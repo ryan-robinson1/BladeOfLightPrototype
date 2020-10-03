@@ -6,8 +6,8 @@ public class ShootScript : MonoBehaviour
 {
     [SerializeField]
     private Transform objectToFollow;
-    [SerializeField]
-    private Rigidbody _rb;
+ 
+    
     [SerializeField]
     private float followSpeed = 10;
     [SerializeField]
@@ -21,7 +21,9 @@ public class ShootScript : MonoBehaviour
     private float _headMoveSpeed;
     private float _legMoveSpeed;
 
-    private float _moveBackwardDistance; 
+    private float _moveBackwardDistance;
+
+    private Rigidbody _rb;
     private void Start()
     {
         _torsoMoveSpeed = 20;
@@ -37,7 +39,7 @@ public class ShootScript : MonoBehaviour
             Debug.Log("Did not assign legs in hierarchy");
 
 
-        _moveBackwardDistance = Random.Range(18, 25);
+        _moveBackwardDistance = Random.Range(15, 20);
         _rb = this.GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
@@ -60,7 +62,7 @@ public class ShootScript : MonoBehaviour
         float positionDifference = transform.position.x - objectToFollow.position.x;
         if (positionDifference < _moveBackwardDistance && positionDifference>0)
         {
-            _rb.velocity = new Vector3(transform.forward.x * -3f, 0, transform.forward.z * -(5f/positionDifference));
+            _rb.velocity = new Vector3(transform.forward.x * -3f, 0, transform.forward.z * -(1f/positionDifference));
         }
     }
 
