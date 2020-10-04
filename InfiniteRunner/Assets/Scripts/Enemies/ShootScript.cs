@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ShootScript : MonoBehaviour
 {
+    public GameObject bullet; 
+
     [SerializeField]
     private Transform objectToFollow;
- 
-    
+    [SerializeField]
+    private Transform gunBarrel;
     [SerializeField]
     private float followSpeed = 10;
     [SerializeField]
@@ -23,12 +25,15 @@ public class ShootScript : MonoBehaviour
 
     private float _moveBackwardDistance;
 
+    Quaternion _lookRotation;
+    Vector3 _direction;
+
     private Rigidbody _rb;
     private void Start()
     {
-        _torsoMoveSpeed = 20;
+        _torsoMoveSpeed = 40;
         _headMoveSpeed = 45;
-        _legMoveSpeed = 15;
+        _legMoveSpeed = 35;
 
 
         if(torso == null)
@@ -44,10 +49,13 @@ public class ShootScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
         LookAtTarget();
         MoveBackwards();
+        if(Time.time%Random.Range(3,5)==0)
+            Shoot();
     }
-    public void LookAtTarget()
+    private void LookAtTarget()
     {
         Vector3 _lookDirection = objectToFollow.position - transform.position;
         Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
@@ -56,14 +64,27 @@ public class ShootScript : MonoBehaviour
         torso.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _torsoMoveSpeed * Time.deltaTime);
         head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.deltaTime);
         legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.deltaTime);
+       
     }
-    public void MoveBackwards()
+    private void MoveBackwards()
     {
         float positionDifference = transform.position.x - objectToFollow.position.x;
         if (positionDifference < _moveBackwardDistance && positionDifference>0)
         {
-            _rb.velocity = new Vector3(transform.forward.x * -3f, 0, transform.forward.z * -(1f/positionDifference));
+            _rb.velocity = new Vector3(transform.forward.x * -3f, 0, transform.forward.z * -(1f/positionDifference*2));
         }
+    }
+    private void Shoot()
+    {
+        Vector3 _pointToAimAt = new Vector3(objectToFollow.position.x, objectToFollow.position.y, objectToFollow.position.z);
+        _direction = (_pointToAimAt - transform.position).normalized;
+        _lookRotation = Quaternion.LookRotation(_direction);
+        
+
+
+        Vector3 spawnPos = torso.transform.position + torso.transform.forward*1.1f;
+        Instantiate(bullet, spawnPos, _lookRotation); 
+
     }
 
 }

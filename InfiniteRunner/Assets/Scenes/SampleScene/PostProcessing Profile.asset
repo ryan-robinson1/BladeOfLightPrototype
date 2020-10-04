@@ -33,7 +33,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.09
   contrast:
     m_OverrideState: 1
     m_Value: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 40
+    m_Value: 25
     min: -100
     max: 100
 --- !u!114 &-163581680738381794
@@ -70,14 +70,14 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.12636912}
   midtones:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.21903957}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 3092733677044962081}
   - {fileID: 377533371109659074}
   - {fileID: 715875722017895876}
+  - {fileID: -163581680738381794}
 --- !u!114 &377533371109659074
 MonoBehaviour:
   m_ObjectHideFlags: 3
