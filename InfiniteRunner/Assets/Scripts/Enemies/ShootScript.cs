@@ -58,7 +58,7 @@ public class ShootScript : MonoBehaviour
 
         LookAtTarget();
         MoveBackwards();
-        if(Time.time%Random.Range(3,5)==0)
+        if(Time.time%Random.Range(1,1)==0)
             Shoot();
         destroyModel();
     }
@@ -94,7 +94,7 @@ public class ShootScript : MonoBehaviour
         
 
 
-        Vector3 spawnPos = torso.transform.position + torso.transform.forward*1.1f;
+        Vector3 spawnPos = gunBarrel.transform.position + gunBarrel.transform.forward;
         Instantiate(bullet, spawnPos, _lookRotation); 
 
     }

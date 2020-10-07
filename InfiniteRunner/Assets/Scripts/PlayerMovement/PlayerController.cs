@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 17f;
+    private float speed = 10f;
     [SerializeField]
     private Transform lookAtPoint;
 
