@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 10f;
+   
+    private float speed = 15f;
     [SerializeField]
     private Transform lookAtPoint;
 
@@ -17,13 +17,15 @@ public class PlayerController : MonoBehaviour
 
 
     int _playerPositionOffset = 0;
-
+    public Vector3 getVelocity() { return _rb.velocity; }
     private void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
         _tf = this.GetComponent<Transform>();
-        _anim = this.GetComponentInChildren<Animator>(); 
+        _anim = this.GetComponentInChildren<Animator>();
+        _rb.velocity = new Vector3(speed, 0, 0);
     }
+    
     private void Update()
     {
         Move();

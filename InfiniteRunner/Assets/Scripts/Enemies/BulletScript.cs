@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class BulletScript : MonoBehaviour
 
     private float lifeLength = 6f;
     private float lifeLengthTimer = float.PositiveInfinity;
+    [HideInInspector]
+    public float bulletSpeed;
 
     Rigidbody rb;
     private void Start()
@@ -17,7 +20,7 @@ public class BulletScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(transform.forward.x * 25f, transform.forward.y*25f, transform.forward.z * 25f);
+        rb.velocity = new Vector3(transform.forward.x * bulletSpeed, transform.forward.y*bulletSpeed, transform.forward.z * bulletSpeed);
 
         if (Time.time - lifeLengthTimer > lifeLength)
             Destroy(this.gameObject); 
@@ -28,6 +31,11 @@ public class BulletScript : MonoBehaviour
         if (other.gameObject.transform.CompareTag("Player"))
         {
             Debug.Log("Hit by bullet");
+            Destroy(this.gameObject);
         }
+    }
+    public float getBulletSpeed()
+    {
+        return bulletSpeed; 
     }
 }
