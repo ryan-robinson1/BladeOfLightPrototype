@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
-    private float speed = 15f;
+
+    public TimeManagerScript timeManager;
+
+
+
     [SerializeField]
     private Transform lookAtPoint;
 
+
+    private float speed = 15f;
     Rigidbody _rb;
     Transform _tf;
     Animator _anim;
@@ -30,11 +35,13 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Slide();
-        ChangeLookAtPoint(); 
-      
+        ChangeLookAtPoint();
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            timeManager.SlowMotion();
 
-
+        }
     }
     void Slide()
     {
