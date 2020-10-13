@@ -4,11 +4,17 @@ ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: -6544437262410897493
+      74: -4339482175404930214
     second: enemy-armature|enemy-idle
   - first:
-      74: 3009601531003976978
+      74: 3516113942113077853
     second: enemy-armature|enemy-idle-pistol
+  - first:
+      74: -5294535691456112824
+    second: enemy-armature.001|enemy-walk
+  - first:
+      74: -6744530747055740078
+    second: enemy-armature.001|enemy-walk-pistol
   - first:
       74: -1544098529351539477
     second: enemy-armature|enemy-walk
@@ -50,7 +56,7 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: enemy-armature|enemy-idle
-      takeName: enemy-armature|enemy-idle
+      takeName: enemy-armature.001|enemy-idle
       internalID: 0
       firstFrame: 0
       lastFrame: 40
@@ -79,7 +85,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: enemy-armature|enemy-idle-pistol
-      takeName: enemy-armature|enemy-idle-pistol
+      takeName: enemy-armature.001|enemy-idle-pistol
       internalID: 0
       firstFrame: 0
       lastFrame: 25
@@ -108,7 +114,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: enemy-armature|enemy-walk
-      takeName: enemy-armature|enemy-walk
+      takeName: enemy-armature.001|enemy-walk
       internalID: 0
       firstFrame: 0
       lastFrame: 40
@@ -137,7 +143,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: enemy-armature|enemy-walk-pistol
-      takeName: enemy-armature|enemy-walk-pistol
+      takeName: enemy-armature.001|enemy-walk-pistol
       internalID: 0
       firstFrame: 0
       lastFrame: 40

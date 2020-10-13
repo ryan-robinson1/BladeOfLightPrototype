@@ -33,6 +33,7 @@ public class ShootScript : MonoBehaviour
 
     private float _moveBackwardDistance;
 
+
     Quaternion _lookRotation;
     Vector3 _direction;
     Animator _anim;
@@ -63,8 +64,7 @@ public class ShootScript : MonoBehaviour
     {
         LookAtTarget();
         MoveBackwards();
-        if (Time.time % Random.Range(3, 5) == 0)
-            Shoot();
+        Shoot();
         destroyModel();
     }
     private void LookAtTarget()
@@ -94,17 +94,25 @@ public class ShootScript : MonoBehaviour
 
     private void Shoot()
     {
-        Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
-        _direction = (_pointToAimAt - transform.position).normalized;
-        _lookRotation = Quaternion.LookRotation(_direction);
+        if (Time.time % Random.Range(3, 5) == 0)
+        {
+            Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
+            _direction = (_pointToAimAt - transform.position).normalized;
+            _lookRotation = Quaternion.LookRotation(_direction);
+
+
+            Vector3 spawnPos = gunBarrel.transform.position + gunBarrel.transform.forward;
+
+            //Sets the bullet speed in the script
+            GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
+            b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
+            _anim.SetBool("shooting", true);
+        }
+        else
+        {
+            _anim.SetBool("shooting", false);
+        }
         
-
-        Vector3 spawnPos = gunBarrel.transform.position + gunBarrel.transform.forward;
-
-        //Sets the bullet speed in the script
-        GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
-        b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
-        _anim.SetBool ("shooting", true);
 
     }
 
