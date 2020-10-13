@@ -63,7 +63,7 @@ public class ShootScript : MonoBehaviour
     {
         LookAtTarget();
         MoveBackwards();
-        if(Time.time%Random.Range(3,5)==0)
+        if (Time.time % Random.Range(3, 5) == 0)
             Shoot();
         destroyModel();
     }
@@ -103,7 +103,8 @@ public class ShootScript : MonoBehaviour
 
         //Sets the bullet speed in the script
         GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
-        b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed; 
+        b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
+        _anim.SetBool ("shooting", true);
 
     }
 
