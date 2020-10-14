@@ -23,7 +23,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private float _bulletSpeed = 25f; 
 
-    private float _walkSpeed = 0.5f;
+    private float _walkSpeed = 3f;
     private float _removalDistance = 10;
   
 
@@ -37,6 +37,7 @@ public class ShootScript : MonoBehaviour
     Quaternion _lookRotation;
     Vector3 _direction;
     Animator _anim;
+    ParticleSystem _muzzleFlash;
 
     private Rigidbody _rb;
     private void Start()
@@ -58,6 +59,7 @@ public class ShootScript : MonoBehaviour
         _moveBackwardDistance = Random.Range(50, 100);
         _rb = this.GetComponent<Rigidbody>();
         _anim = this.GetComponentInChildren<Animator>();
+        _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
     }
     
     private void FixedUpdate()
@@ -67,6 +69,7 @@ public class ShootScript : MonoBehaviour
         Shoot();
         destroyModel();
     }
+
     private void LookAtTarget()
     {
        
@@ -107,6 +110,7 @@ public class ShootScript : MonoBehaviour
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
             _anim.SetBool("shooting", true);
+            _muzzleFlash.Play();
         }
         else
         {
