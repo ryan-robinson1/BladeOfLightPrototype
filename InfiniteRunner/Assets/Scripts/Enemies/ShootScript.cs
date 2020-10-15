@@ -130,7 +130,8 @@ public class ShootScript : MonoBehaviour
     }
     private Vector3 CalculateInterceptPosition(Vector3 targetPosition)
     {
-        Vector3 interceptPoint = FirstOrderIntercept(this.transform.position,_rb.velocity,_bulletSpeed,new Vector3(targetPosition.x,targetPosition.y-0.5f,targetPosition.z),player.getVelocity());
+        Vector3 interceptPoint = FirstOrderIntercept(
+            this.transform.position,_rb.velocity,_bulletSpeed,new Vector3(targetPosition.x,targetPosition.y-0.8f,targetPosition.z),player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), Random.Range(targetPosition.y, interceptPoint.y), Random.Range(targetPosition.z, interceptPoint.z));
         return inaccurateInterceptPoint;
     }

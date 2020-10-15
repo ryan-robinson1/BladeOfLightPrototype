@@ -8,24 +8,54 @@ ModelImporter:
     second: enemy-armature|enemy-idle
   - first:
       74: 3516113942113077853
-    second: enemy-armature|enemy-idle-pistol
+    second: enemy-armature.001|enemy-idle-pistol
   - first:
       74: -5294535691456112824
     second: enemy-armature.001|enemy-walk
   - first:
       74: -6744530747055740078
-    second: enemy-armature.001|enemy-walk-pistol
+    second: enemy-armature|enemy-walk-pistol
+  - first:
+      74: 3009601531003976978
+    second: enemy-armature|enemy-idle-pistol
   - first:
       74: -1544098529351539477
     second: enemy-armature|enemy-walk
-  - first:
-      74: -1214333238781545169
-    second: enemy-armature|enemy-walk-pistol
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: armor mat red
+    second: {fileID: 2100000, guid: 80fcedf1978d37845bca53d3e19076aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armor strip black
+    second: {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backpack
+    second: {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gun-black
+    second: {fileID: 2100000, guid: 165949a76911b844e8d94d95a573c7de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iron-sight-red
+    second: {fileID: 2100000, guid: 47ad122f59ff1834486b6db0fe93ba18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: offset-white
+    second: {fileID: 2100000, guid: 47ad122f59ff1834486b6db0fe93ba18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: visor mat
     second: {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
   materials:
     materialImportMode: 1
@@ -95,8 +125,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -153,8 +183,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
