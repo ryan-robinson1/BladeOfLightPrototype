@@ -37,9 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Slide();
+        Jump();
         ChangeLookAtPoint();
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             timeManager.SlowMotion();
 
@@ -52,6 +53,14 @@ public class PlayerController : MonoBehaviour
             _anim.SetTrigger("PlaySlideAnimation");
         }
      
+    }
+    void Jump()
+    {
+       /* if (Input.GetKeyDown(KeyCode.Space))
+        {
+            
+            _rb.AddForce(0, 10000, 0);
+        }*/
     }
     void ChangeLookAtPoint()
     {

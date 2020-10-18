@@ -33,6 +33,13 @@ public class ShootScript : MonoBehaviour
 
     private float _moveBackwardDistance;
 
+    private float positionDifference;
+
+    private float ammo = 5;
+    private float timeInBetweenShots = 0.5f;
+    private float reloadTime = 1.8f;
+    private float reloadTimer = float.NegativeInfinity;
+    private bool shooting = false;
 
     Quaternion _lookRotation;
     Vector3 _direction;
@@ -43,9 +50,9 @@ public class ShootScript : MonoBehaviour
     private void Start()
     {
 
-        _torsoMoveSpeed = 40;
-        _headMoveSpeed = 45;
-        _legMoveSpeed = 35;
+        _torsoMoveSpeed = 50;
+        _headMoveSpeed = 55;
+        _legMoveSpeed = 40;
 
 
         if(torso == null)
@@ -56,7 +63,7 @@ public class ShootScript : MonoBehaviour
             Debug.Log("Did not assign legs in hierarchy");
 
 
-        _moveBackwardDistance = Random.Range(50, 100);
+        _moveBackwardDistance = Random.Range(10,15);
         _rb = this.GetComponent<Rigidbody>();
         _anim = this.GetComponentInChildren<Animator>();
         _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
@@ -64,30 +71,51 @@ public class ShootScript : MonoBehaviour
     
     private void FixedUpdate()
     {
-        LookAtTarget();
+        positionDifference = transform.position.x - (objectToFollow.position.x);
         MoveBackwards();
-        Shoot();
+        if(positionDifference < Random.Range(80, 10) && !shooting)
+        {
+            InvokeRepeating("Shoot", 0f, timeInBetweenShots);
+            shooting = true;
+        }
+        else
+        {
+            _anim.SetBool("shooting", false);
+        }
+
         destroyModel();
+      //  LookAtTarget();
+
+
+
     }
+    private void Update()
+    {
+        
+
+    }
+    private void LateUpdate()
+    {
+        _anim.enabled = true;
+    }
+
 
     private void LookAtTarget()
     {
-       
         Vector3 _lookDirection = objectToFollow.position - transform.position;
         _lookDirection.y = 0;
         Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
 
-
-
+        _anim.enabled = false;
         torso.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _torsoMoveSpeed * Time.deltaTime);
         head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.deltaTime);
         legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.deltaTime);
-   
-
+        
     }
+    
     private void MoveBackwards()
     {
-        float positionDifference = transform.position.x - (objectToFollow.position.x);
+   
         if (positionDifference < _moveBackwardDistance && positionDifference>0)
         {
             _rb.velocity = new Vector3(transform.forward.x * -_walkSpeed, 0, transform.forward.z * -(1f/positionDifference*2));
@@ -97,7 +125,7 @@ public class ShootScript : MonoBehaviour
 
     private void Shoot()
     {
-        if (Time.time % Random.Range(3, 5) == 0)
+        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference >0)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;
@@ -111,19 +139,21 @@ public class ShootScript : MonoBehaviour
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
+            ammo--;
         }
-        else
+        else if(ammo == 0)
         {
             _anim.SetBool("shooting", false);
+            reloadTimer = Time.time;
+            ammo = 5;
         }
-        
+
 
     }
 
     private void destroyModel()
     {
-        float positionDifference = objectToFollow.position.x - transform.position.x;
-        if (positionDifference > _removalDistance)
+        if (-positionDifference > _removalDistance)
         {
            Destroy(this.gameObject);
         }
@@ -131,8 +161,8 @@ public class ShootScript : MonoBehaviour
     private Vector3 CalculateInterceptPosition(Vector3 targetPosition)
     {
         Vector3 interceptPoint = FirstOrderIntercept(
-            this.transform.position,_rb.velocity,_bulletSpeed,new Vector3(targetPosition.x,targetPosition.y-0.8f,targetPosition.z),player.getVelocity());
-        Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), Random.Range(targetPosition.y, interceptPoint.y), Random.Range(targetPosition.z, interceptPoint.z));
+            this.transform.position,_rb.velocity,_bulletSpeed,new Vector3(targetPosition.x,targetPosition.y-1f,targetPosition.z),player.getVelocity());
+        Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
         return inaccurateInterceptPoint;
     }
     public static Vector3 FirstOrderIntercept
