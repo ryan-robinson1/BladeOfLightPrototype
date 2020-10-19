@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour
 {
 
 
-    private float lifeLength = 6f;
+    private float lifeLength = 2f;
     private float lifeLengthTimer = float.PositiveInfinity;
     [HideInInspector]
     public float bulletSpeed;

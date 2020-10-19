@@ -12,7 +12,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private Transform gunBarrel;
     [SerializeField]
-    private float followSpeed = 10;
+    private float followSpeed = 20;
     [SerializeField]
     private Transform torso;
     [SerializeField]
@@ -84,32 +84,31 @@ public class ShootScript : MonoBehaviour
         }
 
         destroyModel();
-      //  LookAtTarget();
+        LookAtTarget();
 
 
 
     }
     private void Update()
-    {
-        
+    { 
 
     }
     private void LateUpdate()
     {
-        _anim.enabled = true;
+        
     }
 
 
     private void LookAtTarget()
     {
+      
         Vector3 _lookDirection = objectToFollow.position - transform.position;
         _lookDirection.y = 0;
         Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
 
-        _anim.enabled = false;
-        torso.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _torsoMoveSpeed * Time.deltaTime);
-        head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.deltaTime);
-        legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.deltaTime);
+        torso.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _torsoMoveSpeed * Time.time);
+         head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.time);
+         legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.time);
         
     }
     

@@ -11,16 +11,16 @@ ModelImporter:
     second: enemy-armature.001|enemy-idle-pistol
   - first:
       74: -5294535691456112824
-    second: enemy-armature.001|enemy-walk
+    second: enemy-armature|enemy-walk
   - first:
       74: -6744530747055740078
     second: enemy-armature|enemy-walk-pistol
   - first:
+      74: 7115570179015441645
+    second: enemy-armature.001|enemy-walk-pistol.001
+  - first:
       74: 3009601531003976978
     second: enemy-armature|enemy-idle-pistol
-  - first:
-      74: -1544098529351539477
-    second: enemy-armature|enemy-walk
   externalObjects:
   - first:
       type: UnityEngine:Material
