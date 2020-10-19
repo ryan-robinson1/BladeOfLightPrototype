@@ -7872,7 +7872,7 @@ GameObject:
   - component: {fileID: 2155300144688084558}
   - component: {fileID: 2155300144688084559}
   m_Layer: 0
-  m_Name: PistolEnemy LEGIT
+  m_Name: PistolEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
