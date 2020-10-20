@@ -14,9 +14,10 @@ public class StartMenuScript : MonoBehaviour
     public void StartGame()
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        camera.transform.rotation = Quaternion.Euler(31, 90, 0);
+
         player.GetComponent<PlayerController>().enabled = true;
         camera.GetComponent<CameraFollowScript>().enabled = true;
-        camera.transform.rotation = Quaternion.Euler(31, 90, 0);
         this.GetComponentInChildren<Canvas>().enabled = false;
     }
 }

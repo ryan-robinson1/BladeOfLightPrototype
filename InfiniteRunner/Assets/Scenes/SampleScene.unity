@@ -1646,6 +1646,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 1418675917}
+  followSpeed: 20
   torso: {fileID: 629451070}
   head: {fileID: 1946689121}
   legs: {fileID: 389619171}
@@ -3561,6 +3562,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 1936513517}
+  followSpeed: 20
   torso: {fileID: 1970491475}
   head: {fileID: 1637312191}
   legs: {fileID: 1592159598}
@@ -3573,7 +3575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351472970}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 126.86, y: 0.784, z: -0.97}
+  m_LocalPosition: {x: 126.86, y: 0.784, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1226463048}
@@ -31843,7 +31845,7 @@ PrefabInstance:
     - target: {fileID: 1693744828698302697, guid: dd076d957c0660e469eb96bacdc03f49,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693744828698302699, guid: dd076d957c0660e469eb96bacdc03f49,
         type: 3}
@@ -32174,6 +32176,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 400202087}
+  followSpeed: 20
   torso: {fileID: 1937597448}
   head: {fileID: 2077296485}
   legs: {fileID: 1688710381}
@@ -32186,7 +32189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244036359}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 156.77, y: 0.784, z: 1.07}
+  m_LocalPosition: {x: 156.77, y: 0.784, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2089776281}
@@ -34400,6 +34403,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 210070426}
+  followSpeed: 20
   torso: {fileID: 159545701}
   head: {fileID: 1726378850}
   legs: {fileID: 310480443}
@@ -34412,7 +34416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543147087}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 145.78, y: 0.784, z: -2.03}
+  m_LocalPosition: {x: 145.78, y: 0.784, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2129390263}
@@ -38495,6 +38499,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 909075470}
+  followSpeed: 20
   torso: {fileID: 1083991979}
   head: {fileID: 1840441994}
   legs: {fileID: 354252186}
@@ -38507,7 +38512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920965357}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 118.25, y: 0.784, z: -0.84}
+  m_LocalPosition: {x: 118.25, y: 0.784, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 607972691}
@@ -39709,6 +39714,7 @@ MonoBehaviour:
   robots: {fileID: 0}
   objectToFollow: {fileID: 1917582207}
   gunBarrel: {fileID: 790196271}
+  followSpeed: 20
   torso: {fileID: 754230604}
   head: {fileID: 993937097}
   legs: {fileID: 1641527808}

@@ -19,28 +19,31 @@ public class PlayerController : MonoBehaviour
     Animator _anim;
     BoxCollider _bc;
 
+   
 
 
 
     int _playerPositionOffset = 0;
-    public Vector3 getVelocity() { return _rb.velocity; }
+ 
     private void Start()
     {
+        
         _rb = this.GetComponent<Rigidbody>();
         _tf = this.GetComponent<Transform>();
         _anim = this.GetComponentInChildren<Animator>();
         _bc = this.GetComponent<BoxCollider>();
         _rb.velocity = new Vector3(speed, 0, 0);
+       
     }
-    
+    public Vector3 getVelocity() { return new Vector3(speed,0,0); }
+
     private void Update()
     {
         Move();
         Slide();
-        Jump();
         ChangeLookAtPoint();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || SwipeInput.Instance.DoubleTap)
         {
             timeManager.SlowMotion();
 
@@ -48,19 +51,11 @@ public class PlayerController : MonoBehaviour
     }
     void Slide()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
             _anim.SetTrigger("PlaySlideAnimation");
         }
      
-    }
-    void Jump()
-    {
-       /* if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-            _rb.AddForce(0, 10000, 0);
-        }*/
     }
     void ChangeLookAtPoint()
     {
@@ -81,17 +76,18 @@ public class PlayerController : MonoBehaviour
     {
         _rb.velocity = new Vector3(speed, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.A) && _playerPositionOffset < 1)
+        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft)&& _playerPositionOffset < 1)
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.5f);
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 2f);
             _playerPositionOffset += 1;
         }
-        if (Input.GetKeyDown(KeyCode.D) && _playerPositionOffset > -1)
+        if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset > -1)
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.5f);
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 2f);
             _playerPositionOffset -= 1;
         }
 
     }
+   
 
 }

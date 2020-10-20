@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.transform.CompareTag("Player"))
         {
-            Debug.Log("Hit by bullet");
+           // Debug.Log("Hit by bullet");
             Destroy(this.gameObject);
         }
     }

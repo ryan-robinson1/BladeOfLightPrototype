@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeManagerScript : MonoBehaviour
 {
-    
+    public CameraFollowScript camera;
 
     private float slowdownFactor = 0.1f;
     private float slowMotionLength = 0.15f;
@@ -13,6 +13,7 @@ public class TimeManagerScript : MonoBehaviour
 
 
     float _slowMotionTimer = float.PositiveInfinity;
+
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class TimeManagerScript : MonoBehaviour
         Time.timeScale = slowdownFactor;
         Time.fixedDeltaTime = Time.timeScale * 0.01f;
         _slowMotionTimer = Time.time;
+        //camera.followSpeed = 40f;
 
     }
     private void UndoSlowMotion()
@@ -36,6 +38,7 @@ public class TimeManagerScript : MonoBehaviour
         {
             _slowMotionTimer = float.PositiveInfinity;
             Time.fixedDeltaTime = 0.01f;
+            //camera.followSpeed = 10f;
         }
     }
     private void ResetSlowMotionTimer()

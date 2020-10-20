@@ -50,9 +50,9 @@ public class ShootScript : MonoBehaviour
     private void Start()
     {
 
-        _torsoMoveSpeed = 50;
-        _headMoveSpeed = 55;
-        _legMoveSpeed = 40;
+        _torsoMoveSpeed = 40;
+        _headMoveSpeed = 45;
+        _legMoveSpeed = 30;
 
 
         if(torso == null)

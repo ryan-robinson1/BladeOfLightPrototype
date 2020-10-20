@@ -13,7 +13,7 @@ public class CameraFollowScript : MonoBehaviour
     }
     public void MoveToTarget()
     {
-        Vector3 _targetPos = new Vector3(objectToFollow.position.x,objectToFollow.position.y,0) +
+        Vector3 _targetPos = new Vector3(objectToFollow.position.x,objectToFollow.position.y, objectToFollow.position.z) +
                              objectToFollow.forward * offset.z +
                              objectToFollow.right * offset.x +
                              objectToFollow.up * offset.y;
