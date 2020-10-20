@@ -4,6 +4,7 @@ public class ShootScript : MonoBehaviour
 {
     public GameObject bullet;
     public PlayerController player;
+    public GameObject casing;
 
     public BulletScript robots;
     
@@ -136,6 +137,7 @@ public class ShootScript : MonoBehaviour
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
+            spawnBulletCasing();
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
             ammo--;
@@ -148,6 +150,15 @@ public class ShootScript : MonoBehaviour
         }
 
 
+    }
+
+    private void spawnBulletCasing()
+    {
+        Vector3 spawnCasePos = gunBarrel.transform.position;
+        Vector3 exitVelocity = new Vector3(0, 2, 1);
+        // spawn the bullet casing
+        GameObject bCase = Instantiate(casing, spawnCasePos, _lookRotation);
+        bCase.GetComponent<Rigidbody>().AddForce(exitVelocity, ForceMode.Impulse);
     }
 
     private void destroyModel()
