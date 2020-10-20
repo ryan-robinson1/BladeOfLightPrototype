@@ -7,24 +7,19 @@ public class PlayerController : MonoBehaviour
 
     public TimeManagerScript timeManager;
 
-
-
     [SerializeField]
     private Transform lookAtPoint;
 
-
-    private float speed = 15f;
     Rigidbody _rb;
     Transform _tf;
     Animator _anim;
     BoxCollider _bc;
 
-   
+    private int _playerPositionOffset = 0;
+    private float speed = 15f;
 
+    string[] recentInputs = new string[2];
 
-
-    int _playerPositionOffset = 0;
- 
     private void Start()
     {
         
@@ -42,11 +37,12 @@ public class PlayerController : MonoBehaviour
         Move();
         Slide();
         ChangeLookAtPoint();
-
-        if (Input.GetKeyDown(KeyCode.Space) || SwipeInput.Instance.DoubleTap)
+        UpdateRecentInputs();
+        if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
         {
             timeManager.SlowMotion();
-
+            recentInputs[0] = "";
+            recentInputs[1] = "";
         }
     }
     void Slide()
@@ -87,6 +83,39 @@ public class PlayerController : MonoBehaviour
             _playerPositionOffset -= 1;
         }
 
+    }
+
+    /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 
+    /* the two most recent inputs to prevent a double swipe from being counted as a double tap
+    */
+    void UpdateRecentInputs()
+    {
+        if(SwipeInput.Instance.SwipeRight || SwipeInput.Instance.SwipeLeft || SwipeInput.Instance.SwipeUp || SwipeInput.Instance.SwipeDown)
+        {
+            if(recentInputs[0] == "Swipe")
+            {
+                recentInputs[1] = "Swipe";
+            }
+            else
+            {
+                recentInputs[0] = "Swipe";
+            }
+        }
+        else if (SwipeInput.Instance.Tap)
+        {
+            if (recentInputs[0] == "Tap")
+            {
+                recentInputs[1] = "Tap";
+            }
+            else
+            {
+                recentInputs[0] = "Tap";
+            }
+        }
+    }
+    bool TwoRecentTaps()
+    {
+        return recentInputs[0] == "Tap" && recentInputs[1] == "Tap";
     }
    
 
