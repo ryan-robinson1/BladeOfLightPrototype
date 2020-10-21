@@ -27,6 +27,7 @@ public class TimeManagerScript : MonoBehaviour
         //camera.followSpeed = 40f;
 
     }
+
     private void UndoSlowMotion()
     {
         Time.timeScale += _reentraceSpeed * Time.unscaledDeltaTime;

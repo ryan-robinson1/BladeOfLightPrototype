@@ -10,18 +10,20 @@ public class ShootScript : MonoBehaviour
     
     [SerializeField]
     private Transform objectToFollow;
-    [SerializeField]
-    private Transform gunBarrel;
-    [SerializeField]
-    private float followSpeed = 20;
-    [SerializeField]
-    private Transform torso;
-    [SerializeField]
-    private Transform head;
-    [SerializeField]
-    private Transform legs;
 
-    [SerializeField]
+    public Transform gunBarrel;
+    
+    public Transform casingSpawn;
+    
+    private float followSpeed = 20;
+    
+    public Transform torso;
+    
+    public Transform head;
+    
+    public Transform legs;
+
+    
     private float _bulletSpeed = 25f; 
 
     private float _walkSpeed = 3f;
@@ -90,15 +92,6 @@ public class ShootScript : MonoBehaviour
 
 
     }
-    private void Update()
-    { 
-
-    }
-    private void LateUpdate()
-    {
-        
-    }
-
 
     private void LookAtTarget()
     {
@@ -137,7 +130,7 @@ public class ShootScript : MonoBehaviour
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
-            spawnBulletCasing();
+            this.spawnBulletCasing();
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
             ammo--;
@@ -152,15 +145,22 @@ public class ShootScript : MonoBehaviour
 
     }
 
+    /**
+     * Spawns a bullet casing when Shoot() is called. Applies a random exit velocity
+     * for the casing ejection.
+     */
     private void spawnBulletCasing()
     {
-        Vector3 spawnCasePos = gunBarrel.transform.position;
-        Vector3 exitVelocity = new Vector3(0, 2, 1);
-        // spawn the bullet casing
+        Vector3 spawnCasePos = casingSpawn.transform.position;
+        Vector3 exitVelocity = new Vector3(Random.Range(0.5f, 1.5f), 1f, Random.Range(0.25f, 1f));
+
         GameObject bCase = Instantiate(casing, spawnCasePos, _lookRotation);
         bCase.GetComponent<Rigidbody>().AddForce(exitVelocity, ForceMode.Impulse);
     }
 
+    /**
+     * Destroys the enemy model after the player has passed it. 
+     */
     private void destroyModel()
     {
         if (-positionDifference > _removalDistance)

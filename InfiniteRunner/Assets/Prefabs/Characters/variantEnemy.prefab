@@ -22,6 +22,23 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: casingSpawn
+      value: 
+      objectReference: {fileID: 6081675561583633201}
+    - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: casing
+      value: 
+      objectReference: {fileID: 255836919305108668, guid: d5b1b1412ce09754c8d72d72f08af307,
+        type: 3}
+    - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1806744742710055406, guid: f8a72c67fb623a546a07a815aba67054,
+        type: 3}
     - target: {fileID: 2155300144688084595, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,3 +96,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f450a687d30d145b878b036977c47a, type: 3}
+--- !u!4 &6081675561583633201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1949194857607391022, guid: e0f450a687d30d145b878b036977c47a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5722559819830330399}
+  m_PrefabAsset: {fileID: 0}

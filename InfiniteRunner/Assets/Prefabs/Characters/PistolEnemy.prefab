@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1303215005476557779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949194857607391022}
+  m_Layer: 9
+  m_Name: CaseSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949194857607391022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303215005476557779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.0075, z: 0.0059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2155300144004402184}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2155300142850515371
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +41,7 @@ GameObject:
   - component: {fileID: 2155300142850515370}
   - component: {fileID: 2155300142850515368}
   - component: {fileID: 2155300142850515369}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-hand-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300142867765143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +153,7 @@ GameObject:
   - component: {fileID: 2155300142880741886}
   - component: {fileID: 2155300142880741884}
   - component: {fileID: 2155300142880741885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chest-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +236,7 @@ GameObject:
   - component: {fileID: 2155300142915700272}
   - component: {fileID: 2155300142915700278}
   - component: {fileID: 2155300142915700279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: top of gun.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143020324304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +349,7 @@ GameObject:
   - component: {fileID: 2155300143091536055}
   - component: {fileID: 2155300143091536053}
   - component: {fileID: 2155300143091536054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: back sights.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +430,7 @@ GameObject:
   - component: {fileID: 2155300143092553695}
   - component: {fileID: 2155300143092553693}
   - component: {fileID: 2155300143092553694}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-thigh-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143104042934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GunBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +541,7 @@ GameObject:
   - component: {fileID: 2155300143105312143}
   - component: {fileID: 2155300143105312141}
   - component: {fileID: 2155300143105312142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-thigh-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143133075645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143134204666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +686,7 @@ GameObject:
   - component: {fileID: 2155300143190469740}
   - component: {fileID: 2155300143190469650}
   - component: {fileID: 2155300143190469651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: barrel and handle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +769,7 @@ GameObject:
   - component: {fileID: 2155300143225691508}
   - component: {fileID: 2155300143225691514}
   - component: {fileID: 2155300143225691515}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-knee-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143277718478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +882,7 @@ GameObject:
   - component: {fileID: 2155300143318593040}
   - component: {fileID: 2155300143318593046}
   - component: {fileID: 2155300143318593047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-elbow-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143319477012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,7 +994,7 @@ GameObject:
   - component: {fileID: 2155300143325297103}
   - component: {fileID: 2155300143325297101}
   - component: {fileID: 2155300143325297102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: head-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1077,7 @@ GameObject:
   - component: {fileID: 2155300143345407963}
   - component: {fileID: 2155300143345407961}
   - component: {fileID: 2155300143345407962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-elbow-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1158,7 @@ GameObject:
   - component: {fileID: 2155300143415733013}
   - component: {fileID: 2155300143415733019}
   - component: {fileID: 2155300143415733012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistolFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5999,7 +6029,7 @@ GameObject:
   - component: {fileID: 2155300143442332112}
   - component: {fileID: 2155300143442332118}
   - component: {fileID: 2155300143442332119}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-hand-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6080,7 +6110,7 @@ GameObject:
   - component: {fileID: 2155300143625260434}
   - component: {fileID: 2155300143625260432}
   - component: {fileID: 2155300143625260433}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-calf-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6159,7 +6189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143639750233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6190,7 +6220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143775109944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6222,7 +6252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143828075945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6256,7 +6286,7 @@ GameObject:
   - component: {fileID: 2155300143839937148}
   - component: {fileID: 2155300143839937122}
   - component: {fileID: 2155300143839937123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: curve thing in back.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6336,7 +6366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155300143882356305}
   - component: {fileID: 2155300143882356304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: low_poly_pistol_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6386,7 +6416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300143915410429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6420,7 +6450,7 @@ GameObject:
   - component: {fileID: 2155300143924009884}
   - component: {fileID: 2155300143924009858}
   - component: {fileID: 2155300143924009859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger holder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6501,7 +6531,7 @@ GameObject:
   - component: {fileID: 2155300143972723372}
   - component: {fileID: 2155300143972723282}
   - component: {fileID: 2155300143972723283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: neck-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6580,7 +6610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144004402184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6606,6 +6636,7 @@ Transform:
   - {fileID: 2155300143924009884}
   - {fileID: 2155300144624067174}
   - {fileID: 2155300143104042934}
+  - {fileID: 1949194857607391022}
   m_Father: {fileID: 2155300143828075945}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6618,7 +6649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144013451531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6651,7 +6682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144053384647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6686,7 +6717,7 @@ GameObject:
   - component: {fileID: 2155300144095310065}
   - component: {fileID: 2155300144095310071}
   - component: {fileID: 2155300144095310064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-bicep-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6768,7 +6799,7 @@ GameObject:
   - component: {fileID: 2155300144132675376}
   - component: {fileID: 2155300144132675382}
   - component: {fileID: 2155300144132675383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: smaller curve thing in back.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6849,7 +6880,7 @@ GameObject:
   - component: {fileID: 2155300144178327856}
   - component: {fileID: 2155300144178327862}
   - component: {fileID: 2155300144178327863}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-foot-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6930,7 +6961,7 @@ GameObject:
   - component: {fileID: 2155300144237946923}
   - component: {fileID: 2155300144237946921}
   - component: {fileID: 2155300144237946922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-calf-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7009,7 +7040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144242548948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7045,7 +7076,7 @@ GameObject:
   - component: {fileID: 2155300144314408491}
   - component: {fileID: 2155300144314408489}
   - component: {fileID: 2155300144314408490}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-shoulder-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7126,7 +7157,7 @@ GameObject:
   - component: {fileID: 2155300144339692125}
   - component: {fileID: 2155300144339692099}
   - component: {fileID: 2155300144339692124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-foot-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7205,7 +7236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144342318697}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7239,7 +7270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144351387586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7272,7 +7303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144365143879}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7304,7 +7335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144381883031}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7338,7 +7369,7 @@ GameObject:
   - component: {fileID: 2155300144489553271}
   - component: {fileID: 2155300144489553269}
   - component: {fileID: 2155300144489553270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-knee-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7419,7 +7450,7 @@ GameObject:
   - component: {fileID: 2155300144546905762}
   - component: {fileID: 2155300144546905760}
   - component: {fileID: 2155300144546905761}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-forearm-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7500,7 +7531,7 @@ GameObject:
   - component: {fileID: 2155300144578184635}
   - component: {fileID: 2155300144578184633}
   - component: {fileID: 2155300144578184634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hips-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7580,7 +7611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144582250636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-bicep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7613,7 +7644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155300144614821034}
   - component: {fileID: 2155300144614821033}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistolLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7706,7 +7737,7 @@ GameObject:
   - component: {fileID: 2155300144624067174}
   - component: {fileID: 2155300144624067172}
   - component: {fileID: 2155300144624067173}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7787,7 +7818,7 @@ GameObject:
   - component: {fileID: 2155300144626013776}
   - component: {fileID: 2155300144626013782}
   - component: {fileID: 2155300144626013783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-bicep-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7871,7 +7902,7 @@ GameObject:
   - component: {fileID: 2155300144688084557}
   - component: {fileID: 2155300144688084558}
   - component: {fileID: 2155300144688084559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistolEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7906,11 +7937,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4199b3a8582eb7642ac7a1a3d21673ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1789775608755118853, guid: cc22a1b68edb9d54bb4ce0e952e0629f, type: 3}
+  bullet: {fileID: 1806744742710055406, guid: f8a72c67fb623a546a07a815aba67054, type: 3}
   player: {fileID: 0}
+  casing: {fileID: 255836919305108668, guid: d5b1b1412ce09754c8d72d72f08af307, type: 3}
   robots: {fileID: 0}
   objectToFollow: {fileID: 0}
   gunBarrel: {fileID: 2155300143104042934}
+  casingSpawn: {fileID: 1949194857607391022}
   followSpeed: 20
   torso: {fileID: 2155300144342318697}
   head: {fileID: 2155300142867765143}
@@ -7966,7 +7999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155300144699954403}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left-bicep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8000,7 +8033,7 @@ GameObject:
   - component: {fileID: 2155300144824326398}
   - component: {fileID: 2155300144824326396}
   - component: {fileID: 2155300144824326397}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-forearm-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8081,7 +8114,7 @@ GameObject:
   - component: {fileID: 2155300144850122023}
   - component: {fileID: 2155300144850122021}
   - component: {fileID: 2155300144850122022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right-shoulder-mesh.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

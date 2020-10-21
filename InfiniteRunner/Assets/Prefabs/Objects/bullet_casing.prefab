@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1768813091638992233}
   - component: {fileID: 1102682084378493419}
   - component: {fileID: -7837787796397147035}
-  - component: {fileID: -2071060374880586021}
+  - component: {fileID: -4937855067713448322}
   m_Layer: 8
   m_Name: bullet_casing
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 255836919305108668}
   m_LocalRotation: {x: 0.00000002185569, y: -0.00000004371139, z: 1.016575e-15, w: 1}
   m_LocalPosition: {x: 162.19, y: 3.2748792, z: -2.81}
-  m_LocalScale: {x: 2.940166, y: 2.940166, z: 2.940166}
+  m_LocalScale: {x: 4.5395412, y: 4.5395412, z: 4.5395412}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebb06c1985f6b90448e35fe7f635f82b, type: 2}
+  - {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,12 +94,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!135 &-7837787796397147035
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107,13 +107,13 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255836919305108668}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 17f103410f537194d9b4325b47aa42f3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.01311693
-  m_Center: {x: 0, y: 1.10735595e-17, z: -0.00311693}
---- !u!114 &-2071060374880586021
+  m_Radius: 0.006
+  m_Center: {x: 0, y: 0.001, z: 0}
+--- !u!114 &-4937855067713448322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
