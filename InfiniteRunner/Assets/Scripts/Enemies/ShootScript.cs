@@ -105,7 +105,27 @@ public class ShootScript : MonoBehaviour
          legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.time);
         
     }
-    
+
+    /**
+     * Returns the look rotation so it can be used by the DissolveEnemyScript.
+     * 
+     * @return The look rotation.
+     */
+    public Quaternion getLookRotation()
+    {
+        return _lookRotation;
+    }
+
+    /**
+     * Sets the _lookRotation.
+     * 
+     * @param rot The look rotation to be set.
+     */
+    public void setLookRotation(Quaternion rot)
+    {
+        _lookRotation = rot;
+    }
+
     private void MoveBackwards()
     {
    

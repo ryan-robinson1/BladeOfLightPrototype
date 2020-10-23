@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /**
  * Gives the enemy the dissolve effect and destroys the enemy upon getting
@@ -13,14 +11,14 @@ public class DissolveEnemyScript : MonoBehaviour
 
     private float shaderLifetime = 1f;
     Collider collider;
-    Renderer renderer;
+    Renderer[] renderers;
     public Material dissolveMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
         collider = this.GetComponent<Collider>();
-        renderer = this.GetComponentInChildren<Renderer>();
+        renderers = this.GetComponentsInChildren<Renderer>();
     }
 
 
@@ -35,6 +33,8 @@ public class DissolveEnemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collider.enabled = false;
+            this.GetComponent<Rigidbody>().useGravity = false;
+            this.GetComponent<ShootScript>().enabled = false;
             this.Dissolve();
             this.Destruct();
         }
@@ -53,9 +53,15 @@ public class DissolveEnemyScript : MonoBehaviour
      */
     private void Dissolve()
     {
-        // going to require a for loop and loop through game objects
-        // changing each object's mat...must be a more efficient way
-        // than that though
-        renderer.material = dissolveMaterial;
+        // change materials of each renderer on this object
+        foreach (Renderer rend in renderers)
+        {
+            var mats = new Material[rend.materials.Length];
+            for (var i = 0; i < rend.materials.Length; i++)
+            {
+                mats[i] = dissolveMaterial;
+            }
+            rend.materials = mats;
+        }
     }
 }
