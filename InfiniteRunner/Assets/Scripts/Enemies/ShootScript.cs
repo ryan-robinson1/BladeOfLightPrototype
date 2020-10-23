@@ -153,8 +153,8 @@ public class ShootScript : MonoBehaviour
     {
         Vector3 spawnCasePos = casingSpawn.transform.position;
         Vector3 exitVelocity = new Vector3(Random.Range(0.5f, 1.5f), 1f, Random.Range(0.25f, 1f));
-
-        GameObject bCase = Instantiate(casing, spawnCasePos, _lookRotation);
+        
+        GameObject bCase = Instantiate(casing, spawnCasePos, casing.transform.rotation);
         bCase.GetComponent<Rigidbody>().AddForce(exitVelocity, ForceMode.Impulse);
     }
 

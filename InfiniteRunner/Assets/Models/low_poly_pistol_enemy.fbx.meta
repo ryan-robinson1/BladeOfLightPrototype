@@ -176,7 +176,7 @@ ModelImporter:
       takeName: enemy-armature.001|enemy-walk-pistol
       internalID: 0
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
