@@ -9,16 +9,38 @@
 public class DissolveEnemyScript : MonoBehaviour
 {
 
-    private float shaderLifetime = 1f;
     Collider collider;
     Renderer[] renderers;
     public Material dissolveMaterial;
 
-    // Start is called before the first frame update
+    private float shaderLifetime = 1f;
+    private bool dissolving = false;
+    private float minRender;
+    private float dissolveStrength = 2f;
+
+    /**
+     * Called before the first frame update.
+     */
     void Start()
     {
         collider = this.GetComponent<Collider>();
         renderers = this.GetComponentsInChildren<Renderer>();
+        minRender = dissolveMaterial.GetFloat("minimumRender");
+    }
+
+    /**
+     * Called every fixed framerate frame and updates the game state.
+     */
+    private void FixedUpdate()
+    {
+        if (dissolving)
+        {
+            minRender += Time.deltaTime * dissolveStrength;
+            foreach (Renderer rend in renderers)
+            {
+                rend.material.SetFloat("minimumRender", minRender);
+            }
+        }
     }
 
 
@@ -63,5 +85,6 @@ public class DissolveEnemyScript : MonoBehaviour
             }
             rend.materials = mats;
         }
+        dissolving = true;
     }
 }
