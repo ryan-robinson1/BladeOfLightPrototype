@@ -7901,7 +7901,7 @@ GameObject:
   - component: {fileID: 2155300144688084556}
   - component: {fileID: 2155300144688084557}
   - component: {fileID: 2155300144688084558}
-  - component: {fileID: 2155300144688084559}
+  - component: {fileID: 6491162799621658131}
   m_Layer: 9
   m_Name: PistolEnemy
   m_TagString: Untagged
@@ -7976,7 +7976,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.9, z: 0.8}
   m_Center: {x: 0, y: 0.7, z: 0}
---- !u!114 &2155300144688084559
+--- !u!114 &6491162799621658131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7985,9 +7985,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2155300144688084552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ef632ff0c599943ba6caecbe520393, type: 3}
+  m_Script: {fileID: 11500000, guid: c498140457391554e8f423c3054c1d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offSetDissolveMaterial: {fileID: 2100000, guid: 8e97271687394a54d81a9ccbc27ed88b,
+    type: 2}
+  armorMat: {fileID: 2100000, guid: 80fcedf1978d37845bca53d3e19076aa, type: 2}
+  armorStrip: {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
 --- !u!1 &2155300144699954428
 GameObject:
   m_ObjectHideFlags: 0

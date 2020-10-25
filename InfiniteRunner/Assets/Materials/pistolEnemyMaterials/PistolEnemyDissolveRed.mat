@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyDissolveEffect
-  m_Shader: {fileID: -6465566751694194690, guid: e69a30262af7d5b45b71aaa1a19a4fca,
+  m_Name: PistolEnemyDissolveRed
+  m_Shader: {fileID: -6465566751694194690, guid: 03d869774dc352840bc6a7829d25f79e,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -49,9 +49,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1ADB1DC2: 0
-    - Vector1_870BC778: 0.05
-    - Vector1_DA9C7B02: 30
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -74,20 +71,17 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - edgeWidth: 0.05
-    - minimumRender: 0.3
+    - minimumRender: 0.5
     - noiseScale: 30
-    - noiseStrength: 1
     m_Colors:
-    - Color_801894A2: {r: 1.945098, g: 1.913725, b: 1.913725, a: 0}
-    - Color_9DA14DEC: {r: 10.09701, g: 0.2381369, b: 0.2381369, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - dissolveEdgeColor: {r: 10.09701, g: 0.2381369, b: 0.2381369, a: 0}
-    - mainColor: {r: 1.945098, g: 1.913725, b: 1.913725, a: 0}
+    - dissolveEdgeColor: {r: 35.71022, g: 0, b: 0, a: 0}
+    - mainColor: {r: 1.3854587, g: 1.3854587, b: 1.3854587, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &5692762974755240616
+--- !u!114 &7320251730946368778
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
