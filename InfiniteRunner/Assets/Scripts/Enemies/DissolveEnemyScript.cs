@@ -4,6 +4,9 @@
  * Gives the enemy the dissolve effect and destroys the enemy upon getting
  * hit by the player.
  * 
+ * Note: There could be a more efficient way to do this, but this works
+ * perfectly fine for now. - 2020.10.25
+ * 
  * @author Maxfield Barden
  */
 public class DissolveEnemyScript : MonoBehaviour
