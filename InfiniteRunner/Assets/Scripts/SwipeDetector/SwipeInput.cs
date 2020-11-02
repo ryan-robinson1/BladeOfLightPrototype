@@ -28,7 +28,7 @@ public class SwipeInput : MonoBehaviour
     }
     #endregion
     [Header("Tweaks")]
-    [SerializeField] private float deadzone = 100.0f;
+    private float deadzone = 30f;
     [SerializeField] private float doubleTapDelta = 0.5f;
 
     [Header("Logic")]

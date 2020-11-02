@@ -3,13 +3,13 @@
 public class ShootScript : MonoBehaviour
 {
     public GameObject bullet;
-    public PlayerController player;
     public GameObject casing;
 
-    public BulletScript robots;
-    
-    [SerializeField]
+
+
+    private PlayerController player;
     private Transform objectToFollow;
+    private GameObject playerObject;
 
     public Transform gunBarrel;
     
@@ -70,6 +70,10 @@ public class ShootScript : MonoBehaviour
         _rb = this.GetComponent<Rigidbody>();
         _anim = this.GetComponentInChildren<Animator>();
         _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
+
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = playerObject.GetComponent<PlayerController>();
+        objectToFollow = playerObject.transform.GetChild(1).transform;
     }
     
     private void FixedUpdate()
@@ -138,7 +142,7 @@ public class ShootScript : MonoBehaviour
 
     private void Shoot()
     {
-        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference >0)
+        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference > 1)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;
