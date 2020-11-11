@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform lookAtPoint;
 
+    [HideInInspector]
+    public bool deflecting;
+
     Rigidbody _rb;
     Transform _tf;
     Animator _anim;
@@ -17,8 +20,13 @@ public class PlayerController : MonoBehaviour
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
+    
 
     string[] recentInputs = new string[2];
+
+    //Deflect timers
+    private float deflectLength = 0.5f;
+    private float deflectTimer = float.PositiveInfinity;
 
     private void Start()
     {
@@ -38,6 +46,7 @@ public class PlayerController : MonoBehaviour
         Slide();
         ChangeLookAtPoint();
         UpdateRecentInputs();
+        Deflect();
         if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
         {
             timeManager.SlowMotion();
@@ -83,6 +92,21 @@ public class PlayerController : MonoBehaviour
             _playerPositionOffset -= 1;
         }
 
+    }
+    //Sets the deflecting variable to true when the user taps the screen
+    void Deflect()
+    {
+       
+        if(Time.time-deflectTimer >= deflectLength)
+        {
+            deflecting = false;
+            deflectTimer = float.PositiveInfinity;
+        }
+        else if (SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W))
+        {
+            deflecting = true;
+            deflectTimer = Time.time;
+        }
     }
 
     /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 

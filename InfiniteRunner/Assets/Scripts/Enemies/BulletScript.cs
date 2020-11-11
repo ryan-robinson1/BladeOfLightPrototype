@@ -30,8 +30,16 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.transform.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<DamageManager>().TakeDamage();
-            Debug.Log("Hit by bullet");
+            if (other.gameObject.transform.GetComponent<PlayerController>().deflecting)
+            {
+                Debug.Log("Deflected bullet");
+            }
+            else
+            {
+                other.gameObject.GetComponent<DamageManager>().TakeDamage();
+                Debug.Log("Hit by bullet");
+            }
+          
             Destroy(this.gameObject);
 
         }
