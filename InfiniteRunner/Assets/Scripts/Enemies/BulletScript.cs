@@ -30,8 +30,10 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.transform.CompareTag("Player"))
         {
-           // Debug.Log("Hit by bullet");
+            other.gameObject.GetComponent<DamageManager>().TakeDamage();
+            Debug.Log("Hit by bullet");
             Destroy(this.gameObject);
+
         }
     }
     public float getBulletSpeed()
