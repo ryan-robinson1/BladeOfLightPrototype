@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public TimeManagerScript timeManager;
 
     [SerializeField]
+    private ParticleSystem hitEffect;
+    [SerializeField]
     private Transform lookAtPoint;
 
     [HideInInspector]
@@ -47,12 +49,13 @@ public class PlayerController : MonoBehaviour
         ChangeLookAtPoint();
         UpdateRecentInputs();
         Deflect();
-        if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
+        Debug.Log(SwipeInput.Instance.Tap);
+    /*    if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
         {
             timeManager.SlowMotion();
             recentInputs[0] = "";
             recentInputs[1] = "";
-        }
+        }*/
     }
     void Slide()
     {
@@ -107,6 +110,12 @@ public class PlayerController : MonoBehaviour
             deflecting = true;
             deflectTimer = Time.time;
         }
+    }
+    //Plays the hit particle system. Activated by BulletScript
+    public void PlayHitEffect()
+    {
+        Debug.Log("PLAY");
+        hitEffect.Play();
     }
 
     /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 

@@ -85,6 +85,13 @@ public class SwipeInput : MonoBehaviour
         UpdateMobile();
 #endif
     }
+    private void LateUpdate()
+    {
+        if(swipeLeft || swipeRight || swipeDown || swipeUp)
+        {
+            tap = false;
+        }
+    }
 
     private void UpdateStandalone()
     {
@@ -171,6 +178,7 @@ public class SwipeInput : MonoBehaviour
                     swipeUp = true;
             }
             startTouch = swipeDelta = Vector2.zero;
+           
             
         }
 

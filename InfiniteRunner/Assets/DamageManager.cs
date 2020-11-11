@@ -12,6 +12,8 @@ public class DamageManager : MonoBehaviour
     [HideInInspector]
     public float health;
 
+    
+
     private void Start()
     {
         health = startHealth;
