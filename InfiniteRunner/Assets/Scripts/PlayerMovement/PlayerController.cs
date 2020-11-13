@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(PlayerAnimationController))]
 public class PlayerController : MonoBehaviour
 {
+
+    private PlayerAnimationController _animController;
 
     public TimeManagerScript timeManager;
 
@@ -17,11 +21,11 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody _rb;
     Transform _tf;
-    Animator _anim;
     BoxCollider _bc;
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
+
     
 
     string[] recentInputs = new string[2];
@@ -32,10 +36,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        
+        _animController = this.GetComponent<PlayerAnimationController>();
         _rb = this.GetComponent<Rigidbody>();
         _tf = this.GetComponent<Transform>();
-        _anim = this.GetComponentInChildren<Animator>();
         _bc = this.GetComponent<BoxCollider>();
         _rb.velocity = new Vector3(speed, 0, 0);
        
@@ -45,7 +48,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-        Slide();
         ChangeLookAtPoint();
         UpdateRecentInputs();
         Deflect();
@@ -57,23 +59,15 @@ public class PlayerController : MonoBehaviour
             recentInputs[1] = "";
         }*/
     }
-    void Slide()
-    {
-        if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
-        {
-            _anim.SetTrigger("PlaySlideAnimation");
-        }
-     
-    }
     void ChangeLookAtPoint()
     {
-        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Running"))
+       if (_animController.IsRunning())
         {
             lookAtPoint.localPosition = new Vector3(0, 0.4f, 0);
             _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
             _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
         }
-        else if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Sliding"))
+        else if (_animController.IsSliding())
         {
             lookAtPoint.localPosition = new Vector3(0, -0.4f, 0);
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);

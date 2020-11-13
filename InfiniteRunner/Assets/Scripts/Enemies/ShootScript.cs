@@ -7,9 +7,9 @@ public class ShootScript : MonoBehaviour
 
 
 
-    private PlayerController player;
-    private Transform objectToFollow;
-    private GameObject playerObject;
+    public PlayerController player;
+    public Transform objectToFollow;
+    public GameObject playerObject;
 
     public Transform gunBarrel;
     
