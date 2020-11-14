@@ -22,13 +22,26 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
+     * Detects collision with the enemy and plays the attack animation
+     * appropiately.
+     * 
+     * @param collision The collision we are detecting.
+     */
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.transform.CompareTag("Enemy"))
+        {
+            _anim.SetTrigger("Attack");
+        }
+    }
+
+    /**
      * Plays the Slide animation.
      */
     private void Slide()
     {
         if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
-            // need to make the slide animation a few frames longer
             _anim.SetTrigger("Slide");
         }
     }
@@ -38,11 +51,8 @@ public class PlayerAnimationController : MonoBehaviour
      */
     private void Attack()
     {
-        // will change later to an OnTriggerEnter function call
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _anim.SetTrigger("Attack");
-        }
+        // will need to add combo
+        _anim.SetTrigger("Attack");
     }
 
     /**
@@ -72,7 +82,6 @@ public class PlayerAnimationController : MonoBehaviour
     private void UpdateAnimationState()
     {
         this.Slide();
-        this.Attack();
     }
 
     /**

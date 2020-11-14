@@ -7904,7 +7904,7 @@ GameObject:
   - component: {fileID: 6491162799621658131}
   m_Layer: 9
   m_Name: PistolEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7938,10 +7938,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1806744742710055406, guid: f8a72c67fb623a546a07a815aba67054, type: 3}
-  player: {fileID: 0}
   casing: {fileID: 255836919305108668, guid: d5b1b1412ce09754c8d72d72f08af307, type: 3}
-  robots: {fileID: 0}
+  player: {fileID: 0}
   objectToFollow: {fileID: 0}
+  playerObject: {fileID: 0}
   gunBarrel: {fileID: 2155300143104042934}
   casingSpawn: {fileID: 1949194857607391022}
   torso: {fileID: 2155300144342318697}
@@ -7974,8 +7974,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.9, z: 0.8}
-  m_Center: {x: 0, y: 0.7, z: 0}
+  m_Size: {x: 0.8, y: 1.9, z: 3.147346}
+  m_Center: {x: -2.468049e-15, y: 0.7, z: 1.1736733}
 --- !u!114 &6491162799621658131
 MonoBehaviour:
   m_ObjectHideFlags: 0
