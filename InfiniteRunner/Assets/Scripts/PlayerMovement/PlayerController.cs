@@ -52,12 +52,12 @@ public class PlayerController : MonoBehaviour
         UpdateRecentInputs();
         Deflect();
         Debug.Log(SwipeInput.Instance.Tap);
-    /*    if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
+        if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
         {
             timeManager.SlowMotion();
             recentInputs[0] = "";
             recentInputs[1] = "";
-        }*/
+        }
     }
     void ChangeLookAtPoint()
     {

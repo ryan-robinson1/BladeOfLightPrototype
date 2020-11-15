@@ -21,7 +21,8 @@ public class DissolveEnemyScript : MonoBehaviour
     private float shaderLifetime = 1f;
     private bool dissolving = false;
     private float minRender;
-    private float dissolveStrength = 3f;
+    private float dissolveStrength = 2f;
+    private float startDelay = 0.25f;
     private string[] matNames;
 
     /**
@@ -42,14 +43,7 @@ public class DissolveEnemyScript : MonoBehaviour
     {
         if (dissolving)
         {
-            minRender += Time.deltaTime * dissolveStrength;
-            foreach (Renderer rend in renderers)
-            {
-                foreach (Material mat in rend.materials)
-                {
-                    mat.SetFloat("minimumRender", minRender); 
-                }
-            }
+            this.Dissolve();
         }
     }
 
@@ -70,7 +64,7 @@ public class DissolveEnemyScript : MonoBehaviour
             this.GetComponent<Rigidbody>().isKinematic = true;
 
             this.GetComponent<ShootScript>().enabled = false;
-            this.Dissolve();
+            this.Invoke("SwapMats", startDelay);
             this.Destruct();
         }
     }
@@ -84,9 +78,9 @@ public class DissolveEnemyScript : MonoBehaviour
     }
 
     /**
-     * Creates the dissolve effect.
+     * Swaps out the materials so the enemy can dissolve.
      */
-    private void Dissolve()
+    private void SwapMats()
     {
         // change materials of each renderer on this object
         foreach (Renderer rend in renderers)
@@ -113,6 +107,22 @@ public class DissolveEnemyScript : MonoBehaviour
         }
 
         dissolving = true;
+    }
+
+    /**
+     * Creates the disintegration effect by scaling up the intensity of the
+     * dissolve effect.
+     */
+    private void Dissolve()
+    {
+        minRender += Time.deltaTime * dissolveStrength;
+        foreach (Renderer rend in renderers)
+        {
+            foreach (Material mat in rend.materials)
+            {
+                mat.SetFloat("minimumRender", minRender);
+            }
+        }
     }
 
     /**

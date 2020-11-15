@@ -27,7 +27,7 @@ public class ShootScript : MonoBehaviour
     private float _bulletSpeed = 25f; 
 
     private float _walkSpeed = 3f;
-    private float _removalDistance = 10;
+    private float _removalDistance = 5;
   
 
     private float _torsoMoveSpeed;

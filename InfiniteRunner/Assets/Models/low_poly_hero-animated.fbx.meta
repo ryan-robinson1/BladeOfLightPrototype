@@ -12,7 +12,32 @@ ModelImporter:
   - first:
       74: 877382752608488796
     second: hero-armature|ninja_sword_basic
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blade-edge-red
+    second: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hilt-black
+    second: {fileID: 2100000, guid: 78d9adbaf82b9884b9e488df8d6e3c8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner-red
+    second: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ninja-black
+    second: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ninja-health-strip
+    second: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
