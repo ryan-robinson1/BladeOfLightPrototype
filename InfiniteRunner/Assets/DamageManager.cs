@@ -11,15 +11,18 @@ public class DamageManager : MonoBehaviour
     public float startHealth = 100;
     public Material healthIndicator;
     private float noiseScale;
-    private float noiseReset = 30f;
-    private float noiseCutoff = 200f;
-    private float animationSpeed = 0.05f;
     [HideInInspector]
     public float health;
 
-    private float min = 30f;
-    private float max = 200f;
+
+    private float min = 0f;
+    private float max = 0.07f;
     private float t = 0f;
+    private float edgeWidth;
+
+    Color[] colors;
+
+
 
 
     /**
@@ -29,7 +32,9 @@ public class DamageManager : MonoBehaviour
     {
         health = startHealth;
         noiseScale = healthIndicator.GetFloat("noiseScale");
-        this.ResetNoise();
+        edgeWidth = healthIndicator.GetFloat("edgeWidth");
+        colors = this.generateColors();
+        healthIndicator.SetColor("dissolveColor", colors[2]);
     }
 
     /**
@@ -37,7 +42,7 @@ public class DamageManager : MonoBehaviour
      */
     private void FixedUpdate()
     {
-        this.AnimateNoise();
+        this.UpdateHealthStatus();
 
     }
 
@@ -48,7 +53,8 @@ public class DamageManager : MonoBehaviour
         HealthBar.fillAmount = health / startHealth;
         if(health <= 0)
         {
-            this.ResetNoise();
+            this.setDefaultMats();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -58,10 +64,11 @@ public class DamageManager : MonoBehaviour
      */
     private void AnimateNoise()
     {
+        var speed = 16f;
         noiseScale = Mathf.Lerp(min, max, t);
         healthIndicator.SetFloat("noiseScale", noiseScale);
 
-        t += animationSpeed * Time.deltaTime;
+        t += speed * Time.deltaTime;
 
         if (t > 1f)
         {
@@ -74,12 +81,86 @@ public class DamageManager : MonoBehaviour
     }
 
     /**
-     * Resets the noise to keep it from going too high.
+     * Updates what color we should be displaying on the Player object
+     * based on what the Player's current health is.
      */
-    private void ResetNoise()
+    private void UpdateHealthStatus()
     {
-        // this is a lil hacky might need to fix it later
-        noiseScale = noiseReset;
+        var midHealth = startHealth / 1.5f;
+        var lowHealth = startHealth / 3f;
+        if (health > midHealth)
+        {
+            healthIndicator.SetColor("dissolveColor", colors[0]);
+        }
+        else if (health <= midHealth && health > lowHealth){
+            healthIndicator.SetColor("dissolveColor", colors[1]);
+            healthIndicator.SetFloat("minimumRender", 0.45f);
+        }
+        else if (health <= lowHealth && health > 0)
+        {
+            healthIndicator.SetColor("dissolveColor", colors[2]);
+            healthIndicator.SetFloat("minimumRender", 0.65f);
+            this.AnimateEdgeWidth();
+        }
+    }
+
+    /**
+     * Animates the width of the edge for Player object's material.
+     * Used when the player is at low health to give a pulsating effect.
+     */
+    private void AnimateEdgeWidth()
+    {
+        var speed = 0.7f;
+        edgeWidth = Mathf.Lerp(min, max, t);
+        healthIndicator.SetFloat("edgeWidth", edgeWidth);
+
+        t += speed * Time.deltaTime;
+
+        if (t > 1f)
+        {
+            var temp = max;
+            max = min;
+            min = temp;
+            t = 0f;
+        }
+    }
+
+    /**
+     * Called when user quits the application.
+     */
+    public void OnApplicationQuit()
+    {
+        this.setDefaultMats();
+    }
+
+    /**
+     * Generates an array of Color objects that we will use to indicate
+     * the player's health.
+     * 
+     * @return An Array of three Colors.
+     */
+    private Color[] generateColors()
+    {
+        Color[] c = new Color[3];
+        var intensity = 16f;
+        // blue
+        c[0] = new Color(0.08f * intensity, 0.66f * intensity, 0.75f * intensity);
+        // yellow
+        c[1] = new Color(0.75f * intensity, 0.65f * intensity, 0.08f * intensity);
+        // green
+        c[2] = new Color(0.85f * intensity, 0.11f * intensity, 0.11f * intensity);
+        return c;
+    }
+
+    /**
+     * Returns the material back to its default state.
+     */
+    private void setDefaultMats()
+    {
+        healthIndicator.SetColor("dissolveColor", colors[0]);
+        healthIndicator.SetFloat("edgeWidth", 0.03f);
+        healthIndicator.SetFloat("noiseScale", 67f);
+        healthIndicator.SetFloat("minimumRender", 0.25f);
     }
 
 }

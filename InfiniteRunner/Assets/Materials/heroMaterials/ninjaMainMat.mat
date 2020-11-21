@@ -71,14 +71,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - edgeWidth: 0.03
-    - minimumRender: 0.4
-    - noiseScale: 30
+    - minimumRender: 0.25
+    - noiseScale: 67
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - dissolveColor: {r: 3.0555074, g: 6.6658344, b: 9.263522, a: 0}
+    - dissolveColor: {r: 1.28, g: 10.56, b: 12, a: 1}
     - mainColor: {r: 1.254924, g: 1.254924, b: 1.254924, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1779021456544264974
