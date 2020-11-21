@@ -10,7 +10,6 @@ public class DamageManager : MonoBehaviour
     public float bulletDamage = 1;
     public float startHealth = 100;
     public Material healthIndicator;
-    private float noiseScale;
     [HideInInspector]
     public float health;
 
@@ -31,7 +30,6 @@ public class DamageManager : MonoBehaviour
     private void Start()
     {
         health = startHealth;
-        noiseScale = healthIndicator.GetFloat("noiseScale");
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         colors = this.generateColors();
         healthIndicator.SetColor("dissolveColor", colors[2]);
@@ -46,6 +44,18 @@ public class DamageManager : MonoBehaviour
 
     }
 
+    /**
+     * Displays information on screen.
+     */
+    private void OnGUI()
+    {
+        int fps = (int)(1.0f / Time.smoothDeltaTime);
+        var style = new GUIStyle();
+        style.fontSize = 50;
+        style.normal.textColor = Color.green;
+        GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);
+    }
+
     //Method executed if hit by bullet. Takes damage.
     public void TakeDamage()
     {
@@ -56,28 +66,6 @@ public class DamageManager : MonoBehaviour
             this.setDefaultMats();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-
-    /**
-     * Animates the noise on the hero model to give the hero a more lively
-     * look and feel.
-     */
-    private void AnimateNoise()
-    {
-        var speed = 16f;
-        noiseScale = Mathf.Lerp(min, max, t);
-        healthIndicator.SetFloat("noiseScale", noiseScale);
-
-        t += speed * Time.deltaTime;
-
-        if (t > 1f)
-        {
-            float temp = max;
-            max = min;
-            min = temp;
-            t = 0f;
-        }
-        
     }
 
     /**
@@ -110,7 +98,7 @@ public class DamageManager : MonoBehaviour
      */
     private void AnimateEdgeWidth()
     {
-        var speed = 0.7f;
+        float speed = 0.7f;
         edgeWidth = Mathf.Lerp(min, max, t);
         healthIndicator.SetFloat("edgeWidth", edgeWidth);
 
@@ -142,7 +130,7 @@ public class DamageManager : MonoBehaviour
     private Color[] generateColors()
     {
         Color[] c = new Color[3];
-        var intensity = 16f;
+        float intensity = 16f;
         // blue
         c[0] = new Color(0.08f * intensity, 0.66f * intensity, 0.75f * intensity);
         // yellow
