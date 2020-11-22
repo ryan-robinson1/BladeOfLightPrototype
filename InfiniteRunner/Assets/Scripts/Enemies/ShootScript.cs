@@ -93,7 +93,7 @@ public class ShootScript : MonoBehaviour
         destroyModel();
         LookAtTarget();
 
-
+        Debug.Log(positionDifference);
 
     }
 
@@ -132,6 +132,7 @@ public class ShootScript : MonoBehaviour
 
     private void MoveBackwards()
     {
+       
    
         if (positionDifference < _moveBackwardDistance && positionDifference>0)
         {
@@ -142,7 +143,7 @@ public class ShootScript : MonoBehaviour
 
     private void Shoot()
     {
-        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference > 1)
+        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference > 6)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;
