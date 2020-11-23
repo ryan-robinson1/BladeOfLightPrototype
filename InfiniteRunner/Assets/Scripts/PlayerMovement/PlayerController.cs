@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody _rb;
     Transform _tf;
     BoxCollider _bc;
+    public AudioSource _ac;
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
@@ -58,7 +59,8 @@ public class PlayerController : MonoBehaviour
         UpdateRecentInputs();
         Deflect();
        // Debug.Log(SwipeInput.Instance.Tap);
-        if (Input.GetKeyDown(KeyCode.Space) || (SwipeInput.Instance.DoubleTap && TwoRecentTaps()))
+       // (SwipeInput.Instance.DoubleTap && TwoRecentTaps()
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             timeManager.SlowMotion();
             recentInputs[0] = "";
@@ -115,7 +117,8 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect()
     {
-       
+        _ac.pitch = Random.Range(1.0f, 1.25f);
+        _ac.Play();
         Debug.Log("PLAY");
         hitEffect.Play();
     }
