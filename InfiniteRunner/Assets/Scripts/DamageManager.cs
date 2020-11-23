@@ -81,12 +81,12 @@ public class DamageManager : MonoBehaviour
             healthIndicator.SetColor("dissolveColor", colors[0]);
         }
         else if (health <= midHealth && health > lowHealth){
-            healthIndicator.SetColor("dissolveColor", colors[1]);
+            healthIndicator.SetColor("dissolveColor", colors[0]);
             healthIndicator.SetFloat("minimumRender", 0.45f);
         }
         else if (health <= lowHealth && health > 0)
         {
-            healthIndicator.SetColor("dissolveColor", colors[2]);
+            healthIndicator.SetColor("dissolveColor", colors[0]);
             healthIndicator.SetFloat("minimumRender", 0.65f);
             this.AnimateEdgeWidth();
         }

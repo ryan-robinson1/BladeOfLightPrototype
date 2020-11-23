@@ -41,10 +41,11 @@ public class BulletScript : MonoBehaviour
                 other.gameObject.GetComponent<DamageManager>().TakeDamage();
                 //Debug.Log("Hit by bullet");
             }
-          
-          
+
+            Destroy(this.gameObject);
 
         }
+       
   
     }
     public float getBulletSpeed()

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerAnimationController))]
 public class PlayerController : MonoBehaviour
@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimationController _animController;
 
     public TimeManagerScript timeManager;
+    public Image StaminaBar;
 
     [SerializeField]
     private ParticleSystem hitEffect;
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
     //Deflect timers
     private float deflectLength = 0.5f;
     private float deflectTimer = float.PositiveInfinity;
+    private float staminaRefreshLength = 1f;
+    private float staminaRefreshTimer = float.NegativeInfinity;
 
     private void Start()
     {
@@ -46,6 +49,7 @@ public class PlayerController : MonoBehaviour
         _tf = this.GetComponent<Transform>();
         _bc = this.GetComponent<BoxCollider>();
         _rb.velocity = new Vector3(speed, 0, 0);
+      
        
 
         
@@ -101,18 +105,34 @@ public class PlayerController : MonoBehaviour
     //Sets the deflecting variable to true when the user taps the screen
     void Deflect()
     {
+        if(Time.time-staminaRefreshTimer >= staminaRefreshLength)
+        {
+            if (Time.time - deflectTimer >= deflectLength)
+            {
+                deflecting = false;
+                deflectTimer = float.PositiveInfinity;
+                StaminaBar.fillAmount = 0;
+                staminaRefreshTimer = Time.time;
+
+
+            }
+            else if (SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W) && !deflecting)
+            {
+                deflecting = true;
+                deflectTimer = Time.time;
+
+            }
+            else if (deflectTimer != float.PositiveInfinity)
+            {
+                StaminaBar.fillAmount = 1 - ((Time.time - deflectTimer) * 2);
+            }
+        }
+        else
+        {
+           StaminaBar.fillAmount = ((Time.time - staminaRefreshTimer));
+        }
        
-        if(Time.time-deflectTimer >= deflectLength)
-        {
-            deflecting = false;
-            deflectTimer = float.PositiveInfinity;
-            
-        }
-        else if (SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W))
-        {
-            deflecting = true;
-            deflectTimer = Time.time;
-        }
+     
     }
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect()
