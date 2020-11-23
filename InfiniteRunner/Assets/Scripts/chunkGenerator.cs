@@ -50,8 +50,8 @@ public class chunkGenerator : MonoBehaviour
             if (lastPositionSpawned != nextSpawnPosition)
             {
                 renderedObjects.Enqueue(Instantiate(chunks[Random.Range(0, 3)], new Vector3(nextSpawnPosition, 0, 0), Quaternion.Euler(0, 0, 0)));
-
-                for(int i = 0; i < Random.Range(8, 12); i++){
+                int numEnemiesSpawned = Random.Range(8, 14);
+                for (int i = 0; i < numEnemiesSpawned ; i++){
                   
                     spawnEnemies();
                 }
@@ -78,10 +78,10 @@ public class chunkGenerator : MonoBehaviour
     {
     
         float[] possibleZCoor = { -3.5f,-1.75f, 0, 1.75f,3.5f };
-        int xCoor = Random.Range(0, 15) * 20;
+        int xCoor = Random.Range(0, 30) * 10;
         while (enemySpawnPoints.Contains(xCoor))
         {
-            xCoor = Random.Range(0, 15) * 20;
+            xCoor = Random.Range(0, 30) * 10;
         }
         
         enemySpawnPoints.Add(xCoor);
