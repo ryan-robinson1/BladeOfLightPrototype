@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
 
             }
-            else if (SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W) && !deflecting)
+            else if ((SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W) )&& !deflecting)
             {
                 deflecting = true;
                 deflectTimer = Time.time;
