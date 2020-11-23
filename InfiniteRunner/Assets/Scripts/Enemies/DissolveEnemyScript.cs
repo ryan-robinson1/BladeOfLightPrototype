@@ -25,7 +25,7 @@ public class DissolveEnemyScript : MonoBehaviour
     private float dissolveStrength = 2f;
     private float startDelay = 0.25f;
     private string[] matNames;
-
+   
     
 
 
@@ -67,7 +67,11 @@ public class DissolveEnemyScript : MonoBehaviour
             // slightly upon getting hit
             this.GetComponent<Rigidbody>().isKinematic = true;
 
-            collision.gameObject.GetComponent<AudioSource>().Play();
+            AudioSource swordAudio = collision.gameObject.GetComponent<AudioSource>();
+
+            swordAudio.pitch = Random.Range(0.93f,1.2f);
+            swordAudio.Play();
+         
             
             this.GetComponent<ShootScript>().enabled = false;
             this.Invoke("SwapMats", startDelay);
