@@ -23,6 +23,7 @@ public class chunkGenerator : MonoBehaviour
     private Queue<GameObject> renderedObjects = new Queue<GameObject>();
     private ArrayList enemySpawnPoints = new ArrayList();
 
+    private float lastZCoor = 10;
     private void Update()
     {
         spawnChunks();
@@ -77,14 +78,16 @@ public class chunkGenerator : MonoBehaviour
     {
     
         float[] possibleZCoor = { -3.5f,-1.75f, 0, 1.75f,3.5f };
-        int xCoor = Random.Range(0, 30) * 10;
+        int xCoor = Random.Range(0, 15) * 20;
         while (enemySpawnPoints.Contains(xCoor))
         {
-            xCoor = Random.Range(0, 30) * 10;
+            xCoor = Random.Range(0, 15) * 20;
         }
+        
         enemySpawnPoints.Add(xCoor);
         
         float zCoor = possibleZCoor[Random.Range(0, 5)];
+      
 
         Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x)+150+xCoor,0.72f, zCoor), Quaternion.Euler(0,-90,0));
 
