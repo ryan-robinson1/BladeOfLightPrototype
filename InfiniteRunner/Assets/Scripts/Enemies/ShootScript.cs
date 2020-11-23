@@ -39,8 +39,8 @@ public class ShootScript : MonoBehaviour
     private float positionDifference;
 
     private float ammo = 5;
-    private float timeInBetweenShots = 0.5f;
-    private float reloadTime = 1.8f;
+    private float timeInBetweenShots = 1f;
+    private float reloadTime = 3f;
     private float reloadTimer = float.NegativeInfinity;
     private bool shooting = false;
 
@@ -149,6 +149,8 @@ public class ShootScript : MonoBehaviour
             _direction = (_pointToAimAt - transform.position).normalized;
             _lookRotation = Quaternion.LookRotation(_direction);
 
+            RaycastHit hit;
+
 
             Vector3 spawnPos = gunBarrel.transform.position + gunBarrel.transform.forward;
 
@@ -158,7 +160,7 @@ public class ShootScript : MonoBehaviour
             this.spawnBulletCasing();
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
-            ammo--;
+            //ammo--;
         }
         else if(ammo == 0)
         {

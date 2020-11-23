@@ -86,14 +86,14 @@ public class PlayerController : MonoBehaviour
     {
         _rb.velocity = new Vector3(speed, 0, 0);
 
-        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft)&& _playerPositionOffset < 1)
+        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft)&& _playerPositionOffset < 2)
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 2f);
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
             _playerPositionOffset += 1;
         }
-        if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset > -1)
+        if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset > -2)
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 2f);
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
             _playerPositionOffset -= 1;
         }
 
