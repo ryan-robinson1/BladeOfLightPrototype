@@ -18,12 +18,16 @@ public class DissolveEnemyScript : MonoBehaviour
     public Material armorMat;
     public Material armorStrip;
 
+
     private float shaderLifetime = 1f;
     private bool dissolving = false;
     private float minRender;
     private float dissolveStrength = 2f;
     private float startDelay = 0.25f;
     private string[] matNames;
+
+    
+
 
     /**
      * Called before the first frame update.
@@ -63,6 +67,8 @@ public class DissolveEnemyScript : MonoBehaviour
             // slightly upon getting hit
             this.GetComponent<Rigidbody>().isKinematic = true;
 
+            collision.gameObject.GetComponent<AudioSource>().Play();
+            
             this.GetComponent<ShootScript>().enabled = false;
             this.Invoke("SwapMats", startDelay);
             this.Destruct();

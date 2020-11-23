@@ -93,7 +93,7 @@ public class ShootScript : MonoBehaviour
         destroyModel();
         LookAtTarget();
 
-        Debug.Log(positionDifference);
+        
 
     }
 

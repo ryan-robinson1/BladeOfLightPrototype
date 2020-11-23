@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem hitEffect;
     [SerializeField]
     private Transform lookAtPoint;
-
+   
     [HideInInspector]
     public bool deflecting;
 
@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
+
+
+    public static AudioClip sliceSound;
+   
 
     
 
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour
         _bc = this.GetComponent<BoxCollider>();
         _rb.velocity = new Vector3(speed, 0, 0);
        
+
+        
     }
     public Vector3 getVelocity() { return new Vector3(speed,0,0); }
 
@@ -98,6 +104,7 @@ public class PlayerController : MonoBehaviour
         {
             deflecting = false;
             deflectTimer = float.PositiveInfinity;
+            
         }
         else if (SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W))
         {
@@ -108,6 +115,7 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect()
     {
+       
         Debug.Log("PLAY");
         hitEffect.Play();
     }

@@ -85,9 +85,7 @@ public class chunkGenerator : MonoBehaviour
         enemySpawnPoints.Add(xCoor);
         
         int zCoor = possibleZCoor[Random.Range(0, 3)];
-        Debug.Log(zCoor);
 
-        Debug.Log(new Vector3(zCoor, distanceTraveled + xCoor, 0.72f));
         Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x)+150+xCoor,0.72f, zCoor), Quaternion.Euler(0,-90,0));
 
     }
