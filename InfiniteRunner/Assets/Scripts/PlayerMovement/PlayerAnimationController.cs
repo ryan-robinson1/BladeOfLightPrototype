@@ -24,6 +24,14 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
+     * Makes the character start running once the game is started from the menu.
+     */
+    public void StartGame()
+    {
+        _anim.SetTrigger("Run");
+    }
+
+    /**
      * Detects collision with the enemy and plays the attack animation
      * appropiately.
      * 
