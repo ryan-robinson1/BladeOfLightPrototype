@@ -49,11 +49,11 @@ public class DamageManager : MonoBehaviour
      */
     private void OnGUI()
     {
-        int fps = (int)(1.0f / Time.smoothDeltaTime);
+/*        int fps = (int)(1.0f / Time.smoothDeltaTime);
         var style = new GUIStyle();
         style.fontSize = 50;
         style.normal.textColor = Color.green;
-        GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);
+        GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);*/
     }
 
     //Method executed if hit by bullet. Takes damage.

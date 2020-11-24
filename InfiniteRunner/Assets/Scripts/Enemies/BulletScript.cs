@@ -26,7 +26,11 @@ public class BulletScript : MonoBehaviour
         if (Time.time - lifeLengthTimer > lifeLength)
             Destroy(this.gameObject); 
     }
-
+    /**
+     *  Destroys the bullet if it hits the player and deals damage if not deflecting
+     *  
+     *  @param other The Collider
+     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.transform.CompareTag("Player"))
