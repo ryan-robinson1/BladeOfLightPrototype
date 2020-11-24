@@ -63,6 +63,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         // will need to add combo
         _anim.SetTrigger("Attack");
+        player.setDeflects(0);
     }
 
     /**

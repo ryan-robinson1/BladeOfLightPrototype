@@ -116,6 +116,15 @@ public class PlayerController : MonoBehaviour
     }
 
     /**
+     * Sets the number of deflects
+     */
+    public int setDeflects(int def)
+    {
+        deflects = def;
+        return deflects;
+    }
+
+    /**
      * Keeps track of how many bullets the player has deflected in one
      * deflect cycle.
      */
