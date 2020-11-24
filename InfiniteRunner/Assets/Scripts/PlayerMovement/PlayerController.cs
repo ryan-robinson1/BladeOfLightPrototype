@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 0.5f;
+    public float deflectLength = 5f;
     private float deflectTimer = float.PositiveInfinity;
     private float staminaRefreshLength = 1f;
     private float staminaRefreshTimer = float.NegativeInfinity;
@@ -113,14 +113,14 @@ public class PlayerController : MonoBehaviour
                 deflectTimer = float.PositiveInfinity;
                 StaminaBar.fillAmount = 0;
                 staminaRefreshTimer = Time.time;
-
+                _animController.UpdateDeflect();
 
             }
             else if ((SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W) )&& !deflecting)
             {
                 deflecting = true;
                 deflectTimer = Time.time;
-
+                _animController.UpdateDeflect();
             }
             else if (deflectTimer != float.PositiveInfinity)
             {

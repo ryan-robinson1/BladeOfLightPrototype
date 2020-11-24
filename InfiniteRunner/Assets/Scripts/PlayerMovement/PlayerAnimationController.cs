@@ -12,13 +12,15 @@ public class PlayerAnimationController : MonoBehaviour
 {
 
     Animator _anim;
+    PlayerController player;
 
     /**
      * Called before first frame update and used to instantiate our variables.
      */
     void Start()
     {
-        _anim = this.GetComponentInChildren<Animator>(); 
+        _anim = this.GetComponentInChildren<Animator>();
+        player = this.GetComponent<PlayerController>();
     }
 
     /**
@@ -53,6 +55,30 @@ public class PlayerAnimationController : MonoBehaviour
     {
         // will need to add combo
         _anim.SetTrigger("Attack");
+    }
+
+    /**
+     * Controls deflecting
+     */
+    public void Deflect()
+    {
+        _anim.SetBool("Deflecting", true);
+        
+    }
+
+    /**
+     * Updates our deflecting status
+     */
+    public void UpdateDeflect()
+    {
+        if (_anim.GetBool("Deflecting"))
+        {
+            _anim.SetBool("Deflecting", false);
+        }
+        else
+        {
+            _anim.SetBool("Deflecting", true);
+        }
     }
 
     /**
