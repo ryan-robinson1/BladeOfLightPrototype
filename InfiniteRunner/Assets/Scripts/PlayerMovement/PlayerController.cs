@@ -37,10 +37,11 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    public float deflectLength = 5f;
+    private float deflectLength = 2f;
     private float deflectTimer = float.PositiveInfinity;
-    private float staminaRefreshLength = 1f;
+    private float staminaRefreshLength = 3f;
     private float staminaRefreshTimer = float.NegativeInfinity;
+    private float currentFillCapacity = 0f;
 
     private void Start()
     {
@@ -104,9 +105,10 @@ public class PlayerController : MonoBehaviour
     }
     //Sets the deflecting variable to true when the user taps the screen
     void Deflect()
-    {
-        if(Time.time-staminaRefreshTimer >= staminaRefreshLength)
+    {        
+        if (Time.time - staminaRefreshTimer >= staminaRefreshLength)
         {
+           
             if (Time.time - deflectTimer >= deflectLength)
             {
                 deflecting = false;
@@ -114,9 +116,18 @@ public class PlayerController : MonoBehaviour
                 StaminaBar.fillAmount = 0;
                 staminaRefreshTimer = Time.time;
                 _animController.UpdateDeflect();
+                currentFillCapacity = 0;
 
             }
-            else if ((SwipeInput.Instance.Tap || Input.GetKeyDown(KeyCode.W) )&& !deflecting)
+            else if((SwipeInput.Instance.SwipeDown || Input.GetKeyDown(KeyCode.S)) && deflecting)
+            {
+                currentFillCapacity = StaminaBar.fillAmount;
+                staminaRefreshTimer = Time.time;
+                deflecting = false;
+                deflectTimer = float.PositiveInfinity;
+                _animController.UpdateDeflect();
+            }
+            else if ((SwipeInput.Instance.SwipeUp || Input.GetKeyDown(KeyCode.W)) && !deflecting)
             {
                 deflecting = true;
                 deflectTimer = Time.time;
@@ -124,16 +135,22 @@ public class PlayerController : MonoBehaviour
             }
             else if (deflectTimer != float.PositiveInfinity)
             {
-                StaminaBar.fillAmount = 1 - ((Time.time - deflectTimer) * 2);
+                StaminaBar.fillAmount = 1 - ((Time.time - deflectTimer) /deflectLength);
             }
         }
         else
-        {
-           StaminaBar.fillAmount = ((Time.time - staminaRefreshTimer));
+        { 
+            StaminaBar.fillAmount = currentFillCapacity + ((Time.time - (staminaRefreshTimer))/staminaRefreshLength);
+
+            if(StaminaBar.fillAmount >= 1)
+            {
+                staminaRefreshTimer = 0;
+            }
         }
-       
-     
-    }
+
+
+    
+}
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect()
     {
