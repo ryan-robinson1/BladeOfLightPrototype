@@ -41,7 +41,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
-            _anim.SetTrigger("Attack");
+            this.Attack();
         }
     }
 
@@ -66,12 +66,12 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
-     * Controls deflecting
+     * Updates the number of deflects to loop through deflect
+     * animation cycles.
      */
-    public void Deflect()
+    public void UpdateDeflectCount()
     {
-        _anim.SetBool("Deflecting", true);
-        
+        _anim.SetInteger("deflects", player.getDeflects());   
     }
 
     /**
@@ -116,6 +116,7 @@ public class PlayerAnimationController : MonoBehaviour
     private void UpdateAnimationState()
     {
         this.Slide();
+        this.UpdateDeflectCount();
     }
 
     /**

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
     private PlayerAnimationController _animController;
+    private BulletScript bScript;
 
     public TimeManagerScript timeManager;
     public Image StaminaBar;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
+    private int deflects = 0;
 
 
     public static AudioClip sliceSound;
@@ -104,6 +106,28 @@ public class PlayerController : MonoBehaviour
       
 
     }
+
+    /**
+     * Gets the number of deflects in one deflect animation cycle.
+     */
+    public int getDeflects()
+    {
+        return deflects;
+    }
+
+    /**
+     * Keeps track of how many bullets the player has deflected in one
+     * deflect cycle.
+     */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.transform.CompareTag("Bullet") && deflecting)
+        {
+            deflects++;
+            Debug.Log(deflects);
+        }   
+    }
+
     //Sets the deflecting variable to true when the user taps the screen
     void Deflect()
     {        
@@ -118,6 +142,7 @@ public class PlayerController : MonoBehaviour
                 staminaRefreshTimer = Time.time;
                 _animController.UpdateDeflect();
                 currentFillCapacity = 0;
+                deflects = 0;
 
             }
             else if((SwipeInput.Instance.SwipeDown || Input.GetKeyDown(KeyCode.S)) && deflecting)
@@ -125,6 +150,7 @@ public class PlayerController : MonoBehaviour
                 currentFillCapacity = StaminaBar.fillAmount;
                 staminaRefreshTimer = Time.time;
                 deflecting = false;
+                deflects = 0;
                 deflectTimer = float.PositiveInfinity;
                 _animController.UpdateDeflect();
             }

@@ -49,6 +49,7 @@ public class BulletScript : MonoBehaviour
        
   
     }
+
     public float getBulletSpeed()
     {
         return bulletSpeed; 
