@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 2f;
+    private float deflectLength = 1.5f;
     private float deflectTimer = float.PositiveInfinity;
-    private float staminaRefreshLength = 3f;
+    private float staminaRefreshLength = 2f;
     private float staminaRefreshTimer = float.NegativeInfinity;
     private float currentFillCapacity = 0f;
 
@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
             _playerPositionOffset -= 1;
         }
+      
 
     }
     //Sets the deflecting variable to true when the user taps the screen

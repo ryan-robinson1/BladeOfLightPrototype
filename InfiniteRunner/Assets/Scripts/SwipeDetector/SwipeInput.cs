@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwipeInput : MonoBehaviour
 {
-    public static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
+    private static bool tap, swipeLeft, swipeRight, swipeUp, swipeDown,swipeLeftBig,swipeRightBig;
     private bool tapRequested;
     private bool isDraging = false;
     private Vector2 startTouch, swipeDelta;
@@ -51,6 +51,14 @@ public class SwipeInput : MonoBehaviour
     public bool SwipeRight
     {
         get { return swipeRight; }
+    }
+    public bool SwipeLeftBig
+    {
+        get { return swipeLeftBig; }
+    }
+    public bool SwipeRightBig
+    {
+        get { return swipeRightBig; }
     }
     public bool SwipeUp
     {
@@ -112,7 +120,7 @@ public class SwipeInput : MonoBehaviour
             }
 
             //Did we cross the distance?
-            if (swipeDelta.magnitude > 30)
+            if (swipeDelta.magnitude > 15 )
             {
                 float x = swipeDelta.x;
                 float y = swipeDelta.y;
@@ -132,6 +140,7 @@ public class SwipeInput : MonoBehaviour
                 }
                 Reset();
             }
+            
             
         }
     }
