@@ -65,8 +65,7 @@ public class PlayerController : MonoBehaviour
         ChangeLookAtPoint();
         UpdateRecentInputs();
         Deflect();
-       // Debug.Log(SwipeInput.Instance.Tap);
-       // (SwipeInput.Instance.DoubleTap && TwoRecentTaps()
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             timeManager.SlowMotion();

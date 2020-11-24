@@ -10,33 +10,26 @@ public class ShootScript : MonoBehaviour
     public PlayerController player;
     public Transform objectToFollow;
     public GameObject playerObject;
-
     public Transform gunBarrel;
-    
     public Transform casingSpawn;
-    
-    private float followSpeed = 20;
-    
     public Transform torso;
-    
     public Transform head;
-    
     public Transform legs;
+    private Rigidbody _rb;
 
-    
-    private float _bulletSpeed = 25f; 
 
+    private float _bulletSpeed = 25f;
     private float _walkSpeed = 3f;
     private float _removalDistance = 5;
-  
+    private float _moveBackwardDistance;
+    private float positionDifference;
+
 
     private float _torsoMoveSpeed;
     private float _headMoveSpeed;
     private float _legMoveSpeed;
 
-    private float _moveBackwardDistance;
 
-    private float positionDifference;
 
     private float ammo = 5;
     private float timeInBetweenShots = 1f;
@@ -49,7 +42,7 @@ public class ShootScript : MonoBehaviour
     Animator _anim;
     ParticleSystem _muzzleFlash;
 
-    private Rigidbody _rb;
+
     private void Start()
     {
 
@@ -58,7 +51,7 @@ public class ShootScript : MonoBehaviour
         _legMoveSpeed = 30;
 
 
-        if(torso == null)
+        if (torso == null)
             Debug.Log("Did not assign torso in hierarchy");
         if (head == null)
             Debug.Log("Did not assign head in hierarchy");
@@ -66,7 +59,7 @@ public class ShootScript : MonoBehaviour
             Debug.Log("Did not assign legs in hierarchy");
 
 
-        _moveBackwardDistance = Random.Range(10,15);
+        _moveBackwardDistance = Random.Range(10, 15);
         _rb = this.GetComponent<Rigidbody>();
         _anim = this.GetComponentInChildren<Animator>();
         _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
@@ -75,12 +68,16 @@ public class ShootScript : MonoBehaviour
         player = playerObject.GetComponent<PlayerController>();
         objectToFollow = playerObject.transform.GetChild(1).transform;
     }
-    
+
+
+    /**
+    *  Called every fixed frame rate (used bc of physics calculations)
+    */
     private void FixedUpdate()
     {
         positionDifference = transform.position.x - (objectToFollow.position.x);
         MoveBackwards();
-        if(positionDifference < Random.Range(80, 10) && !shooting)
+        if (positionDifference < Random.Range(80, 10) && !shooting)
         {
             InvokeRepeating("Shoot", 0f, timeInBetweenShots);
             shooting = true;
@@ -93,21 +90,23 @@ public class ShootScript : MonoBehaviour
         destroyModel();
         LookAtTarget();
 
-        
+
 
     }
-
+    /**
+    *  Rotates the object to face the lookat point
+    */
     private void LookAtTarget()
     {
-      
+
         Vector3 _lookDirection = objectToFollow.position - transform.position;
         _lookDirection.y = 0;
         Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
 
         torso.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _torsoMoveSpeed * Time.time);
-         head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.time);
-         legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.time);
-        
+        head.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _headMoveSpeed * Time.time);
+        legs.transform.rotation = Quaternion.Lerp(transform.rotation, _rot, _legMoveSpeed * Time.time);
+
     }
 
     /**
@@ -130,20 +129,24 @@ public class ShootScript : MonoBehaviour
         _lookRotation = rot;
     }
 
+    /**
+    * Makes the enemy walk backwards if the player gets within a certain distance (positionDifference)
+    */
     private void MoveBackwards()
     {
-       
-   
-        if (positionDifference < _moveBackwardDistance && positionDifference>0)
+        if (positionDifference < _moveBackwardDistance && positionDifference > 0)
         {
-            _rb.velocity = new Vector3(transform.forward.x * -_walkSpeed, 0, transform.forward.z * -(1f/positionDifference*2));
+            _rb.velocity = new Vector3(transform.forward.x * -_walkSpeed, 0, transform.forward.z * -(1f / positionDifference * 2));
             _anim.SetTrigger("PlayWalkBackward");
         }
     }
 
+    /**
+     *  Shoots the gun at the predicted point returned by CalculateInterceptPosition. Is modified by 'ammo,' 'reloadTime,' and 'timeInBetweenShots.'
+     */
     private void Shoot()
     {
-        if (ammo>0 && Time.time-reloadTimer>reloadTime && positionDifference > 6)
+        if (ammo > 0 && Time.time - reloadTimer > reloadTime && positionDifference > 6)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;
@@ -162,7 +165,7 @@ public class ShootScript : MonoBehaviour
             _muzzleFlash.Play();
             //ammo--;
         }
-        else if(ammo == 0)
+        else if (ammo == 0)
         {
             _anim.SetBool("shooting", false);
             reloadTimer = Time.time;
@@ -180,7 +183,7 @@ public class ShootScript : MonoBehaviour
     {
         Vector3 spawnCasePos = casingSpawn.transform.position;
         Vector3 exitVelocity = new Vector3(Random.Range(0.5f, 1.5f), 1f, Random.Range(0.25f, 1f));
-        
+
         GameObject bCase = Instantiate(casing, spawnCasePos, casing.transform.rotation);
         bCase.GetComponent<Rigidbody>().AddForce(exitVelocity, ForceMode.Impulse);
     }
@@ -192,16 +195,31 @@ public class ShootScript : MonoBehaviour
     {
         if (-positionDifference > _removalDistance)
         {
-           Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
+    /**
+    *  Helper method that calculates the point where the enemy should shoot at
+    *  
+    *  @param targetPosition The current position of the target
+    *  
+    *  @return A random vector3 in between the target position and the predicted intercept position. Accuracy of shot can be modified in inaccurateInterceptPoint
+    */
     private Vector3 CalculateInterceptPosition(Vector3 targetPosition)
     {
         Vector3 interceptPoint = FirstOrderIntercept(
-            this.transform.position,_rb.velocity,_bulletSpeed,new Vector3(targetPosition.x,targetPosition.y-1f,targetPosition.z),player.getVelocity());
+            this.transform.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1f, targetPosition.z), player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
         return inaccurateInterceptPoint;
     }
+
+    /**
+     *  Calculates the intercept 
+     *  
+     *  @param shooterPosition, shooterVelocity, shotSpeed, targetPosition, targetVelocity
+     *  
+     *  @return The calculated intercept point that the player will be at if it continues on current trajectory
+     */
     public static Vector3 FirstOrderIntercept
     (
         Vector3 shooterPosition,
@@ -214,14 +232,14 @@ public class ShootScript : MonoBehaviour
         Vector3 targetRelativePosition = targetPosition - shooterPosition;
         Vector3 targetRelativeVelocity = targetVelocity - shooterVelocity;
 
-       
+
         float t = FirstOrderInterceptTime
         (
             shotSpeed,
             targetRelativePosition,
             targetRelativeVelocity
         );
-       
+
         return targetPosition + t * (targetRelativeVelocity);
     }
     //Uses relative position to calculate the first intercept
@@ -249,20 +267,20 @@ public class ShootScript : MonoBehaviour
                     targetRelativePosition
                 )
             );
-            return Mathf.Max(t, 0f); 
+            return Mathf.Max(t, 0f);
         }
 
         float b = 2f * Vector3.Dot(targetRelativeVelocity, targetRelativePosition);
         float c = targetRelativePosition.sqrMagnitude;
         float determinant = b * b - 4f * a * c;
-    
-      
+
+
         if (determinant > 0f)
         { //determinant > 0; two intercept paths (most common)
-            
+
             float t1 = (-b + Mathf.Sqrt(determinant)) / (2f * a),
                     t2 = (-b - Mathf.Sqrt(determinant)) / (2f * a);
-            
+
             if (t1 > 0f)
             {
                 if (t2 > 0f)

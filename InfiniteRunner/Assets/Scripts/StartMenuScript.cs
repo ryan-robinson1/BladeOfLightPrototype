@@ -12,6 +12,9 @@ public class StartMenuScript : MonoBehaviour
     {
         //StartGame();
     }
+    /**
+     *  Resets the camera and player position the game configuration
+     */
     public void StartGame()
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
