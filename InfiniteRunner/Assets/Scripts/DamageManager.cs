@@ -17,7 +17,7 @@ public class DamageManager : MonoBehaviour
     public ParticleSystem damageLightEffect;
 
     private float min = 0f;
-    private float max = 0.07f;
+    private float max = 0.03f;
     private float t = 0f;
     private float edgeWidth;
 
