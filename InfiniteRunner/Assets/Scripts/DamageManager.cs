@@ -32,7 +32,7 @@ public class DamageManager : MonoBehaviour
         health = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         colors = this.generateColors();
-        healthIndicator.SetColor("dissolveColor", colors[2]);
+        healthIndicator.SetColor("dissolveColor", colors[0]);
     }
 
     /**
@@ -40,7 +40,7 @@ public class DamageManager : MonoBehaviour
      */
     private void FixedUpdate()
     {
-        this.UpdateHealthStatus();
+        this.UpdateHealthStatus(health);
 
     }
 
@@ -72,22 +72,16 @@ public class DamageManager : MonoBehaviour
      * Updates what color we should be displaying on the Player object
      * based on what the Player's current health is.
      */
-    private void UpdateHealthStatus()
+    private void UpdateHealthStatus(float health)
     {
-        var midHealth = startHealth / 1.5f;
-        var lowHealth = startHealth / 3f;
-        if (health > midHealth)
+        float healthMultiplier = 0.5f;
+
+        var minRender = (1.15f - (health / startHealth)) * healthMultiplier;
+       
+        healthIndicator.SetFloat("minimumRender", minRender);
+        
+        if (health / startHealth < 0.3f)
         {
-            healthIndicator.SetColor("dissolveColor", colors[0]);
-        }
-        else if (health <= midHealth && health > lowHealth){
-            healthIndicator.SetColor("dissolveColor", colors[0]);
-            healthIndicator.SetFloat("minimumRender", 0.45f);
-        }
-        else if (health <= lowHealth && health > 0)
-        {
-            healthIndicator.SetColor("dissolveColor", colors[0]);
-            healthIndicator.SetFloat("minimumRender", 0.65f);
             this.AnimateEdgeWidth();
         }
     }
@@ -147,8 +141,8 @@ public class DamageManager : MonoBehaviour
     {
         healthIndicator.SetColor("dissolveColor", colors[0]);
         healthIndicator.SetFloat("edgeWidth", 0.03f);
-        healthIndicator.SetFloat("noiseScale", 67f);
-        healthIndicator.SetFloat("minimumRender", 0.25f);
+        healthIndicator.SetFloat("noiseScale", 120f);
+        healthIndicator.SetFloat("minimumRender", 0.15f);
     }
 
 }
