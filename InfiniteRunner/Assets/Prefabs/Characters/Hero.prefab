@@ -4972,9 +4972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 0}
+  StaminaBar: {fileID: 0}
   hitEffect: {fileID: 7405669792341692151}
   lookAtPoint: {fileID: 8091541568006297123}
   deflecting: 0
+  _ac: {fileID: 0}
 --- !u!65 &8091541567484115807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4986,8 +4988,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.231268, y: 1.6337435, z: 0.832606}
-  m_Center: {x: 0.17267902, y: 0.11064386, z: -0.19335043}
+  m_Size: {x: 1.7905602, y: 1.7482227, z: 0.87793976}
+  m_Center: {x: -0.16927335, y: 0.16788346, z: -0.033272028}
 --- !u!114 &8091541567484115806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5005,6 +5007,8 @@ MonoBehaviour:
   startHealth: 10000
   healthIndicator: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
   health: 0
+  damageEffect: {fileID: 0}
+  damageLightEffect: {fileID: 0}
 --- !u!114 &8091541567484115800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,6 +5058,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8091541567484115811}
     m_Modifications:
+    - target: {fileID: 1624910368873755851, guid: 0c8eabca84cf4524d99a1a52db513f47,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624910369679191606, guid: 0c8eabca84cf4524d99a1a52db513f47,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1624910369807362165, guid: 0c8eabca84cf4524d99a1a52db513f47,
         type: 3}
       propertyPath: m_LocalPosition.x

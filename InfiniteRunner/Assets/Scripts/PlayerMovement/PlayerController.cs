@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem hitEffect;
     [SerializeField]
     private Transform lookAtPoint;
-   
+
     [HideInInspector]
     public bool deflecting;
 
@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
 
 
     public static AudioClip sliceSound;
-   
 
-    
+
+
 
     string[] recentInputs = new string[2];
 
@@ -52,12 +52,12 @@ public class PlayerController : MonoBehaviour
         _tf = this.GetComponent<Transform>();
         _bc = this.GetComponent<BoxCollider>();
         _rb.velocity = new Vector3(speed, 0, 0);
-      
-       
 
-        
+
+
+
     }
-    public Vector3 getVelocity() { return new Vector3(speed,0,0); }
+    public Vector3 getVelocity() { return new Vector3(speed, 0, 0); }
 
     private void Update()
     {
@@ -75,24 +75,34 @@ public class PlayerController : MonoBehaviour
     }
     void ChangeLookAtPoint()
     {
-       if (_animController.IsRunning())
+        if (_animController.IsRunning())
         {
             lookAtPoint.localPosition = new Vector3(0, 0.4f, 0);
-            _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
-            _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
+
         }
         else if (_animController.IsSliding())
         {
             lookAtPoint.localPosition = new Vector3(0, -0.4f, 0);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("Slide");
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
             _bc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);
+            Invoke("resetBC", 0.65f);
         }
+    }
+    void resetBC()
+    {
+        _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
+        _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
     }
     void Move()
     {
         _rb.velocity = new Vector3(speed, 0, 0);
 
-        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft)&& _playerPositionOffset < 2)
+        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset < 2)
         {
             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
             _playerPositionOffset += 1;
@@ -102,7 +112,7 @@ public class PlayerController : MonoBehaviour
             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
             _playerPositionOffset -= 1;
         }
-      
+
 
     }
 
@@ -133,15 +143,15 @@ public class PlayerController : MonoBehaviour
         {
             deflects++;
             Debug.Log(deflects);
-        }   
+        }
     }
 
     //Sets the deflecting variable to true when the user taps the screen
     void Deflect()
-    {        
+    {
         if (Time.time - staminaRefreshTimer >= staminaRefreshLength)
         {
-           
+
             if (Time.time - deflectTimer >= deflectLength)
             {
                 deflecting = false;
@@ -153,7 +163,7 @@ public class PlayerController : MonoBehaviour
                 deflects = 0;
 
             }
-            else if((SwipeInput.Instance.SwipeDown || Input.GetKeyDown(KeyCode.S)) && deflecting)
+            else if ((SwipeInput.Instance.SwipeDown || Input.GetKeyDown(KeyCode.S)) && deflecting)
             {
                 currentFillCapacity = StaminaBar.fillAmount;
                 staminaRefreshTimer = Time.time;
@@ -170,22 +180,22 @@ public class PlayerController : MonoBehaviour
             }
             else if (deflectTimer != float.PositiveInfinity)
             {
-                StaminaBar.fillAmount = 1 - ((Time.time - deflectTimer) /deflectLength);
+                StaminaBar.fillAmount = 1 - ((Time.time - deflectTimer) / deflectLength);
             }
         }
         else
-        { 
-            StaminaBar.fillAmount = currentFillCapacity + ((Time.time - (staminaRefreshTimer))/staminaRefreshLength);
+        {
+            StaminaBar.fillAmount = currentFillCapacity + ((Time.time - (staminaRefreshTimer)) / staminaRefreshLength);
 
-            if(StaminaBar.fillAmount >= 1)
+            if (StaminaBar.fillAmount >= 1)
             {
                 staminaRefreshTimer = 0;
             }
         }
 
 
-    
-}
+
+    }
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect()
     {
@@ -200,9 +210,9 @@ public class PlayerController : MonoBehaviour
     */
     void UpdateRecentInputs()
     {
-        if(SwipeInput.Instance.SwipeRight || SwipeInput.Instance.SwipeLeft || SwipeInput.Instance.SwipeUp || SwipeInput.Instance.SwipeDown)
+        if (SwipeInput.Instance.SwipeRight || SwipeInput.Instance.SwipeLeft || SwipeInput.Instance.SwipeUp || SwipeInput.Instance.SwipeDown)
         {
-            if(recentInputs[0] == "Swipe")
+            if (recentInputs[0] == "Swipe")
             {
                 recentInputs[1] = "Swipe";
             }
@@ -227,6 +237,6 @@ public class PlayerController : MonoBehaviour
     {
         return recentInputs[0] == "Tap" && recentInputs[1] == "Tap";
     }
-   
+
 
 }
