@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private int _playerPositionOffset = 0;
     private float speed = 15f;
     private int deflects = 0;
+    
 
 
     public static AudioClip sliceSound;
@@ -197,12 +198,19 @@ public class PlayerController : MonoBehaviour
 
     }
     //Plays the hit particle system. Activated by BulletScript
-    public void PlayHitEffect()
+    public void PlayHitEffect(float z)
     {
         _ac.pitch = Random.Range(1.0f, 1.25f);
         _ac.Play();
-        Debug.Log("PLAY");
         hitEffect.Play();
+    }
+
+    /* 
+     * Executed by bulletScript if within the range defined by the variable "bulletrange" in bulletScript's update function
+     */
+    public void BulletWithinRange()
+    {
+        Debug.Log("Bullet within Range");
     }
 
     /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 

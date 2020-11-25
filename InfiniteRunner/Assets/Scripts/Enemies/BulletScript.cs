@@ -10,14 +10,20 @@ public class BulletScript : MonoBehaviour
 
     private float lifeLength = 2f;
     private float lifeLengthTimer = float.PositiveInfinity;
+    private bool rangeFlag= false;
     [HideInInspector]
     public float bulletSpeed;
 
+    GameObject player;
+    PlayerController pc;
     Rigidbody rb;
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         lifeLengthTimer = Time.time;
+        player = GameObject.FindGameObjectWithTag("Player");
+        pc = player.GetComponent<PlayerController>();
+
     }
     private void FixedUpdate()
     {
@@ -25,6 +31,23 @@ public class BulletScript : MonoBehaviour
 
         if (Time.time - lifeLengthTimer > lifeLength)
             Destroy(this.gameObject); 
+
+    }
+    /**
+    *  Triggers every frame. If the bullet is within "bulletRange" it triggers "BulletWithinRange" method of the characterController
+    */
+    private void Update()
+    {
+        RaycastHit hit;
+        float bulletRange = 5;
+        if(Physics.Raycast(this.transform.position,this.transform.forward,out hit, bulletRange))
+        {
+            if (!rangeFlag && hit.transform.CompareTag("Player"))
+            {
+             pc.BulletWithinRange(); 
+                rangeFlag = true;
+            }
+        }
     }
     /**
      *  Destroys the bullet if it hits the player and deals damage if not deflecting
@@ -35,20 +58,32 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.transform.CompareTag("Player"))
         {
-            if (other.gameObject.transform.GetComponent<PlayerController>().deflecting)
+            if (pc.deflecting)
             {
 
-                //Debug.Log("Deflected bullet");
-               other.gameObject.transform.GetComponent<PlayerController>().PlayHitEffect();
+            
+           pc.PlayHitEffect(other.gameObject.transform.position.z);
             }
             else
             {
                 other.gameObject.GetComponent<DamageManager>().TakeDamage();
-                //Debug.Log("Hit by bullet");
+           
             }
 
             Destroy(this.gameObject);
 
+        }
+        else if (other.gameObject.transform.CompareTag("Sword")){
+            if (pc.deflecting)
+            {
+                pc.PlayHitEffect(other.gameObject.transform.position.z);
+            }
+            else
+            {
+                player.GetComponent<DamageManager>().TakeDamage();
+            }
+
+            Destroy(this.gameObject);
         }
        
   
