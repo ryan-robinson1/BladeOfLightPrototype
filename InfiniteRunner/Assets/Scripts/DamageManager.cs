@@ -13,6 +13,7 @@ public class DamageManager : MonoBehaviour
     [HideInInspector]
     public float health;
 
+    public ParticleSystem damageEffect;
 
     private float min = 0f;
     private float max = 0.07f;
@@ -61,6 +62,7 @@ public class DamageManager : MonoBehaviour
     {
         health -= bulletDamage;
         HealthBar.fillAmount = health / startHealth;
+        damageEffect.Play();
         if(health <= 0)
         {
             this.setDefaultMats();

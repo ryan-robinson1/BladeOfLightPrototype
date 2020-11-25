@@ -71,8 +71,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - edgeWidth: 0.03
-    - minimumRender: 0.25
-    - noiseScale: 67
+    - minimumRender: 0.15
+    - noiseScale: 120
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
