@@ -58,8 +58,7 @@ public class BulletScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.CompareTag("Player") 
-            || other.gameObject.transform.CompareTag("Sword"))
+        if (other.gameObject.transform.CompareTag("Player"))
         {
             if (pc.deflecting)
             {
@@ -73,6 +72,14 @@ public class BulletScript : MonoBehaviour
 
             Destroy(this.gameObject);
 
+        }
+        else if (other.gameObject.transform.CompareTag("Sword"))
+        {
+            if (pc.deflecting)
+            {
+                pc.PlayHitEffect(other.gameObject.transform.position.z);
+                Destroy(this.gameObject);
+            }
         }
        
     }
