@@ -200,9 +200,9 @@ public class PlayerController : MonoBehaviour
         if (deflecting)
         {
             deflects++;
-            if (deflects >= 6)
+            if (deflects >= 5)
             {
-                deflects = 2;
+                deflects = 1;
             }
         }
     }
