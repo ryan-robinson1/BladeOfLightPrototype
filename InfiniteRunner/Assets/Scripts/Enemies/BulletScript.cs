@@ -39,12 +39,14 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
-        float bulletRange = 5;
-        if(Physics.Raycast(this.transform.position,this.transform.forward,out hit, bulletRange))
+        float bulletRange = 5f;
+        if(Physics.Raycast(this.transform.position,this.transform.forward,
+            out hit, bulletRange))
         {
-            if (!rangeFlag && hit.transform.CompareTag("Player"))
+            if (!rangeFlag && hit.transform.CompareTag("Player") 
+                || hit.transform.CompareTag("Sword"))
             {
-             pc.BulletWithinRange(); 
+                pc.BulletWithinRange(); 
                 rangeFlag = true;
             }
         }
@@ -56,7 +58,8 @@ public class BulletScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.transform.CompareTag("Player"))
+        if (other.gameObject.transform.CompareTag("Player") 
+            || other.gameObject.transform.CompareTag("Sword"))
         {
             if (pc.deflecting)
             {
@@ -73,20 +76,7 @@ public class BulletScript : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-        else if (other.gameObject.transform.CompareTag("Sword")){
-            if (pc.deflecting)
-            {
-                pc.PlayHitEffect(other.gameObject.transform.position.z);
-            }
-            else
-            {
-                player.GetComponent<DamageManager>().TakeDamage();
-            }
-
-            Destroy(this.gameObject);
-        }
        
-  
     }
 
     public float getBulletSpeed()

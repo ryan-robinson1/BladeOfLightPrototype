@@ -15908,7 +15908,7 @@ PrefabInstance:
     - target: {fileID: 2155300144688084595, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 158.96
+      value: 79.1
       objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084595, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
@@ -15918,7 +15918,7 @@ PrefabInstance:
     - target: {fileID: 2155300144688084595, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084595, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
@@ -17868,6 +17868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.00022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049178594816772515, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 7177657140162661807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}

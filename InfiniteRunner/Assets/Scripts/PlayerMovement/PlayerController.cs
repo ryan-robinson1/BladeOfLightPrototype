@@ -134,19 +134,6 @@ public class PlayerController : MonoBehaviour
         return deflects;
     }
 
-    /**
-     * Keeps track of how many bullets the player has deflected in one
-     * deflect cycle.
-     */
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.transform.CompareTag("Bullet") && deflecting)
-        {
-            deflects++;
-            Debug.Log(deflects);
-        }
-    }
-
     //Sets the deflecting variable to true when the user taps the screen
     void Deflect()
     {
@@ -210,7 +197,14 @@ public class PlayerController : MonoBehaviour
      */
     public void BulletWithinRange()
     {
-        Debug.Log("Bullet within Range");
+        if (deflecting)
+        {
+            deflects++;
+            if (deflects >= 5)
+            {
+                deflects = 1;
+            }
+        }
     }
 
     /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 

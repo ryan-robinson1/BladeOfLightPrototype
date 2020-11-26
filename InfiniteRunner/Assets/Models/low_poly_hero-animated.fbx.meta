@@ -145,7 +145,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect1
       takeName: hero-armature|ninja_deflect1
       internalID: 0
-      firstFrame: 3
+      firstFrame: 4.5
       lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
@@ -174,7 +174,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect2
       takeName: hero-armature|ninja_deflect2
       internalID: 0
-      firstFrame: 3
+      firstFrame: 4.5
       lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
@@ -203,7 +203,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect3
       takeName: hero-armature|ninja_deflect3
       internalID: 0
-      firstFrame: 3
+      firstFrame: 4.5
       lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
@@ -232,7 +232,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect4
       takeName: hero-armature|ninja_deflect4
       internalID: 0
-      firstFrame: 3
+      firstFrame: 4.5
       lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
