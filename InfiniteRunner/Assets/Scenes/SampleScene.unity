@@ -16381,6 +16381,25 @@ MonoBehaviour:
   health: 0
   damageEffect: {fileID: 0}
   damageLightEffect: {fileID: 0}
+--- !u!1 &1480943397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6049178594816772515, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8091541566474677756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1480943401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480943397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0005055923, y: 0.01821496, z: 0.007074459}
+  m_Center: {x: 0.00000092531445, y: -0.00056395144, z: -0.000028720933}
 --- !u!1 &1545877458
 GameObject:
   m_ObjectHideFlags: 0
