@@ -64,7 +64,6 @@ public class PlayerAnimationController : MonoBehaviour
      */
     private void Attack()
     {
-        // will need to add combo
         if (attacks == 0)
         {
             _anim.SetTrigger("Attack");
@@ -75,7 +74,6 @@ public class PlayerAnimationController : MonoBehaviour
             _anim.SetTrigger("AttackAgain");
             attacks = 0;
         }
-        Debug.Log(attacks);
         player.setDeflects(0);
     }
 
@@ -105,7 +103,7 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
-     * Updates our deflecting status
+     * Updates our deflecting status.
      */
     public void UpdateDeflect()
     {
