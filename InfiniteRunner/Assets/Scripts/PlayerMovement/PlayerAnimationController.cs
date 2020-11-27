@@ -13,6 +13,9 @@ public class PlayerAnimationController : MonoBehaviour
 
     Animator _anim;
     PlayerController player;
+    private int attacks = 0;
+    private float attackTimer = 0f;
+    private float attackReset = 1.5f;
 
     /**
      * Called before first frame update and used to instantiate our variables.
@@ -62,8 +65,34 @@ public class PlayerAnimationController : MonoBehaviour
     private void Attack()
     {
         // will need to add combo
-        _anim.SetTrigger("Attack");
+        if (attacks == 0)
+        {
+            _anim.SetTrigger("Attack");
+            attacks++;
+        }
+        else
+        {
+            _anim.SetTrigger("AttackAgain");
+            attacks = 0;
+        }
+        Debug.Log(attacks);
         player.setDeflects(0);
+    }
+
+    /**
+     * Resets our attack counter if we haven't attacked in a few frames.
+     */
+    private void UpdateAttackCounter()
+    {
+       if (attacks > 0)
+        {
+            attackTimer += Time.deltaTime;
+            if (attackTimer > attackReset)
+            {
+                attacks = 0;
+                attackTimer = 0f;
+            }
+        }
     }
 
     /**
@@ -118,6 +147,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         this.Slide();
         this.UpdateDeflectCount();
+        this.UpdateAttackCounter();
     }
 
     /**
