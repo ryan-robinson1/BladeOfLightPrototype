@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 1.5f;
+    private float deflectLength = 5f; //1.5
     private float deflectTimer = float.PositiveInfinity;
     private float staminaRefreshLength = 2f;
     private float staminaRefreshTimer = float.NegativeInfinity;
