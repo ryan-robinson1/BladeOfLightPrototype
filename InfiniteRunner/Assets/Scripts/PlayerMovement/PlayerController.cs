@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private int _playerPositionOffset = 0;
     private float speed = 15f;
     private int deflects = 0;
+
+    public List<Transform> deflectParticlePositions;
     
 
 
@@ -185,11 +187,30 @@ public class PlayerController : MonoBehaviour
 
     }
     //Plays the hit particle system. Activated by BulletScript
-    public void PlayHitEffect(float z)
+    public void PlayHitEffect(Transform t)
     {
         _ac.pitch = Random.Range(1.0f, 1.25f);
         _ac.Play();
-        hitEffect.Play();
+
+
+        Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.identity,this.gameObject.transform);
+    }
+    Transform GetClosestObject(List<Transform> objects, Transform fromThis)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = fromThis.position;
+        foreach (Transform potentialTarget in objects)
+        {
+            Vector3 directionToTarget = potentialTarget.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+        return bestTarget;
     }
 
     /* 
