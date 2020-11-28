@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             lookAtPoint.localPosition = new Vector3(0, -0.4f, 0);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
             Debug.Log("Slide");
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
