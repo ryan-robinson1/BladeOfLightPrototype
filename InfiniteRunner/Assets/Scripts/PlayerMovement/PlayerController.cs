@@ -193,7 +193,11 @@ public class PlayerController : MonoBehaviour
         _ac.Play();
 
 
-        Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.identity,this.gameObject.transform);
+        ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.identity, this.gameObject.transform);
+        var main = particle.main;
+        main.simulationSpeed = 0.3f;
+        particle.Play();
+        
     }
     Transform GetClosestObject(List<Transform> objects, Transform fromThis)
     {

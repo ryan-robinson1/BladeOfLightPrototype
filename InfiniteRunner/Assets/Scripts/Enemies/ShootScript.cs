@@ -146,7 +146,7 @@ public class ShootScript : MonoBehaviour
      */
     private void Shoot()
     {
-        if (ammo > 0 && Time.time - reloadTimer > reloadTime && positionDifference > 6)
+        if (ammo > 0 && Time.time - reloadTimer > reloadTime+Random.Range(0,0.4f) && positionDifference > 6)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;

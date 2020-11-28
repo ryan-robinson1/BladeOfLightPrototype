@@ -126,7 +126,15 @@ public class PlayerAnimationController : MonoBehaviour
     {
         return _anim.GetCurrentAnimatorStateInfo(0).IsName("Slide");
     }
-
+    /**
+    * Checks if the hero is currently attacking.
+    * 
+    * @return True if the hero is curently in the Slide state.
+    */
+    public bool IsAttacking()
+    {
+        return _anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing_1") || _anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing_2");
+    }
 
     /**
      * Checks if the hero is currently running.
