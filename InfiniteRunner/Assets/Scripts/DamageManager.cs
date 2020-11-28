@@ -130,7 +130,7 @@ public class DamageManager : MonoBehaviour
         Color[] c = new Color[3];
         float intensity = 16f;
         // blue
-        c[0] = new Color(0.08f * intensity, 0.66f * intensity, 0.75f * intensity);
+        c[0] = new Color(0.012f * intensity, 0.41f * intensity, 0.75f * intensity);
         // yellow
         c[1] = new Color(0.75f * intensity, 0.65f * intensity, 0.08f * intensity);
         // green
