@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem hitEffect;
-
     [SerializeField]
     private Transform lookAtPoint;
 
