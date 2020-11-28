@@ -42,9 +42,9 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 5f; //1.5
+    private float deflectLength = 2.5f; //1.5
     private float deflectTimer = float.PositiveInfinity;
-    private float staminaRefreshLength = 2f;
+    private float staminaRefreshLength = 4f;
     private float staminaRefreshTimer = float.NegativeInfinity;
     private float currentFillCapacity = 0f;
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             lookAtPoint.localPosition = new Vector3(0, -0.4f, 0);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)|| SwipeInput.Instance.SwipeDown)
         {
             Debug.Log("Slide");
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
