@@ -193,9 +193,9 @@ public class PlayerController : MonoBehaviour
         _ac.Play();
 
 
-        ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.identity, this.gameObject.transform);
+        ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0,100,0), this.gameObject.transform);
         var main = particle.main;
-        main.simulationSpeed = 0.3f;
+       // main.simulationSpeed = 0.3f;
         particle.Play();
         
     }
