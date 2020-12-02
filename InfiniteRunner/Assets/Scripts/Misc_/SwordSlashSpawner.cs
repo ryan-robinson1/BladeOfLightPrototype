@@ -2,9 +2,9 @@
 using UnityEngine;
 
 /**
- * Handles the playing of the Sword Slash effect. The Coroutine
- * waits a certain amount of time to play the slash effect
- * depending on the animation that is currently being played.
+ * Handles the playing of the Sword Slash effect. Updates the particle
+ * system's position and rotation based on the location of the sword
+ * object.
  * 
  * @author Maxfield Barden
  */
@@ -16,7 +16,7 @@ public class SwordSlashSpawner : MonoBehaviour
 
     /**
      * Instantiates a new SlashEffect at the current given position
-     * of the sword.
+     * of the sword. Updates the position and rotation of our slash.
      * 
      * @param delayTimer The amount of time to delay before playing slash
      * animation.

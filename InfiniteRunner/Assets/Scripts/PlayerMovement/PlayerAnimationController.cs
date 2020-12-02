@@ -105,14 +105,13 @@ public class PlayerAnimationController : MonoBehaviour
     private float GetSlashDelay(int attacks)
     {
         int attackNum = attacks;
+
         switch (attackNum)
         {
-            // second attack
-            case 0:
-                return 0.16f;
-            // first attack
             case 1:
                 return 0.15f;
+            case 2:
+                return 0.025f;
             default:
                 return 0f;
         }
