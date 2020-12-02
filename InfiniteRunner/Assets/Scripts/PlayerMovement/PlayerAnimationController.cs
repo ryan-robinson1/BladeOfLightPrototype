@@ -13,6 +13,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     Animator _anim;
     PlayerController player;
+    SwordSlashSpawner slashSpawner;
     private int attacks = 0;
     private float attackTimer = 0f;
     private float attackReset = 1.5f;
@@ -24,6 +25,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         _anim = this.GetComponentInChildren<Animator>();
         player = this.GetComponent<PlayerController>();
+        slashSpawner = this.GetComponent<SwordSlashSpawner>();
     }
 
     /**
@@ -45,6 +47,7 @@ public class PlayerAnimationController : MonoBehaviour
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
             this.Attack();
+            StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(attacks)));
         }
     }
 
@@ -94,6 +97,27 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
+     * Gets how long of a delay we should have before playing our slash
+     * particle effect.
+     * 
+     * @return The delay timer based on which attack animation we are playing.
+     */
+    private float GetSlashDelay(int attacks)
+    {
+        int attackNum = attacks;
+
+        switch (attackNum)
+        {
+            case 1:
+                return 0.15f;
+            case 2:
+                return 0.025f;
+            default:
+                return 0f;
+        }
+    }
+
+    /**
      * Updates the number of deflects to loop through deflect
      * animation cycles.
      */
@@ -118,6 +142,16 @@ public class PlayerAnimationController : MonoBehaviour
     }
 
     /**
+     * Checks if an attack animation is currently playing.
+     * 
+     * @return True if an attack animation is currently playing.
+     */
+    public bool IsAttacking()
+    {
+        return attacks > 0;
+    }
+
+    /**
      * Checks if the hero is currently sliding.
      * 
      * @return True if the hero is curently in the Slide state.
@@ -125,15 +159,6 @@ public class PlayerAnimationController : MonoBehaviour
     public bool IsSliding()
     {
         return _anim.GetCurrentAnimatorStateInfo(0).IsName("Slide");
-    }
-    /**
-    * Checks if the hero is currently attacking.
-    * 
-    * @return True if the hero is curently in the Slide state.
-    */
-    public bool IsAttacking()
-    {
-        return _anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing_1") || _anim.GetCurrentAnimatorStateInfo(0).IsName("SwordSwing_2");
     }
 
     /**
