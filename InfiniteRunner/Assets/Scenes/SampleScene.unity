@@ -3482,6 +3482,41 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6154041
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 3.0422e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.01e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: LightsModule.rangeCurve.scalar
@@ -3811,6 +3846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024901123423400661, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115800, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
