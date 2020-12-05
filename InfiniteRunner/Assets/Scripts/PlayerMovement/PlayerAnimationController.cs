@@ -47,7 +47,6 @@ public class PlayerAnimationController : MonoBehaviour
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
             this.Attack();
-            Debug.Log(this.GetSlashDelay(attacks));
             StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(attacks)));
         }
     }
@@ -69,12 +68,7 @@ public class PlayerAnimationController : MonoBehaviour
     private void Attack()
     {
         // slide attack
-        if (this.IsSliding())
-        {
-            _anim.SetTrigger("SlideAttack");
-            return;
-        }
-
+        
         if (attacks == 0)
         {
             _anim.SetTrigger("Attack");
@@ -85,7 +79,7 @@ public class PlayerAnimationController : MonoBehaviour
             _anim.SetTrigger("AttackAgain");
             attacks = 0;
         }
-       // player.setDeflects(0);
+        player.setDeflects(0);
     }
 
     /**
