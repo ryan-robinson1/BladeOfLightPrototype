@@ -10,8 +10,14 @@ ModelImporter:
       74: -3913567553555338316
     second: hero-armature|ninja-run-NEW
   - first:
-      74: -793220524762207150
-    second: hero-armature|ninja-slide
+      74: -4326320179189651540
+    second: hero-armature|ninja-slide-attack
+  - first:
+      74: 5794877448706365939
+    second: hero-armature|ninja-slide-NEW
+  - first:
+      74: 2106805276545097031
+    second: hero-armature|ninja-slide-old
   - first:
       74: 5975838450875884598
     second: hero-armature|ninja_deflect1
@@ -25,8 +31,8 @@ ModelImporter:
       74: -527518597127287748
     second: hero-armature|ninja_deflect4
   - first:
-      74: -1062544092846378563
-    second: hero-armature|ninja_deflect5
+      74: -6785116243894289078
+    second: hero-armature|ninja_deflect6
   - first:
       74: -6361288299582486417
     second: hero-armature|ninja_deflect_default
@@ -36,6 +42,9 @@ ModelImporter:
   - first:
       74: -1325329532392456809
     second: hero-armature|ninja_sword1
+  - first:
+      74: 697022417142977445
+    second: hero-armature|ninja_sword2
   - first:
       74: 877382752608488796
     second: hero-armature|ninja_sword_basic
@@ -50,6 +59,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: hilt-black
     second: {fileID: 2100000, guid: 78d9adbaf82b9884b9e488df8d6e3c8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hilt-off-white
+    second: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -104,8 +118,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -151,8 +165,66 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hero-armature|ninja-slide
-      takeName: hero-armature|ninja-slide
+      name: hero-armature|ninja-slide-attack
+      takeName: hero-armature|ninja-slide-attack
+      internalID: 0
+      firstFrame: 30
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hero-armature|ninja-slide-NEW
+      takeName: hero-armature|ninja-slide-NEW
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hero-armature|ninja-slide-old
+      takeName: hero-armature|ninja-slide-old
       internalID: 0
       firstFrame: 25
       lastFrame: 52
@@ -296,8 +368,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: hero-armature|ninja_deflect5
-      takeName: hero-armature|ninja_deflect5
+      name: hero-armature|ninja_deflect6
+      takeName: hero-armature|ninja_deflect6
       internalID: 0
       firstFrame: 4.5
       lastFrame: 10
@@ -388,6 +460,35 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hero-armature|ninja_sword2
+      takeName: hero-armature|ninja_sword2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
