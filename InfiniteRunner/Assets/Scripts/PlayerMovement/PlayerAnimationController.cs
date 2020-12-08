@@ -68,7 +68,13 @@ public class PlayerAnimationController : MonoBehaviour
     private void Attack()
     {
         // slide attack
-        
+        if (this.IsSliding())
+        {
+            _anim.SetTrigger("SlideAttack");
+            player.setDeflects(0);
+            Debug.Log("Slide attack playing");
+            return;
+        }
         if (attacks == 0)
         {
             _anim.SetTrigger("Attack");
