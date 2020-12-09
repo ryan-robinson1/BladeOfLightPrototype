@@ -1639,23 +1639,47 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     priority: 128
-    name: w
+    name: DeflectSound
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 125c447d52b48e74a8a5ad883baff3f2, type: 3}
-    volume: 0.14
+  - clip: {fileID: 8300000, guid: c8ae35cb9e9dc0c43a40e3287ed72387, type: 3}
+    volume: 0.085
     pitch: 1
     priority: 23
     name: MainTheme
     loop: 1
     playOnAwake: 1
     source: {fileID: 0}
-  - clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    priority: 0
-    name: 
+  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
+    volume: 1
+    pitch: 1
+    priority: 131
+    name: SliceSound
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 33050acec134ead4bb78946ca332427b, type: 3}
+    volume: 1
+    pitch: 1
+    priority: 131
+    name: SliceSound
+    loop: 1
+    playOnAwake: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
+    volume: 1
+    pitch: 1
+    priority: 131
+    name: SliceSound
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
+    volume: 1
+    pitch: 1
+    priority: 131
+    name: SliceSound
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
