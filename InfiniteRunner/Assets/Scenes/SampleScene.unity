@@ -1644,7 +1644,7 @@ MonoBehaviour:
     playOnAwake: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: c8ae35cb9e9dc0c43a40e3287ed72387, type: 3}
-    volume: 0.085
+    volume: 0.073
     pitch: 1
     priority: 23
     name: MainTheme
@@ -1659,13 +1659,13 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 33050acec134ead4bb78946ca332427b, type: 3}
-    volume: 1
+  - clip: {fileID: 8300000, guid: 1454424302706c744a21db75bf5d3d16, type: 3}
+    volume: 0.25
     pitch: 1
-    priority: 131
-    name: SliceSound
+    priority: 30
+    name: Footsteps
     loop: 1
-    playOnAwake: 1
+    playOnAwake: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
     volume: 1
