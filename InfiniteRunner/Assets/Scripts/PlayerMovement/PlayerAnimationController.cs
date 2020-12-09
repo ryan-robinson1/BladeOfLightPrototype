@@ -17,6 +17,7 @@ public class PlayerAnimationController : MonoBehaviour
     private int attacks = 0;
     private float attackTimer = 0f;
     private float attackReset = 1.5f;
+    private int slashID;
 
     /**
      * Called before first frame update and used to instantiate our variables.
@@ -47,7 +48,7 @@ public class PlayerAnimationController : MonoBehaviour
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
             this.Attack();
-            StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(attacks)));
+            StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(slashID)));
         }
     }
 
@@ -72,17 +73,20 @@ public class PlayerAnimationController : MonoBehaviour
         {
             _anim.SetTrigger("SlideAttack");
             player.setDeflects(0);
+            slashID = -1;
             return;
         }
         if (attacks == 0)
         {
             _anim.SetTrigger("Attack");
             attacks++;
+            slashID = 0;
         }
         else if (attacks == 1)
         {
             _anim.SetTrigger("AttackAgain");
             attacks = 0;
+            slashID = 1;
         }
         player.setDeflects(0);
     }
@@ -113,13 +117,17 @@ public class PlayerAnimationController : MonoBehaviour
     {
         int attackNum = attacks;
         switch (attackNum)
-        {      
+        {
+            // handles the slide case
+            case -1:
+                return 0.15f;
+
             // first attack
-            case 1:
+            case 0:
                 return 0.15f;
 
             // second attack
-            case 0:
+            case 1:
                 return 0.16f;
 
             default:

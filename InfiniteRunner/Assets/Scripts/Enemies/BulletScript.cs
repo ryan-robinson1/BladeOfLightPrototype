@@ -39,7 +39,7 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
-        float bulletRange = 10f;
+        float bulletRange = 5f;
         if(Physics.Raycast(this.transform.position,this.transform.forward,
             out hit, bulletRange))
         {
