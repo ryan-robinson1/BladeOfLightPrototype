@@ -1638,7 +1638,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 12ca53b8e936f084d8904d1f714a6578, type: 3}
     volume: 1
     pitch: 1
-    priority: 128
+    priority: 256
     name: DeflectSound
     loop: 0
     playOnAwake: 0
@@ -1646,12 +1646,12 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: c8ae35cb9e9dc0c43a40e3287ed72387, type: 3}
     volume: 0.073
     pitch: 1
-    priority: 23
+    priority: 0
     name: MainTheme
     loop: 1
     playOnAwake: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
+  - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 1
     pitch: 1
     priority: 131
@@ -1659,28 +1659,12 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 1454424302706c744a21db75bf5d3d16, type: 3}
-    volume: 0.25
+  - clip: {fileID: 8300000, guid: 3d3d956d0335d394faa0c8543a24a002, type: 3}
+    volume: 0.352
     pitch: 1
-    priority: 30
+    priority: 108
     name: Footsteps
     loop: 1
-    playOnAwake: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
-    volume: 1
-    pitch: 1
-    priority: 131
-    name: SliceSound
-    loop: 0
-    playOnAwake: 0
-    source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: d90fe84ea1faf0741973cf4f39bda556, type: 3}
-    volume: 1
-    pitch: 1
-    priority: 131
-    name: SliceSound
-    loop: 0
     playOnAwake: 0
     source: {fileID: 0}
 --- !u!4 &1336547975
@@ -2004,6 +1988,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1546999462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546999454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deae8cdcd02a98a49ab51896aef20b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1546999464
 MonoBehaviour:
   m_ObjectHideFlags: 0
