@@ -62,6 +62,7 @@ public class BulletScript : MonoBehaviour
         {
             if (pc.deflecting)
             {
+  
                 pc.PlayHitEffect(other.gameObject.transform);
             }
             else
