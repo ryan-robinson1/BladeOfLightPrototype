@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody _rb;
     Transform _tf;
     BoxCollider _bc;
-    public AudioSource _ac;
+
 
     private int _playerPositionOffset = 0;
     private float speed = 15f;
@@ -32,9 +32,6 @@ public class PlayerController : MonoBehaviour
 
     public List<Transform> deflectParticlePositions;
     
-
-
-    public static AudioClip sliceSound;
 
 
 
@@ -189,8 +186,7 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect(Transform t)
     {
-        _ac.pitch = Random.Range(1.0f, 1.25f);
-        _ac.Play();
+         FindObjectOfType<AudioManager>().Play("DeflectSound", Random.Range(1.0f, 1.25f));
 
 
         ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0,100,0), this.gameObject.transform);

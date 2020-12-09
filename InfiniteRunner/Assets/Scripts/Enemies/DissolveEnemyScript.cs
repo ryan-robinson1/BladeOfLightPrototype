@@ -67,10 +67,12 @@ public class DissolveEnemyScript : MonoBehaviour
             // slightly upon getting hit
             this.GetComponent<Rigidbody>().isKinematic = true;
 
-            AudioSource swordAudio = collision.gameObject.GetComponent<AudioSource>();
+        
 
-            swordAudio.pitch = Random.Range(0.93f,1.2f);
-            swordAudio.Play();
+            float pitch = Random.Range(0.93f,1.2f);
+
+            FindObjectOfType<AudioManager>().Play("SliceSound", pitch);
+             
          
             
             this.GetComponent<ShootScript>().enabled = false;
