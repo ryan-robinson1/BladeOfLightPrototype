@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
     private float staminaRefreshTimer = float.NegativeInfinity;
     private float currentFillCapacity = 0f;
 
+    //pitch timer
+    private float pitchComboTimer = float.PositiveInfinity;
+    private float deflectComboLength = 0.3f;
+    private float currentPitch = 1f;
+
     private void Start()
     {
         _animController = this.GetComponent<PlayerAnimationController>();
@@ -65,7 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         ChangeLookAtPoint();
-        UpdateRecentInputs();
+        resetCurrentPitch();
         Deflect();
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -188,7 +193,16 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect(Transform t)
     {
-        _am.Play("DeflectSound", Random.Range(1.0f, 1.25f));
+        float pitch = Random.Range(1.0f, 1.25f);
+        if (Time.time - pitchComboTimer < deflectComboLength)
+        {
+            pitch = currentPitch + 0.02f;
+
+        }
+        currentPitch = pitch;
+        pitchComboTimer = Time.time;
+   
+        _am.Play("DeflectSound", pitch);
 
 
         ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0,100,0), this.gameObject.transform);
@@ -196,6 +210,17 @@ public class PlayerController : MonoBehaviour
        // main.simulationSpeed = 0.3f;
         particle.Play();
         
+    }
+
+    /* 
+     * Resets the default pitch back to 1 after the combo time period has passed
+     */
+    void resetCurrentPitch()
+    {
+        if(Time.time - pitchComboTimer > deflectComboLength)
+        {
+            currentPitch = 1f;
+        }
     }
     Transform GetClosestObject(List<Transform> objects, Transform fromThis)
     {
@@ -229,39 +254,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    /* Even though I wrote them, I'm not completely sure why these functions work, but their purpose is to log 
-    /* the two most recent inputs to prevent a double swipe from being counted as a double tap
-    */
-    void UpdateRecentInputs()
-    {
-        if (SwipeInput.Instance.SwipeRight || SwipeInput.Instance.SwipeLeft || SwipeInput.Instance.SwipeUp || SwipeInput.Instance.SwipeDown)
-        {
-            if (recentInputs[0] == "Swipe")
-            {
-                recentInputs[1] = "Swipe";
-            }
-            else
-            {
-                recentInputs[0] = "Swipe";
-            }
-        }
-        else if (SwipeInput.Instance.Tap)
-        {
-            if (recentInputs[0] == "Tap")
-            {
-                recentInputs[1] = "Tap";
-            }
-            else
-            {
-                recentInputs[0] = "Tap";
-            }
-        }
-    }
-    bool TwoRecentTaps()
-    {
-        return recentInputs[0] == "Tap" && recentInputs[1] == "Tap";
-    }
-
-
 }
