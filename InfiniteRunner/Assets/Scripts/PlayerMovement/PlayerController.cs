@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect(Transform t)
     {
-        float pitch = Random.Range(1.0f, 1.15f);
+        float pitch = Random.Range(1.0f, 1.08f);
         if (Time.time - pitchComboTimer < deflectComboLength)
         {
             pitch = currentPitch + 0.02f;
