@@ -16,7 +16,7 @@ public class PlayerAnimationController : MonoBehaviour
     SwordSlashSpawner slashSpawner;
     private int attacks = 0;
     private float attackTimer = 0f;
-    private float attackReset = 1.5f;
+    private float attackReset = 2f;
     private int slashID;
 
     /**
@@ -85,8 +85,14 @@ public class PlayerAnimationController : MonoBehaviour
         else if (attacks == 1)
         {
             _anim.SetTrigger("AttackAgain");
-            attacks = 0;
+            attacks++;
             slashID = 1;
+        }
+        else if (attacks == 2)
+        {
+            _anim.SetTrigger("Attack3");
+            attacks = 0;
+            slashID = 2;
         }
         player.setDeflects(0);
     }
