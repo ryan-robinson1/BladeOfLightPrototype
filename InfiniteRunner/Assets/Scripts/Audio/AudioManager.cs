@@ -36,6 +36,39 @@ public class AudioManager : MonoBehaviour
 
         }
     }
+
+    /**
+     * Returns the array of Sound objects.
+     * 
+     * @return The array of Sounds.
+     */
+    public Sound[] GetSounds()
+    {
+        return sounds;
+    }
+
+    /**
+     * Pauses every sound playing, used for pausing the game.
+     */
+    public void PauseAllSounds(Sound[] sounds)
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.source.Pause();
+        }
+    }
+
+    /**
+     * Plays all sounds, used to resume the game.
+     */
+    public void UnPauseAllSounds(Sound[] sounds)
+    {
+        foreach (Sound sound in sounds)
+        {
+            sound.source.UnPause();
+        }
+    }
+
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.name == name);

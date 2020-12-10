@@ -9,14 +9,58 @@ public class TimeManagerScript : MonoBehaviour
     private float _slowdownFactor = 0.1f;
     private float _slowMotionLength = 0.15f;
     private float _reentraceSpeed = 1.3f;
+    private bool paused = false;
+    public GameObject audioHolder;
+    private AudioManager audioManager;
 
 
     float _slowMotionTimer = float.PositiveInfinity;
 
 
+    /**
+     * Called before the first frame.
+     */
+    private void Start()
+    {
+        audioManager = audioHolder.GetComponent<AudioManager>();
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (paused)
+            {
+                this.ContinueGame();
+            }
+            else
+            {
+                this.PauseGame();
+            }
+        }
         ResetSlowMotionTimer();
+    }
+
+    /**
+     * Pauses the game and sets the Pause Menu to active.
+     */
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+        paused = true;
+        audioManager.PauseAllSounds(audioManager.GetSounds());
+        // paused menu code goes here
+    }
+
+    /**
+     * Continues the game if we are paused.
+     */
+    private void ContinueGame()
+    {
+        Time.timeScale = 1;
+        paused = false;
+        audioManager.UnPauseAllSounds(audioManager.GetSounds());
+        // disable pause menu code goes here
     }
     private void DoSlowMotion()
     {
