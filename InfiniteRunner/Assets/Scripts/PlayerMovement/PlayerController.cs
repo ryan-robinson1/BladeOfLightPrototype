@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private float deflectComboLength = 2.5f;
     private float currentPitch = 1f;
 
+
+
     private void Start()
     {
         _animController = this.GetComponent<PlayerAnimationController>();
@@ -84,7 +86,9 @@ public class PlayerController : MonoBehaviour
     {
         if (_animController.IsRunning())
         {
+     
             lookAtPoint.localPosition = new Vector3(0, 0.4f, 0);
+
 
         }
         else if (_animController.IsSliding())
@@ -92,9 +96,9 @@ public class PlayerController : MonoBehaviour
             lookAtPoint.localPosition = new Vector3(0, -0.4f, 0);
         }
 
-        if (Input.GetKey(KeyCode.S) || SwipeInput.Instance.SwipeDown)
+        if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
-            Debug.Log("Slide");
+            _am.Pause("Footsteps");
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
             _bc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);
             Invoke("resetBC", 0.65f);
@@ -104,6 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
         _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
+        _am.UnPause("Footsteps");
     }
     void Move()
     {

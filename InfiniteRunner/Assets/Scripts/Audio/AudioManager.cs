@@ -24,9 +24,11 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
+            s.source.mute = s.mute;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.priority = s.priority;
+            
             if (s.playOnAwake)
             {
                 Play(s.name);
@@ -65,6 +67,26 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Stop(); 
+    }
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.Pause();
+    }
+    public void UnPause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.UnPause();
     }
 
 }

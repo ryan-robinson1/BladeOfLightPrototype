@@ -68,6 +68,7 @@ public class DamageManager : MonoBehaviour
         if(health <= 0)
         {
             this.setDefaultMats();
+            FindObjectOfType<AudioManager>().Pause("Footsteps");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

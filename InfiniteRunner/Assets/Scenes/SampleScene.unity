@@ -800,8 +800,6 @@ MonoBehaviour:
   chunks:
   - {fileID: 4244657755561848606, guid: b17f98b68c2c9cc4ab2f52ebf2b4511c, type: 3}
   - {fileID: 3953666057404171443, guid: 67d00e8d9b752d74695a0d1ef5bdd4dd, type: 3}
-  - {fileID: 8870906397981604059, guid: 68f6461204f7f37438618201ee2972e6, type: 3}
-  - {fileID: 3823004479429423078, guid: 2c0c71d2ea4e8e347bfa9a9b5cd83b30, type: 3}
   chunkSize: 300
   player: {fileID: 1546999454}
   camera: {fileID: 1687258581}
@@ -1665,6 +1663,14 @@ MonoBehaviour:
     priority: 108
     name: Footsteps
     loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 40e56deea77e8e945a1c74dbb9d03049, type: 3}
+    volume: 0.369
+    pitch: 1.254
+    priority: 106
+    name: Slide
+    loop: 0
     playOnAwake: 0
     source: {fileID: 0}
 --- !u!4 &1336547975
