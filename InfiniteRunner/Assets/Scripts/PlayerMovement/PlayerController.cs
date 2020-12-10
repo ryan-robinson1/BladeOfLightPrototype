@@ -40,15 +40,15 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 5f; //1.5
+    private float deflectLength = 2.5f; //1.5
     private float deflectTimer = float.PositiveInfinity;
-    private float staminaRefreshLength = 2f;
+    private float staminaRefreshLength = 4f;
     private float staminaRefreshTimer = float.NegativeInfinity;
     private float currentFillCapacity = 0f;
 
     //pitch timer
     private float pitchComboTimer = float.PositiveInfinity;
-    private float deflectComboLength = 0.3f;
+    private float deflectComboLength = 2.5f;
     private float currentPitch = 1f;
 
     private void Start()
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect(Transform t)
     {
-        float pitch = Random.Range(1.0f, 1.25f);
+        float pitch = Random.Range(1.0f, 1.15f);
         if (Time.time - pitchComboTimer < deflectComboLength)
         {
             pitch = currentPitch + 0.02f;
@@ -220,6 +220,7 @@ public class PlayerController : MonoBehaviour
         if(Time.time - pitchComboTimer > deflectComboLength)
         {
             currentPitch = 1f;
+            Debug.Log("reset");
         }
     }
     Transform GetClosestObject(List<Transform> objects, Transform fromThis)
