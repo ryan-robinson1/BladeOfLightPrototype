@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             _am.Pause("Footsteps");
             _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
             _bc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);
-            Invoke("resetBC", 0.65f);
+            Invoke("resetBC", 1.27f);
         }
     }
     void resetBC()
