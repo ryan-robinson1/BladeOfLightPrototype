@@ -14915,6 +14915,7 @@ GameObject:
   - component: {fileID: 8091541567484115807}
   - component: {fileID: 8091541567484115806}
   - component: {fileID: 8091541567484115800}
+  - component: {fileID: 7433953246650681202}
   m_Layer: 9
   m_Name: Hero
   m_TagString: Player
@@ -14971,7 +14972,6 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   lookAtPoint: {fileID: 8091541568006297123}
   deflecting: 0
-  _ac: {fileID: 0}
   deflectParticlePositions: []
 --- !u!65 &8091541567484115807
 BoxCollider:
@@ -15017,6 +15017,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6350f83cfd3ca44808db497aae23f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7433953246650681202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091541567484115810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9c7021eede2394890f3c6f7c7af7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashEffect: {fileID: 1637414892486429959}
 --- !u!1 &8091541568006297122
 GameObject:
   m_ObjectHideFlags: 0
@@ -15261,6 +15274,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9aa434314ce22f47b5f3173c99cab33, type: 3}
+--- !u!198 &1637414892486429959 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3069618705583981374, guid: c9aa434314ce22f47b5f3173c99cab33,
+    type: 3}
+  m_PrefabInstance: {fileID: 4332530846543957561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8091541568203912557
 PrefabInstance:
   m_ObjectHideFlags: 0
