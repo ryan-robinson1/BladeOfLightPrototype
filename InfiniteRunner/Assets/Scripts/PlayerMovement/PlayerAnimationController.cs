@@ -16,7 +16,7 @@ public class PlayerAnimationController : MonoBehaviour
     SwordSlashSpawner slashSpawner;
     private int attacks = 0;
     private float attackTimer = 0f;
-    private float attackReset = 2.5f;
+    private float attackReset = 4f;
     private int slashID;
 
     /**
