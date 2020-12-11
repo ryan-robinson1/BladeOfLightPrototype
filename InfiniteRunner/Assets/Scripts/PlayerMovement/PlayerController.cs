@@ -31,8 +31,16 @@ public class PlayerController : MonoBehaviour
     private float speed = 15f;
     private int deflects = 0;
 
+
+    Dictionary<int, float> positonMap =
+    new Dictionary<int, float>();
+
+   
+
+
+
     public List<Transform> deflectParticlePositions;
-    
+
 
 
 
@@ -53,6 +61,8 @@ public class PlayerController : MonoBehaviour
 
 
 
+
+
     private void Start()
     {
         _animController = this.GetComponent<PlayerAnimationController>();
@@ -62,6 +72,14 @@ public class PlayerController : MonoBehaviour
         _am = FindObjectOfType<AudioManager>();
         _rb.velocity = new Vector3(speed, 0, 0);
 
+       
+        positonMap[-1] = -1.75f;
+        positonMap[-2] = -3.5f;
+        positonMap[0] = 0f;
+        positonMap[1] = 1.75f;
+        positonMap[2] = 3.5f;
+
+       
 
 
 
@@ -86,7 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_animController.IsRunning())
         {
-     
+
             lookAtPoint.localPosition = new Vector3(0, 0.4f, 0);
 
 
@@ -114,16 +132,53 @@ public class PlayerController : MonoBehaviour
     {
         _rb.velocity = new Vector3(speed, 0, 0);
 
-        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset < 2)
+
+
+        /* if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == 1)
+         {
+             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
+             _playerPositionOffset += 1;
+         }
+         else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset == -1)
+         {
+             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
+             _playerPositionOffset -= 1;
+         }
+         else if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == 0)
+         {
+             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
+             _playerPositionOffset += 1;
+         }
+         else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset == 2)
+         {
+             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
+             _playerPositionOffset -= 1;
+         }
+         else if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == -2)
+         {
+             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
+             _playerPositionOffset += 1;
+         }*/
+
+       
+       
+       
+
+        if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft))
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
-            _playerPositionOffset += 1;
+            if(_playerPositionOffset<2) _playerPositionOffset += 1;
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, positonMap[_playerPositionOffset]);
         }
-        if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset > -2)
+        else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight))
         {
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
-            _playerPositionOffset -= 1;
+            if (_playerPositionOffset > -2) _playerPositionOffset -= 1;
+            _tf.position = new Vector3(_tf.position.x, _tf.position.y, positonMap[_playerPositionOffset]);
         }
+
+        
+       
+
+
 
 
     }
@@ -131,6 +186,7 @@ public class PlayerController : MonoBehaviour
     /**
      * Gets the number of deflects in one deflect animation cycle.
      */
+
     public int getDeflects()
     {
         return deflects;
@@ -206,15 +262,15 @@ public class PlayerController : MonoBehaviour
         }
         currentPitch = pitch;
         pitchComboTimer = Time.time;
-   
+
         _am.Play("DeflectSound", pitch);
 
 
-        ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0,100,0), this.gameObject.transform);
+        ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0, 100, 0), this.gameObject.transform);
         var main = particle.main;
-       // main.simulationSpeed = 0.3f;
+        // main.simulationSpeed = 0.3f;
         particle.Play();
-        
+
     }
 
     /* 
@@ -222,7 +278,7 @@ public class PlayerController : MonoBehaviour
      */
     void resetCurrentPitch()
     {
-        if(Time.time - pitchComboTimer > deflectComboLength)
+        if (Time.time - pitchComboTimer > deflectComboLength)
         {
             currentPitch = 1f;
             Debug.Log("reset");

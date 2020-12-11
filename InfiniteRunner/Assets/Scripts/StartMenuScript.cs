@@ -21,6 +21,7 @@ public class StartMenuScript : MonoBehaviour
         camera.transform.rotation = Quaternion.Euler(31, 90, 0);
         _animController = player.GetComponent<PlayerAnimationController>();
 
+        player.GetComponent<Rigidbody>().transform.position = new Vector3(0, 1.15f, 0);
         player.GetComponent<PlayerController>().enabled = true;
         _animController.StartGame();
         camera.GetComponent<CameraFollowScript>().enabled = true;
