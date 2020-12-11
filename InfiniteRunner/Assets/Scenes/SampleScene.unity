@@ -1650,7 +1650,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 1
@@ -3485,7 +3485,7 @@ PrefabInstance:
     - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.0988169
+      value: 0.46270883
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -3500,17 +3500,17 @@ PrefabInstance:
     - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.39791247
+      value: -0.07985888
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.4948702
+      value: 0.49487025
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.06251529
+      value: -0.06251528
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115810, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
