@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: 12ca53b8e936f084d8904d1f714a6578, type: 3}
+  - clip: {fileID: 8300000, guid: e75114e065e45b24a926b8f8175615ec, type: 3}
     volume: 1
     pitch: 1
     priority: 256
@@ -2817,6 +2817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chunk1
       objectReference: {fileID: 0}
+    - target: {fileID: 4244657755561848606, guid: b17f98b68c2c9cc4ab2f52ebf2b4511c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17f98b68c2c9cc4ab2f52ebf2b4511c, type: 3}
 --- !u!1001 &8091541566474677756
@@ -3430,7 +3435,7 @@ PrefabInstance:
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.386
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -3440,7 +3445,7 @@ PrefabInstance:
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
