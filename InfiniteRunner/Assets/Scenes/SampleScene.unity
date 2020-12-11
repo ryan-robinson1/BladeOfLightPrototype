@@ -1634,9 +1634,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: e75114e065e45b24a926b8f8175615ec, type: 3}
-    volume: 1
-    pitch: 1
+  - clip: {fileID: 8300000, guid: 56b5a43f380823944b7e32a22f57745f, type: 3}
+    volume: 0.468
+    pitch: 1.1
     priority: 256
     name: DeflectSound
     loop: 0
