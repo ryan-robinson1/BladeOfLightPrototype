@@ -115,7 +115,7 @@ public class AudioManager : MonoBehaviour
         s.source.pitch = pitch;
        // s.source.Play();
   
- }
+ 
         s.source.PlayOneShot(s.source.clip); 
     }
     public void Stop(string name)
