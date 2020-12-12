@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private int deflects = 0;
 
 
-    Dictionary<int, float> positonMap =
+    Dictionary<int, float> positionMap =
     new Dictionary<int, float>();
 
    
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private float deflectComboLength = 0f;
     private float currentPitch = 1f;
 
-
+    private float transitionSpeed = 8f;
 
 
 
@@ -73,11 +73,11 @@ public class PlayerController : MonoBehaviour
         _rb.velocity = new Vector3(speed, 0, 0);
 
        
-        positonMap[-1] = -1.75f;
-        positonMap[-2] = -3.5f;
-        positonMap[0] = 0f;
-        positonMap[1] = 1.75f;
-        positonMap[2] = 3.5f;
+        positionMap[-1] = -1.75f;
+        positionMap[-2] = -3.5f;
+        positionMap[0] = 0f;
+        positionMap[1] = 1.75f;
+        positionMap[2] = 3.5f;
 
        
 
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        UpdateMove();
         ChangeLookAtPoint();
         resetCurrentPitch();
         Deflect();
@@ -128,60 +128,33 @@ public class PlayerController : MonoBehaviour
         _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
         _am.UnPause("Footsteps");
     }
-    void Move()
+    void UpdateMove()
     {
         _rb.velocity = new Vector3(speed, 0, 0);
 
-
-
-        /* if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == 1)
-         {
-             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
-             _playerPositionOffset += 1;
-         }
-         else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset == -1)
-         {
-             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
-             _playerPositionOffset -= 1;
-         }
-         else if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == 0)
-         {
-             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
-             _playerPositionOffset += 1;
-         }
-         else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight) && _playerPositionOffset == 2)
-         {
-             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z - 1.75f);
-             _playerPositionOffset -= 1;
-         }
-         else if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft) && _playerPositionOffset == -2)
-         {
-             _tf.position = new Vector3(_tf.position.x, _tf.position.y, _tf.position.z + 1.75f);
-             _playerPositionOffset += 1;
-         }*/
-
-       
-       
-       
-
         if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft))
         {
-            if(_playerPositionOffset<2) _playerPositionOffset += 1;
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, positonMap[_playerPositionOffset]);
+            if (_playerPositionOffset < 2)
+            {
+                _playerPositionOffset++;
+            }
         }
+
         else if ((Input.GetKeyDown(KeyCode.D) || SwipeInput.Instance.SwipeRight))
         {
-            if (_playerPositionOffset > -2) _playerPositionOffset -= 1;
-            _tf.position = new Vector3(_tf.position.x, _tf.position.y, positonMap[_playerPositionOffset]);
+            if (_playerPositionOffset > -2)
+            {
+                _playerPositionOffset--;
+            }
         }
 
-        
-       
-
-
-
+        _tf.position = Vector3.Lerp(_tf.position, 
+            new Vector3(_tf.position.x, _tf.position.y, 
+            positionMap[_playerPositionOffset]), 
+            Time.deltaTime * transitionSpeed);
 
     }
+    
 
     /**
      * Gets the number of deflects in one deflect animation cycle.
