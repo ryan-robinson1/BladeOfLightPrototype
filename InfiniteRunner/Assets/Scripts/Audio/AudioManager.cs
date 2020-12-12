@@ -68,14 +68,30 @@ public class AudioManager : MonoBehaviour
             sound.source.UnPause();
         }
     }
+
+    /**
+   * Given a CDF of weights,for example {0.3,0.7,1.0} and an array of sounds, choose a soundrandomly using the weights corresponding to their index
+   * 
+   * @param weightsCDF Array of floats that represent a CDF of weights
+   * @param names The sound names
+   * @param pitch The pitch of the sound
+   * 
+   */
     public void PlaySoundFromArray(string[] names, float[] weightCDF, float pitch)
     {
 
-
+        if(names.Length == weightCDF.Length)
+        {
+            int index = ChooseWeightedIndex(weightCDF);
+            Debug.Log(index);
+            Play(names[index], pitch);
+        }
+        else
+        {
+            Debug.LogError("Error: weightCDF length and names length must be the same");
+        }
         
-        int index = ChooseWeightedIndex(weightCDF);
-       /* Debug.Log(index);*/
-        Play(names[index],pitch);
+     
 
     }
     public void Play(string name)
@@ -141,8 +157,7 @@ public class AudioManager : MonoBehaviour
     {
         System.Random r = new System.Random();
         double random = r.NextDouble();
-        Debug.Log(random);
-
+        
        for(int i = 0; i < weightsCDF.Length; i++)
         {
             if (random < weightsCDF[i])

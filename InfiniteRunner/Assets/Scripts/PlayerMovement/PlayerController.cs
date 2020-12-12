@@ -264,8 +264,8 @@ public class PlayerController : MonoBehaviour
           pitchComboTimer = Time.time;*/
 
         float pitch = Random.Range(0.95f, 1.10f);
-        string[] sounds = {"Deflect1", "Deflect2"};
-        float[] weightCDF = { 0.6f, 1f};
+        string[] sounds = {"Deflect1","Deflect2","Deflect3","Deflect4"};
+        float[] weightCDF = {0.45f,0.65f,0.85f,1};
         _am.PlaySoundFromArray(sounds, weightCDF,pitch);
        
 
