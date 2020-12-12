@@ -68,7 +68,16 @@ public class AudioManager : MonoBehaviour
             sound.source.UnPause();
         }
     }
+    public void PlaySoundFromArray(string[] names, float[] weightCDF, float pitch)
+    {
 
+
+        
+        int index = ChooseWeightedIndex(weightCDF);
+       /* Debug.Log(index);*/
+        Play(names[index],pitch);
+
+    }
     public void Play(string name)
     {
        Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -120,6 +129,28 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.UnPause();
+    }
+    /**
+     * Given a CDF of weights, for example {0.3,0.7,1.0}, return a random index weighted with the probability at said index
+     * 
+     * @param weightsCDF Array of floats that should represent a CDF
+     * 
+     * @return Index with probability at index
+     */
+    private int ChooseWeightedIndex(float[] weightsCDF)
+    {
+        System.Random r = new System.Random();
+        double random = r.NextDouble();
+        Debug.Log(random);
+
+       for(int i = 0; i < weightsCDF.Length; i++)
+        {
+            if (random < weightsCDF[i])
+            {
+                return i;
+            }
+        }
+        return 0;
     }
 
 }

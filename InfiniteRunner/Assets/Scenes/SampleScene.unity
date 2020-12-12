@@ -1634,11 +1634,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: 56b5a43f380823944b7e32a22f57745f, type: 3}
-    volume: 0.468
-    pitch: 1.1
-    priority: 256
-    name: DeflectSound
+  - clip: {fileID: 8300000, guid: 12b1509caae949c439f68c4fe567061c, type: 3}
+    volume: 0.378
+    pitch: 1
+    priority: 123
+    name: Deflect1
     loop: 0
     playOnAwake: 0
     mute: 0
@@ -1675,6 +1675,15 @@ MonoBehaviour:
     pitch: 1.254
     priority: 106
     name: Slide
+    loop: 0
+    playOnAwake: 0
+    mute: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 68f9840d6cbb5e645a7bba875a786705, type: 3}
+    volume: 0.257
+    pitch: 1
+    priority: 106
+    name: Deflect2
     loop: 0
     playOnAwake: 0
     mute: 0

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     //pitch timer
     private float pitchComboTimer = float.PositiveInfinity;
-    private float deflectComboLength = 2.5f;
+    private float deflectComboLength = 0f;
     private float currentPitch = 1f;
 
 
@@ -254,16 +254,20 @@ public class PlayerController : MonoBehaviour
     //Plays the hit particle system. Activated by BulletScript
     public void PlayHitEffect(Transform t)
     {
-        float pitch = Random.Range(1.0f, 1.08f);
-        if (Time.time - pitchComboTimer < deflectComboLength)
-        {
-            pitch = currentPitch + 0.02f;
+        /*  float pitch = Random.Range(0.95f, 1.15f);
+          if (Time.time - pitchComboTimer < deflectComboLength)
+          {
+              pitch = currentPitch + 0.02f;
 
-        }
-        currentPitch = pitch;
-        pitchComboTimer = Time.time;
+          }
+          currentPitch = pitch;
+          pitchComboTimer = Time.time;*/
 
-        _am.Play("DeflectSound", pitch);
+        float pitch = Random.Range(0.95f, 1.10f);
+        string[] sounds = {"Deflect1", "Deflect2"};
+        float[] weightCDF = { 0.6f, 1f};
+        _am.PlaySoundFromArray(sounds, weightCDF,pitch);
+       
 
 
         ParticleSystem particle = Instantiate(hitEffect, GetClosestObject(deflectParticlePositions, t).position, Quaternion.Euler(0, 100, 0), this.gameObject.transform);
