@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private float deflectComboLength = 0f;
     private float currentPitch = 1f;
 
-    private float transitionSpeed = 8f;
+    private float transitionSpeed = 4f;
 
 
 
@@ -151,10 +151,24 @@ public class PlayerController : MonoBehaviour
         _tf.position = Vector3.Lerp(_tf.position, 
             new Vector3(_tf.position.x, _tf.position.y, 
             positionMap[_playerPositionOffset]), 
-            Time.deltaTime * transitionSpeed);
+            this.GetTransitionOffset(Time.deltaTime * transitionSpeed));
 
     }
     
+    /**
+     * Allows the dodge to start slow, become fast in the middle, then
+     * slow back down again towards the end. Gives the dodge more of
+     * a "jumpy" feel.
+     * 
+     * @param x The argument being passed into the circle function.
+     * @return The transition speed offset.
+     */
+    private float GetTransitionOffset(float x)
+    {
+        // equation for least squares line
+        float y = -1 / 25 + (27 / 25) * x;
+        return y;
+    }
 
     /**
      * Gets the number of deflects in one deflect animation cycle.
