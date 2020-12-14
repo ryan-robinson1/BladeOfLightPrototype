@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private float deflectComboLength = 0f;
     private float currentPitch = 1f;
 
-    private float transitionSpeed = 4f;
+    private float transitionSpeed = 6.25f;
 
 
 
