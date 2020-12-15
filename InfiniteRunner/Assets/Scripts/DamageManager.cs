@@ -21,10 +21,6 @@ public class DamageManager : MonoBehaviour
     private float t = 0f;
     private float edgeWidth;
 
-    Color[] colors;
-
-
-
 
     /**
      * Called before any of the Update methods are called for the first time.
@@ -33,8 +29,8 @@ public class DamageManager : MonoBehaviour
     {
         health = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
-        colors = this.generateColors();
-        healthIndicator.SetColor("dissolveColor", colors[0]);
+        healthIndicator.SetColor("dissolveColor", 
+            ColorDataBase.GetCurrentHeroColor());
     }
 
     /**
@@ -121,30 +117,12 @@ public class DamageManager : MonoBehaviour
     }
 
     /**
-     * Generates an array of Color objects that we will use to indicate
-     * the player's health.
-     * 
-     * @return An Array of three Colors.
-     */
-    private Color[] generateColors()
-    {
-        Color[] c = new Color[3];
-        float intensity = 16f;
-        // blue
-        c[0] = new Color(0.012f * intensity, 0.41f * intensity, 0.75f * intensity);
-        // yellow
-        c[1] = new Color(0.75f * intensity, 0.65f * intensity, 0.08f * intensity);
-        // green
-        c[2] = new Color(0.85f * intensity, 0.11f * intensity, 0.11f * intensity);
-        return c;
-    }
-
-    /**
      * Returns the material back to its default state.
      */
     private void setDefaultMats()
     {
-        healthIndicator.SetColor("dissolveColor", colors[0]);
+        healthIndicator.SetColor("dissolveColor",
+            ColorDataBase.GetCurrentHeroColor());
         healthIndicator.SetFloat("edgeWidth", 0.03f);
         healthIndicator.SetFloat("noiseScale", 120f);
         healthIndicator.SetFloat("minimumRender", 0.15f);
