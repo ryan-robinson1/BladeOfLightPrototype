@@ -18,7 +18,7 @@ public class StartMenuScript : MonoBehaviour
     public void StartGame()
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
-        camera.transform.rotation = Quaternion.Euler(31, 90, 0);
+        camera.transform.rotation = Quaternion.Euler(28f, 90, 0);
         _animController = player.GetComponent<PlayerAnimationController>();
 
         player.GetComponent<Rigidbody>().transform.position = new Vector3(0, 1.15f, 0);
