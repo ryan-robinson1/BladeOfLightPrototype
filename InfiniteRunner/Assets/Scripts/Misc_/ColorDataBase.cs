@@ -19,11 +19,17 @@ public static class ColorDataBase
     public static Dictionary<string, Color> heroColors =
         new Dictionary<string, Color>()
         {
-            {"default-blue", new Color(
+            {"hero-blue", new Color(
                 0.012f * heroIntensity, 0.41f * heroIntensity, 0.75f * heroIntensity) },
 
-            {"default-red", new Color(
+            {"hero-red", new Color(
                 0.85f * heroIntensity, 0.11f * heroIntensity, 0.11f * heroIntensity) },
+
+            {"hero-pink", new Color(
+                0.75f * heroIntensity, 0.016f * heroIntensity, 0.35f * heroIntensity) },
+
+            {"hero-purple", new Color(
+                0.275f * heroIntensity, 0.07f * heroIntensity, 0.75f * heroIntensity) },
         };
 
     /**
@@ -37,12 +43,18 @@ public static class ColorDataBase
 
             {"sword-red", new Color(
                 0.85f * swordIntensity, 0.11f * swordIntensity, 0.11f * swordIntensity) },
+
+            {"sword-pink", new Color(
+                0.75f * swordIntensity, 0.016f * swordIntensity, 0.35f * swordIntensity) },
+
+            {"sword-purple", new Color(
+                0.275f * swordIntensity, 0.07f * swordIntensity, 0.75f * swordIntensity) },
         };
 
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["default-red"];
+    private static Color heroColor = heroColors["hero-pink"];
 
-    private static Color swordColor = swordColors["sword-red"];
+    private static Color swordColor = swordColors["sword-pink"];
 
 
     /**
