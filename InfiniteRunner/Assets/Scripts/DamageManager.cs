@@ -16,6 +16,8 @@ public class DamageManager : MonoBehaviour
     public ParticleSystem damageEffect;
     public ParticleSystem damageLightEffect;
 
+    private ParticleSystem.MainModule lightfxModule;
+
     private float min = 0f;
     private float max = 0.03f;
     private float t = 0f;
@@ -31,6 +33,8 @@ public class DamageManager : MonoBehaviour
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         healthIndicator.SetColor("dissolveColor", 
             ColorDataBase.GetCurrentHeroColor());
+        lightfxModule = damageLightEffect.main;
+        lightfxModule.startColor = ColorDataBase.GetSwordAlbedo();
     }
 
     /**

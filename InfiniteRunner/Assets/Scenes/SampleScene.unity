@@ -2763,11 +2763,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.00022
       objectReference: {fileID: 0}
+    - target: {fileID: 5376309070154099632, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6049178594816772515, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_TagString
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 6153679446388525836, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: bladeColor
+      value: 
+      objectReference: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
+    - target: {fileID: 6153679446388525836, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: slashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 9fcc4b8fad4fb3b44981bd58d852a78a, type: 2}
     - target: {fileID: 7177657140162661807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2997,6 +3012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902222145213444315, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.color
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8024901123423400661, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
