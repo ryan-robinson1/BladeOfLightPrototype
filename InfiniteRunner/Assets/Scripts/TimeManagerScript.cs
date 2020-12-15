@@ -12,7 +12,7 @@ public class TimeManagerScript : MonoBehaviour
     private bool paused = false;
     public GameObject audioHolder;
     private AudioManager audioManager;
-    
+
 
     float _slowMotionTimer = float.PositiveInfinity;
 
@@ -44,20 +44,12 @@ public class TimeManagerScript : MonoBehaviour
     /**
      * Pauses the game and sets the Pause Menu to active.
      */
-    public void PauseGame()
+    private void PauseGame()
     {
-        if(paused == true)
-        {
-            ContinueGame();
-        }
-        else
-        {
-            Time.timeScale = 0;
-            paused = true;
-            audioManager.PauseAllSounds(audioManager.GetSounds());
-            // paused menu code goes here
-        }
-
+        Time.timeScale = 0;
+        paused = true;
+        audioManager.PauseAllSounds(audioManager.GetSounds());
+        // paused menu code goes here
     }
 
     /**
