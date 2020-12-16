@@ -52,9 +52,9 @@ public static class ColorDataBase
         };
 
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-red"];
+    private static Color heroColor = heroColors["hero-pink"];
 
-    private static Color swordColor = swordColors["sword-red"];
+    private static Color swordColor = swordColors["sword-pink"];
 
 
     /**
