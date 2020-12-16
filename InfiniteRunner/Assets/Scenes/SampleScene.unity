@@ -636,6 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1014128790}
   - component: {fileID: 1014128791}
+  - component: {fileID: 1014128792}
   m_Layer: 0
   m_Name: HealthPack
   m_TagString: Untagged
@@ -651,7 +652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014128789}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 36.16, y: 0.95, z: -0.16}
+  m_LocalPosition: {x: 131.1, y: 0.95, z: -0.2}
   m_LocalScale: {x: 0.38357168, y: 0.38357168, z: 0.38357168}
   m_Children:
   - {fileID: 789446380}
@@ -671,6 +672,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canisterColor: {fileID: 2100000, guid: 9aa95eef866ce4d42b913266354012cd, type: 2}
+--- !u!65 &1014128792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014128789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.21049, y: 2.7325282, z: 1.3245077}
+  m_Center: {x: 0.16938844, y: 0.8662642, z: 0.162254}
 --- !u!1 &1019524914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,9 +2398,9 @@ Canvas:
   m_GameObject: {fileID: 2142929634}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1687258584}
+  m_PlaneDistance: 2.5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3022,6 +3036,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8091541567484115805, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8091541567484115805, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115806, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}

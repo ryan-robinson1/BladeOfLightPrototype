@@ -12,6 +12,7 @@ public class DamageManager : MonoBehaviour
     public Material healthIndicator;
     [HideInInspector]
     public float health;
+    private float healHealth;
 
     public ParticleSystem damageEffect;
     public ParticleSystem damageLightEffect;
@@ -30,6 +31,7 @@ public class DamageManager : MonoBehaviour
     private void Start()
     {
         health = startHealth;
+        healHealth = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         healthIndicator.SetColor("dissolveColor", 
             ColorDataBase.GetCurrentHeroColor());
@@ -62,7 +64,7 @@ public class DamageManager : MonoBehaviour
     public void TakeDamage()
     {
         health -= bulletDamage;
-        HealthBar.fillAmount = health / startHealth;
+        healHealth -= bulletDamage;
         damageEffect.Play();
         damageLightEffect.Play();
         if(health <= 0)
@@ -79,6 +81,8 @@ public class DamageManager : MonoBehaviour
      */
     private void UpdateHealthStatus(float health)
     {
+        this.UpdateHealing();
+
         float healthMultiplier = 0.5f;
 
         var minRender = (1.15f - (health / startHealth)) * healthMultiplier;
@@ -88,6 +92,49 @@ public class DamageManager : MonoBehaviour
         if (health / startHealth < 0.3f)
         {
             this.AnimateEdgeWidth();
+        }
+
+        HealthBar.fillAmount = this.health / startHealth;
+    }
+
+    /**
+     * Updates the healing display to give gradual health gain upon
+     * picking up a health pack.
+     */
+    private void UpdateHealing()
+    {
+
+        if (health < healHealth)
+        {
+            // a little hacky but helps the lerp stop executing
+            if (healHealth - health <= 0.5f)
+            {
+                health = healHealth;
+                Debug.Log(health);
+            }
+
+            float healingMultiplier = 2f;
+            health = Mathf.Lerp(health, healHealth, Time.deltaTime * healingMultiplier);
+            Debug.Log(health);
+        }
+
+    }
+
+    /**
+     * Heals the hero character.
+     * 
+     * @param healthIncrease The amount we are increasing the health by.
+     */
+    public void Heal(float healthIncrease)
+    {
+        var newHealth = health + healthIncrease;
+        if (newHealth > startHealth)
+        {
+            healHealth = startHealth;
+        }
+        else
+        {
+            healHealth = newHealth;
         }
     }
 
