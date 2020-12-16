@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPackScript : MonoBehaviour
 {
-    private float healAmount = 20f;
+    private float healAmount = 25f;
     public Material canisterColor;
     DamageManager _dm;
     // Start is called before the first frame update

@@ -16,6 +16,8 @@ public class DamageManager : MonoBehaviour
 
     public ParticleSystem damageEffect;
     public ParticleSystem damageLightEffect;
+    public ParticleSystem healEffect;
+    public ParticleSystem healEffect1;
 
     private ParticleSystem.MainModule lightfxModule;
 
@@ -23,7 +25,6 @@ public class DamageManager : MonoBehaviour
     private float max = 0.03f;
     private float t = 0f;
     private float edgeWidth;
-    
 
 
     /**
@@ -34,7 +35,7 @@ public class DamageManager : MonoBehaviour
         health = startHealth;
         healHealth = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
-        healthIndicator.SetColor("dissolveColor", 
+        healthIndicator.SetColor("dissolveColor",
             ColorDataBase.GetCurrentHeroColor());
         lightfxModule = damageLightEffect.main;
         lightfxModule.startColor = ColorDataBase.GetSwordAlbedo();
@@ -54,11 +55,11 @@ public class DamageManager : MonoBehaviour
      */
     private void OnGUI()
     {
-/*        int fps = (int)(1.0f / Time.smoothDeltaTime);
-        var style = new GUIStyle();
-        style.fontSize = 50;
-        style.normal.textColor = Color.green;
-        GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);*/
+        /*        int fps = (int)(1.0f / Time.smoothDeltaTime);
+                var style = new GUIStyle();
+                style.fontSize = 50;
+                style.normal.textColor = Color.green;
+                GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);*/
     }
 
     //Method executed if hit by bullet. Takes damage.
@@ -68,7 +69,7 @@ public class DamageManager : MonoBehaviour
         healHealth -= bulletDamage;
         damageEffect.Play();
         damageLightEffect.Play();
-        if(health <= 0)
+        if (health <= 0)
         {
             this.setDefaultMats();
             FindObjectOfType<AudioManager>().Pause("Footsteps");
@@ -87,25 +88,24 @@ public class DamageManager : MonoBehaviour
         float healthMultiplier = 0.5f;
 
         var minRender = (1.15f - (health / startHealth)) * healthMultiplier;
-       
+
         healthIndicator.SetFloat("minimumRender", minRender);
-        
-        if (health / startHealth < 0.3f)
+
+        if (this.LowHealth())
         {
             this.AnimateEdgeWidth();
         }
 
-        else
-        {
-            // will need to edit this
-            if (edgeWidth < 0.03f)
-            {
-                edgeWidth = 0.03f;
-                healthIndicator.SetFloat("edgeWidth", edgeWidth);
-            }
-        }
-
         HealthBar.fillAmount = this.health / startHealth;
+    }
+
+
+    /**
+     * Returns if we have low health or not.
+     */
+    private bool LowHealth()
+    {
+        return health / startHealth < 0.3f;
     }
 
     /**
@@ -116,17 +116,21 @@ public class DamageManager : MonoBehaviour
     {
 
         if (health < healHealth)
-        { 
-            
-            float healingMultiplier = 10f;
+        {
+            healEffect.Play();
+            healEffect1.Play();
+            // brings us back up to normal edge with if we were at low health
+            float currWidth = edgeWidth;
+            edgeWidth = Mathf.Lerp(currWidth, 0.03f, Time.deltaTime * 0.7f);
+
+            float healingMultiplier = 1f;
             health = Mathf.Lerp(health, healHealth, this.GetHealOverTime(Time.deltaTime * healingMultiplier));
-            healthIndicator.SetFloat("edgeWidth", 0.04f);
+            healthIndicator.SetFloat("edgeWidth", edgeWidth);
 
             // a little hacky but helps the lerp stop executing
             if (healHealth - health <= 0.5f)
             {
                 this.FinishHealing();
-                Debug.Log(health);
             }
         }
 
@@ -137,8 +141,12 @@ public class DamageManager : MonoBehaviour
      */
     private void FinishHealing()
     {
+        healEffect.Stop();
+        healEffect1.Stop();
         health = healHealth;
-        healthIndicator.SetFloat("edgeWidth", 0.03f);
+        edgeWidth = 0.03f;
+        healthIndicator.SetFloat("edgeWidth", edgeWidth);
+        Debug.Log("edgeWidth finished " + edgeWidth);
     }
 
     /**
@@ -149,7 +157,8 @@ public class DamageManager : MonoBehaviour
      */
     private float GetHealOverTime(float x)
     {
-        return Mathf.Pow(x, 2f);
+        float y = 2*x;
+        return y;
     }
 
     /**
