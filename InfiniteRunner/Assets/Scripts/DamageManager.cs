@@ -42,7 +42,7 @@ public class DamageManager : MonoBehaviour
             ColorDataBase.GetCurrentHeroColor());
 
         lightfxModule = damageLightEffect.main;
-        lightfxModule.startColor = ColorDataBase.GetSwordAlbedo();
+        lightfxModule.startColor = ColorDataBase.GetHealthPackColor();
 
         healfxModule = healLightFX.main;
         healfxModule.startColor = ColorDataBase.GetHealthPackColor();
