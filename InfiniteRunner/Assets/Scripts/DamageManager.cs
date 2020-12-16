@@ -14,12 +14,15 @@ public class DamageManager : MonoBehaviour
     public float health;
     private float healHealth;
 
+    // could possibly make a list of particle systems
     public ParticleSystem damageEffect;
     public ParticleSystem damageLightEffect;
     public ParticleSystem healEffect;
     public ParticleSystem healEffect1;
+    public ParticleSystem healLightFX;
 
     private ParticleSystem.MainModule lightfxModule;
+    private ParticleSystem.MainModule healfxModule;
 
     private float min = 0f;
     private float max = 0.03f;
@@ -37,8 +40,12 @@ public class DamageManager : MonoBehaviour
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         healthIndicator.SetColor("dissolveColor",
             ColorDataBase.GetCurrentHeroColor());
+
         lightfxModule = damageLightEffect.main;
         lightfxModule.startColor = ColorDataBase.GetSwordAlbedo();
+
+        healfxModule = healLightFX.main;
+        healfxModule.startColor = ColorDataBase.GetHealthPackColor();
     }
 
     /**
@@ -119,6 +126,7 @@ public class DamageManager : MonoBehaviour
         {
             healEffect.Play();
             healEffect1.Play();
+            healLightFX.Play();
             // brings us back up to normal edge with if we were at low health
             float currWidth = edgeWidth;
             edgeWidth = Mathf.Lerp(currWidth, 0.03f, Time.deltaTime * 0.7f);
