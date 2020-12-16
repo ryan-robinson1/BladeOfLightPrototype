@@ -245,7 +245,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.0065
+  m_MaxParticleSize: 0.004
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -7503,6 +7503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546456962357495371, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 5343857283938482940, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
