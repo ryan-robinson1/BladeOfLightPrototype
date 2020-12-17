@@ -1,19 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/**
+ * Script for the health pack object. Keeps track of its position with
+ * respect to the hero and heals the hero upon being collided with.
+ * 
+ * @author Maxfield Barden
+ */
 
 public class HealthPackScript : MonoBehaviour
 {
     private float healAmount = 25f;
     public Material canisterColor;
     DamageManager _dm;
+
     AudioManager _am;
+
+    private GameObject healthCanister;
+    public Transform objectToFollow;
+    private float _removalDistance = 10f;
+    private float positionDifference;
+
     // Start is called before the first frame update
     void Start()
     {
         canisterColor.SetColor("emissionColor", ColorDataBase.GetCurrentHeroColor());
         canisterColor.SetColor("baseColor", ColorDataBase.GetHealthPackColor());
+
         _am = FindObjectOfType<AudioManager>();
+
+        healthCanister = transform.GetChild(0).gameObject;
+
     }
 
     /**
@@ -28,8 +44,12 @@ public class HealthPackScript : MonoBehaviour
             this.GetComponent<Collider>().enabled = false;
             _dm = collision.gameObject.GetComponent<DamageManager>();
             _dm.Heal(healAmount);
+
             _am.Play("HealthRegen");
-            this.Destruct();
+            
+
+            Destroy(healthCanister);
+
         }
     }
 
@@ -38,11 +58,16 @@ public class HealthPackScript : MonoBehaviour
      */
     private void Destruct()
     {
-        Destroy(this.gameObject);
+        if (-positionDifference > _removalDistance)
+        {
+            Destroy(this.gameObject);
+        }
     }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        positionDifference = transform.position.x - (objectToFollow.position.x);
+        Destruct();
     }
 }
