@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Emissive2
+  m_Name: ShopButtonMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 9dff60f7f54d83c4797bde4f6ff6be9c,
     type: 3}
   m_ShaderKeywords: 
