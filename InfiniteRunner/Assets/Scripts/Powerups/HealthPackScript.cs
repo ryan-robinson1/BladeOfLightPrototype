@@ -7,11 +7,13 @@ public class HealthPackScript : MonoBehaviour
     private float healAmount = 25f;
     public Material canisterColor;
     DamageManager _dm;
+    AudioManager _am;
     // Start is called before the first frame update
     void Start()
     {
         canisterColor.SetColor("emissionColor", ColorDataBase.GetCurrentHeroColor());
         canisterColor.SetColor("baseColor", ColorDataBase.GetHealthPackColor());
+        _am = FindObjectOfType<AudioManager>();
     }
 
     /**
@@ -26,6 +28,7 @@ public class HealthPackScript : MonoBehaviour
             this.GetComponent<Collider>().enabled = false;
             _dm = collision.gameObject.GetComponent<DamageManager>();
             _dm.Heal(healAmount);
+            _am.Play("HealthRegen");
             this.Destruct();
         }
     }
