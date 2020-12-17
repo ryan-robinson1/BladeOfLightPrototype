@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Enemy
   - Sword
+  - HealthPack
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - 
   - BulletCase
+  - Powerup
   - Player
-  - 
   - 
   - 
   - 

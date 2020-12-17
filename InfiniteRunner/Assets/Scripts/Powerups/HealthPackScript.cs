@@ -37,19 +37,14 @@ public class HealthPackScript : MonoBehaviour
      * 
      * @param collision The collision box we are detecting.
      */
-    private void OnCollisionEnter(Collision collision)
+    public void HealPlayer(GameObject hero)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        _dm = hero.GetComponent<DamageManager>();
+        if (_dm.health < _dm.startHealth)
         {
-            this.GetComponent<Collider>().enabled = false;
-            _dm = collision.gameObject.GetComponent<DamageManager>();
             _dm.Heal(healAmount);
-
             _am.Play("HealthRegen");
-            
-
             Destroy(healthCanister);
-
         }
     }
 

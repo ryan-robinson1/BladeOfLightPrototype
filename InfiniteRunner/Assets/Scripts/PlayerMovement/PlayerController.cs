@@ -293,6 +293,24 @@ public class PlayerController : MonoBehaviour
         return bestTarget;
     }
 
+    /**
+     * Detects a collision with a trigger. Used for detecting collisions
+     * with powerup objects.
+     * 
+     */
+    private void OnTriggerEnter(Collider other)
+    {
+        // powerup layer
+        if (other.gameObject.layer == 9)
+        {
+            if (other.gameObject.CompareTag("HealthPack"))
+            {
+                other.gameObject.GetComponent<HealthPackScript>().
+                    HealPlayer(this.gameObject);
+            }
+        }
+    }
+
     /* 
      * Executed by bulletScript if within the range defined by the variable "bulletrange" in bulletScript's update function
      */
