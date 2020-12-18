@@ -1178,7 +1178,7 @@ Transform:
   m_Children:
   - {fileID: 2155300144614821034}
   m_Father: {fileID: 2155300144688084595}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2155300143415733019
 ParticleSystem:
@@ -5028,7 +5028,7 @@ ParticleSystem:
     ratio: 1
     light: {fileID: 2155300144614821033}
     randomDistribution: 1
-    color: 0
+    color: 1
     range: 1
     intensity: 1
     rangeCurve:
@@ -5972,7 +5972,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e625ca9489883d04cb6c0f5c0ae90899, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6386,7 +6386,7 @@ Transform:
   m_Children:
   - {fileID: 2155300144242548948}
   m_Father: {fileID: 2155300144688084595}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!95 &2155300143882356304
 Animator:
@@ -7920,8 +7920,8 @@ Transform:
   m_LocalPosition: {x: 145.78, y: 0.784, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2155300143882356305}
   - {fileID: 2155300143415733013}
+  - {fileID: 2155300143882356305}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}

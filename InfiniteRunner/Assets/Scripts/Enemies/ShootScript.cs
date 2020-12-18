@@ -41,6 +41,7 @@ public class ShootScript : MonoBehaviour
     Vector3 _direction;
     Animator _anim;
     ParticleSystem _muzzleFlash;
+    private ParticleSystem.MainModule _mfMain;
 
 
     private void Start()
@@ -67,6 +68,10 @@ public class ShootScript : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<PlayerController>();
         objectToFollow = playerObject.transform.GetChild(1).transform;
+
+        // muzzle flash color
+        _mfMain = _muzzleFlash.main;
+        _mfMain.startColor = ColorDataBase.GetEnemyStripAlbedo();
     }
 
 
