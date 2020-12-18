@@ -96,12 +96,12 @@ public static class ColorDataBase
 
 
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-red"];
+    private static Color heroColor = heroColors["hero-pink"];
 
-    private static Color enemyMain = enemyColors["enemyDissolve-green"];
-    private static Color enemyStrip = enemyColors["enemyStrip-green"];
+    private static Color enemyMain = enemyColors["enemyDissolve-aqua"];
+    private static Color enemyStrip = enemyColors["enemyStrip-aqua"];
 
-    private static Color swordColor = swordColors["sword-red"];
+    private static Color swordColor = swordColors["sword-pink"];
 
 
     /**
@@ -243,7 +243,7 @@ public static class ColorDataBase
     public static Color GetUIColor()
     {
         Color ui = GetHeroAlbedo();
-        float uiIntensity = 2f;
+        float uiIntensity = 3f;
         ui.r *= uiIntensity;
         ui.g *= uiIntensity;
         ui.b *= uiIntensity;
