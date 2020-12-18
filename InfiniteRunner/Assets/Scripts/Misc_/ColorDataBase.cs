@@ -28,6 +28,9 @@ public static class ColorDataBase
             {"hero-blue", new Color(
                 0.012f * heroIntensity, 0.41f * heroIntensity, 0.75f * heroIntensity) },
 
+            {"hero-green", new Color(
+                0.02f * heroIntensity, 0.75f * heroIntensity, 0.06f * heroIntensity) },
+
             {"hero-red", new Color(
                 1f * heroIntensity, 0.05f * heroIntensity, 0.05f * heroIntensity) },
 
@@ -54,6 +57,9 @@ public static class ColorDataBase
             {"enemyDissolve-green", new Color(
                 0f, 0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
 
+            {"enemyDissolve-orangeYellow", new Color(
+                0.75f * enemyMainIntensity, 0.21f * enemyMainIntensity, 0f) },
+
             {"enemyDissolve-red", new Color(
                 0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
 
@@ -64,6 +70,9 @@ public static class ColorDataBase
 
             {"enemyStrip-green", new Color(
                 0f, 0.75f * enemyStripIntensity, 0.004f * enemyStripIntensity) },
+
+            {"enemyStrip-orangeYellow", new Color(
+                0.75f * enemyStripIntensity, 0.21f * enemyStripIntensity, 0f) },
 
             {"enemyStrip-red", new Color(
                 0.75f * enemyStripIntensity, 0.03f * enemyStripIntensity, 0.03f * enemyStripIntensity) },
@@ -84,6 +93,9 @@ public static class ColorDataBase
             {"sword-blue", new Color(
                 0.012f * swordIntensity, 0.41f * swordIntensity, 0.75f * swordIntensity) },
 
+            {"sword-green", new Color(
+                0.02f * heroIntensity, 0.75f * heroIntensity, 0.06f * heroIntensity) },
+
             {"sword-red", new Color(
                 1f * swordIntensity, 0.05f * swordIntensity, 0.05f * swordIntensity) },
 
@@ -96,12 +108,12 @@ public static class ColorDataBase
 
 
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-pink"];
+    private static Color heroColor = heroColors["hero-purple"];
 
-    private static Color enemyMain = enemyColors["enemyDissolve-aqua"];
-    private static Color enemyStrip = enemyColors["enemyStrip-aqua"];
+    private static Color enemyMain = enemyColors["enemyDissolve-orangeYellow"];
+    private static Color enemyStrip = enemyColors["enemyStrip-orangeYellow"];
 
-    private static Color swordColor = swordColors["sword-pink"];
+    private static Color swordColor = swordColors["sword-purple"];
 
 
     /**

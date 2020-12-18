@@ -7314,10 +7314,6 @@ MonoBehaviour:
   camera: {fileID: 1687258581}
   UI: {fileID: 911404077}
   started: 0
-  uiButtonMats:
-  - {fileID: 2100000, guid: a14d75dbcb6613d41aee0c87f89b2928, type: 2}
-  - {fileID: 2100000, guid: 65e318bf0bd1a5441bdec24234267edf, type: 2}
-  - {fileID: 2100000, guid: 0bc5040d0890be44f92f8707528e4855, type: 2}
 --- !u!4 &1834906559
 Transform:
   m_ObjectHideFlags: 0
@@ -7993,6 +7989,11 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 646904382202478812, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1851289043358948906, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Color.b
@@ -8056,7 +8057,7 @@ PrefabInstance:
     - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: LightsModule.maxLights
-      value: 20
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -8172,6 +8173,46 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4205154421671804473, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}

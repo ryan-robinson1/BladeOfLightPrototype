@@ -16,7 +16,7 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"3ead8604-c576-4fb1-9950-deea7385154b\"\n    },\n    \"m_Name\": \"ButtonColor\",\n    \"m_DefaultReferenceName\": \"Color_D4E0A0BE\",\n    \"m_OverrideReferenceName\": \"buttonColor\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 2.1811716556549074,\n        \"g\": 0.0,\n        \"b\": 1.8084285259246827,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"3ead8604-c576-4fb1-9950-deea7385154b\"\n    },\n    \"m_Name\": \"ButtonColor\",\n    \"m_DefaultReferenceName\": \"Color_D4E0A0BE\",\n    \"m_OverrideReferenceName\": \"buttonColor\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 5.824070930480957,\n        \"g\": 0.0,\n        \"b\": 4.848311424255371,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
         }
     ],
     "m_SerializedKeywords": [],

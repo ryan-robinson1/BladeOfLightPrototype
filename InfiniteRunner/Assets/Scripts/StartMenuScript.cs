@@ -11,14 +11,14 @@ public class StartMenuScript : MonoBehaviour
     PlayerAnimationController _animController;
     public bool started = false;
 
-    public List<Material> uiButtonMats;
+    //public List<Material> uiButtonMats;
     private void Start()
     {
         //StartGame();
-        foreach (Material material in uiButtonMats)
-        {
-            material.SetColor("buttonColor", ColorDataBase.GetUIColor());
-        }
+        //foreach (Material material in uiButtonMats)
+       // {
+           // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
+       // }
     }
     /**
      *  Resets the camera and player position the game configuration
