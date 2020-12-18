@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class BulletScript : MonoBehaviour
 {
-
+    public Material bulletMaterial;
+    public Material bulletTrailMaterial;
 
     private float lifeLength = 2f;
     private float lifeLengthTimer = float.PositiveInfinity;
@@ -19,6 +19,9 @@ public class BulletScript : MonoBehaviour
     Rigidbody rb;
     private void Start()
     {
+        bulletMaterial.SetColor("bulletColor", ColorDataBase.GetBulletColor());
+        bulletTrailMaterial.SetColor("_EmissionColor", ColorDataBase.GetBulletTrail());
+
         rb = this.GetComponent<Rigidbody>();
         lifeLengthTimer = Time.time;
         player = GameObject.FindGameObjectWithTag("Player");

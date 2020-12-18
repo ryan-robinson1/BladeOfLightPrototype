@@ -49,6 +49,8 @@ public class DissolveEnemyScript : MonoBehaviour
         armorMat.SetColor("dissolveColor", ColorDataBase.GetMainEnemyArmorColor());
         armorStrip.SetColor("armorEdgeColor", ColorDataBase.GetEnemyArmorStripColor());
         armorStrip.SetColor("armorStripAlbedo", ColorDataBase.GetEnemyStripAlbedo());
+        offSetDissolveMaterial.SetColor("mainColor", ColorDataBase.GetStripDissolveColor());
+        offSetDissolveMaterial.SetColor("dissolveEdgeColor", ColorDataBase.GetStripDissolveColor());
     }
 
     /**

@@ -233,4 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052038250d06ecd48b8185d7d2d9adfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletMaterial: {fileID: 2100000, guid: ebb06c1985f6b90448e35fe7f635f82b, type: 2}
+  bulletTrailMaterial: {fileID: 2100000, guid: 669390bb06bd08b4aaaa9366ed60eb91, type: 2}
   bulletSpeed: 0

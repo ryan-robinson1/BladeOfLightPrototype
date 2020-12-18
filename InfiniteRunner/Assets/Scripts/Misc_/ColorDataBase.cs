@@ -54,6 +54,7 @@ public static class ColorDataBase
             {"enemyDissolve-red", new Color(
                 0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
 
+
             // armor strip colors
             {"enemyStrip-aqua", new Color(
                 0f, 0.74f * enemyStripIntensity, 0.75f * enemyStripIntensity) },
@@ -140,6 +141,51 @@ public static class ColorDataBase
         strip.g = enemyStrip.g / enemyStripIntensity;
         strip.b = enemyStrip.b / enemyStripIntensity;
         return strip;
+    }
+
+    /**
+     * Gets the enemy armor strip dissolve material color.
+     * 
+     * @return a scaled up intensity of the enemy dissolve color.
+     */
+    public static Color GetStripDissolveColor()
+    {
+        Color strip = GetEnemyStripAlbedo();
+        float stripDissolveIntensity = 32f;
+        strip.r *= stripDissolveIntensity;
+        strip.g *= stripDissolveIntensity;
+        strip.b *= stripDissolveIntensity;
+        return strip;
+    }
+
+    /**
+     * Gets the enemy armor strip dissolve material color.
+     * 
+     * @return a scaled up intensity of the enemy dissolve color.
+     */
+    public static Color GetBulletColor()
+    {
+        Color bullet = GetEnemyStripAlbedo();
+        float bulletIntensity = 0.1f;
+        bullet.r *= bulletIntensity;
+        bullet.g *= bulletIntensity;
+        bullet.b *= bulletIntensity;
+        return bullet;
+    }
+
+    /**
+     * Gets the bullet trail color.
+     * 
+     * @return the color of the bullet trail
+     */
+    public static Color GetBulletTrail()
+    {
+        Color trail = GetEnemyStripAlbedo();
+        float trailIntensity = 3f;
+        trail.r *= trailIntensity;
+        trail.g *= trailIntensity;
+        trail.b *= trailIntensity;
+        return trail;
     }
 
     /**
