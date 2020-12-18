@@ -15,7 +15,9 @@ public class chunkGenerator : MonoBehaviour
     private GameObject camera;
     [SerializeField]
     public GameObject enemy;
-
+    [SerializeField]
+    public GameObject healthPack
+        ;
     private int relativePosition;
     private int distanceTraveled;
 
@@ -87,9 +89,17 @@ public class chunkGenerator : MonoBehaviour
         enemySpawnPoints.Add(xCoor);
         
         float zCoor = possibleZCoor[Random.Range(0, 5)];
-      
 
-        Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x)+150+xCoor,0.72f, zCoor), Quaternion.Euler(0,-90,0));
+        if (Random.Range(0,17) == 1)
+        {
+            Instantiate(healthPack, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 150 + xCoor, 0.933f, zCoor), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 150 + xCoor, 0.72f, zCoor), Quaternion.Euler(0, -90, 0));
+        }
+       
+
 
     }
 

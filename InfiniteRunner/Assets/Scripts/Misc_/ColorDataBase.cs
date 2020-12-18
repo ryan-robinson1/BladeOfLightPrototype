@@ -108,12 +108,12 @@ public static class ColorDataBase
 
 
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-purple"];
+    private static Color heroColor = heroColors["hero-blue"];
 
     private static Color enemyMain = enemyColors["enemyDissolve-orangeYellow"];
     private static Color enemyStrip = enemyColors["enemyStrip-orangeYellow"];
 
-    private static Color swordColor = swordColors["sword-purple"];
+    private static Color swordColor = swordColors["sword-blue"];
 
 
     /**
