@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartMenuScript : MonoBehaviour
 {
@@ -9,9 +10,15 @@ public class StartMenuScript : MonoBehaviour
     public GameObject UI;
     PlayerAnimationController _animController;
     public bool started = false;
+
+    public List<Material> uiButtonMats;
     private void Start()
     {
         //StartGame();
+        foreach (Material material in uiButtonMats)
+        {
+            material.SetColor("buttonColor", ColorDataBase.GetUIColor());
+        }
     }
     /**
      *  Resets the camera and player position the game configuration

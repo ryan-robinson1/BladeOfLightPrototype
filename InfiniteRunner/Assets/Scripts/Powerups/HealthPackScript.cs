@@ -24,7 +24,7 @@ public class HealthPackScript : MonoBehaviour
     void Start()
     {
         canisterColor.SetColor("emissionColor", ColorDataBase.GetCurrentHeroColor());
-        canisterColor.SetColor("baseColor", ColorDataBase.GetHealthPackColor());
+        canisterColor.SetColor("baseColor", ColorDataBase.GetHeroAlbedo());
 
         _am = FindObjectOfType<AudioManager>();
 

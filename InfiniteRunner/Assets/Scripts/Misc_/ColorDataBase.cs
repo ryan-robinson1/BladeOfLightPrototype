@@ -226,12 +226,27 @@ public static class ColorDataBase
      * 
      * @return The color of the healthpack.
      */
-    public static Color GetHealthPackColor()
+    public static Color GetHeroAlbedo()
     {
         Color healthColor = heroColor;
         healthColor.r = heroColor.r / heroIntensity;
         healthColor.g = heroColor.g / heroIntensity;
         healthColor.b = heroColor.b / heroIntensity;
         return healthColor;
+    }
+
+    /**
+     * Returns the color the UI buttons should be.
+     * 
+     * @return The proper color of the UI buttons.
+     */
+    public static Color GetUIColor()
+    {
+        Color ui = GetHeroAlbedo();
+        float uiIntensity = 2f;
+        ui.r *= uiIntensity;
+        ui.g *= uiIntensity;
+        ui.b *= uiIntensity;
+        return ui; 
     }
 }
