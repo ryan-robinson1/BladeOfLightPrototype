@@ -30,11 +30,5 @@ public class StartMenuScript : MonoBehaviour
         this.GetComponentInChildren<Canvas>().enabled = false;
         started = true;
     }
-    private void Update()
-    {
-        if (SwipeInput.Instance.Tap && !started)
-        {
-            StartGame();
-        }
-    }
+   
 }
