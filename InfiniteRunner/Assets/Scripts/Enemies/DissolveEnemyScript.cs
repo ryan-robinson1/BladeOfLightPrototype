@@ -34,10 +34,21 @@ public class DissolveEnemyScript : MonoBehaviour
      */
     void Start()
     {
+        this.SetMatColors();
         collider = this.GetComponent<Collider>();
         renderers = this.GetComponentsInChildren<Renderer>();
         minRender = armorMat.GetFloat("minimumRender");
         matNames = this.generateMatNames();
+    }
+
+    /**
+     * Sets the color of the enemie's mats off spawn.
+     */
+    private void SetMatColors()
+    {
+        armorMat.SetColor("dissolveColor", ColorDataBase.GetMainEnemyArmorColor());
+        armorStrip.SetColor("armorEdgeColor", ColorDataBase.GetEnemyArmorStripColor());
+        armorStrip.SetColor("armorStripAlbedo", ColorDataBase.GetEnemyStripAlbedo());
     }
 
     /**

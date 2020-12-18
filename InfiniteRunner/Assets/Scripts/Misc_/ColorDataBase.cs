@@ -11,14 +11,20 @@ using UnityEngine;
 public static class ColorDataBase
 {
     private const float heroIntensity = 16f;
+    private const float enemyMainIntensity = 8f;
+    private const float enemyStripIntensity = 24f;
     private const float swordIntensity = 8f;
 
     /**
-     * Dictionary of hero colors.
+     * Dictionary of hero colors. Sorted by alphabetical order.
      */
     public static Dictionary<string, Color> heroColors =
         new Dictionary<string, Color>()
         {
+            // IF ADDING A COLOR PUT IT IN ALPHABETICAL ORDER
+            {"hero-aqua", new Color(
+                0f, 0.74f * heroIntensity, 0.75f * heroIntensity) },
+
             {"hero-blue", new Color(
                 0.012f * heroIntensity, 0.41f * heroIntensity, 0.75f * heroIntensity) },
 
@@ -33,11 +39,41 @@ public static class ColorDataBase
         };
 
     /**
-     * Dictionary of sword colors.
+     * Dictionary of enemy colors. Sorted by alphabetical order.
+     */
+    // WILL MODIFY TO HAVE ARRAY OF COLORS AS THE VALUE PAIR
+    public static Dictionary<string, Color> enemyColors =
+        new Dictionary<string, Color>()
+        {
+            // IF ADDING A COLOR PUT IT IN ALPHABETICAL ORDER
+
+            // main dissolve colors
+            {"enemyDissolve-aqua", new Color(
+                0f, 0.74f * enemyMainIntensity, 0.75f * enemyMainIntensity) },
+
+            {"enemyDissolve-red", new Color(
+                0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
+
+            // armor strip colors
+            {"enemyStrip-aqua", new Color(
+                0f, 0.74f * enemyStripIntensity, 0.75f * enemyStripIntensity) },
+
+            {"enemyStrip-red", new Color(
+                0.75f * enemyStripIntensity, 0.03f * enemyStripIntensity, 0.03f * enemyStripIntensity) },
+
+            
+        };
+
+    /**
+     * Dictionary of sword colors. Sorted by alphabetical order.
      */
     public static Dictionary<string, Color> swordColors =
         new Dictionary<string, Color>()
         {
+            // IF ADDING A COLOR PUT IT IN ALPHABETICAL ORDER
+            {"sword-aqua", new Color(
+                0f, 0.74f * swordIntensity, 0.75f * swordIntensity) },
+
             {"sword-blue", new Color(
                 0.012f * swordIntensity, 0.41f * swordIntensity, 0.75f * swordIntensity) },
 
@@ -51,10 +87,14 @@ public static class ColorDataBase
                 0.275f * swordIntensity, 0.07f * swordIntensity, 0.75f * swordIntensity) },
         };
 
-    // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-blue"];
 
-    private static Color swordColor = swordColors["sword-red"];
+    // will need to change this later to make it more variable
+    private static Color heroColor = heroColors["hero-pink"];
+
+    private static Color enemyMain = enemyColors["enemyDissolve-aqua"];
+    private static Color enemyStrip = enemyColors["enemyStrip-aqua"];
+
+    private static Color swordColor = swordColors["sword-pink"];
 
 
     /**
@@ -66,6 +106,40 @@ public static class ColorDataBase
     {
         // will modify based on selection
         return heroColor;
+    }
+
+    /**
+     * Returns the main dissolve color on the enemy.
+     * 
+     * @return The main dissolve color of the Enemy.
+     */
+    public static Color GetMainEnemyArmorColor()
+    {
+        return enemyMain;
+    }
+
+    /**
+     * Returns the armor strip color on the enemy.
+     * 
+     * @return The armor strip color on the enemy.
+     */
+    public static Color GetEnemyArmorStripColor()
+    {
+        return enemyStrip;
+    }
+
+    /**
+     * Returns the albedo element of the enemy armor strip.
+     * 
+     * @return The lower intensity version of the armor strip.
+     */
+    public static Color GetEnemyStripAlbedo()
+    {
+        Color strip = enemyStrip;
+        strip.r = enemyStrip.r / enemyStripIntensity;
+        strip.g = enemyStrip.g / enemyStripIntensity;
+        strip.b = enemyStrip.b / enemyStripIntensity;
+        return strip;
     }
 
     /**
