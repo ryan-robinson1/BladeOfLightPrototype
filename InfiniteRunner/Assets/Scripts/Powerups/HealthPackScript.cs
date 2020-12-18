@@ -25,6 +25,7 @@ public class HealthPackScript : MonoBehaviour
     {
         canisterColor.SetColor("emissionColor", ColorDataBase.GetCurrentHeroColor());
         canisterColor.SetColor("baseColor", ColorDataBase.GetHeroAlbedo());
+        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
 
         _am = FindObjectOfType<AudioManager>();
 
