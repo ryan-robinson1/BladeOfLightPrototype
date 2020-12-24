@@ -165,7 +165,7 @@ public class ShootScript : MonoBehaviour
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
-            this.spawnBulletCasing();
+            //this.spawnBulletCasing();
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
             //ammo--;

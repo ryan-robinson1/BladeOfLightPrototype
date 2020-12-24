@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 30ff28180a85a4643840ee689c0782dd
+guid: 36d0cfc96a85b604f9ac9edc4ec96cce
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -7,68 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ACUnity
+      name: BeerBottleColor
+    second: {fileID: 2100000, guid: 0835ba5db23a6fb4ab875bc88e61e1e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChineseText
+    second: {fileID: 2100000, guid: dd0fc7e291920634dba337b990ea1aa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainNoodleShopColor
+    second: {fileID: 2100000, guid: 5cb4c8adf020fa54a8f701bc206fbf11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StoolColor
     second: {fileID: 2100000, guid: f84c61f03709e4e4a8ef08cdde028389, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BeerFoam
-    second: {fileID: 2100000, guid: 6f2fd6dc17362f0479afd18c177a00db, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BeerbaseLight
-    second: {fileID: 2100000, guid: 0c28443e422493a48ab0ed191204c163, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BoardWood
-    second: {fileID: 2100000, guid: cecc5f88c80915d41bd3689331f8a646, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chair
-    second: {fileID: 2100000, guid: 9874b1dec0666cd48a732c153387fded, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Door
-    second: {fileID: 2100000, guid: e67f76ab6aa720f4a9073db4732df6cb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MainBrick
-    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Railing
-    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SignInterior
-    second: {fileID: 2100000, guid: a93729fb9ce5b8644a4a3382655ad1a7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SignStrip
-    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
+      name: TransParentNoodle
+    second: {fileID: 2100000, guid: f4cace4932efbea48b1da5fe14ad7e4f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowBars
-    second: {fileID: 2100000, guid: 949d19d621e505f45bb09fc5fd9dd1c1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WindowLight
-    second: {fileID: 2100000, guid: 469cdc21c1fa68042b6fd4fc43319a9b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WordColor
-    second: {fileID: 2100000, guid: dd0fc7e291920634dba337b990ea1aa8, type: 2}
+    second: {fileID: 2100000, guid: 93ba63c34d656ef4f992cfbf951d4934, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
