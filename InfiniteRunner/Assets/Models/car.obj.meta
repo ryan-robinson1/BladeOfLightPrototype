@@ -1,21 +1,39 @@
 fileFormatVersion: 2
-guid: 4844f4316e978a140a379010b153ab90
+guid: ba7c4db01467c8b4290f4398260241f7
 ModelImporter:
-  serializedVersion: 19301
-  internalIDToNameTable:
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: 1568955696296072139
-    second: low_poly_human|CameraAction
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarNeonStrip
+    second: {fileID: 2100000, guid: 7bcc80defe354c14a8dd1818cf03f121, type: 2}
   - first:
-      74: 3828486419580634088
-    second: low_poly_human|CameraAction.001
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarWindowColor
+    second: {fileID: 2100000, guid: 60fd6d7c47497c24ba6c164767f8d078, type: 2}
   - first:
-      74: 1058588439309054794
-    second: low_poly_human|Idle
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainCarColor
+    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
   - first:
-      74: 2237588238887786041
-    second: low_poly_human|Running
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TailIghtOffset
+    second: {fileID: 2100000, guid: ae5f0e1549efa1e4a87dc4a8815c5243, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TireColor
+    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowLight
+    second: {fileID: 2100000, guid: 469cdc21c1fa68042b6fd4fc43319a9b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -42,65 +60,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: low_poly_human|Idle
-      takeName: low_poly_human|Idle
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 60
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: low_poly_human|Running
-      takeName: low_poly_human|Running
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -119,6 +79,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -128,6 +89,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -160,7 +124,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
