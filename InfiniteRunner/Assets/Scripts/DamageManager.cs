@@ -72,7 +72,7 @@ public class DamageManager : MonoBehaviour
     //Method executed if hit by bullet. Takes damage.
     public void TakeDamage()
     {
-      /*  health -= bulletDamage;
+        health -= bulletDamage;
         healHealth -= bulletDamage;
         damageEffect.Play();
         damageLightEffect.Play();
@@ -82,7 +82,7 @@ public class DamageManager : MonoBehaviour
             this.setDefaultMats();
             FindObjectOfType<AudioManager>().Pause("Footsteps");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }*/
+        }
     }
 
     /**
