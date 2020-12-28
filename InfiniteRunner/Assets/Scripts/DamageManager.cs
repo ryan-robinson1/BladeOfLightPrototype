@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DamageManager : MonoBehaviour
 {
     public Image HealthBar;
-    public float bulletDamage = 1;
+    public float bulletDamage = 2;
     public float startHealth = 100;
     public Material healthIndicator;
     [HideInInspector]
@@ -72,16 +72,17 @@ public class DamageManager : MonoBehaviour
     //Method executed if hit by bullet. Takes damage.
     public void TakeDamage()
     {
-        health -= bulletDamage;
+      /*  health -= bulletDamage;
         healHealth -= bulletDamage;
         damageEffect.Play();
         damageLightEffect.Play();
+
         if (health <= 0)
         {
             this.setDefaultMats();
             FindObjectOfType<AudioManager>().Pause("Footsteps");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        }*/
     }
 
     /**

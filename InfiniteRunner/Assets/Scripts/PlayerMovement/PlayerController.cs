@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody _rb;
     Transform _tf;
-    BoxCollider _bc;
+    CapsuleCollider _cc;
     AudioManager _am;
 
 
@@ -48,9 +48,9 @@ public class PlayerController : MonoBehaviour
     string[] recentInputs = new string[2];
 
     //Deflect timers
-    private float deflectLength = 2.5f; //1.5
+    private float deflectLength = 1.7f; //1.5
     private float deflectTimer = float.PositiveInfinity;
-    private float staminaRefreshLength = 4f;
+    private float staminaRefreshLength = 3f;
     private float staminaRefreshTimer = float.NegativeInfinity;
     private float currentFillCapacity = 0f;
 
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         _animController = this.GetComponent<PlayerAnimationController>();
         _rb = this.GetComponent<Rigidbody>();
         _tf = this.GetComponent<Transform>();
-        _bc = this.GetComponent<BoxCollider>();
+        _cc = this.GetComponent<CapsuleCollider>();
         _am = FindObjectOfType<AudioManager>();
         _rb.velocity = new Vector3(speed, 0, 0);
 
@@ -117,20 +117,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
             _am.Pause("Footsteps");
-            _bc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
-            _bc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);
-            Invoke("resetBC", 1.27f);
+            /* _cc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
+             _cc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);*/
+            _cc.height = 1f;
+            _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z); 
+              Invoke("resetBC", 1.27f);
         }
     }
     void resetBC()
     {
-        _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
-        _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);
+        /*  _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
+          _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);*/
+        _cc.center = new Vector3(_cc.center.x, 0.5f, _cc.center.z);
+        _cc.height = 3.033f;
         _am.UnPause("Footsteps");
     }
     void UpdateMove()
     {
         _rb.velocity = new Vector3(speed, 0, 0);
+
 
         if ((Input.GetKeyDown(KeyCode.A) || SwipeInput.Instance.SwipeLeft))
         {

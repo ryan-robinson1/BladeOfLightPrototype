@@ -18,7 +18,7 @@ public class ShootScript : MonoBehaviour
     private Rigidbody _rb;
 
 
-    private float _bulletSpeed = 25f;
+    private float _bulletSpeed = 30f;
     private float _walkSpeed = 3f;
     private float _removalDistance = 5;
     private float _moveBackwardDistance;
@@ -32,7 +32,7 @@ public class ShootScript : MonoBehaviour
 
 
     private float ammo = 5;
-    private float timeInBetweenShots = 1f;
+    private float timeInBetweenShots = 0.6f;
     private float reloadTime = 3f;
     private float reloadTimer = float.NegativeInfinity;
     private bool shooting = false;

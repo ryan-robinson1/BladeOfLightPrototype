@@ -48,7 +48,7 @@ public class chunkGenerator : MonoBehaviour
         if (relativePosition == 150)
 
         {
-            int nextSpawnPosition = distanceTraveled + Mathf.RoundToInt(relativePosition) + 300;
+            int nextSpawnPosition = Mathf.RoundToInt(distanceTraveled) + 300 + Mathf.RoundToInt(relativePosition);
             if (lastPositionSpawned != nextSpawnPosition)
             {
                 renderedObjects.Enqueue(Instantiate(chunks[Random.Range(0, chunks.Length)], new Vector3(nextSpawnPosition, 0, 0), Quaternion.Euler(0, 0, 0)));
