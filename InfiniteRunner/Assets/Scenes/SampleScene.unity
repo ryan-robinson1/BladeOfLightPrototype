@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: objectToFollow
@@ -556,7 +561,7 @@ Transform:
   m_LocalScale: {x: 0.15592681, y: 0.15592681, z: 0.15592681}
   m_Children: []
   m_Father: {fileID: 205935864}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -212.842, z: 0}
 --- !u!199 &86245105
 ParticleSystemRenderer:
@@ -38685,6 +38690,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: player
@@ -50560,6 +50570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PistolEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
@@ -66650,6 +66665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a,
         type: 3}
       propertyPath: objectToFollow
@@ -78868,6 +78888,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2590144478336841449, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: ShapeModule.angle
@@ -79051,12 +79076,12 @@ PrefabInstance:
     - target: {fileID: 3767076013752665282, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4205154421671804473, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4205154421671804473, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -79116,7 +79141,7 @@ PrefabInstance:
     - target: {fileID: 4546456962357495372, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5343857283938482940, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -79386,7 +79411,7 @@ PrefabInstance:
     - target: {fileID: 7810630866953328531, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7902222145213444315, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -79401,7 +79426,7 @@ PrefabInstance:
     - target: {fileID: 8069759228862653351, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115800, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -79673,6 +79698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716202789563392291, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9215466526365904577, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
