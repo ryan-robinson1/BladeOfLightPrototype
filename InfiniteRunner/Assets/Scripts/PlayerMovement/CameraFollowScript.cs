@@ -15,7 +15,7 @@ public class CameraFollowScript : MonoBehaviour
     private void Start()
     {
         startOffset = transform.position - objectToFollow.position;
-        startOffset.z += 1f;
+        startOffset.z += 1.5f;
         offset = startOffset;
     }
 
