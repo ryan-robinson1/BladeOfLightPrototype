@@ -20,6 +20,16 @@ public class StartMenuScript : MonoBehaviour
            // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
        // }
     }
+
+    /**
+     * Updates the game each frame.
+     */
+    private void FixedUpdate()
+    {
+        // keeps the player from inching off screen
+        player.transform.position = new Vector3(
+            0f, player.transform.position.y, player.transform.position.z);
+    }
     /**
      *  Resets the camera and player position the game configuration
      */
@@ -36,6 +46,7 @@ public class StartMenuScript : MonoBehaviour
         camera.GetComponent<CameraFollowScript>().enabled = true;
         this.GetComponentInChildren<Canvas>().enabled = false;
         started = true;
+        this.enabled = false;
     }
    
 }
