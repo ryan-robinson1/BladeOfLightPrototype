@@ -65838,7 +65838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 1546999455}
-  offset: {x: -3, y: 3, z: 0}
+  goalOffset: {x: -3, y: 3, z: 0}
   followSpeed: 10
   lookSpeed: 0
 --- !u!20 &1687258584
@@ -78891,7 +78891,7 @@ PrefabInstance:
     - target: {fileID: 2590144478336841449, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3366781722810399535, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -79426,7 +79426,7 @@ PrefabInstance:
     - target: {fileID: 8069759228862653351, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115800, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}

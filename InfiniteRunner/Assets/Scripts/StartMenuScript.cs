@@ -10,15 +10,17 @@ public class StartMenuScript : MonoBehaviour
     public GameObject UI;
     PlayerAnimationController _animController;
     public bool started = false;
+    private Quaternion targetCameraRotation;
 
     //public List<Material> uiButtonMats;
     private void Start()
     {
         //StartGame();
         //foreach (Material material in uiButtonMats)
-       // {
-           // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
-       // }
+        // {
+        // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
+        // }
+        targetCameraRotation = Quaternion.Euler(28f, 90f, 0f);
     }
 
     /**
@@ -27,16 +29,39 @@ public class StartMenuScript : MonoBehaviour
     private void FixedUpdate()
     {
         // keeps the player from inching off screen
-        player.transform.position = new Vector3(
+        if (!started)
+        {
+            player.transform.position = new Vector3(
             0f, player.transform.position.y, player.transform.position.z);
+        }
+        else
+        {
+            // rotates the camera out
+            camera.transform.rotation = Quaternion.Lerp(
+                camera.transform.rotation, targetCameraRotation, 2.5f * Time.deltaTime);
+        }
+
+        DisableScript();
     }
+
+    /**
+     * Disables the script once the camera is rotated fully so the update
+     * function stops calling and saves memory.
+     */
+    private void DisableScript()
+    {
+        if (camera.transform.rotation == targetCameraRotation)
+        {
+            this.enabled = false;
+        }
+    }
+
     /**
      *  Resets the camera and player position the game configuration
      */
     public void StartGame()
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
-        camera.transform.rotation = Quaternion.Euler(28f, 90, 0);
         _animController = player.GetComponent<PlayerAnimationController>();
         UI.GetComponent<Canvas>().enabled = true;
 
@@ -46,7 +71,7 @@ public class StartMenuScript : MonoBehaviour
         camera.GetComponent<CameraFollowScript>().enabled = true;
         this.GetComponentInChildren<Canvas>().enabled = false;
         started = true;
-        this.enabled = false;
+        //this.enabled = false;
     }
    
 }
