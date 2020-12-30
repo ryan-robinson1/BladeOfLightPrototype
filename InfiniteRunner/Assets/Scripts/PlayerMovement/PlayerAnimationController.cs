@@ -51,10 +51,9 @@ public class PlayerAnimationController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.transform.CompareTag("Enemy"))
-        {
-            // attack multiplier starts at 0 so must add 1
-            sCounter.AddAttackScore(streakMultiplier);
+        { 
             this.Attack();
+            sCounter.AddAttackScore(streakMultiplier);
             StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(slashID)));
         }
     }
@@ -107,7 +106,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         // increment the streakMultiplier every 10 kills
         streak++;
-        if ((streak + 1) % 10 == 0)
+        if (streak % 10 == 0)
         {
             streakMultiplier++;
         }
