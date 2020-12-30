@@ -14,6 +14,7 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     public GameObject player;
+    private PlayerAnimationController _animController;
     private int score;
     public TextMeshProUGUI scoreText;
     private int deflectScore = 5;
@@ -25,6 +26,7 @@ public class ScoreCounter : MonoBehaviour
     void Start()
     {
         score = 0;
+        _animController = player.GetComponent<PlayerAnimationController>();
     }
 
     /**
@@ -37,10 +39,11 @@ public class ScoreCounter : MonoBehaviour
 
     /**
      * Adds points to the total score when we kill an enemy.
+     * Every 10 kill streaks the multiplier for the score increases.
      */
-    public void AddAttackScore(int attackMultiplier)
+    public void AddAttackScore(int streakMultiplier)
     {
-        score += (attackScore * attackMultiplier);
+        score += (attackScore * streakMultiplier);
     }
 
     /**
@@ -50,6 +53,6 @@ public class ScoreCounter : MonoBehaviour
     {
         score++;
         scoreText.text = 
-            $"Score: {score} \nCombo: {player.GetComponent<PlayerAnimationController>().GetAttackMultiplier()}";
+            $"Score: {score} \nStreak: {_animController.GetStreak()}\nMultiplier: {_animController.GetStreakMultiplier()}";
     }
 }

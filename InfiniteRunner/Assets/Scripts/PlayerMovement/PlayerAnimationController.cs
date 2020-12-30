@@ -18,7 +18,8 @@ public class PlayerAnimationController : MonoBehaviour
     private float attackTimer = 0f;
     private float attackReset = 4f;
     private int slashID;
-    private int attackMultiplier = 0;
+    private int streak = 0;
+    private int streakMultiplier = 1;
 
     [HideInInspector]
     public ScoreCounter sCounter;
@@ -52,7 +53,7 @@ public class PlayerAnimationController : MonoBehaviour
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
             // attack multiplier starts at 0 so must add 1
-            sCounter.AddAttackScore(attackMultiplier + 1);
+            sCounter.AddAttackScore(streakMultiplier);
             this.Attack();
             StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(slashID)));
         }
@@ -74,17 +75,42 @@ public class PlayerAnimationController : MonoBehaviour
      */
     public void resetAttackMultiplier()
     {
-        attackMultiplier = 0;
+        streak = 0;
+        streakMultiplier = 1;
     }
 
     /**
-     * Gets the attackMultiplier so it can be dispayed by the score counter.
+     * Gets the streak so it can be dispayed by the score counter.
      * 
-     * @return the attackMultiplier
+     * @return the streak
      */
-    public int GetAttackMultiplier()
+    public int GetStreak()
     {
-        return attackMultiplier;
+        return streak;
+    }
+
+    /**
+     * Gets the streakMultiplier so it can be displayed by the score
+     * counter.
+     * 
+     * @return the streakMultiplier
+     */
+    public int GetStreakMultiplier()
+    {
+        return streakMultiplier;
+    }
+
+    /**
+     * Increments the streak counter and streakMultiplier counter (if applicable)
+     */
+    private void IncrementStreakCounter()
+    {
+        // increment the streakMultiplier every 10 kills
+        streak++;
+        if ((streak + 1) % 10 == 0)
+        {
+            streakMultiplier++;
+        }
     }
 
     /**
@@ -92,7 +118,8 @@ public class PlayerAnimationController : MonoBehaviour
      */
     private void Attack()
     {
-        attackMultiplier++;
+        // delay a little bit due to the large hitbox on enemies
+        Invoke("IncrementStreakCounter", 0.25f);
         // slide attack
         if (this.IsSliding())
         {
