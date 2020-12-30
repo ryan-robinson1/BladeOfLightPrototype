@@ -49,6 +49,7 @@ public class ScoreCounter : MonoBehaviour
     void Update()
     {
         score++;
-        scoreText.text = "Score: " + score;
+        scoreText.text = 
+            $"Score: {score} \nCombo: {player.GetComponent<PlayerAnimationController>().GetAttackMultiplier()}";
     }
 }

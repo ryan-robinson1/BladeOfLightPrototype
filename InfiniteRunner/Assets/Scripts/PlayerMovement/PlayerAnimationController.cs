@@ -18,8 +18,7 @@ public class PlayerAnimationController : MonoBehaviour
     private float attackTimer = 0f;
     private float attackReset = 4f;
     private int slashID;
-    [HideInInspector]
-    public int attackMultiplier = 1;
+    private int attackMultiplier = 0;
 
     [HideInInspector]
     public ScoreCounter sCounter;
@@ -52,7 +51,8 @@ public class PlayerAnimationController : MonoBehaviour
     {
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
-            sCounter.AddAttackScore(attackMultiplier);
+            // attack multiplier starts at 0 so must add 1
+            sCounter.AddAttackScore(attackMultiplier + 1);
             this.Attack();
             StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(slashID)));
         }
@@ -69,9 +69,22 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
+    /**
+     * Resets the attackMultiplier upon missing an enemy.
+     */
     public void resetAttackMultiplier()
     {
-        attackMultiplier = 1;
+        attackMultiplier = 0;
+    }
+
+    /**
+     * Gets the attackMultiplier so it can be dispayed by the score counter.
+     * 
+     * @return the attackMultiplier
+     */
+    public int GetAttackMultiplier()
+    {
+        return attackMultiplier;
     }
 
     /**
