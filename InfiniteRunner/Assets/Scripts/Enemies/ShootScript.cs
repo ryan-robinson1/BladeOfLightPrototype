@@ -200,6 +200,7 @@ public class ShootScript : MonoBehaviour
     {
         if (-positionDifference > _removalDistance)
         {
+            player.GetComponent<PlayerAnimationController>().resetAttackMultiplier();
             Destroy(this.gameObject);
         }
     }

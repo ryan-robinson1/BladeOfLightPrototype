@@ -3,20 +3,44 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/**
+ * Handles the scoring system in the game. Gives players points for deflecting,
+ * attacking, as well as distance ran. Will store as a high score if it is 
+ * higher than the lowest high score.
+ * 
+ * @author Maxfield Barden
+ */
+
 public class ScoreCounter : MonoBehaviour
 {
+    public GameObject player;
     private int score;
     public TextMeshProUGUI scoreText;
+    private int deflectScore = 5;
+    private int attackScore = 50;
 
     /**
      * Called before the first frame update.
      */
     void Start()
     {
-        int offsetX = 100;
-        int offsetY = 100;
         score = 0;
-        scoreText.rectTransform.position = new Vector2(Screen.width - offsetX, Screen.height - offsetY);
+    }
+
+    /**
+     * Adds points to the total score when we deflect a bullet.
+     */
+    public void AddDeflectScore()
+    {
+        score += deflectScore;
+    }
+
+    /**
+     * Adds points to the total score when we kill an enemy.
+     */
+    public void AddAttackScore(int attackMultiplier)
+    {
+        score += (attackScore * attackMultiplier);
     }
 
     /**
@@ -24,7 +48,7 @@ public class ScoreCounter : MonoBehaviour
      */
     void Update()
     {
-        score += 1;
+        score++;
         scoreText.text = "Score: " + score;
     }
 }

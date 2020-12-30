@@ -18,6 +18,11 @@ public class PlayerAnimationController : MonoBehaviour
     private float attackTimer = 0f;
     private float attackReset = 4f;
     private int slashID;
+    [HideInInspector]
+    public int attackMultiplier = 1;
+
+    [HideInInspector]
+    public ScoreCounter sCounter;
 
     /**
      * Called before first frame update and used to instantiate our variables.
@@ -47,6 +52,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         if (collision.gameObject.transform.CompareTag("Enemy"))
         {
+            sCounter.AddAttackScore(attackMultiplier);
             this.Attack();
             StartCoroutine(slashSpawner.Slash(this.GetSlashDelay(slashID)));
         }
@@ -63,11 +69,17 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
+    public void resetAttackMultiplier()
+    {
+        attackMultiplier = 1;
+    }
+
     /**
      * Sets the Attack animation trigger.
      */
     private void Attack()
     {
+        attackMultiplier++;
         // slide attack
         if (this.IsSliding())
         {

@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimationController _animController;
     private BulletScript bScript;
 
+    [HideInInspector]
+    public ScoreCounter sCounter;
+
     public TimeManagerScript timeManager;
     public Image StaminaBar;
 
@@ -318,12 +321,15 @@ public class PlayerController : MonoBehaviour
 
     /* 
      * Executed by bulletScript if within the range defined by the variable "bulletrange" in bulletScript's update function
+     * 
+     * @return True if we are deflecting and there is a bullet within range.
      */
     public void BulletWithinRange()
     {
         if (deflecting)
         {
             deflects++;
+            sCounter.AddDeflectScore();
             if (deflects >= 5)
             {
                 deflects = 1;
