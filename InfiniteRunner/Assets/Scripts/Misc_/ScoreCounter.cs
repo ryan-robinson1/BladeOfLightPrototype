@@ -40,7 +40,6 @@ public class ScoreCounter : MonoBehaviour
     {
         _animController.resetAttackMultiplier();
         this.SendRoundInfo();
-        Debug.Log("Highest Streak is: " + highestStreak);
     }
 
     /**

@@ -40966,7 +40966,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 0.59
@@ -51616,8 +51616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.46, y: 0.5}
   m_AnchorMax: {x: 0.83, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 60}
+  m_AnchoredPosition: {x: 0, y: 103.04992}
+  m_SizeDelta: {x: 320, y: 266.10016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521624105
 MonoBehaviour:

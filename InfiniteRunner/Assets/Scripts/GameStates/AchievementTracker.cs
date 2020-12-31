@@ -59,7 +59,7 @@ public class AchievementTracker : MonoBehaviour
     private string DisplayHighScores()
     {
         string highScoreDisplay =
-            $"1. {highScores[0]}\n\n2. {highScores[1]}\n\n3. {highScores[2]}";
+            $"High Scores:\n\n1. {highScores[0]}\n\n2. {highScores[1]}\n\n3. {highScores[2]}";
         return highScoreDisplay;
     }
 
