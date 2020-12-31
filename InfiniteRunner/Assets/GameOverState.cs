@@ -45,8 +45,16 @@ public class GameOverState : MonoBehaviour
      */
     private void DisplayScore()
     {
-        gameOverUI.GetComponentInChildren<Text>().text
+        if (IsHighScore())
+        {
+            gameOverUI.GetComponentInChildren<Text>().text
+            = $"Final Score: {score}\n\nNew High Score!\n\nHighest Streak: {streak}";
+        }
+        else
+        {
+            gameOverUI.GetComponentInChildren<Text>().text
             = $"Final Score: {score}\nHighest Streak: {streak}";
+        }
     }
 
     /**
@@ -69,13 +77,23 @@ public class GameOverState : MonoBehaviour
     }
 
     /**
-     * Determines if the score from this round is greater than one
-     * or all of the current high scores.
+     * Determines if the score from this round is a new high score.
+     * 
+     * @return True if this round's score is a new high score.
+     */
+    private bool IsHighScore()
+    {
+        return score > PlayerPrefs.GetInt("HighScore3", 0);
+    }
+
+    /**
+     * Tells the achievements to update the high score chart if this is
+     * a new high score.
      */
     private void DetermineHighScore(int score)
     {
         // if its higher than the lowest high score, it's a new high score.
-        if (score > PlayerPrefs.GetInt("HighScore3", 0))
+        if (IsHighScore())
         {
             achievements.UpdateHighScores(score);
         }
