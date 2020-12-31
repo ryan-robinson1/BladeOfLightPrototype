@@ -20,6 +20,7 @@ public class ScoreCounter : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int deflectScore = 5;
     private int attackScore = 50;
+    private int highestStreak;
 
     /**
      * Called before the first frame update.
@@ -27,6 +28,7 @@ public class ScoreCounter : MonoBehaviour
     void Start()
     {
         score = 0;
+        highestStreak = 0;
         _animController = player.GetComponent<PlayerAnimationController>();
         gmOverState = player.GetComponent<GameOverState>();
     }
@@ -36,7 +38,18 @@ public class ScoreCounter : MonoBehaviour
      */
     private void OnDisable()
     {
+        _animController.resetAttackMultiplier();
+        this.SendRoundInfo();
+        Debug.Log("Highest Streak is: " + highestStreak);
+    }
+
+    /**
+     * Sends the game over state the information from the current round.
+     */
+    private void SendRoundInfo()
+    {
         gmOverState.GetScoreFromRound(score);
+        gmOverState.GetHighestStreak(highestStreak);
     }
 
     /**
@@ -45,6 +58,24 @@ public class ScoreCounter : MonoBehaviour
     public void AddDeflectScore()
     {
         score += deflectScore;
+    }
+
+    /**
+     * Compares the current streak that just broke to the current
+     * highest streak on record. If the streak being passed in
+     * is greater than the current highest streak, it becomes
+     * the new highest streak. Only used for calculating high
+     * streaks during the current round.
+     * 
+     * @param streak The streak we are comparing the current
+     * highest streak to.
+     */
+    public void SetHighestStreak(int streak)
+    {
+        if (streak > highestStreak)
+        {
+            highestStreak = streak;
+        }
     }
 
     /**

@@ -16,21 +16,28 @@ public class GameOverState : MonoBehaviour
 {
     public GameObject gameOverUI;
     public GameObject inGameUI;
+    public GameObject startMenu;
+    public GameObject achievementTracker;
+    private AchievementTracker achievements;
+    private StartMenuScript sMenuScript;
     private int score;
+    private int streak;
 
     // Start is called before the first frame update
     void Start()
     {
         inGameUI.GetComponent<ScoreCounter>().enabled = false;
         inGameUI.GetComponent<Canvas>().enabled = false;
+        sMenuScript = startMenu.GetComponent<StartMenuScript>();
+        achievements = achievementTracker.GetComponent<AchievementTracker>();
 
+        DetermineHighScore(score);
         DisplayScore();
         gameOverUI.GetComponent<Canvas>().enabled = true;
 
         this.GetComponent<PlayerController>().enabled = false;
         this.GetComponent<PlayerAnimationController>().enabled = false;
 
-        Debug.Log(score);
     }
 
     /**
@@ -39,7 +46,7 @@ public class GameOverState : MonoBehaviour
     private void DisplayScore()
     {
         gameOverUI.GetComponentInChildren<Text>().text
-            = "Final Score: " + score;
+            = $"Final Score: {score}\nHighest Streak: {streak}";
     }
 
     /**
@@ -48,7 +55,7 @@ public class GameOverState : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+
     }
 
     /**
@@ -59,6 +66,29 @@ public class GameOverState : MonoBehaviour
     public void GetScoreFromRound(int score)
     {
         this.score = score;
+    }
+
+    /**
+     * Determines if the score from this round is greater than one
+     * or all of the current high scores.
+     */
+    private void DetermineHighScore(int score)
+    {
+        // if its higher than the lowest high score, it's a new high score.
+        if (score > PlayerPrefs.GetInt("HighScore3", 0))
+        {
+            achievements.UpdateHighScores(score);
+        }
+    }
+
+    /**
+     * Gets the highest streak from the current round.
+     * 
+     * @param streak The highest streak from the current round.
+     */
+    public void GetHighestStreak(int streak) 
+    {
+        this.streak = streak;
     }
 
 

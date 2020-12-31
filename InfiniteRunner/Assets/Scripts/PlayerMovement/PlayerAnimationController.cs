@@ -74,6 +74,8 @@ public class PlayerAnimationController : MonoBehaviour
      */
     public void resetAttackMultiplier()
     {
+        // send the score counter the current streak before resetting it
+        sCounter.SetHighestStreak(streak);
         streak = 0;
         streakMultiplier = 1;
     }
