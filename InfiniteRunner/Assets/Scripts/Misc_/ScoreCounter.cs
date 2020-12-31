@@ -15,6 +15,7 @@ public class ScoreCounter : MonoBehaviour
 {
     public GameObject player;
     private PlayerAnimationController _animController;
+    private GameOverState gmOverState;
     private int score;
     public TextMeshProUGUI scoreText;
     private int deflectScore = 5;
@@ -27,6 +28,15 @@ public class ScoreCounter : MonoBehaviour
     {
         score = 0;
         _animController = player.GetComponent<PlayerAnimationController>();
+        gmOverState = player.GetComponent<GameOverState>();
+    }
+
+    /**
+     * Sends the game over screen the score from this round when the player dies.
+     */
+    private void OnDisable()
+    {
+        gmOverState.GetScoreFromRound(score);
     }
 
     /**

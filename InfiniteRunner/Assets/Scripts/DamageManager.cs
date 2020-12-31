@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DamageManager : MonoBehaviour
@@ -23,6 +22,8 @@ public class DamageManager : MonoBehaviour
 
     private ParticleSystem.MainModule lightfxModule;
     private ParticleSystem.MainModule healfxModule;
+
+    private GameOverState gameOverState;
 
     private float min = 0f;
     private float max = 0.03f;
@@ -46,6 +47,8 @@ public class DamageManager : MonoBehaviour
 
         healfxModule = healLightFX.main;
         healfxModule.startColor = ColorDataBase.GetHeroAlbedo();
+
+        gameOverState = this.GetComponentInChildren<GameOverState>();
     }
 
     /**
@@ -77,11 +80,12 @@ public class DamageManager : MonoBehaviour
         damageEffect.Play();
         damageLightEffect.Play();
 
+        // round is over
         if (health <= 0)
         {
             this.setDefaultMats();
             FindObjectOfType<AudioManager>().Pause("Footsteps");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gameOverState.enabled = true;
         }
     }
 

@@ -8,6 +8,8 @@ public class StartMenuScript : MonoBehaviour
     public GameObject player;
     public GameObject camera;
     public GameObject UI;
+   [HideInInspector]
+    public GameObject achievements;
     PlayerAnimationController _animController;
     public bool started = false;
     private Quaternion targetCameraRotation;
@@ -57,6 +59,16 @@ public class StartMenuScript : MonoBehaviour
     }
 
     /**
+     * Transfers over to the achievements menu. Called by onClick()
+     * function of the Trophy button at the main menu.
+     */
+    public void OnTrophyClick()
+    {
+        achievements.GetComponentInChildren<Canvas>().enabled = true;
+        this.GetComponentInChildren<Canvas>().enabled = false;
+    }
+
+    /**
      *  Resets the camera and player position the game configuration
      */
     public void StartGame()
@@ -65,6 +77,7 @@ public class StartMenuScript : MonoBehaviour
         _animController = player.GetComponent<PlayerAnimationController>();
         UI.GetComponent<Canvas>().enabled = true;
         UI.GetComponent<ScoreCounter>().enabled = true;
+
 
         player.GetComponent<Rigidbody>().transform.position = new Vector3(0, 1.15f, 0);
         player.GetComponent<PlayerController>().enabled = true;
