@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         /*  _bc.size = new Vector3(_bc.size.x, 1.731701f, _bc.size.z);
           _bc.center = new Vector3(_bc.center.x, 0, _bc.center.z);*/
         _cc.center = new Vector3(_cc.center.x, 0.5f, _cc.center.z);
-        _cc.height = 3.033f;
+        _cc.height = 3f;
         _am.UnPause("Footsteps");
     }
     void UpdateMove()
