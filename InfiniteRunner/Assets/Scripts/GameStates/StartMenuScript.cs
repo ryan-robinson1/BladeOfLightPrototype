@@ -13,6 +13,7 @@ public class StartMenuScript : MonoBehaviour
     PlayerAnimationController _animController;
     public bool started = false;
     private Quaternion targetCameraRotation;
+    public GameObject chunkGenerator;
 
     //public List<Material> uiButtonMats;
     private void Start()
@@ -34,7 +35,7 @@ public class StartMenuScript : MonoBehaviour
         if (!started)
         {
             player.transform.position = new Vector3(
-            0f, player.transform.position.y, player.transform.position.z);
+            -2f, 0.745f, player.transform.position.z);
         }
         else
         {
@@ -85,7 +86,9 @@ public class StartMenuScript : MonoBehaviour
         camera.GetComponent<CameraFollowScript>().enabled = true;
         this.GetComponentInChildren<Canvas>().enabled = false;
         started = true;
+        chunkGenerator.GetComponent<ChunkGenerator>().generateChunk(new Vector3(90, 0, 0), Quaternion.Euler(0, 90, 0));
         //this.enabled = false;
+        
     }
    
 }

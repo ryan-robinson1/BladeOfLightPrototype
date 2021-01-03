@@ -90,7 +90,7 @@ public class chunkGenerator : MonoBehaviour
         
         float zCoor = possibleZCoor[Random.Range(0, 5)];
 
-        if (Random.Range(0,17) == 1)
+        if (Random.Range(0,25) == 1)
         {
             Instantiate(healthPack, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 150 + xCoor, 0.933f, zCoor), Quaternion.identity);
         }

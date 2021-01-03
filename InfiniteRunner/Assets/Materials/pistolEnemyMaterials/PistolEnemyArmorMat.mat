@@ -75,7 +75,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - edgeWidth: 0.03
-    - minimumRender: 0.2
+    - minimumRender: 0
     - noiseScale: 30
     m_Colors:
     - Color_801894A2: {r: 1.945098, g: 1.913725, b: 1.913725, a: 0}

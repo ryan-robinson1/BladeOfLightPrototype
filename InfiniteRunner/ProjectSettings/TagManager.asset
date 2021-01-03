@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Sword
   - HealthPack
+  - ChunkGenerator
   layers:
   - Default
   - TransparentFX
