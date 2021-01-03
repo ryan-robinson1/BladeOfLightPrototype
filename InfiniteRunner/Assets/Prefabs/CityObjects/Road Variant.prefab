@@ -216,6 +216,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7764338151980275979, guid: 1ed4d5d2c8cd105448b8e705043048d9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.062568665
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764338151980275979, guid: 1ed4d5d2c8cd105448b8e705043048d9,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.031284332
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764338151980275979, guid: 1ed4d5d2c8cd105448b8e705043048d9,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.00000076293946
+      objectReference: {fileID: 0}
     - target: {fileID: 7803261598095630291, guid: 1ed4d5d2c8cd105448b8e705043048d9,
         type: 3}
       propertyPath: m_LocalRotation.x

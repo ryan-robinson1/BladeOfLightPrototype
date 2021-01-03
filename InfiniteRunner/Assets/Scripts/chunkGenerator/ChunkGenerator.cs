@@ -6,6 +6,8 @@ public class ChunkGenerator : MonoBehaviour
 {
     [SerializeField]
     private GameObject road;
+    [SerializeField]
+    private GameObject startingChunk;
 
     Queue<GameObject> roads = new Queue<GameObject>();
     bool firstChunkPassed = false;
@@ -20,7 +22,11 @@ public class ChunkGenerator : MonoBehaviour
         {
             Destroy(roads.Dequeue());
         }
-        else firstChunkPassed = true;
+        else
+        {
+            Destroy(startingChunk);
+            firstChunkPassed = true;
+        }
        
     }
 }
