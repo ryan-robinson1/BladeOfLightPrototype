@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4075950514362095965}
+  - component: {fileID: 3265564316848112132}
   m_Layer: 0
   m_Name: bigger-garage
   m_TagString: Untagged
@@ -31,6 +32,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3265564316848112132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736720818578637799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3282ea684c6298a429f20796cf2a7358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5644897271440784190
 GameObject:
   m_ObjectHideFlags: 0

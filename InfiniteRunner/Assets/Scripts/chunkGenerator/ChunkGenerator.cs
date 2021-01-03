@@ -29,7 +29,7 @@ public class ChunkGenerator : MonoBehaviour
 
     public void generateChunk(Vector3 position, Quaternion rotation)
     {
-       GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
+        GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
        roads.Enqueue(roadSection);
         generateBuildings();
 
@@ -37,14 +37,14 @@ public class ChunkGenerator : MonoBehaviour
     }
     public void generateBuildings()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 8; i++)
         {
             int buildingNum = Random.Range(0, structures.Length);
             Vector3 spawnPosition = structures[buildingNum].spawnPosition + new Vector3(currentSpawnXLeft + structures[buildingNum].extentX, 0, 0);
             GameObject.Instantiate(structures[buildingNum].prefab, spawnPosition, Quaternion.identity);
             currentSpawnXLeft += (structures[buildingNum].extentX * 2) + alleyWidth;
         }
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 8; i++)
         {
             int buildingNum = Random.Range(0, structures.Length);
             Vector3 spawnPosition = new Vector3(0, structures[buildingNum].spawnPosition.y, structures[buildingNum].spawnPosition.z*-1) + new Vector3(currentSpawnXRight + structures[buildingNum].extentX, 0, 0);

@@ -23,7 +23,7 @@ public class StartMenuScript : MonoBehaviour
         // {
         // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
         // }
-        targetCameraRotation = Quaternion.Euler(28f, 90f, 0f);
+        targetCameraRotation = Quaternion.Euler(23f, 90f, 0f);
     }
 
     /**
