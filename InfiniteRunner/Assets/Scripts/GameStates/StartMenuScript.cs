@@ -14,7 +14,7 @@ public class StartMenuScript : MonoBehaviour
     public bool started = false;
     private Quaternion targetCameraRotation;
     public GameObject chunkGenerator;
-
+    int renderDistance = 3;
     //public List<Material> uiButtonMats;
     private void Start()
     {
@@ -86,7 +86,11 @@ public class StartMenuScript : MonoBehaviour
         camera.GetComponent<CameraFollowScript>().enabled = true;
         this.GetComponentInChildren<Canvas>().enabled = false;
         started = true;
-        chunkGenerator.GetComponent<ChunkGenerator>().generateChunk(new Vector3(90, 0, 0), Quaternion.Euler(0, 90, 0));
+        for(int i =0;i<renderDistance;i++)
+        {
+            chunkGenerator.GetComponent<ChunkGenerator>().generateChunk(new Vector3(90, 0, 0), Quaternion.Euler(0, 90, 0));
+        }
+        
         //this.enabled = false;
         
     }

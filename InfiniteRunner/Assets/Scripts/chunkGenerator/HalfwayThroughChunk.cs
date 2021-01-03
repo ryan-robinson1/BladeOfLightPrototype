@@ -15,7 +15,7 @@ public class HalfwayThroughChunk : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            chunkGenerator.GetComponent<ChunkGenerator>().generateChunk(transform.position + new Vector3(180, 0, 0), Quaternion.Euler(0, 90, 0));
+            chunkGenerator.GetComponent<ChunkGenerator>().generateChunk(transform.position , Quaternion.Euler(0, 90, 0));
         }
     }
 }

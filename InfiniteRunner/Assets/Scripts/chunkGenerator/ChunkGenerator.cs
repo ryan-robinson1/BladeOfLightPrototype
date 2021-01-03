@@ -8,27 +8,19 @@ public class ChunkGenerator : MonoBehaviour
     private GameObject road;
 
     Queue<GameObject> roads = new Queue<GameObject>();
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    bool firstChunkPassed = false;
 
     public void generateChunk(Vector3 position, Quaternion rotation)
     {
-       roads.Enqueue(GameObject.Instantiate(road, position, rotation));
+       roads.Enqueue(GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation));
     }
     public void degenerateChunk()
     {
-        if(roads.Count > 2)
+        if (firstChunkPassed)
         {
             Destroy(roads.Dequeue());
         }
+        else firstChunkPassed = true;
+       
     }
 }
