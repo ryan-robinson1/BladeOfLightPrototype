@@ -6,7 +6,8 @@ public class ChunkGenerator : MonoBehaviour
 {
     [SerializeField]
     private GameObject road;
-
+    [SerializeField]
+    private float alleyWidth = 7f;      //Distance between buildings
     [SerializeField]
     private GameObject startingChunk;
     [SerializeField]
@@ -17,7 +18,7 @@ public class ChunkGenerator : MonoBehaviour
 
     float currentSpawnXLeft = 0;
     float currentSpawnXRight = 0;
-    float alleyWidth = 7f;
+    
     private void Start()
     {
         foreach(Structure s in structures)
