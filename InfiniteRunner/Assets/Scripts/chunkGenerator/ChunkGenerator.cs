@@ -12,13 +12,25 @@ public class ChunkGenerator : MonoBehaviour
     private GameObject startingChunk;
     [SerializeField]
     private Structure[] structures;
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject enemy;
+    [SerializeField]
+    private GameObject healthPack;
+    [SerializeField]
+    private GameObject streetLight;
+    [SerializeField]
+    private GameObject roadPatch;
 
     Queue<GameObject> roads = new Queue<GameObject>();
     bool firstChunkPassed = false;
 
     float currentSpawnXLeft = 0;
     float currentSpawnXRight = 0;
-    
+    float streetLightSpawnX = 0;
+    float roadPatchX = 0;
+    private ArrayList enemySpawnPoints = new ArrayList();
     private void Start()
     {
         foreach(Structure s in structures)
@@ -31,9 +43,17 @@ public class ChunkGenerator : MonoBehaviour
     {
         GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
        roads.Enqueue(roadSection);
-        generateBuildings();
+       generateBuildings();
+       spawnEnemies();
+       spawnStreetLights();
+       //spawnRoadPatch();
 
 
+    }
+    public void spawnRoadPatch()
+    {
+        GameObject.Instantiate(roadPatch, new Vector3(roadPatchX, 0.1726f, 0), Quaternion.identity);
+        roadPatchX += 180;
     }
     public void generateBuildings()
     {
@@ -64,5 +84,46 @@ public class ChunkGenerator : MonoBehaviour
             firstChunkPassed = true;
         }
        
+    }
+    void spawnStreetLights()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            if(Random.Range(0,5) != 2)
+            {
+                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 2, 5), Quaternion.identity);
+            }
+            if (Random.Range(0, 5) != 3)
+            {
+                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 2, -5), Quaternion.identity);
+            }
+            streetLightSpawnX += 35;
+        }
+    }
+    void spawnEnemies()
+    {
+
+    /*    float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
+        int xCoor = Random.Range(0, 18) * 10;
+        *//*while (enemySpawnPoints.Contains(xCoor))
+        {
+            xCoor = Random.Range(0, 30) * 10;
+        }
+        *//*
+        enemySpawnPoints.Add(xCoor);
+
+        float zCoor = possibleZCoor[Random.Range(0, 5)];
+
+        if (Random.Range(0, 25) == 1)
+        {
+            Instantiate(healthPack, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 90 + xCoor, 0.933f, zCoor), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 90 + xCoor, 0.72f, zCoor), Quaternion.Euler(0, -90, 0));
+        }*/
+
+
+
     }
 }
