@@ -41,7 +41,7 @@ public class ChunkGenerator : MonoBehaviour
 
     public void generateChunk(Vector3 position, Quaternion rotation)
     {
-        GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
+        GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, -0.15f), rotation);
        roads.Enqueue(roadSection);
        generateBuildings();
        spawnEnemies();
