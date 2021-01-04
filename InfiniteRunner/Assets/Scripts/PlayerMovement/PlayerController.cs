@@ -44,12 +44,6 @@ public class PlayerController : MonoBehaviour
 
     public List<Transform> deflectParticlePositions;
 
-
-
-
-
-    string[] recentInputs = new string[2];
-
     //Deflect timers
     private float deflectLength = 1.7f; //1.5
     private float deflectTimer = float.PositiveInfinity;
@@ -96,12 +90,8 @@ public class PlayerController : MonoBehaviour
         resetCurrentPitch();
         Deflect();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            timeManager.SlowMotion();
-            recentInputs[0] = "";
-            recentInputs[1] = "";
-        }
+       
+       
     }
     void ChangeLookAtPoint()
     {
