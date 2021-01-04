@@ -41,7 +41,7 @@ public class ChunkGenerator : MonoBehaviour
 
     public void generateChunk(Vector3 position, Quaternion rotation)
     {
-        GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, -0.15f), rotation);
+        GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
        roads.Enqueue(roadSection);
        generateBuildings();
        spawnEnemies();
@@ -87,7 +87,7 @@ public class ChunkGenerator : MonoBehaviour
     }
     void spawnStreetLights()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 5; i++)
         {
             if(Random.Range(0,5) != 2)
             {
