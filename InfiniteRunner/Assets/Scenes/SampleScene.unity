@@ -36999,19 +36999,19 @@ MonoBehaviour:
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 14}
+    spawnPosition: {x: 0, y: 0.28, z: 12}
     extentX: 0
   - prefab: {fileID: 8224178439395684098, guid: 61135e092b4843e438b529676126c10c,
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 15}
+    spawnPosition: {x: 0, y: 0.28, z: 11}
     extentX: 0
   - prefab: {fileID: 7041941324018835826, guid: 2acaa271d8ea6b44598c9a3058c27424,
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 11.5}
+    spawnPosition: {x: 0, y: 0.28, z: 12}
     extentX: 0
   - prefab: {fileID: 3736720818578637799, guid: 0029cb1f1c7a60448abfd7364b71ed46,
       type: 3}
@@ -37029,18 +37029,18 @@ MonoBehaviour:
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 14}
+    spawnPosition: {x: 0, y: 0.28, z: 12.5}
     extentX: 0
   - prefab: {fileID: 6409181154165254777, guid: 2bed129d1d70a934da63bc3eb8b12b31,
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 13}
+    spawnPosition: {x: 0, y: 0.28, z: 12}
     extentX: 0
   - prefab: {fileID: 351438346400336694, guid: 7291bfc5265a99e4ba17687cd5ac3b00, type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 14}
+    spawnPosition: {x: 0, y: 0.28, z: 12}
     extentX: 0
 --- !u!4 &684608571
 Transform:
