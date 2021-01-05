@@ -37117,6 +37117,12 @@ MonoBehaviour:
     probabilityOfSpawning: 0
     spawnPosition: {x: 0, y: 0.6, z: 12}
     extentX: 0
+  - prefab: {fileID: 9144706318767694847, guid: 342893c7afc93524f9414523886d6d9c,
+      type: 3}
+    height: 4
+    probabilityOfSpawning: 0
+    spawnPosition: {x: 0, y: 0.6, z: 12}
+    extentX: 0
   player: {fileID: 1546999454}
   enemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a, type: 3}
   healthPack: {fileID: 4616966541825948077, guid: db5c2bcc34789ee4e98412642b9949de,
@@ -41503,7 +41509,7 @@ MonoBehaviour:
     name: SliceSound
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 3d3d956d0335d394faa0c8543a24a002, type: 3}
     volume: 0.18
@@ -41512,7 +41518,7 @@ MonoBehaviour:
     name: Footsteps
     loop: 1
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 40e56deea77e8e945a1c74dbb9d03049, type: 3}
     volume: 0.369
@@ -41521,7 +41527,7 @@ MonoBehaviour:
     name: Slide
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: d32b80575ed8d8041b73de4979e9dd2b, type: 3}
     volume: 0.4
@@ -41530,7 +41536,7 @@ MonoBehaviour:
     name: Deflect2
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b95d5ec9d2cbbf241ba2f84d7912276f, type: 3}
     volume: 0.4
@@ -41539,7 +41545,7 @@ MonoBehaviour:
     name: Deflect3
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: e41218909557332489443fa956c4cd5b, type: 3}
     volume: 0.4
@@ -41548,7 +41554,7 @@ MonoBehaviour:
     name: Deflect4
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: c3137593b0fbaec4887155cb8f359ae3, type: 3}
     volume: 0.184
@@ -41557,7 +41563,7 @@ MonoBehaviour:
     name: HealthRegen
     loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
 --- !u!4 &1336547975
 Transform:
