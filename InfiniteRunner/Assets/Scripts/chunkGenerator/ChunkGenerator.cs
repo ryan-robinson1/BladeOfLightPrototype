@@ -92,11 +92,11 @@ public class ChunkGenerator : MonoBehaviour
         {
             if(Random.Range(0,5) != 2)
             {
-                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 2, 5), Quaternion.identity);
+                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 1.5f, 5), Quaternion.identity);
             }
             if (Random.Range(0, 5) != 3)
             {
-                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 2, -5), Quaternion.identity);
+                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX, 1.5f, -5), Quaternion.Euler(0,180,0));
             }
             streetLightSpawnX += 35;
         }
