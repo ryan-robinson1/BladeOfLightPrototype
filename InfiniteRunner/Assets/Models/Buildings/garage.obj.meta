@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MainRoad
-    second: {fileID: 2100000, guid: 5cb4c8adf020fa54a8f701bc206fbf11, type: 2}
+    second: {fileID: 2100000, guid: f84c61f03709e4e4a8ef08cdde028389, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
