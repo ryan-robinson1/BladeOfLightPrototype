@@ -117,7 +117,7 @@ public class ChunkGenerator : MonoBehaviour
             }
            
         }
-        enemiesX += 150;
+        enemiesX += 180;
         
 
         /*    float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
