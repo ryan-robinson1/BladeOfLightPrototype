@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4450995612477416125
 Transform:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 147834540306570651}
   - component: {fileID: 3260107092761971820}
   m_Layer: 0
-  m_Name: light-pole
+  m_Name: light-pole-off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2600871424509047642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26815d0b163f6e74eb6b59281291c583, type: 3}
   m_Name: 
@@ -213,7 +213,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f84c61f03709e4e4a8ef08cdde028389, type: 2}
-  - {fileID: 2100000, guid: 091b834061af39345863a3d6bd0005b6, type: 2}
+  - {fileID: 2100000, guid: ad35636cb4a7afe46b1a0efdb70dc41a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

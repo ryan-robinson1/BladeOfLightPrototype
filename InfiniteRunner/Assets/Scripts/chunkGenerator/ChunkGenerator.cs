@@ -21,6 +21,8 @@ public class ChunkGenerator : MonoBehaviour
     [SerializeField]
     private GameObject streetLight;
     [SerializeField]
+    private GameObject streetLightOff;
+    [SerializeField]
     private GameObject roadPatch;
 
     Queue<GameObject> roads = new Queue<GameObject>();
@@ -88,15 +90,29 @@ public class ChunkGenerator : MonoBehaviour
     }
     void spawnStreetLights()
     {
-        for (int i = 0; i < 5; i++)
+        GameObject _streetLight1 = streetLight;
+        GameObject _streetLight2 = streetLight;
+        if (Random.Range(0, 10) == Random.Range(0, 10))
+        {
+            Debug.Log("Off");
+            _streetLight1 = streetLightOff;
+        }
+        else if(Random.Range(0, 10) == Random.Range(0, 10))
+        {
+            Debug.Log("Off");
+            _streetLight2 = streetLightOff;
+        }
+      
+        for (int i = 0; i < 3; i++)
         {
             if(Random.Range(0,5) != 2)
             {
-                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX+Random.Range(3,15), 0, 5), Quaternion.identity);
+                GameObject.Instantiate(_streetLight1, new Vector3(streetLightSpawnX+Random.Range(3,15), 0, 5), Quaternion.identity);
             }
+
             if (Random.Range(0, 5) != 3)
             {
-                GameObject.Instantiate(streetLight, new Vector3(streetLightSpawnX - Random.Range(5, 15), 0, -5), Quaternion.Euler(0,180,0));
+                GameObject.Instantiate(_streetLight2, new Vector3(streetLightSpawnX - Random.Range(5, 15), 0, -5), Quaternion.Euler(0,180,0));
             }
             streetLightSpawnX += 55;
         }
