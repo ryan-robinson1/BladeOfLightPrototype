@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour
     public Material bulletMaterial;
     public Material bulletTrailMaterial;
 
-    private float lifeLength = 2f;
+    private float lifeLength = 6f;
     private float lifeLengthTimer = float.PositiveInfinity;
     private bool rangeFlag= false;
     [HideInInspector]

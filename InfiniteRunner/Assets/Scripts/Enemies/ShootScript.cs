@@ -18,7 +18,7 @@ public class ShootScript : MonoBehaviour
     private Rigidbody _rb;
 
 
-    private float _bulletSpeed = 30f;
+    private float _bulletSpeed = 20f;
     private float _walkSpeed = 3f;
     private float _removalDistance = 5;
     private float _moveBackwardDistance;
