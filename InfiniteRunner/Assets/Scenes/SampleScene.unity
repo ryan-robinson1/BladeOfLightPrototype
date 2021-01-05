@@ -37029,13 +37029,13 @@ MonoBehaviour:
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 12}
+    spawnPosition: {x: 0, y: 0.5, z: 12}
     extentX: 0
   - prefab: {fileID: 5391583130676316885, guid: fe4185518a32ef94eacba13eef471850,
       type: 3}
     height: 2
     probabilityOfSpawning: 0
-    spawnPosition: {x: 0, y: 0.28, z: 12.5}
+    spawnPosition: {x: 0, y: 0.5, z: 12.5}
     extentX: 0
   - prefab: {fileID: 6409181154165254777, guid: 2bed129d1d70a934da63bc3eb8b12b31,
       type: 3}
