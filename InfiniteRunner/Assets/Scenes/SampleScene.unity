@@ -24,8 +24,8 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 2.64
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.81434673, g: 0.85087013, b: 0.9433962, a: 1}
+  m_AmbientMode: 1
+  m_SubtractiveShadowColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e1466517f0324e543bdaa4af82c4cad0, type: 2}
   m_HaloStrength: 0.271
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.0063185995, g: 0.0095241405, b: 0.019622289, a: 1}
+  m_IndirectSpecularColor: {r: 0.22238412, g: 0.2537651, b: 0.2755135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37048,6 +37048,14 @@ MonoBehaviour:
     probabilityOfSpawning: 0
     spawnPosition: {x: 0, y: 0.28, z: 12}
     extentX: 0
+  player: {fileID: 1546999454}
+  enemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a, type: 3}
+  healthPack: {fileID: 4616966541825948077, guid: db5c2bcc34789ee4e98412642b9949de,
+    type: 3}
+  streetLight: {fileID: 6556500109371611777, guid: 3c606e3344082b74a859f76062d6eaf6,
+    type: 3}
+  roadPatch: {fileID: 3563952589658656653, guid: 8347878038c65ab45b3cdf1bd1bc5284,
+    type: 3}
 --- !u!4 &684608571
 Transform:
   m_ObjectHideFlags: 0
@@ -40783,7 +40791,7 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
   serializedVersion: 2
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 0
@@ -74953,14 +74961,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  m_Intensity: 4
+  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Intensity: 8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -75541,7 +75549,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06db3ae1873a7dc4396d5af10ec4baf5, type: 2}
+  - {fileID: 2100000, guid: dfc7cb7da233064429e6384dfe5335ec, type: 2}
   - {fileID: 2100000, guid: 75a4579940ce40b4391c8beff8adabb0, type: 2}
   - {fileID: 2100000, guid: 14f0c36c01ddad048b304061fd2144a0, type: 2}
   m_StaticBatchInfo:
