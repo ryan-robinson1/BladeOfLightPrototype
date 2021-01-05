@@ -15,6 +15,7 @@ public class CameraFollowScript : MonoBehaviour
     private void Start()
     {
         startOffset = transform.position - objectToFollow.position;
+        startOffset.x += 0.5f;
         startOffset.z += 1.5f;
         offset = startOffset;
     }
@@ -43,7 +44,7 @@ public class CameraFollowScript : MonoBehaviour
     {
         if (!inPosition)
         {
-            offset = Vector3.Lerp(offset, goalOffset, 1.5f * Time.deltaTime);
+            offset = Vector3.Lerp(offset, goalOffset, 1.25f * Time.deltaTime);
             if (offset == goalOffset)
             {
                 inPosition = true;

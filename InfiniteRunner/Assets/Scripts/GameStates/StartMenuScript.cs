@@ -41,7 +41,7 @@ public class StartMenuScript : MonoBehaviour
         {
             // rotates the camera out
             camera.transform.rotation = Quaternion.Lerp(
-                camera.transform.rotation, targetCameraRotation, 2.5f * Time.deltaTime);
+                camera.transform.rotation, targetCameraRotation, 3.5f * Time.deltaTime);
         }
 
         DisableScript();
