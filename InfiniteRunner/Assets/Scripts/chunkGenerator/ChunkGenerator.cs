@@ -107,7 +107,15 @@ public class ChunkGenerator : MonoBehaviour
 
         for(int i = 0; i < Random.Range(5, 7);i++)
         {
-            Instantiate(enemy,new Vector3(enemiesX,0,0)+returnEnemySpawnPoint(), Quaternion.Euler(0, -90, 0));
+            if (Random.Range(0, 25) == 1)
+            {
+                Instantiate(healthPack, new Vector3(enemiesX, 0, 0) + returnEnemySpawnPoint(), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(enemy, new Vector3(enemiesX, 0.17f, 0) + returnEnemySpawnPoint(), Quaternion.Euler(0, -90, 0));
+            }
+           
         }
         enemiesX += 150;
         
