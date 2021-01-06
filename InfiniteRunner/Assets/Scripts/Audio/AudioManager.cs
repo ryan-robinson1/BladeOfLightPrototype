@@ -83,7 +83,6 @@ public class AudioManager : MonoBehaviour
         if(names.Length == weightCDF.Length)
         {
             int index = ChooseWeightedIndex(weightCDF);
-            Debug.Log(index);
             Play(names[index], pitch);
         }
         else

@@ -136,6 +136,7 @@ public class ChunkGenerator : MonoBehaviour
         for(int i = 0; i < Random.Range(0, 2);i++)
         {
             Instantiate(healthPack, new Vector3(enemiesX, 0, 0) + returnRandomSpawnPoint(), Quaternion.identity);
+            Debug.Log("Big health");
         }
     }
     private Vector3 returnRandomSpawnPoint()
@@ -143,7 +144,7 @@ public class ChunkGenerator : MonoBehaviour
         float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
         float x = Random.Range(0, 180);
         float z = possibleZCoor[Random.Range(0, 5)];
-        float y = 0.17f;
+        float y = 0.6f;
 
         return new Vector3(x, y, z);
     }
@@ -170,13 +171,10 @@ public class ChunkGenerator : MonoBehaviour
            if(enemiesX + spawnPoint.x > 50)
            {
                 Instantiate(enemy, new Vector3(enemiesX, 0, 0) + spawnPoint, Quaternion.Euler(0, -90, 0));
-           }
-           
-         
+           }  
         }
 
         enemiesX += 180;
-     
     }
     private float returnEnemyXSpawnPoint()
     {
