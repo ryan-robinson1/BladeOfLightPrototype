@@ -35,7 +35,7 @@ public class StartMenuScript : MonoBehaviour
         if (!started)
         {
             player.transform.position = new Vector3(
-            -2f, 0.745f, player.transform.position.z);
+            -2f, 0.745f, 0);
         }
         else
         {

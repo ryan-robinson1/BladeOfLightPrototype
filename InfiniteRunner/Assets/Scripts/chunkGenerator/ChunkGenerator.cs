@@ -27,13 +27,26 @@ public class ChunkGenerator : MonoBehaviour
 
     Queue<GameObject> roads = new Queue<GameObject>();
     bool firstChunkPassed = false;
+    bool firstSpawn = true;
 
     float currentSpawnXLeft = 0;
     float currentSpawnXRight = 0;
     float streetLightSpawnX = 0;
     float roadPatchX = 0;
     float enemiesX = 0;
-    private ArrayList enemySpawnPoints = new ArrayList();
+
+    int spaceBetweenEnemies = 6;
+
+
+    private List<float> enemySpawnPoints = new List<float>();
+    Dictionary<float,int> zCoordTranslations = new Dictionary<float, int>(){
+    {3.5f,1},
+    {1.75f,2},
+    {0,3},
+    {-1.75f,4},
+    {-3.5f,5}
+        };
+
     private void Start()
     {
         foreach(Structure s in structures)
@@ -49,6 +62,7 @@ public class ChunkGenerator : MonoBehaviour
        generateBuildings();
        spawnEnemies();
        spawnStreetLights();
+       spawnPowerUps();
        //spawnRoadPatch();
 
 
@@ -94,12 +108,12 @@ public class ChunkGenerator : MonoBehaviour
         GameObject _streetLight2 = streetLight;
         if (Random.Range(0, 10) == Random.Range(0, 10))
         {
-            Debug.Log("Off");
+     
             _streetLight1 = streetLightOff;
         }
         else if(Random.Range(0, 10) == Random.Range(0, 10))
         {
-            Debug.Log("Off");
+
             _streetLight2 = streetLightOff;
         }
       
@@ -117,55 +131,106 @@ public class ChunkGenerator : MonoBehaviour
             streetLightSpawnX += 55;
         }
     }
-    void spawnEnemies()
+    void spawnPowerUps()
     {
-     
-
-        for(int i = 0; i < Random.Range(5, 7);i++)
+        for(int i = 0; i < Random.Range(0, 2);i++)
         {
-            if (Random.Range(0, 25) == 1)
-            {
-                Instantiate(healthPack, new Vector3(enemiesX, 0.17f, 0) + returnEnemySpawnPoint(), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(enemy, new Vector3(enemiesX, 0, 0) + returnEnemySpawnPoint(), Quaternion.Euler(0, -90, 0));
-            }
-           
+            Instantiate(healthPack, new Vector3(enemiesX, 0, 0) + returnRandomSpawnPoint(), Quaternion.identity);
         }
-        enemiesX += 180;
-        
-
-        /*    float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
-            int xCoor = Random.Range(0, 18) * 10;
-            *//*while (enemySpawnPoints.Contains(xCoor))
-            {
-                xCoor = Random.Range(0, 30) * 10;
-            }
-            *//*
-            enemySpawnPoints.Add(xCoor);
-
-            float zCoor = possibleZCoor[Random.Range(0, 5)];
-
-            if (Random.Range(0, 25) == 1)
-            {
-                Instantiate(healthPack, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 90 + xCoor, 0.933f, zCoor), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(enemy, new Vector3(Mathf.RoundToInt(player.transform.position.x) + 90 + xCoor, 0.72f, zCoor), Quaternion.Euler(0, -90, 0));
-            }*/
-
-
-
     }
-    private Vector3 returnEnemySpawnPoint()
+    private Vector3 returnRandomSpawnPoint()
     {
         float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
-        float zCoor = possibleZCoor[Random.Range(0, 5)];
-        float xCoor = Random.Range(0, 180);
-        float yCoor = 0.43f;
-        return new Vector3(xCoor, yCoor, zCoor);
+        float x = Random.Range(0, 180);
+        float z = possibleZCoor[Random.Range(0, 5)];
+        float y = 0.17f;
 
+        return new Vector3(x, y, z);
     }
+    void spawnEnemies()
+    {
+
+
+        for(int i = 0; i < Random.Range(5,10);i++)
+        {
+            enemySpawnPoints.Add(returnEnemyXSpawnPoint());  
+        }
+        enemySpawnPoints.Sort();
+      
+
+        List<Vector3> spawnPointVectors = createVector3FromX(enemySpawnPoints);
+        enemySpawnPoints.Clear();
+
+        spaceOutSpawnPoints(ref spawnPointVectors);
+
+
+
+        foreach (Vector3 spawnPoint in spawnPointVectors)
+        {
+           if(enemiesX + spawnPoint.x > 50)
+           {
+                Instantiate(enemy, new Vector3(enemiesX, 0, 0) + spawnPoint, Quaternion.Euler(0, -90, 0));
+           }
+           
+         
+        }
+
+        enemiesX += 180;
+     
+    }
+    private float returnEnemyXSpawnPoint()
+    {
+        float xCoor = Random.Range(0, 180);
+        return xCoor;
+    }
+    private List<Vector3> createVector3FromX(List<float> xCoords)
+    {
+       float[] possibleZCoor = { -3.5f, -1.75f, 0, 1.75f, 3.5f };
+       List<Vector3> spawnPoints = new List<Vector3>();
+       foreach(float x in xCoords)
+        {
+            float z = possibleZCoor[Random.Range(0, 5)];
+            spawnPoints.Add(new Vector3(x, 0.43f, z));
+        }
+        return spawnPoints;
+    }
+    private void spaceOutSpawnPoints(ref List<Vector3> list)
+    {
+        for(int i = 1; i < list.Count; i++)
+        {
+            int delta = spaceBetweenEnemies * (Mathf.Abs(zCoordTranslations[list[i - 1].z] - zCoordTranslations[list[i].z])+1);
+           
+            if (list[i].x-list[i-1].x < delta && list[i].x - list[i - 1].x >= 0)
+            {
+               
+                list[i] = new Vector3(delta, list[i].y, list[i].z) + new Vector3(list[i - 1].x,0,0);
+            }
+            else if(list[i].x - list[i - 1].x < 0 && list[i - 1].x- list[i].x < delta)
+            {
+                list[i] = new Vector3(delta, list[i].y, list[i].z) + new Vector3(list[i - 1].x, 0, 0);
+            }
+            else if (list[i].x - list[i - 1].x < 0)
+            {
+                foreach(Vector3 v in list)
+                {
+                    int localDelta = spaceBetweenEnemies * (Mathf.Abs(zCoordTranslations[v.z] - zCoordTranslations[list[i].z]) + 1);
+                    if (list[i].x - v.x < localDelta)
+                    {
+                        list[i] = new Vector3(delta, list[i].y, list[i].z) + new Vector3(list[i - 1].x, 0, 0);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    private void printVector3List(List<Vector3> v)
+    {
+        string s = "";
+        foreach (Vector3 vec in v)
+        {
+            s += "("+vec.x+","+vec.z+"), ";
+        }
+        Debug.Log(s);
+    }
+
 }
