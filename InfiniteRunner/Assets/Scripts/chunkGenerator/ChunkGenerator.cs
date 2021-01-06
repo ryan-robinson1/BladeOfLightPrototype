@@ -133,11 +133,13 @@ public class ChunkGenerator : MonoBehaviour
     }
     void spawnPowerUps()
     {
-        for(int i = 0; i < Random.Range(0, 2);i++)
+        if (Random.Range(0, 4) == 0)
         {
             Instantiate(healthPack, new Vector3(enemiesX, 0, 0) + returnRandomSpawnPoint(), Quaternion.identity);
             Debug.Log("Big health");
+
         }
+
     }
     private Vector3 returnRandomSpawnPoint()
     {
