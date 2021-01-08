@@ -41524,7 +41524,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 0.428
@@ -52458,7 +52458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9327bc32773aef3498a3b2ff9798462c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bddb9e89fd030e439c00dfc23f23f3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75291,7 +75291,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 1687258584}
   m_PlaneDistance: 1
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
