@@ -34,8 +34,9 @@ public class StartMenuScript : MonoBehaviour
         // keeps the player from inching off screen
         if (!started)
         {
-            player.transform.position = new Vector3(
+               player.transform.position = new Vector3(
             -2f, 0.745f, 0);
+
         }
         else
         {

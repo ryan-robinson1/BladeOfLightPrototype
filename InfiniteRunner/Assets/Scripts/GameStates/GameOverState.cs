@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 /**
  * Takes care of the game over screen when after the player runs out of health.
@@ -18,10 +19,12 @@ public class GameOverState : MonoBehaviour
     public GameObject inGameUI;
     public GameObject startMenu;
     public GameObject achievementTracker;
+    public GameObject shop;
     private AchievementTracker achievements;
     private StartMenuScript sMenuScript;
     private int score;
     private int streak;
+    private int bounty;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,7 @@ public class GameOverState : MonoBehaviour
         achievements = achievementTracker.GetComponent<AchievementTracker>();
 
         DetermineHighScore(score);
+        calculateBounty();
         DisplayScore();
         gameOverUI.GetComponent<Canvas>().enabled = true;
 
@@ -47,13 +51,13 @@ public class GameOverState : MonoBehaviour
     {
         if (IsHighScore())
         {
-            gameOverUI.GetComponentInChildren<Text>().text
-            = $"Final Score: {score}\n\nNew High Score!\n\nHighest Streak: {streak}";
+            gameOverUI.GetComponentInChildren<TextMeshProUGUI>().text
+            = $"Final Score: {score}\n\nNew High Score!\n\nHighest Streak: {streak}\nPayout: ${bounty}";
         }
         else
         {
-            gameOverUI.GetComponentInChildren<Text>().text
-            = $"Final Score: {score}\nHighest Streak: {streak}";
+            gameOverUI.GetComponentInChildren<TextMeshProUGUI>().text
+            = $"Final Score: {score}\nHighest Streak: {streak}\nPayout: ${bounty}";
         }
     }
 
@@ -107,6 +111,14 @@ public class GameOverState : MonoBehaviour
     public void GetHighestStreak(int streak) 
     {
         this.streak = streak;
+    }
+    /**
+    * Calculates the money earned from the round
+    */
+    public void calculateBounty()
+    {
+        bounty = score / 100 + streak;
+        shop.GetComponent<Shop>().depositMoney(bounty);
     }
 
 
