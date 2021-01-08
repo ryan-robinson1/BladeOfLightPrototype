@@ -216,6 +216,11 @@ public class ShootScript : MonoBehaviour
         Vector3 interceptPoint = FirstOrderIntercept(
             this.transform.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1f, targetPosition.z), player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
+
+        if (player.timeSinceLastDodge > 8)
+        {
+            return interceptPoint;
+        }
         return inaccurateInterceptPoint;
     }
 

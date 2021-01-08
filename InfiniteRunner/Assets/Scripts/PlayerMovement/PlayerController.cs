@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 15f;
     private int deflects = 0;
 
+    public float timeSinceLastDodge = 0f;
 
     Dictionary<int, float> positionMap =
     new Dictionary<int, float>();
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
         _cc = this.GetComponent<CapsuleCollider>();
         _am = FindObjectOfType<AudioManager>();
         _rb.velocity = new Vector3(speed, 0, 0);
-
+        Invoke("timeSinceLastDodgeCounter", 1f);
        
         positionMap[-1] = -1.75f;
         positionMap[-2] = -3.5f;
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
         ChangeLookAtPoint();
         resetCurrentPitch();
         Deflect();
-
+        
        
        
     }
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour
             if (_playerPositionOffset < 2)
             {
                 _playerPositionOffset++;
+                timeSinceLastDodge = 0;
             }
         }
 
@@ -143,6 +145,7 @@ public class PlayerController : MonoBehaviour
             if (_playerPositionOffset > -2)
             {
                 _playerPositionOffset--;
+                timeSinceLastDodge = 0;
             }
         }
 
@@ -151,6 +154,11 @@ public class PlayerController : MonoBehaviour
             positionMap[_playerPositionOffset]), 
             this.GetTransitionOffset(Time.deltaTime * transitionSpeed));
 
+    }
+    private void timeSinceLastDodgeCounter()
+    {
+        timeSinceLastDodge++;
+        Invoke("timeSinceLastDodgeCounter", 1f);
     }
     
     /**
