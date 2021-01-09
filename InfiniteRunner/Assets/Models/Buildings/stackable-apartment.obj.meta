@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DarkWindow
-    second: {fileID: 2100000, guid: ba4abe40074b79a4ebc424b827b3b349, type: 2}
+    second: {fileID: 2100000, guid: 8cf0452f7f558a145a801b75a1982c7d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
