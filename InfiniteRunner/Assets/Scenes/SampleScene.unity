@@ -36147,13 +36147,13 @@ MonoBehaviour:
     probabilityOfSpawning: 0
     spawnPosition: {x: 0, y: 0.6, z: 12}
     extentX: 0
-  - prefab: {fileID: 7161068490643567318, guid: 342893c7afc93524f9414523886d6d9c,
+  - prefab: {fileID: 5841597466840731369, guid: d11f3093342c70d44951f82974c167f6,
       type: 3}
     height: 4
     probabilityOfSpawning: 0
     spawnPosition: {x: 0, y: 0.6, z: 12}
     extentX: 0
-  - prefab: {fileID: 3312661769268001872, guid: 9108401718871e3469ce014f01ef8e76,
+  - prefab: {fileID: 1129449704518362121, guid: 342893c7afc93524f9414523886d6d9c,
       type: 3}
     height: 4
     probabilityOfSpawning: 0
