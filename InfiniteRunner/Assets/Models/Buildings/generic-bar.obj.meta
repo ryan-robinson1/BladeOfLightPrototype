@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 594752bd97b5a2e45b69fb4e901226e7
+guid: 6c2547aa21d0ecc4fac74e404202947c
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoardWood
+    second: {fileID: 2100000, guid: cecc5f88c80915d41bd3689331f8a646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair
+    second: {fileID: 2100000, guid: f84c61f03709e4e4a8ef08cdde028389, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,13 +27,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Railing
+    second: {fileID: 2100000, guid: 742e5d18ed2d3bf4ab39d5778900c1d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: WindowBars
-    second: {fileID: 2100000, guid: 93ba63c34d656ef4f992cfbf951d4934, type: 2}
+    second: {fileID: 2100000, guid: 949d19d621e505f45bb09fc5fd9dd1c1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowLight
-    second: {fileID: 2100000, guid: ba4abe40074b79a4ebc424b827b3b349, type: 2}
+    second: {fileID: 2100000, guid: 469cdc21c1fa68042b6fd4fc43319a9b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

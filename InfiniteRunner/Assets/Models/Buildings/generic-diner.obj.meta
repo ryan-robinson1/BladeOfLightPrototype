@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 594752bd97b5a2e45b69fb4e901226e7
+guid: 3cea73ce6f77c9b4599d9044efb01c69
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BoardWood
+    second: {fileID: 2100000, guid: cecc5f88c80915d41bd3689331f8a646, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +23,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowBars
-    second: {fileID: 2100000, guid: 93ba63c34d656ef4f992cfbf951d4934, type: 2}
+    second: {fileID: 2100000, guid: 6666607714aad2a4d9042e8b9dba492b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
