@@ -166,14 +166,22 @@ public class ChunkGenerator : MonoBehaviour
 
         spaceOutSpawnPoints(ref spawnPointVectors);
 
-
+        printVector3List(spawnPointVectors);
 
         foreach (Vector3 spawnPoint in spawnPointVectors)
         {
-           if(enemiesX + spawnPoint.x > 50)
-           {
-                Instantiate(enemy, new Vector3(enemiesX, 0, 0) + spawnPoint, Quaternion.Euler(0, -90, 0));
-           }  
+           
+        }
+        for(int i = 0; i < spawnPointVectors.Count; i++)
+        {
+            if (enemiesX + spawnPointVectors[i].x > 50)
+            {
+                if (i > 0 && spawnPointVectors[i].x-spawnPointVectors[i-1].x>spaceBetweenEnemies)
+                {
+                    Instantiate(enemy, new Vector3(enemiesX, 0, 0) + spawnPointVectors[i], Quaternion.Euler(0, -90, 0));
+                }
+             
+            }
         }
 
         enemiesX += 180;
