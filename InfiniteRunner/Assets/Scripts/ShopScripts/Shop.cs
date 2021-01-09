@@ -13,11 +13,7 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("money"))
-        {
-            PlayerPrefs.SetInt("money", 0);
-        }
-        money = PlayerPrefs.GetInt("money");
+        money = PlayerPrefs.GetInt("money", 0);
         moneyText.text = money + "";
         moneyText2.text = money + "";
     }
