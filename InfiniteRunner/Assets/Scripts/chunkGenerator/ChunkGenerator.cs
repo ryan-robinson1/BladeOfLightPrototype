@@ -238,7 +238,7 @@ public class ChunkGenerator : MonoBehaviour
         {
             s += "("+vec.x+","+vec.z+"), ";
         }
-        Debug.Log(s);
+        //Debug.Log(s);
     }
 
 }
