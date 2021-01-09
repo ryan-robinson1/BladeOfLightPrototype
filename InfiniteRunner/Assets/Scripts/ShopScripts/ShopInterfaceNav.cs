@@ -8,6 +8,7 @@ public class ShopInterfaceNav : MonoBehaviour
     public Camera MainMenuCamera;
     public Canvas ShopCanvas;
     public Canvas mainMenuCanvas;
+    public GameObject displayHero;
    
     public void goToShop()
     {
@@ -15,6 +16,7 @@ public class ShopInterfaceNav : MonoBehaviour
         MainMenuCamera.enabled = false;
         ShopCanvas.enabled = true;
         mainMenuCanvas.enabled = false;
+        displayHero.SetActive(true);
     }
     public void goToMainMenu()
     {
@@ -22,5 +24,6 @@ public class ShopInterfaceNav : MonoBehaviour
         MainMenuCamera.enabled = true;
         ShopCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
+        displayHero.SetActive(false);
     }
 }
