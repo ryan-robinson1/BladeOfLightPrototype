@@ -61,7 +61,7 @@ public class PlayerAnimationController : MonoBehaviour
     /**
      * Plays the Slide animation.
      */
-    private void Slide()
+    public void Slide()
     {
         if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
@@ -125,6 +125,7 @@ public class PlayerAnimationController : MonoBehaviour
         // slide attack
         if (this.IsSliding())
         {
+            player.ChangeBCHeight();
             _anim.SetTrigger("SlideAttack");
             _anim.SetTrigger("SlideAgain");
             player.setDeflects(0);
@@ -133,6 +134,7 @@ public class PlayerAnimationController : MonoBehaviour
         }
         if (this.IsSlideChain())
         {
+            player.ChangeBCHeight();
             _anim.SetTrigger("SlideAttack");
             _anim.SetTrigger("Slide");
             player.setDeflects(0);

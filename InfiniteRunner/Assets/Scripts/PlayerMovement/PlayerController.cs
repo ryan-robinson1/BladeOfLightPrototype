@@ -111,12 +111,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
             _am.Pause("Footsteps");
-            /* _cc.size = new Vector3(_bc.size.x, 0.4f, _bc.size.z);
-             _cc.center = new Vector3(_bc.center.x, -0.4f, _bc.center.z);*/
-            _cc.height = 1f;
-            _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z); 
-              Invoke("resetBC", 1.27f);
+            this.ChangeBCHeight();
         }
+    }
+
+    /**
+     * Changes the height of the collider in case we slide.
+     */
+    public void ChangeBCHeight()
+    {
+        _cc.height = 1f;
+        _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z);
+        Invoke("resetBC", 1.27f);
     }
     void resetBC()
     {
