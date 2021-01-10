@@ -37901,26 +37901,26 @@ MonoBehaviour:
   movementAxis: 0
   automaticallyLayout: 1
   sizeControl: 0
-  size: {x: 250, y: 250}
-  automaticLayoutSpacing: 0.267
+  size: {x: 350, y: 350}
+  automaticLayoutSpacing: 0.1
   leftMargin: 0
   rightMargin: 0
   topMargin: 0
   bottomMargin: 0
   infinitelyScroll: 1
-  infiniteScrollingEndSpacing: 0.101
+  infiniteScrollingEndSpacing: 0.1
   useOcclusionCulling: 0
-  startingPanel: 1
+  startingPanel: 0
   swipeGestures: 1
   minimumSwipeSpeed: 0
   previousButton: {fileID: 0}
   nextButton: {fileID: 0}
   pagination: {fileID: 0}
   toggleNavigation: 1
-  snapTarget: 2
+  snapTarget: 0
   snappingSpeed: 10
-  thresholdSnappingSpeed: -1
-  hardSnap: 1
+  thresholdSnappingSpeed: 150
+  hardSnap: 0
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
@@ -37934,68 +37934,7 @@ MonoBehaviour:
   onPanelChanging:
     m_PersistentCalls:
       m_Calls: []
-  transitionEffects:
-  - minDisplacement: 0
-    maxDisplacement: 0
-    minValue: 0
-    maxValue: 0
-    defaultMinValue: 0
-    defaultMaxValue: 0
-    defaultMinDisplacement: 0
-    defaultMaxDisplacement: 0
-    showPanel: 0
-    showDisplacement: 0
-    showValue: 0
-    label: localPosition.z
-    function:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    defaultFunction:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    simpleScrollSnap: {fileID: 1188590673}
+  transitionEffects: []
 --- !u!114 &1188590674
 MonoBehaviour:
   m_ObjectHideFlags: 0
