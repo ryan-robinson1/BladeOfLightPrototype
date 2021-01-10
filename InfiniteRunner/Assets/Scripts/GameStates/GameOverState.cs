@@ -117,7 +117,10 @@ public class GameOverState : MonoBehaviour
     */
     public void calculateBounty()
     {
-        bounty = score / 100 + streak;
+        float g = ((score / 1000) + streak) / 100;
+        float p = Mathf.Pow(g, 1f / 3f) * 535;
+        bounty = Mathf.RoundToInt(p); 
+
         shop.GetComponent<Shop>().depositMoney(bounty);
     }
 
