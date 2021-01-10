@@ -8,6 +8,7 @@ public class StartMenuScript : MonoBehaviour
     public GameObject player;
     public GameObject camera;
     public GameObject UI;
+    public Canvas shopMenu;
    [HideInInspector]
     public GameObject achievements;
     PlayerAnimationController _animController;
@@ -24,6 +25,7 @@ public class StartMenuScript : MonoBehaviour
         // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
         // }
         targetCameraRotation = Quaternion.Euler(23f, 90f, 0f);
+        shopMenu.enabled = false;
     }
 
     /**
