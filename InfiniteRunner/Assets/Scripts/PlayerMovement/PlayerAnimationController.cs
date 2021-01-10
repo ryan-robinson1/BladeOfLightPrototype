@@ -67,6 +67,7 @@ public class PlayerAnimationController : MonoBehaviour
         {
             _anim.SetTrigger("Slide");
         }
+
     }
 
     /**
@@ -125,10 +126,21 @@ public class PlayerAnimationController : MonoBehaviour
         if (this.IsSliding())
         {
             _anim.SetTrigger("SlideAttack");
+            _anim.SetTrigger("SlideAgain");
             player.setDeflects(0);
             slashID = -1;
             return;
         }
+        if (this.IsSlideChain())
+        {
+            _anim.SetTrigger("SlideAttack");
+            _anim.SetTrigger("Slide");
+            player.setDeflects(0);
+            slashID = -1;
+            return;
+        }
+
+
         if (attacks == 0)
         {
             _anim.SetTrigger("Attack");
@@ -240,6 +252,16 @@ public class PlayerAnimationController : MonoBehaviour
     public bool IsSliding()
     {
         return _anim.GetCurrentAnimatorStateInfo(0).IsName("Slide");
+    }
+
+    /**
+     * Checks to see if the hero is in the second sliding state or not.
+     * 
+     * @return True if the hero is currently in the second Slide state.
+     */
+    public bool IsSlideChain()
+    {
+        return _anim.GetCurrentAnimatorStateInfo(0).IsName("SlideAgain");
     }
 
     /**
