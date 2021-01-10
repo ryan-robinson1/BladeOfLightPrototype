@@ -125,6 +125,13 @@ public class PlayerAnimationController : MonoBehaviour
         // slide attack
         if (this.IsSliding())
         {
+            if (_anim.GetAnimatorTransitionInfo(0).IsName("Slide -> Running"))
+            {
+                _anim.SetTrigger("SlideAttack");
+                player.setDeflects(0);
+                slashID = -1;
+                return;
+            }
             player.ChangeBCHeight();
             _anim.SetTrigger("SlideAttack");
             _anim.SetTrigger("SlideAgain");
@@ -134,6 +141,13 @@ public class PlayerAnimationController : MonoBehaviour
         }
         if (this.IsSlideChain())
         {
+            if (_anim.GetAnimatorTransitionInfo(0).IsName("SlideAgain -> Running"))
+            {
+                _anim.SetTrigger("SlideAttack");
+                player.setDeflects(0);
+                slashID = -1;
+                return;
+            }
             player.ChangeBCHeight();
             _anim.SetTrigger("SlideAttack");
             _anim.SetTrigger("Slide");
