@@ -10,12 +10,16 @@ public class Shop : MonoBehaviour
     public Item[] itemArray;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI moneyText2;
+    public TextMeshProUGUI moneyText3;
+    public TextMeshProUGUI moneyText4;
 
     void Start()
     {
         money = PlayerPrefs.GetInt("money", 0);
         moneyText.text = money + "";
         moneyText2.text = money + "";
+        moneyText3.text = money + "";
+        moneyText4.text = money + "";
     }
 
     
@@ -45,6 +49,8 @@ public class Shop : MonoBehaviour
         PlayerPrefs.SetInt("money", money);
         moneyText.text = money+"";
         moneyText2.text = money + "";
+        moneyText3.text = money + "";
+        moneyText4.text = money + "";
 
     }
     public bool withdrawlMoney(int withdrawl)
@@ -56,6 +62,8 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetInt("money", money);
             moneyText.text = money + "";
             moneyText2.text = money + "";
+            moneyText3.text = money + "";
+            moneyText4.text = money + "";
             return true;
         }
         else

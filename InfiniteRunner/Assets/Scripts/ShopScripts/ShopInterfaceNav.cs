@@ -28,8 +28,11 @@ public class ShopInterfaceNav : MonoBehaviour
     public void goToMainMenu()
     {
         ShopCamera.enabled = false;
+        ShopCamera.transform.position = playerShopCameraPosition;
         MainMenuCamera.enabled = true;
         PlayerShopCanvas.enabled = false;
+        EnemyShopCanvas.enabled = false;
+        SwordShopCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
         shop.transform.GetChild(0).gameObject.SetActive(false);
     }
