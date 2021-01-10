@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
+      74: -7302094099422726813
+    second: hero-armature|GetUpFromCrouch
+  - first:
       74: 1973036272630970001
     second: hero-armature|ninja-resting
   - first:
@@ -21,9 +24,6 @@ ModelImporter:
   - first:
       74: 5794877448706365939
     second: hero-armature|ninja-slide-NEW
-  - first:
-      74: 2106805276545097031
-    second: hero-armature|ninja-slide-old
   - first:
       74: 5975838450875884598
     second: hero-armature|ninja_deflect1
@@ -54,9 +54,6 @@ ModelImporter:
   - first:
       74: -8192632056498975336
     second: hero-armature|ninja_sword_basic.001
-  - first:
-      74: -7636657545113919252
-    second: hero-armature|sword-spin
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -115,6 +112,35 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
+    - serializedVersion: 16
+      name: hero-armature|GetUpFromCrouch
+      takeName: hero-armature|GetUpFromCrouch
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: hero-armature|ninja-resting
       takeName: hero-armature|ninja-resting
@@ -185,8 +211,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -214,8 +240,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -266,35 +292,6 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 37
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: hero-armature|ninja-slide-old
-      takeName: hero-armature|ninja-slide-old
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 52
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -585,35 +582,6 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 10
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: hero-armature|sword-spin
-      takeName: hero-armature|sword-spin
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
