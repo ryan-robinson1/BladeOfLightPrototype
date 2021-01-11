@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,24 +14,70 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI moneyText2;
     public TextMeshProUGUI moneyText3;
     public TextMeshProUGUI moneyText4;
+    public List<Transform> itemCanvas;
+    public bool deletePlayerPrefs = false;
     TextMeshProUGUI achievmentText;
     Button purchaseButton;
     TextMeshProUGUI itemName;
+    private bool firstTimePlaying;
 
     void Start()
     {
+        if (deletePlayerPrefs)
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        hasPlayed();
+        setUpItemPlayerPrefs();
         money = PlayerPrefs.GetInt("money", 0);
         moneyText.text = money + "";
         moneyText2.text = money + "";
         moneyText3.text = money + "";
         moneyText4.text = money + "";
-    }
+        
 
-    
-    void Update()
-    {
         
     }
+    public void hasPlayed()
+    {
+        int hasPlayed = PlayerPrefs.GetInt("hasPlayed",0);
+        if (hasPlayed == 0)
+        {
+            PlayerPrefs.SetInt("hasPlayed", 1);
+            firstTimePlaying = true;
+            
+        }
+        else
+        {
+            firstTimePlaying = false;
+        }
+        
+    }
+    public void setUpItemPlayerPrefs()
+    {
+        
+
+        foreach(Transform canvas in itemCanvas)
+        {
+            foreach(Transform t in canvas)
+            {
+                Item tempItem = t.GetComponent<Item>();
+                tempItem.purchaseState = (Item.ButtonState)Enum.Parse(typeof(Item.ButtonState), PlayerPrefs.GetString(tempItem.name, "unlocked"), true);
+
+                if (tempItem.defaultItem && firstTimePlaying)
+                {
+                    tempItem.price = 0;
+                    
+                    tempItem.purchaseState = Item.ButtonState.equipped;
+                    PlayerPrefs.SetString(tempItem.name, tempItem.purchaseState.ToString());
+                    // equipItem(tempItem);
+                    Debug.Log("FirstTimePlaying");
+                }
+            }
+        }
+    }
+  
+    
     public void updateScrollSnap(DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap _scrollSnap)
     {
         itemList.Clear();
@@ -115,6 +162,7 @@ public class Shop : MonoBehaviour
         if (withdrawlMoney(i.price))
         {
             i.purchaseState = Item.ButtonState.purchased;
+            PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
             setItemValues();
         }
     }
@@ -126,6 +174,24 @@ public class Shop : MonoBehaviour
             foreach (var otherItem in itemList)
             {
                 if(otherItem.purchaseState == Item.ButtonState.equipped)
+                {
+                    otherItem.purchaseState = Item.ButtonState.purchased;
+                    PlayerPrefs.SetString(otherItem.name, otherItem.purchaseState.ToString());
+                }
+            }
+            i.purchaseState = Item.ButtonState.equipped;
+            PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
+            
+            setItemValues();
+        }
+    }
+    public void equipItem(Item i)
+    {
+        if (i.purchaseState == Item.ButtonState.purchased)
+        {
+            foreach (var otherItem in itemList)
+            {
+                if (otherItem.purchaseState == Item.ButtonState.equipped)
                 {
                     otherItem.purchaseState = Item.ButtonState.purchased;
                 }

@@ -5726,7 +5726,7 @@ MonoBehaviour:
   prefab: {fileID: 97069849}
   name: IceCore
   price: 10
-  defaultItem: 1
+  defaultItem: 0
   color: 
   achievement: Kill a bear
   purchaseState: 2
@@ -5827,6 +5827,12 @@ MonoBehaviour:
   moneyText2: {fileID: 478555159}
   moneyText3: {fileID: 390521926}
   moneyText4: {fileID: 1717883601}
+  itemCanvas:
+  - {fileID: 2139145385}
+  - {fileID: 580547633}
+  - {fileID: 1926193808}
+  - {fileID: 686266117}
+  deletePlayerPrefs: 0
 --- !u!1 &158974309
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,7 +6645,7 @@ MonoBehaviour:
   prefab: {fileID: 261299783}
   name: Light Sword
   price: 45
-  defaultItem: 0
+  defaultItem: 1
   color: 
   achievement: Win a duel
   purchaseState: 2
@@ -32984,7 +32990,7 @@ MonoBehaviour:
   prefab: {fileID: 573329336}
   name: CodeCore
   price: 25
-  defaultItem: 0
+  defaultItem: 1
   color: 
   achievement: Kill someone and get away with it
   purchaseState: 2
@@ -40953,7 +40959,7 @@ MonoBehaviour:
   prefab: {fileID: 1116497304}
   name: DarkCodeCore
   price: 35
-  defaultItem: 0
+  defaultItem: 1
   color: 
   achievement: Carve a pumpkin
   purchaseState: 2
@@ -70305,7 +70311,7 @@ MonoBehaviour:
   prefab: {fileID: 1849849415}
   name: RedCore
   price: 75
-  defaultItem: 0
+  defaultItem: 1
   color: 
   achievement: red rEd red!
   purchaseState: 2
