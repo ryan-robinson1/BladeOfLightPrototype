@@ -122,7 +122,6 @@ public class PlayerController : MonoBehaviour
     {
         _cc.height = 1f;
         _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z);
-        Invoke("resetBC", 1.27f);
     }
     void resetBC()
     {

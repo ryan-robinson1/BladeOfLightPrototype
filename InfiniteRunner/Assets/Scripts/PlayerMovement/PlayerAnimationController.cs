@@ -66,9 +66,16 @@ public class PlayerAnimationController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) || SwipeInput.Instance.SwipeDown)
         {
             _anim.SetTrigger("Slide");
+            player.ChangeBCHeight();
         }
-
+        
+        if (_anim.GetAnimatorTransitionInfo(0).IsName("Slide -> Running") ||
+            _anim.GetAnimatorTransitionInfo(0).IsName("SlideAgain -> Running"))
+        {
+            player.Invoke("resetBC", 0f);
+        }
     }
+
 
     /**
      * Resets the attackMultiplier upon missing an enemy.
