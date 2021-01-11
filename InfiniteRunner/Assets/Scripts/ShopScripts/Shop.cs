@@ -50,7 +50,7 @@ public class Shop : MonoBehaviour
     public void setItemValues()
     {
         int index = scrollSnap.CurrentPanel;
-        Debug.Log(index);
+
         achievmentText.text = itemList[index].achievement;
         itemName.text = itemList[index].name;
 
@@ -97,12 +97,25 @@ public class Shop : MonoBehaviour
             buttonText.text = "Equip";
         }
     }
-    public void purchaseItem(string name)
+    public void pressPurchaseEnableButton(Button button)
+    {
+        Text buttonText = button.GetComponentInChildren<Text>();
+        if (buttonText.text == "Equip")
+        {
+            equipItem();
+        }
+        else if (buttonText.text.StartsWith("$"))
+        {
+            purchaseItem();
+        }
+    }
+    public void purchaseItem()
     {
         Item i = itemList[scrollSnap.CurrentPanel];
         if (withdrawlMoney(i.price))
         {
             i.purchaseState = Item.ButtonState.purchased;
+            setItemValues();
         }
     }
     public void equipItem()
@@ -110,8 +123,20 @@ public class Shop : MonoBehaviour
         Item i = itemList[scrollSnap.CurrentPanel];
         if (i.purchaseState == Item.ButtonState.purchased)
         {
+            foreach (var otherItem in itemList)
+            {
+                if(otherItem.purchaseState == Item.ButtonState.equipped)
+                {
+                    otherItem.purchaseState = Item.ButtonState.purchased;
+                }
+            }
             i.purchaseState = Item.ButtonState.equipped;
+            setItemValues();
         }
+    }
+    public void unlockItem(Item i)
+    {
+        i.purchaseState = Item.ButtonState.unlocked;
     }
     public void depositMoney(int deposit)
     {

@@ -397,7 +397,7 @@ Canvas:
   m_GameObject: {fileID: 31118430}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1775364385}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -635,7 +635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 73883273}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: pressPurchaseEnableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 73883272}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &73883273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5713,7 +5725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 97069849}
   name: IceCore
-  price: 0
+  price: 10
   defaultItem: 1
   color: 
   achievement: Kill a bear
@@ -6626,7 +6638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 261299783}
   name: Light Sword
-  price: 3000
+  price: 45
   defaultItem: 0
   color: 
   achievement: Win a duel
@@ -17525,7 +17537,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432811349}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: pressPurchaseEnableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 432811348}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432811349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17654,7 +17678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 436847017}
   name: Dagger
-  price: 1500
+  price: 25
   defaultItem: 0
   color: 
   achievement: Stab someone in the back
@@ -17749,7 +17773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 460401868}
   name: AquaCore
-  price: 1500
+  price: 5
   defaultItem: 0
   color: 
   achievement: Fought 2000 enemies
@@ -27756,7 +27780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 510051637}
   name: DarkPlasmaCore
-  price: 1000
+  price: 50
   defaultItem: 0
   color: 
   achievement: Buy your first home
@@ -32959,7 +32983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 573329336}
   name: CodeCore
-  price: 3500
+  price: 25
   defaultItem: 0
   color: 
   achievement: Kill someone and get away with it
@@ -33054,7 +33078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 576701923}
   name: SunCore
-  price: 1200
+  price: 80
   defaultItem: 0
   color: 
   achievement: Geocash
@@ -38076,7 +38100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 599003386}
   name: DarkIceCore
-  price: 3400
+  price: 25
   defaultItem: 0
   color: 
   achievement: Kick a field goal
@@ -39172,7 +39196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 851054185}
   name: DarkAquaCore
-  price: 2111
+  price: 20
   defaultItem: 0
   color: 
   achievement: AHelp an old lady cross the street
@@ -39346,7 +39370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 873213798}
   name: PurpleCore
-  price: 3468
+  price: 30
   defaultItem: 0
   color: 
   achievement: Adopt a Dog
@@ -40445,7 +40469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   name: MatterCore
-  price: 5000
+  price: 45
   defaultItem: 0
   color: 
   achievement: do 4 jumping jacks
@@ -40928,7 +40952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1116497304}
   name: DarkCodeCore
-  price: 3233
+  price: 35
   defaultItem: 0
   color: 
   achievement: Carve a pumpkin
@@ -42329,7 +42353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1329082539}
   name: DarkFlameCore
-  price: 4677
+  price: 45
   defaultItem: 0
   color: 
   achievement: Invest into tesla
@@ -42876,7 +42900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1399353285}
   name: Ray Sword
-  price: 2000
+  price: 40
   defaultItem: 0
   color: 
   achievement: Fight a wolf
@@ -47842,7 +47866,7 @@ Canvas:
   m_GameObject: {fileID: 1455618296}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1775364385}
   m_PlaneDistance: 1
   m_PixelPerfect: 0
@@ -52911,7 +52935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1469104257}
   name: IceCore
-  price: 3
+  price: 45
   defaultItem: 0
   color: 
   achievement: Never Kill Anyone
@@ -58390,7 +58414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1539040258}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: pressPurchaseEnableButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1539040257}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1539040258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69131,7 +69167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1704612564}
   name: Rapier
-  price: 2500
+  price: 30
   defaultItem: 0
   color: 
   achievement: Run for office
@@ -69810,7 +69846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1841627177}
   name: Long Sword
-  price: 400
+  price: 20
   defaultItem: 0
   color: 
   achievement: Stub your toe
@@ -69905,7 +69941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1849849415}
   name: BlueCore
-  price: 3444
+  price: 25
   defaultItem: 0
   color: 
   achievement: Get 6000 Score
@@ -70268,7 +70304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1849849415}
   name: RedCore
-  price: 4500
+  price: 75
   defaultItem: 0
   color: 
   achievement: red rEd red!
@@ -75650,7 +75686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2010392588}
   name: FlameCore
-  price: 2000
+  price: 35
   defaultItem: 0
   color: 
   achievement: Beat somone in a game of chess
