@@ -120,8 +120,15 @@ public class PlayerController : MonoBehaviour
      */
     public void ChangeBCHeight()
     {
-        _cc.height = 1f;
-        _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z);
+        try
+        {
+            _cc.height = 1f;
+            _cc.center = new Vector3(_cc.center.x, -0.5f, _cc.center.z);
+        }
+        catch
+        {
+
+        }
     }
     void resetBC()
     {

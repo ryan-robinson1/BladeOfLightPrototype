@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopInterfaceNav : MonoBehaviour
 {
@@ -10,13 +12,17 @@ public class ShopInterfaceNav : MonoBehaviour
     public Canvas EnemyShopCanvas;
     public Canvas SwordShopCanvas;
     public Canvas mainMenuCanvas;
-    public GameObject shop;
+    public Shop shop;
+    public DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnapSword;
+    public DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnapSwordCore;
     bool moveToEnemyShop = false;
     bool moveToPlayerShop = false;
     bool moveToSwordShop = false;
+    bool swordCoreSwitchFlag = false;
     Vector3 enemyShopCameraPosition = new Vector3(-8.152f, 2.43f, 10.6f);
     Vector3 playerShopCameraPosition = new Vector3(-15f, 2.43f, 10.6f);
     Vector3 swordShopCameraPosition = new Vector3(-21.848f, 2.43f, 10.6f);
+    private DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnap;
     public void goToShop()
     {
         ShopCamera.enabled = true;
@@ -24,6 +30,10 @@ public class ShopInterfaceNav : MonoBehaviour
         PlayerShopCanvas.enabled = true;
         mainMenuCanvas.enabled = false;
         shop.transform.GetChild(0).gameObject.SetActive(true);
+        scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
+        shop.updateScrollSnap(scrollSnap);
+        shop.updateShopUIReferences(PlayerShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), PlayerShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
+            PlayerShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
     }
     public void goToMainMenu()
     {
@@ -39,22 +49,53 @@ public class ShopInterfaceNav : MonoBehaviour
     public void goToEnemyShop()
     {
         moveToEnemyShop = true;
-       
         PlayerShopCanvas.enabled = false;
+        scrollSnap = EnemyShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
+        shop.updateScrollSnap(scrollSnap);
+        shop.updateShopUIReferences(EnemyShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), EnemyShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
+            EnemyShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
     }
     public void goToPlayerShop()
     {
         EnemyShopCanvas.enabled = false;
         SwordShopCanvas.enabled = false;
-       
         moveToPlayerShop = true;
+        scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
+        shop.updateScrollSnap(scrollSnap);
+        shop.updateShopUIReferences(PlayerShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), PlayerShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
+            PlayerShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
+
     }
     public void goToSwordShop()
     {
         PlayerShopCanvas.enabled = false;
         
         moveToSwordShop = true;
-
+        if (!swordCoreSwitchFlag)
+        {
+            shop.updateScrollSnap(scrollSnapSword);
+            shop.setItemValues();
+        }
+        else
+        {
+            shop.updateScrollSnap(scrollSnapSwordCore);
+            shop.setItemValues();
+        }
+       
+        shop.updateShopUIReferences(SwordShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), SwordShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
+            SwordShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
+    }
+    public void switchSwordShopScrollSnap()
+    {
+        if (!swordCoreSwitchFlag)
+        {
+           
+            swordCoreSwitchFlag = true;
+        }
+        else
+        {
+            swordCoreSwitchFlag = false;
+        }
     }
     void Update()
     {
@@ -65,6 +106,8 @@ public class ShopInterfaceNav : MonoBehaviour
             {
                 moveToEnemyShop = false;
                 EnemyShopCanvas.enabled = true;
+                shop.setItemValues();
+
             }
         }
         else if (moveToPlayerShop)
@@ -74,6 +117,7 @@ public class ShopInterfaceNav : MonoBehaviour
             {
                 moveToPlayerShop = false;
                 PlayerShopCanvas.enabled = true;
+                shop.setItemValues();
             }
         }
         else if (moveToSwordShop)
@@ -83,6 +127,7 @@ public class ShopInterfaceNav : MonoBehaviour
             {
                 moveToSwordShop = false;
                 SwordShopCanvas.enabled = true;
+                shop.setItemValues();
             }
         }
     }
