@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
     private int money;
-    private List<Item> itemList = new List<Item>();
-    private DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnap; 
+    [SerializeField]
+    public Item[] itemArray;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI moneyText2;
     public TextMeshProUGUI moneyText3;
     public TextMeshProUGUI moneyText4;
-    TextMeshProUGUI achievmentText;
-    Button purchaseButton;
-    TextMeshProUGUI itemName;
 
     void Start()
     {
@@ -31,86 +27,20 @@ public class Shop : MonoBehaviour
     {
         
     }
-    public void updateScrollSnap(DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap _scrollSnap)
-    {
-        itemList.Clear();
-        scrollSnap = _scrollSnap;
-        GameObject content = _scrollSnap.transform.GetChild(0).GetChild(0).gameObject;
-        foreach (Transform child in content.transform)
-        {
-            itemList.Add(child.GetComponent<Item>());
-        }
-    }
-    public void updateShopUIReferences(TextMeshProUGUI _achievementText, Button _purchaseButton, TextMeshProUGUI _itemName)
-    {
-        itemName = _itemName;
-        purchaseButton = _purchaseButton;
-        achievmentText = _achievementText;
-    }
-    public void setItemValues()
-    {
-        int index = scrollSnap.CurrentPanel;
-        Debug.Log(index);
-        achievmentText.text = itemList[index].achievement;
-        itemName.text = itemList[index].name;
-
-        Text buttonText = purchaseButton.GetComponentInChildren<Text>();
-        if (itemList[index].purchaseState == Item.ButtonState.equipped)
-        {
-            buttonText.text = "Equipped"; 
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.locked)
-        {
-            buttonText.text = "Locked";
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.unlocked)
-        {
-            buttonText.text = "$" + itemList[index].price;
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.purchased)
-        {
-            buttonText.text = "Equip";
-        }
-    }
-    public void setItemValues(int _index)
-    {
-        int index = _index;
-        
-        achievmentText.text = itemList[index].achievement;
-        itemName.text = itemList[index].name;
-
-        Text buttonText = purchaseButton.GetComponentInChildren<Text>();
-        if (itemList[index].purchaseState == Item.ButtonState.equipped)
-        {
-            buttonText.text = "Equipped";
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.locked)
-        {
-            buttonText.text = "Locked";
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.unlocked)
-        {
-            buttonText.text = "$" + itemList[index].price;
-        }
-        else if (itemList[index].purchaseState == Item.ButtonState.purchased)
-        {
-            buttonText.text = "Equip";
-        }
-    }
     public void purchaseItem(string name)
     {
-        Item i = itemList[scrollSnap.CurrentPanel];
+        Item i = findItemByName(name);
         if (withdrawlMoney(i.price))
         {
-            i.purchaseState = Item.ButtonState.purchased;
+            i.purchased = true;
         }
     }
-    public void equipItem()
+    public void equipItem(string name)
     {
-        Item i = itemList[scrollSnap.CurrentPanel];
-        if (i.purchaseState == Item.ButtonState.purchased)
+        Item i = findItemByName(name);
+        if (i.purchased)
         {
-            i.purchaseState = Item.ButtonState.equipped;
+            i.equipped = true;
         }
     }
     public void depositMoney(int deposit)
@@ -143,9 +73,9 @@ public class Shop : MonoBehaviour
        
        
     }
-   /* public Item findItemByName(string name)
+    public Item findItemByName(string name)
     {
-        foreach(Item i in itemList)
+        foreach(Item i in itemArray)
         {
             if (i.name == name)
             {
@@ -153,5 +83,5 @@ public class Shop : MonoBehaviour
             }
         }
         return null;
-    }*/
+    }
 }
