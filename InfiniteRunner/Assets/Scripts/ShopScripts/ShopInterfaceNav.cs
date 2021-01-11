@@ -33,7 +33,9 @@ public class ShopInterfaceNav : MonoBehaviour
         scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
         shop.updateScrollSnap(scrollSnap);
         shop.updateShopUIReferences(PlayerShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), PlayerShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
+            
             PlayerShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
+        shop.setItemValues();
     }
     public void goToMainMenu()
     {

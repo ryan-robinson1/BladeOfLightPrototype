@@ -395,7 +395,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31118430}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 1775364385}
@@ -456,7 +456,9 @@ MonoBehaviour:
   EnemyShopCanvas: {fileID: 1482464653}
   SwordShopCanvas: {fileID: 1455618301}
   mainMenuCanvas: {fileID: 2142929638}
-  shop: {fileID: 0}
+  shop: {fileID: 140760967}
+  scrollSnapSword: {fileID: 1977639678}
+  scrollSnapSwordCore: {fileID: 1376554430}
 --- !u!1 &37020331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,8 +5716,8 @@ MonoBehaviour:
   price: 0
   defaultItem: 1
   color: 
-  achievement: 
-  purchaseState: 0
+  achievement: Kill a bear
+  purchaseState: 2
 --- !u!4 &97363569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3410340283595041248, guid: 67e7163adcd6fff40a94c3b46c34630f,
@@ -6481,7 +6483,19 @@ MonoBehaviour:
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: setItemValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPanelSelecting:
     m_PersistentCalls:
       m_Calls: []
@@ -6533,6 +6547,7 @@ GameObject:
   - component: {fileID: 261299784}
   - component: {fileID: 261299786}
   - component: {fileID: 261299785}
+  - component: {fileID: 261299787}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -6597,6 +6612,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261299783}
   m_CullTransparentMesh: 0
+--- !u!114 &261299787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261299783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 261299783}
+  name: Light Sword
+  price: 3000
+  defaultItem: 0
+  color: 
+  achievement: Win a duel
+  purchaseState: 2
 --- !u!1 &263534969
 GameObject:
   m_ObjectHideFlags: 0
@@ -17541,6 +17575,7 @@ GameObject:
   - component: {fileID: 436847018}
   - component: {fileID: 436847020}
   - component: {fileID: 436847019}
+  - component: {fileID: 436847021}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -17605,6 +17640,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436847017}
   m_CullTransparentMesh: 0
+--- !u!114 &436847021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436847017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 436847017}
+  name: Dagger
+  price: 1500
+  defaultItem: 0
+  color: 
+  achievement: Stab someone in the back
+  purchaseState: 2
 --- !u!1 &460401868
 GameObject:
   m_ObjectHideFlags: 0
@@ -17698,8 +17752,8 @@ MonoBehaviour:
   price: 1500
   defaultItem: 0
   color: 
-  achievement: 
-  purchaseState: 0
+  achievement: Fought 2000 enemies
+  purchaseState: 2
 --- !u!1 &469702432
 GameObject:
   m_ObjectHideFlags: 0
@@ -27623,6 +27677,7 @@ GameObject:
   - component: {fileID: 510051638}
   - component: {fileID: 510051640}
   - component: {fileID: 510051639}
+  - component: {fileID: 510051641}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -27687,6 +27742,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510051637}
   m_CullTransparentMesh: 0
+--- !u!114 &510051641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510051637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 510051637}
+  name: DarkPlasmaCore
+  price: 1000
+  defaultItem: 0
+  color: 
+  achievement: Buy your first home
+  purchaseState: 2
 --- !u!1 &538068929
 GameObject:
   m_ObjectHideFlags: 0
@@ -32888,8 +32962,8 @@ MonoBehaviour:
   price: 3500
   defaultItem: 0
   color: 
-  achievement: 
-  purchaseState: 0
+  achievement: Kill someone and get away with it
+  purchaseState: 2
 --- !u!1 &576701923
 GameObject:
   m_ObjectHideFlags: 0
@@ -32901,6 +32975,7 @@ GameObject:
   - component: {fileID: 576701924}
   - component: {fileID: 576701926}
   - component: {fileID: 576701925}
+  - component: {fileID: 576701927}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -32965,6 +33040,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576701923}
   m_CullTransparentMesh: 0
+--- !u!114 &576701927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576701923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 576701923}
+  name: SunCore
+  price: 1200
+  defaultItem: 0
+  color: 
+  achievement: Geocash
+  purchaseState: 2
 --- !u!1 &580547632
 GameObject:
   m_ObjectHideFlags: 0
@@ -37903,6 +37997,7 @@ GameObject:
   - component: {fileID: 599003387}
   - component: {fileID: 599003389}
   - component: {fileID: 599003388}
+  - component: {fileID: 599003390}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -37967,6 +38062,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599003386}
   m_CullTransparentMesh: 0
+--- !u!114 &599003390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599003386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 599003386}
+  name: DarkIceCore
+  price: 3400
+  defaultItem: 0
+  color: 
+  achievement: Kick a field goal
+  purchaseState: 2
 --- !u!1 &621426484
 GameObject:
   m_ObjectHideFlags: 0
@@ -38979,6 +39093,7 @@ GameObject:
   - component: {fileID: 851054186}
   - component: {fileID: 851054188}
   - component: {fileID: 851054187}
+  - component: {fileID: 851054189}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -39043,6 +39158,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851054185}
   m_CullTransparentMesh: 0
+--- !u!114 &851054189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851054185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 851054185}
+  name: DarkAquaCore
+  price: 2111
+  defaultItem: 0
+  color: 
+  achievement: AHelp an old lady cross the street
+  purchaseState: 2
 --- !u!1 &868032867
 GameObject:
   m_ObjectHideFlags: 0
@@ -39133,6 +39267,7 @@ GameObject:
   - component: {fileID: 873213799}
   - component: {fileID: 873213801}
   - component: {fileID: 873213800}
+  - component: {fileID: 873213802}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -39197,6 +39332,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873213798}
   m_CullTransparentMesh: 0
+--- !u!114 &873213802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873213798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 873213798}
+  name: PurpleCore
+  price: 3468
+  defaultItem: 0
+  color: 
+  achievement: Adopt a Dog
+  purchaseState: 2
 --- !u!1 &875178278
 GameObject:
   m_ObjectHideFlags: 0
@@ -39914,7 +40068,7 @@ GameObject:
   - component: {fileID: 989211015}
   - component: {fileID: 989211014}
   m_Layer: 5
-  m_Name: AchievmentRequirement
+  m_Name: AchievementRequirement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39993,7 +40147,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -40101,8 +40255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.675, y: -666}
-  m_SizeDelta: {x: 252.90118, y: 65.03693}
+  m_AnchoredPosition: {x: 6.4, y: -666}
+  m_SizeDelta: {x: 535.6584, y: 65.03693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003176831
 MonoBehaviour:
@@ -40158,7 +40312,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -40294,8 +40448,8 @@ MonoBehaviour:
   price: 5000
   defaultItem: 0
   color: 
-  achievement: 
-  purchaseState: 0
+  achievement: do 4 jumping jacks
+  purchaseState: 2
 --- !u!1 &1019524914
 GameObject:
   m_ObjectHideFlags: 0
@@ -40430,7 +40584,7 @@ GameObject:
   - component: {fileID: 1076157869}
   - component: {fileID: 1076157868}
   m_Layer: 5
-  m_Name: AchievmentRequirement
+  m_Name: AchievementRequirement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40509,7 +40663,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -40695,6 +40849,7 @@ GameObject:
   - component: {fileID: 1116497305}
   - component: {fileID: 1116497307}
   - component: {fileID: 1116497306}
+  - component: {fileID: 1116497308}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -40759,6 +40914,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116497304}
   m_CullTransparentMesh: 0
+--- !u!114 &1116497308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116497304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1116497304}
+  name: DarkCodeCore
+  price: 3233
+  defaultItem: 0
+  color: 
+  achievement: Carve a pumpkin
+  purchaseState: 2
 --- !u!1 &1131692591
 GameObject:
   m_ObjectHideFlags: 0
@@ -41014,6 +41188,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: setItemValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1166104949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41230,7 +41416,19 @@ MonoBehaviour:
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: setItemValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPanelSelecting:
     m_PersistentCalls:
       m_Calls: []
@@ -41630,7 +41828,7 @@ GameObject:
   - component: {fileID: 1265027807}
   - component: {fileID: 1265027806}
   m_Layer: 5
-  m_Name: AchievmentRequirement
+  m_Name: AchievementRequirement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41709,7 +41907,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -42052,6 +42250,7 @@ GameObject:
   - component: {fileID: 1329082540}
   - component: {fileID: 1329082542}
   - component: {fileID: 1329082541}
+  - component: {fileID: 1329082543}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -42116,6 +42315,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329082539}
   m_CullTransparentMesh: 0
+--- !u!114 &1329082543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329082539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1329082539}
+  name: DarkFlameCore
+  price: 4677
+  defaultItem: 0
+  color: 
+  achievement: Invest into tesla
+  purchaseState: 2
 --- !u!1 &1329461940
 GameObject:
   m_ObjectHideFlags: 0
@@ -42515,7 +42733,19 @@ MonoBehaviour:
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: setItemValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPanelSelecting:
     m_PersistentCalls:
       m_Calls: []
@@ -42567,6 +42797,7 @@ GameObject:
   - component: {fileID: 1399353286}
   - component: {fileID: 1399353288}
   - component: {fileID: 1399353287}
+  - component: {fileID: 1399353289}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -42631,6 +42862,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399353285}
   m_CullTransparentMesh: 0
+--- !u!114 &1399353289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399353285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1399353285}
+  name: Ray Sword
+  price: 2000
+  defaultItem: 0
+  color: 
+  achievement: Fight a wolf
+  purchaseState: 2
 --- !u!1 &1415579264
 GameObject:
   m_ObjectHideFlags: 0
@@ -52582,6 +52832,7 @@ GameObject:
   - component: {fileID: 1469104258}
   - component: {fileID: 1469104260}
   - component: {fileID: 1469104259}
+  - component: {fileID: 1469104261}
   m_Layer: 5
   m_Name: 2
   m_TagString: Untagged
@@ -52646,6 +52897,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469104257}
   m_CullTransparentMesh: 0
+--- !u!114 &1469104261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469104257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1469104257}
+  name: IceCore
+  price: 3
+  defaultItem: 0
+  color: 
+  achievement: Never Kill Anyone
+  purchaseState: 2
 --- !u!1 &1470794321
 GameObject:
   m_ObjectHideFlags: 0
@@ -57939,8 +58209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.675, y: -666}
-  m_SizeDelta: {x: 252.90118, y: 65.03693}
+  m_AnchoredPosition: {x: 6.4, y: -666}
+  m_SizeDelta: {x: 535.6584, y: 65.03693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536373735
 MonoBehaviour:
@@ -57996,7 +58266,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -68782,6 +69052,7 @@ GameObject:
   - component: {fileID: 1704612565}
   - component: {fileID: 1704612567}
   - component: {fileID: 1704612566}
+  - component: {fileID: 1704612568}
   m_Layer: 5
   m_Name: 4
   m_TagString: Untagged
@@ -68846,6 +69117,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704612564}
   m_CullTransparentMesh: 0
+--- !u!114 &1704612568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704612564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1704612564}
+  name: Rapier
+  price: 2500
+  defaultItem: 0
+  color: 
+  achievement: Run for office
+  purchaseState: 2
 --- !u!1 &1717883599
 GameObject:
   m_ObjectHideFlags: 0
@@ -69441,6 +69731,7 @@ GameObject:
   - component: {fileID: 1841627178}
   - component: {fileID: 1841627180}
   - component: {fileID: 1841627179}
+  - component: {fileID: 1841627181}
   m_Layer: 5
   m_Name: 5
   m_TagString: Untagged
@@ -69505,6 +69796,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841627177}
   m_CullTransparentMesh: 0
+--- !u!114 &1841627181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841627177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1841627177}
+  name: Long Sword
+  price: 400
+  defaultItem: 0
+  color: 
+  achievement: Stub your toe
+  purchaseState: 2
 --- !u!1 &1849849415
 GameObject:
   m_ObjectHideFlags: 0
@@ -69516,6 +69826,7 @@ GameObject:
   - component: {fileID: 1849849416}
   - component: {fileID: 1849849418}
   - component: {fileID: 1849849417}
+  - component: {fileID: 1849849419}
   m_Layer: 5
   m_Name: 1
   m_TagString: Untagged
@@ -69580,6 +69891,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849849415}
   m_CullTransparentMesh: 0
+--- !u!114 &1849849419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849849415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1849849415}
+  name: BlueCore
+  price: 3444
+  defaultItem: 0
+  color: 
+  achievement: Get 6000 Score
+  purchaseState: 2
 --- !u!1 &1862445250
 GameObject:
   m_ObjectHideFlags: 0
@@ -69614,8 +69944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.675, y: -666}
-  m_SizeDelta: {x: 252.90118, y: 65.03693}
+  m_AnchoredPosition: {x: 6.4, y: -666}
+  m_SizeDelta: {x: 535.6584, y: 65.03693}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862445252
 MonoBehaviour:
@@ -69671,7 +70001,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -69859,6 +70189,7 @@ GameObject:
   - component: {fileID: 1914969496}
   - component: {fileID: 1914969498}
   - component: {fileID: 1914969497}
+  - component: {fileID: 1914969499}
   m_Layer: 5
   m_Name: 3
   m_TagString: Untagged
@@ -69923,6 +70254,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914969495}
   m_CullTransparentMesh: 0
+--- !u!114 &1914969499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914969495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1849849415}
+  name: RedCore
+  price: 4500
+  defaultItem: 0
+  color: 
+  achievement: red rEd red!
+  purchaseState: 2
 --- !u!1 &1926193807
 GameObject:
   m_ObjectHideFlags: 0
@@ -70345,7 +70695,19 @@ MonoBehaviour:
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 140760967}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: setItemValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPanelSelecting:
     m_PersistentCalls:
       m_Calls: []
@@ -75291,8 +75653,8 @@ MonoBehaviour:
   price: 2000
   defaultItem: 0
   color: 
-  achievement: 
-  purchaseState: 0
+  achievement: Beat somone in a game of chess
+  purchaseState: 2
 --- !u!1 &2116228442
 GameObject:
   m_ObjectHideFlags: 0
@@ -75441,6 +75803,9 @@ MonoBehaviour:
   coreSelect: {fileID: 1977639676}
   swordSelect: {fileID: 1376554428}
   buttonText: {fileID: 868032869}
+  shop: {fileID: 140760967}
+  scrollSnapSwordCore: {fileID: 1376554430}
+  scrollSnapSword: {fileID: 1977639678}
 --- !u!1 &2124306196
 GameObject:
   m_ObjectHideFlags: 0
@@ -83210,19 +83575,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.99992615
-      value: -0.99984777
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.01215172
-      value: 0.017452639
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -83238,7 +83600,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 358.607
-      value: 358
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
