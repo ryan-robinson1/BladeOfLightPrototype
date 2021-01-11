@@ -5810,6 +5810,8 @@ MonoBehaviour:
     equipped: 0
   moneyText: {fileID: 280860575}
   moneyText2: {fileID: 478555159}
+  moneyText3: {fileID: 0}
+  moneyText4: {fileID: 0}
 --- !u!1 &158974309
 GameObject:
   m_ObjectHideFlags: 0
@@ -82226,41 +82228,6 @@ PrefabInstance:
       propertyPath: healLightFX
       value: 
       objectReference: {fileID: 186340981}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.46270883
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.964536
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 1.2822683
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.07985888
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.46497473
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.06251528
-      objectReference: {fileID: 0}
-    - target: {fileID: 8091541567484115807, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115810, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_Name
@@ -82309,17 +82276,17 @@ PrefabInstance:
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99992615
+      value: -0.99984777
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.01215172
+      value: 0.017452639
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -82334,7 +82301,7 @@ PrefabInstance:
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 358.607
+      value: 358
       objectReference: {fileID: 0}
     - target: {fileID: 8091541567484115811, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
