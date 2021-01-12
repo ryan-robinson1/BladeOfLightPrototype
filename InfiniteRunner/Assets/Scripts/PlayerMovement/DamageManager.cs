@@ -159,7 +159,6 @@ public class DamageManager : MonoBehaviour
         health = healHealth;
         edgeWidth = 0.03f;
         healthIndicator.SetFloat("edgeWidth", edgeWidth);
-        Debug.Log("edgeWidth finished " + edgeWidth);
     }
 
     /**
