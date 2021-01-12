@@ -26,10 +26,13 @@ public class SwordColorScript : MonoBehaviour
     {
         swordEmission = ColorDataBase.GetSwordColor();
         swordAlbedo = ColorDataBase.GetSwordAlbedo();
-
-        bladeSmoke = transform.GetChild(0).GetComponentInChildren<
-            ParticleSystem>().main;
-        bladeSmoke.startColor = swordAlbedo;
+        try
+        {
+            bladeSmoke = transform.GetChild(0).GetComponentInChildren<
+                ParticleSystem>().main;
+            bladeSmoke.startColor = swordAlbedo;
+        }
+        catch { }
 
         slashMaterial.SetColor("slashColor", swordEmission);
 
