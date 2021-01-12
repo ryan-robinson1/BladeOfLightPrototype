@@ -53,6 +53,10 @@ public class Shop : MonoBehaviour
         }
         
     }
+    public int selectedPanel()
+    {
+        return scrollSnap.CurrentPanel;
+    }
     public void setUpItemPlayerPrefs()
     {
         
@@ -78,15 +82,21 @@ public class Shop : MonoBehaviour
     }
   
     
-    public void updateScrollSnap(DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap _scrollSnap)
+    public int updateScrollSnap(DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap _scrollSnap)
     {
+        int equippedIndex = -1;
         itemList.Clear();
         scrollSnap = _scrollSnap;
         GameObject content = _scrollSnap.transform.GetChild(0).GetChild(0).gameObject;
         foreach (Transform child in content.transform)
         {
             itemList.Add(child.GetComponent<Item>());
+            if(child.GetComponent<Item>().purchaseState == Item.ButtonState.equipped)
+            {
+                equippedIndex= itemList.Count - 1;
+            }
         }
+        return equippedIndex;
     }
     public void updateShopUIReferences(TextMeshProUGUI _achievementText, Button _purchaseButton, TextMeshProUGUI _itemName)
     {
@@ -166,6 +176,7 @@ public class Shop : MonoBehaviour
             setItemValues();
         }
     }
+
     public void equipItem()
     {
         Item i = itemList[scrollSnap.CurrentPanel];

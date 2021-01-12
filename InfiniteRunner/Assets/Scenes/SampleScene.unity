@@ -42526,9 +42526,9 @@ MonoBehaviour:
     pitch: 1
     priority: 108
     name: Footsteps
-    loop: 1
+    loop: 0
     playOnAwake: 0
-    mute: 0
+    mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 40e56deea77e8e945a1c74dbb9d03049, type: 3}
     volume: 0.369
