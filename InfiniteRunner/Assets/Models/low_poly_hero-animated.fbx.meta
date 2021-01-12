@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
+      74: 931109679452298134
+    second: hero-armature|ANOTTHERUNN
+  - first:
       74: -7302094099422726813
     second: hero-armature|GetUpFromCrouch
   - first:
@@ -21,9 +24,6 @@ ModelImporter:
   - first:
       74: -7295420243564415230
     second: hero-armature|ninja-run-02
-  - first:
-      74: -3913567553555338316
-    second: hero-armature|ninja-run-NEW
   - first:
       74: -4326320179189651540
     second: hero-armature|ninja-slide-attack
@@ -119,6 +119,35 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
+      name: hero-armature|ANOTTHERUNN
+      takeName: hero-armature|ANOTTHERUNN
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
       name: hero-armature|GetUpFromCrouch
       takeName: hero-armature|GetUpFromCrouch
       internalID: 0
@@ -151,7 +180,7 @@ ModelImporter:
       name: hero-armature|NARUTO_DEFLECT1
       takeName: hero-armature|NARUTO_DEFLECT1
       internalID: 0
-      firstFrame: 6
+      firstFrame: 0
       lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
@@ -180,7 +209,7 @@ ModelImporter:
       name: hero-armature|NARUTO_DEFLECT_DEFAULT
       takeName: hero-armature|NARUTO_DEFLECT_DEFAULT
       internalID: 0
-      firstFrame: 6
+      firstFrame: 0
       lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
@@ -217,8 +246,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -275,37 +304,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: hero-armature|ninja-run-NEW
-      takeName: hero-armature|ninja-run-NEW
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -383,7 +383,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect1
       takeName: hero-armature|ninja_deflect1
       internalID: 0
-      firstFrame: 0
+      firstFrame: 6
       lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
@@ -499,7 +499,7 @@ ModelImporter:
       name: hero-armature|ninja_deflect_default
       takeName: hero-armature|ninja_deflect_default
       internalID: 0
-      firstFrame: 0
+      firstFrame: 6
       lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
