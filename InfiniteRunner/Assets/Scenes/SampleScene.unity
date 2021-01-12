@@ -459,6 +459,7 @@ MonoBehaviour:
   shop: {fileID: 140760967}
   scrollSnapSword: {fileID: 1977639678}
   scrollSnapSwordCore: {fileID: 1376554430}
+  bladeCoreSwitcher: {fileID: 2116228447}
 --- !u!1 &37020331
 GameObject:
   m_ObjectHideFlags: 0
@@ -32990,7 +32991,7 @@ MonoBehaviour:
   prefab: {fileID: 573329336}
   name: CodeCore
   price: 25
-  defaultItem: 1
+  defaultItem: 0
   color: 
   achievement: Kill someone and get away with it
   purchaseState: 2
@@ -38567,7 +38568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &686266117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40476,7 +40477,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   name: MatterCore
   price: 45
-  defaultItem: 0
+  defaultItem: 1
   color: 
   achievement: do 4 jumping jacks
   purchaseState: 2
@@ -42703,7 +42704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1376554429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75848,6 +75849,7 @@ MonoBehaviour:
   shop: {fileID: 140760967}
   scrollSnapSwordCore: {fileID: 1376554430}
   scrollSnapSword: {fileID: 1977639678}
+  setEquippedIndex: 0
 --- !u!1 &2124306196
 GameObject:
   m_ObjectHideFlags: 0

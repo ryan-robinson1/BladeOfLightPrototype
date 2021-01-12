@@ -30,7 +30,7 @@ public class BladeCoreSwitcher : MonoBehaviour
             if (setEquippedIndex)
             {
                 scrollSnapSwordCore.GoToPanel(equippedIndex);
-                Debug.Log("First Setuwasdfasdfp");
+
                 setEquippedIndex = false;
             }
            

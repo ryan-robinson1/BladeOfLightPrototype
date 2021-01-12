@@ -15,6 +15,10 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI moneyText3;
     public TextMeshProUGUI moneyText4;
     public List<Transform> itemCanvas;
+    public DissolveEnemyScript shopEnemyScript;
+    public SwordColorScript swordColorScript;
+    public SwordColorScript shopHeroSwordColorScript;
+    public SwordColorScript shopSwordColorScript;
     public bool deletePlayerPrefs = false;
     TextMeshProUGUI achievmentText;
     Button purchaseButton;
@@ -74,7 +78,6 @@ public class Shop : MonoBehaviour
                     
                     tempItem.purchaseState = Item.ButtonState.equipped;
                     PlayerPrefs.SetString(tempItem.name, tempItem.purchaseState.ToString());
-                    // equipItem(tempItem);
                     Debug.Log("FirstTimePlaying");
                 }
             }
@@ -194,7 +197,29 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
             
             setItemValues();
+            if(i.type == Item.Type.enemyColor)
+            {
+                ColorDataBase.setEnemyColor(i.enemyColor);
+                shopEnemyScript.SetMatColors();
+            }
+            else if (i.type == Item.Type.heroColor)
+            {
+                ColorDataBase.setHeroColor(i.heroColor);
+                swordColorScript.setSwordColor();
+            }
+            else if (i.type == Item.Type.swordColor)
+            {
+                ColorDataBase.setSwordColor(i.heroColor);
+                swordColorScript.setSwordColor();
+                shopHeroSwordColorScript.setSwordColor();
+                shopSwordColorScript.setSwordColor();
+            }
+            else if (i.type == Item.Type.swordModel)
+            {
+                //Switch The Model
+            }
         }
+        
     }
     public void equipItem(Item i)
     {
@@ -245,15 +270,5 @@ public class Shop : MonoBehaviour
        
        
     }
-   /* public Item findItemByName(string name)
-    {
-        foreach(Item i in itemList)
-        {
-            if (i.name == name)
-            {
-                return i;
-            }
-        }
-        return null;
-    }*/
+ 
 }

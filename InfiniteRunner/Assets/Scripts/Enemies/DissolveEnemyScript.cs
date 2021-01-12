@@ -44,7 +44,7 @@ public class DissolveEnemyScript : MonoBehaviour
     /**
      * Sets the color of the enemie's mats off spawn.
      */
-    private void SetMatColors()
+    public void SetMatColors()
     {
         armorMat.SetColor("dissolveColor", ColorDataBase.GetMainEnemyArmorColor());
         armorStrip.SetColor("armorEdgeColor", ColorDataBase.GetEnemyArmorStripColor());

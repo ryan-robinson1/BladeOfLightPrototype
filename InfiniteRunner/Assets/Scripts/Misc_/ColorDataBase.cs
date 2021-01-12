@@ -106,16 +106,66 @@ public static class ColorDataBase
                 0.275f * swordIntensity, 0.07f * swordIntensity, 0.75f * swordIntensity) },
         };
 
+    /**
+     * Dictionary of common color names translated to names needed for the database
+     */
+    private static Dictionary<heroColorOptions, Color[]> heroColorTranslator =
+        new Dictionary<heroColorOptions, Color[]>()
+        {
+            {heroColorOptions.pink, new Color[]{ heroColors["hero-pink"], swordColors["sword-pink"] } },
+            {heroColorOptions.blue, new Color[]{ heroColors["hero-blue"], swordColors["sword-blue"] } },
+            {heroColorOptions.green, new Color[]{ heroColors["hero-green"], swordColors["sword-green"] } },
+            {heroColorOptions.red, new Color[]{ heroColors["hero-red"], swordColors["sword-red"] } },
+            {heroColorOptions.aqua, new Color[]{ heroColors["hero-aqua"], swordColors["sword-aqua"] } },
+            {heroColorOptions.purple, new Color[]{ heroColors["hero-purple"], swordColors["sword-purple"] } },
+        };
+    private static Dictionary<enemyColorOptions, Color[]> enemyColorTranslator =
+        new Dictionary<enemyColorOptions, Color[]>()
+        {
+            {enemyColorOptions.orangeYellow, new Color[]{ enemyColors["enemyDissolve-orangeYellow"], enemyColors["enemyStrip-orangeYellow"] } },
+            {enemyColorOptions.aqua, new Color[]{ enemyColors["enemyDissolve-aqua"], enemyColors["enemyStrip-aqua"] } },
+            {enemyColorOptions.green, new Color[]{ enemyColors["enemyDissolve-green"], enemyColors["enemyStrip-green"] } },
+            {enemyColorOptions.red, new Color[]{ enemyColors["enemyDissolve-red"], enemyColors["enemyStrip-red"] } },
 
+        };
+    public enum heroColorOptions
+    {
+        pink,
+        blue,
+        green,
+        red,
+        aqua,
+        purple
+    }
+    public enum enemyColorOptions
+    {
+        orangeYellow,
+        aqua,
+        green,
+        red
+    }
     // will need to change this later to make it more variable
-    private static Color heroColor = heroColors["hero-pink"];
+    private static Color heroColor = heroColors["hero-blue"];
 
-    private static Color enemyMain = enemyColors["enemyDissolve-aqua"];
-    private static Color enemyStrip = enemyColors["enemyStrip-aqua"];
+    private static Color enemyMain = enemyColors["enemyDissolve-red"];
+    private static Color enemyStrip = enemyColors["enemyStrip-red"];
 
-    private static Color swordColor = swordColors["sword-pink"];
+    private static Color swordColor = swordColors["sword-blue"];
 
-
+    public static void setHeroColor(heroColorOptions colorName)
+    {
+        heroColor = heroColorTranslator[colorName][0];
+        swordColor = heroColorTranslator[colorName][1];
+    }
+    public static void setEnemyColor(enemyColorOptions colorName)
+    {
+        enemyMain = enemyColorTranslator[colorName][0];
+        enemyStrip = enemyColorTranslator[colorName][1];
+    }
+    public static void setSwordColor(heroColorOptions colorName)
+    {
+        swordColor = heroColorTranslator[colorName][1];
+    }
     /**
      * Returns the active color on the hero model.
      * 

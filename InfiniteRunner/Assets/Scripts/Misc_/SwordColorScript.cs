@@ -20,6 +20,10 @@ public class SwordColorScript : MonoBehaviour
      */
     void Start()
     {
+        setSwordColor();
+    }
+    public void setSwordColor()
+    {
         swordEmission = ColorDataBase.GetSwordColor();
         swordAlbedo = ColorDataBase.GetSwordAlbedo();
 
