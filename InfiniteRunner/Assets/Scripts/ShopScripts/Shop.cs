@@ -222,6 +222,7 @@ public class Shop : MonoBehaviour
             {
                 ColorDataBase.setEnemyColor(i.enemyColor);
                 shopEnemyScript.SetMatColors();
+                PlayerPrefs.SetString("EnemyColor", i.enemyColor.ToString());
             }
             else if (i.type == Item.Type.heroColor)
             {
@@ -230,6 +231,8 @@ public class Shop : MonoBehaviour
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
+                PlayerPrefs.SetString("HeroColor", i.enemyColor.ToString());
+                PlayerPrefs.SetString("SwordColor", i.enemyColor.ToString());
             }
             else if (i.type == Item.Type.swordColor)
             {
@@ -237,6 +240,7 @@ public class Shop : MonoBehaviour
                 swordColorScript.setSwordColor();
                 shopHeroSwordColorScript.setSwordColor();
                 shopSwordColorScript.setSwordColor();
+                PlayerPrefs.SetString("SwordColor", i.enemyColor.ToString());
             }
             else if (i.type == Item.Type.swordModel)
             {
