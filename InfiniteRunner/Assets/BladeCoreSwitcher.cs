@@ -17,13 +17,16 @@ public class BladeCoreSwitcher : MonoBehaviour
     bool initialSetupFlag = false;
     [HideInInspector]
     public List<int> purchasesToMakeIndex = new List<int>();
+    [HideInInspector]
+    public int heroSyncEquipIndex = -1;
     public void switchSelects()
     {
         if (!initialSetupFlag)
         {
             swordSelect.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
-            int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
+            shop.updateScrollSnap(scrollSnapSwordCore);
             UpdatePreviousPurchases();
+            int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
             shop.setItemValues(2);
             coreSelect.SetActive(false);
             switchFlag = true;
@@ -52,8 +55,9 @@ public class BladeCoreSwitcher : MonoBehaviour
             else
             {
               
-                int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
+                shop.updateScrollSnap(scrollSnapSwordCore);
                 UpdatePreviousPurchases();
+                int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
                 shop.setItemValues();
                 coreSelect.SetActive(false);
                 swordSelect.SetActive(true);
@@ -84,12 +88,11 @@ public class BladeCoreSwitcher : MonoBehaviour
     }
     private void UpdatePreviousPurchases()
     {
-        foreach (int x in purchasesToMakeIndex)
-        {
-            Debug.Log(x);
-        }
-
         shop.purchaseItemsNoCost(ref purchasesToMakeIndex);
-        
+        if(heroSyncEquipIndex > -1)
+        {
+            shop.equipItem(heroSyncEquipIndex);
+            heroSyncEquipIndex = -1;
+        }
     }
 }

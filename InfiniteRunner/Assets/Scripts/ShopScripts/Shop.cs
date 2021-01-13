@@ -229,6 +229,7 @@ public class Shop : MonoBehaviour
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
+                bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
             }
             else if (i.type == Item.Type.swordColor)
             {
@@ -244,8 +245,9 @@ public class Shop : MonoBehaviour
         }
         
     }
-    public void equipItem(Item i)
+    public void equipItem(int  j)
     {
+        Item i = itemList[j];
         if (i.purchaseState == Item.ButtonState.purchased)
         {
             foreach (var otherItem in itemList)
