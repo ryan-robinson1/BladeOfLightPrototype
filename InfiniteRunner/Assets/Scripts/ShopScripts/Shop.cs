@@ -177,7 +177,7 @@ public class Shop : MonoBehaviour
         }
         else if (itemList[index].purchaseState == Item.ButtonState.noPurchase)
         {
-            buttonText.text = "";
+            buttonText.text = "-";
         }
     }
     public void pressPurchaseEnableButton(Button button)
