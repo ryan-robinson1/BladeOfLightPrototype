@@ -10,7 +10,7 @@ Material:
   m_Name: LogoShader
   m_Shader: {fileID: -6465566751694194690, guid: 9dff60f7f54d83c4797bde4f6ff6be9c,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: buttonColor
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,5 +30,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - buttonColor: {r: 2.25, g: 0.048, b: 1.05, a: 1}
+    - buttonColor: {r: 0.9620769, g: 0, b: 1.976675, a: 1}
   m_BuildTextureStacks: []

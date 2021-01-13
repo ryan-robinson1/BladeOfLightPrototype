@@ -16,14 +16,11 @@ public class StartMenuScript : MonoBehaviour
     private Quaternion targetCameraRotation;
     public GameObject chunkGenerator;
     int renderDistance = 3;
-    //public List<Material> uiButtonMats;
+    public List<Material> uiButtonMats;
     private void Start()
     {
         //StartGame();
-        //foreach (Material material in uiButtonMats)
-        // {
-        // material.SetColor("buttonColor", ColorDataBase.GetUIColor());
-        // }
+        updateUI();
         targetCameraRotation = Quaternion.Euler(23f, 90f, 0f);
         shopMenu.enabled = false;
     }
@@ -96,6 +93,16 @@ public class StartMenuScript : MonoBehaviour
         
         //this.enabled = false;
         
+    }
+    public void updateUI()
+    {
+        foreach (Material material in uiButtonMats)
+        {
+            material.EnableKeyword("buttonColor");
+            Debug.Log(ColorDataBase.GetUIColor().ToString());
+            material.SetColor("buttonColor", ColorDataBase.GetUIColor());
+
+        }
     }
    
 }

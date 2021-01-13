@@ -22,6 +22,7 @@ public class Shop : MonoBehaviour
     public SwordColorScript shopHeroSwordColorScript;
     public SwordColorScript shopSwordColorScript;
     public BladeCoreSwitcher bladeCoreSwitcher;
+    public StartMenuScript startMenu;
     public bool deletePlayerPrefs = false;
   
     TextMeshProUGUI achievmentText;
@@ -251,6 +252,7 @@ public class Shop : MonoBehaviour
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
+                startMenu.updateUI();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
          
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public static class ColorDataBase
     private const float enemyMainIntensity = 8f;
     private const float enemyStripIntensity = 24f;
     private const float swordIntensity = 8f;
-
+    
     /**
      * Dictionary of hero colors. Sorted by alphabetical order.
      */
@@ -128,6 +129,17 @@ public static class ColorDataBase
             {enemyColorOptions.red, new Color[]{ enemyColors["enemyDissolve-red"], enemyColors["enemyStrip-red"] } },
 
         };
+    private static Dictionary<heroColorOptions, Color> UIColorTranslator =
+        new Dictionary<heroColorOptions, Color>()
+        {
+            {heroColorOptions.pink, new Color(1.976675f,0f,1.844258f)},
+            {heroColorOptions.blue, new Color(0,0.6856585f,1.976675f) },
+            {heroColorOptions.green, new Color(0.01741129f,1.976675f,0) },
+            {heroColorOptions.red,new Color(1.976675f,0,0)},
+            {heroColorOptions.aqua, new Color(0,1.976675f,1.775073f) },
+            {heroColorOptions.purple, new Color(0.9620769f,0,1.976675f) },
+
+        };
     public enum heroColorOptions
     {
         pink,
@@ -153,7 +165,7 @@ public static class ColorDataBase
     private static Color swordColor = swordColors["sword-blue"];
 
     public static string heroColorName = "blue";
-    public static string swordColorName = "red";
+    public static string swordColorName = "blue";
     public static string enemyColorName = "red";
 
 
@@ -315,11 +327,9 @@ public static class ColorDataBase
      */
     public static Color GetUIColor()
     {
-        Color ui = GetHeroAlbedo();
-        float uiIntensity = 3f;
-        ui.r *= uiIntensity;
-        ui.g *= uiIntensity;
-        ui.b *= uiIntensity;
-        return ui; 
+        Debug.Log(heroColorName);
+        Enum.TryParse(heroColorName, out ColorDataBase.heroColorOptions UIColor);
+        Debug.Log(UIColorTranslator[UIColor].ToString());
+        return UIColorTranslator[UIColor];
     }
 }
