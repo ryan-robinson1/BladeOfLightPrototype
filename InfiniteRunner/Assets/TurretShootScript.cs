@@ -6,24 +6,20 @@ public class TurretShootScript : MonoBehaviour
 
     private PlayerController player;
     private Transform objectToFollow;
-    public GameObject hero;
+    private GameObject hero;
     public Transform leftGunBarrel;
     public Transform rightGunBarrel;
-    public Transform midConnector;
     private Rigidbody _rb;
 
 
-    private float _bulletSpeed = 20f;
+    private float _bulletSpeed = 25f;
     private float _removalDistance = 10;
     private float positionDifference;
 
 
-    private float _connectorMoveSpeed;
 
-
-
-    private float ammo = 5;
-    private float timeInBetweenShots = 0.85f;
+    private float ammo = 100;
+    private float timeInBetweenShots = 0.75f;
     private float reloadTime = 3f;
     private float reloadTimer = float.NegativeInfinity;
     private bool shooting = false;
@@ -39,18 +35,26 @@ public class TurretShootScript : MonoBehaviour
     private void Start()
     {
 
-        _connectorMoveSpeed = 40;
-
         _rb = this.GetComponent<Rigidbody>();
         // _anim = this.GetComponentInChildren<Animator>();
         //  _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
-
+        hero = GameObject.FindGameObjectWithTag("Player");
         player = hero.GetComponent<PlayerController>();
         objectToFollow = hero.transform.GetChild(1).transform;
 
         // muzzle flash color
         // _mfMain = _muzzleFlash.main;
         // _mfMain.startColor = ColorDataBase.GetEnemyStripAlbedo();
+    }
+
+    /**
+     * Gets the hero object that this script is looking at.
+     * 
+     * @return The hero object this script is looking at.
+     */
+    public Transform GetHeroRef()
+    {
+        return objectToFollow;
     }
 
 
@@ -67,27 +71,10 @@ public class TurretShootScript : MonoBehaviour
         }
         else
         {
-           // _anim.SetBool("shooting", false);
+            // _anim.SetBool("shooting", false);
         }
 
         destroyModel();
-        LookAtTarget();
-
-
-
-    }
-    /**
-    *  Rotates the object to face the lookat point
-    */
-    private void LookAtTarget()
-    {
-
-        Vector3 _lookDirection = objectToFollow.position - transform.position;
-        _lookDirection.y = 0;
-        Quaternion _rot = Quaternion.LookRotation(_lookDirection, Vector3.up);
-
-        midConnector.transform.rotation = Quaternion.Lerp(
-            transform.rotation, _rot, _connectorMoveSpeed * Time.time);
 
     }
 
@@ -115,17 +102,17 @@ public class TurretShootScript : MonoBehaviour
             // otherwise, shoot from the right canister
             else
             {
-                spawnPos = leftGunBarrel.transform.position + leftGunBarrel.transform.forward;
+                spawnPos = rightGunBarrel.transform.position + rightGunBarrel.transform.forward;
                 rightShot = true;
             }
-            
+
 
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
             //this.spawnBulletCasing();
-           // _anim.SetBool("shooting", true);
-           // _muzzleFlash.Play();
+            // _anim.SetBool("shooting", true);
+            // _muzzleFlash.Play();
             //ammo--;
         }
         else if (ammo == 0)
