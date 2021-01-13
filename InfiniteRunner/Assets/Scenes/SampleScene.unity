@@ -5725,8 +5725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 97069849}
-  name: IceCoreCold
-  displayName: IceCore
+  name: IceCore
   price: 10
   defaultItem: 0
   enemyColor: 0
@@ -5837,21 +5836,12 @@ MonoBehaviour:
   - {fileID: 1926193808}
   - {fileID: 686266117}
   shopEnemyScript: {fileID: 2111834597}
-<<<<<<< Updated upstream
   damageManagerScript: {fileID: 0}
   shopDamageManagerScript: {fileID: 0}
   swordColorScript: {fileID: 1243448756}
   shopHeroSwordColorScript: {fileID: 2573826767185139125}
   shopSwordColorScript: {fileID: 631723297}
   bladeCoreSwitcher: {fileID: 0}
-=======
-  damageManagerScript: {fileID: 1546999458}
-  shopDamageManagerScript: {fileID: 919132147670963244}
-  swordColorScript: {fileID: 1243448756}
-  shopHeroSwordColorScript: {fileID: 2573826767185139125}
-  shopSwordColorScript: {fileID: 631723297}
-  bladeCoreSwitcher: {fileID: 2116228447}
->>>>>>> Stashed changes
   deletePlayerPrefs: 0
 --- !u!1001 &144203019
 PrefabInstance:
@@ -6774,7 +6764,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 261299783}
   name: Light Sword
-  displayName: Light Sword
   price: 45
   defaultItem: 1
   enemyColor: 0
@@ -17755,7 +17744,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 436847017}
   name: Dagger
-  displayName: Dagger
   price: 25
   defaultItem: 0
   enemyColor: 0
@@ -17853,7 +17841,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 460401868}
   name: AquaCore
-  displayName: HazeCore
   price: 5
   defaultItem: 1
   enemyColor: 0
@@ -27863,7 +27850,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 510051637}
   name: DarkHateCore
-  displayName: DarkHateCore
   price: 50
   defaultItem: 1
   enemyColor: 3
@@ -33069,7 +33055,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 573329336}
   name: CodeCore
-  displayName: CodeCore
   price: 25
   defaultItem: 0
   enemyColor: 0
@@ -33167,13 +33152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 576701923}
   name: SunCore
-  displayName: MatterCore
   price: 80
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
   achievement: Geocash
-  purchaseState: 4
+  purchaseState: 2
   type: 2
 --- !u!1 &580547632
 GameObject:
@@ -38192,7 +38176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 599003386}
   name: DarkIceCore
-  displayName: DarkIceCore
   price: 25
   defaultItem: 0
   enemyColor: 1
@@ -39216,7 +39199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 851054185}
   name: DarkGoldCore
-  displayName: DarkGoldCore
   price: 20
   defaultItem: 0
   enemyColor: 0
@@ -39393,13 +39375,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 873213798}
   name: PurpleCore
-  displayName: DarkCore
   price: 30
   defaultItem: 0
   enemyColor: 0
   heroColor: 5
   achievement: Adopt a Dog
-  purchaseState: 4
+  purchaseState: 2
   type: 2
 --- !u!1 &875178278
 GameObject:
@@ -40495,7 +40476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   name: MatterCore
-  displayName: MatterCore
   price: 45
   defaultItem: 0
   enemyColor: 0
@@ -40981,9 +40961,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1116497304}
   name: DarkCodeCore
-  displayName: DarkCodeCore
   price: 35
-  defaultItem: 0
+  defaultItem: 1
   enemyColor: 2
   heroColor: 0
   achievement: Carve a pumpkin
@@ -42385,7 +42364,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1329082539}
   name: DarkFlameCore
-  displayName: DarkFlameCore
   price: 45
   defaultItem: 0
   enemyColor: 0
@@ -42935,7 +42913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1399353285}
   name: Ray Sword
-  displayName: Ray Sword
   price: 40
   defaultItem: 0
   enemyColor: 0
@@ -52973,13 +52950,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1469104257}
   name: IceCore
-  displayName: IceCore
   price: 45
   defaultItem: 0
   enemyColor: 0
   heroColor: 4
   achievement: Never Kill Anyone
-  purchaseState: 4
+  purchaseState: 2
   type: 2
 --- !u!1 &1470794321
 GameObject:
@@ -53385,7 +53361,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529377385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000029423}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.9847836, y: 1.7338946, z: 1.8744805}
   m_Children: []
   m_Father: {fileID: 2142929635}
@@ -53393,8 +53369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000017166, y: 651.9}
-  m_SizeDelta: {x: 109.403305, y: 100}
+  m_AnchoredPosition: {x: -15, y: 652}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529377387
 MonoBehaviour:
@@ -53416,7 +53392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c212e60ccc75c95418f9efdf416e9403, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bddb9e89fd030e439c00dfc23f23f3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58678,18 +58654,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8091541566474677756}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1546999458 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8091541567484115806, guid: 53002bc535f494c4b8f4b3ee35c289a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 8091541566474677756}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546999454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2717f72ae927844a61437dfbe204ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1546999462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69226,7 +69190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1704612564}
   name: Rapier
-  displayName: Rapier
   price: 30
   defaultItem: 0
   enemyColor: 0
@@ -69908,7 +69871,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1841627177}
   name: Long Sword
-  displayName: Long Sword
   price: 20
   defaultItem: 0
   enemyColor: 0
@@ -70006,13 +69968,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1849849415}
   name: BlueCore
-  displayName: HazeCore
   price: 25
   defaultItem: 1
   enemyColor: 0
   heroColor: 1
   achievement: Get 6000 Score
-  purchaseState: 4
+  purchaseState: 2
   type: 2
 --- !u!1 &1862445250
 GameObject:
@@ -70372,13 +70333,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1849849415}
   name: RedCore
-  displayName: CodeCore
   price: 75
   defaultItem: 0
   enemyColor: 0
   heroColor: 2
   achievement: red rEd red!
-  purchaseState: 4
+  purchaseState: 2
   type: 2
 --- !u!1 &1926193807
 GameObject:
@@ -75756,8 +75716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2010392588}
-  name: PurpleCore3
-  displayName: DarkCore
+  name: PurpleCore
   price: 35
   defaultItem: 0
   enemyColor: 0
@@ -76968,7 +76927,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651861028497}
   - component: {fileID: 5866666020174583019}
-  - component: {fileID: 919132147670963244}
   m_Layer: 0
   m_Name: DisplayHero
   m_TagString: Untagged
@@ -76976,28 +76934,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132147670963244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147670963243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2717f72ae927844a61437dfbe204ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 1545877460}
-  bulletDamage: 10
-  startHealth: 100
-  healthIndicator: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
-  health: 0
-  damageEffect: {fileID: 878623979}
-  damageLightEffect: {fileID: 345851668}
-  healEffect: {fileID: 1021088125}
-  healEffect1: {fileID: 86245106}
-  healLightFX: {fileID: 186340981}
 --- !u!4 &967642234156740634
 Transform:
   m_ObjectHideFlags: 0
