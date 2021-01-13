@@ -42531,7 +42531,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 0.428
@@ -42549,7 +42549,7 @@ MonoBehaviour:
     name: Footsteps
     loop: 0
     playOnAwake: 0
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: 40e56deea77e8e945a1c74dbb9d03049, type: 3}
     volume: 0.369
