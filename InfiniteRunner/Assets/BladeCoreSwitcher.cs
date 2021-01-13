@@ -15,13 +15,15 @@ public class BladeCoreSwitcher : MonoBehaviour
     bool switchFlag = false;
     public bool setEquippedIndex = false;
     bool initialSetupFlag = false;
-
+    [HideInInspector]
+    public List<int> purchasesToMakeIndex = new List<int>();
     public void switchSelects()
     {
         if (!initialSetupFlag)
         {
             swordSelect.transform.GetChild(0).GetChild(0).transform.gameObject.SetActive(true);
             int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
+            UpdatePreviousPurchases();
             shop.setItemValues(2);
             coreSelect.SetActive(false);
             switchFlag = true;
@@ -30,7 +32,6 @@ public class BladeCoreSwitcher : MonoBehaviour
             if (setEquippedIndex)
             {
                 scrollSnapSwordCore.GoToPanel(equippedIndex);
-
                 setEquippedIndex = false;
             }
            
@@ -39,6 +40,7 @@ public class BladeCoreSwitcher : MonoBehaviour
         {
             if (switchFlag)
             {
+                
                 shop.updateScrollSnap(scrollSnapSword);
                 shop.setItemValues();
                 coreSelect.SetActive(true);
@@ -49,7 +51,9 @@ public class BladeCoreSwitcher : MonoBehaviour
             }
             else
             {
+              
                 int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
+                UpdatePreviousPurchases();
                 shop.setItemValues();
                 coreSelect.SetActive(false);
                 swordSelect.SetActive(true);
@@ -77,5 +81,15 @@ public class BladeCoreSwitcher : MonoBehaviour
             buttonText.text = "Cores";
 
         }
+    }
+    private void UpdatePreviousPurchases()
+    {
+        foreach (int x in purchasesToMakeIndex)
+        {
+            Debug.Log(x);
+        }
+
+        shop.purchaseItemsNoCost(ref purchasesToMakeIndex);
+        
     }
 }

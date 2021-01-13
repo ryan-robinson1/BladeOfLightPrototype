@@ -39,8 +39,7 @@ public class DamageManager : MonoBehaviour
         health = startHealth;
         healHealth = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
-        healthIndicator.SetColor("dissolveColor",
-            ColorDataBase.GetCurrentHeroColor());
+        SetHeroColor();
 
         lightfxModule = damageLightEffect.main;
         lightfxModule.startColor = ColorDataBase.GetHeroAlbedo();
@@ -59,7 +58,11 @@ public class DamageManager : MonoBehaviour
         this.UpdateHealthStatus(health);
 
     }
-
+    public void SetHeroColor()
+    {
+        healthIndicator.SetColor("dissolveColor",
+           ColorDataBase.GetCurrentHeroColor());
+    }
     /**
      * Displays information on screen.
      */

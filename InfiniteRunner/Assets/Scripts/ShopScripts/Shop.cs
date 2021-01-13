@@ -16,9 +16,12 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI moneyText4;
     public List<Transform> itemCanvas;
     public DissolveEnemyScript shopEnemyScript;
+    public DamageManager damageManagerScript;
+    public DamageManager shopDamageManagerScript;
     public SwordColorScript swordColorScript;
     public SwordColorScript shopHeroSwordColorScript;
     public SwordColorScript shopSwordColorScript;
+    public BladeCoreSwitcher bladeCoreSwitcher;
     public bool deletePlayerPrefs = false;
     TextMeshProUGUI achievmentText;
     Button purchaseButton;
@@ -177,7 +180,25 @@ public class Shop : MonoBehaviour
             i.purchaseState = Item.ButtonState.purchased;
             PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
             setItemValues();
+            if(i.type == Item.Type.heroColor)
+            {
+                bladeCoreSwitcher.purchasesToMakeIndex.Add(scrollSnap.CurrentPanel);
+                Debug.Log("Added");
+               
+            }
         }
+    }
+    public void purchaseItemsNoCost(ref List<int> indexes)
+    {
+        for(int j = 0;j < indexes.Count; j++)
+        {
+            Item i = itemList[indexes[j]];
+            i.purchaseState = Item.ButtonState.purchased;
+            Debug.Log(i.name);
+            PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
+            setItemValues();
+        }
+        indexes.Clear();
     }
 
     public void equipItem()
@@ -206,6 +227,8 @@ public class Shop : MonoBehaviour
             {
                 ColorDataBase.setHeroColor(i.heroColor);
                 swordColorScript.setSwordColor();
+                damageManagerScript.SetHeroColor();
+                shopDamageManagerScript.SetHeroColor();
             }
             else if (i.type == Item.Type.swordColor)
             {
