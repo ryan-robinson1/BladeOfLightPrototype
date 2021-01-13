@@ -93,11 +93,13 @@ public class ShopInterfaceNav : MonoBehaviour
         if (equippedIndex > -1)
         {
             scrollSnap.GoToPanel(equippedIndex);
+            
         }
         else
         {
             Debug.LogError("Error: No item equipped");
         }
+       
 
 
 
@@ -106,11 +108,12 @@ public class ShopInterfaceNav : MonoBehaviour
     {
      
             PlayerShopCanvas.enabled = false;
-       
+        
             int equippedIndex; 
             moveToSwordShop = true;
             bladeCoreSwitcher.resetScrollSnap();
             bladeCoreSwitcher.setEquippedIndex = true;
+         
             equippedIndex = shop.updateScrollSnap(scrollSnapSword);
             shop.setItemValues();
             if (equippedIndex > -1)

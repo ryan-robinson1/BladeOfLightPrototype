@@ -152,20 +152,31 @@ public static class ColorDataBase
 
     private static Color swordColor = swordColors["sword-blue"];
 
+    public static string heroColorName = "blue";
+    public static string swordColorName = "red";
+    public static string enemyColorName = "red";
+
+
     public static void setHeroColor(heroColorOptions colorName)
     {
         heroColor = heroColorTranslator[colorName][0];
         swordColor = heroColorTranslator[colorName][1];
+        heroColorName = colorName.ToString();
+        swordColorName = colorName.ToString();
+
     }
     public static void setEnemyColor(enemyColorOptions colorName)
     {
         enemyMain = enemyColorTranslator[colorName][0];
         enemyStrip = enemyColorTranslator[colorName][1];
+        enemyColorName = colorName.ToString();
     }
     public static void setSwordColor(heroColorOptions colorName)
     {
         swordColor = heroColorTranslator[colorName][1];
+        swordColorName = colorName.ToString();
     }
+   
     /**
      * Returns the active color on the hero model.
      * 

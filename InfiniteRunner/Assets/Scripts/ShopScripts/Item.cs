@@ -6,7 +6,10 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public GameObject prefab;
+    //Unique Identifying name
     public string name;
+    //Displayed Name
+    public string displayName;
     public int price;
     public bool defaultItem;
     public ColorDataBase.enemyColorOptions enemyColor;
@@ -21,7 +24,8 @@ public class Item : MonoBehaviour
         purchased,
         equipped,
         unlocked,
-        locked
+        locked,
+        noPurchase
     }
     public enum Type
     {

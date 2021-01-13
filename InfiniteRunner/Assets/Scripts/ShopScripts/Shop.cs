@@ -23,17 +23,29 @@ public class Shop : MonoBehaviour
     public SwordColorScript shopSwordColorScript;
     public BladeCoreSwitcher bladeCoreSwitcher;
     public bool deletePlayerPrefs = false;
+  
     TextMeshProUGUI achievmentText;
     Button purchaseButton;
     TextMeshProUGUI itemName;
     private bool firstTimePlaying;
 
-    void Start()
+    private void Awake()
     {
         if (deletePlayerPrefs)
         {
             PlayerPrefs.DeleteAll();
         }
+        Enum.TryParse(PlayerPrefs.GetString("EnemyColor", "red"), out ColorDataBase.enemyColorOptions enemyC);
+        ColorDataBase.setEnemyColor(enemyC);
+        Enum.TryParse(PlayerPrefs.GetString("HeroColor", "blue"), out ColorDataBase.heroColorOptions heroC);
+        ColorDataBase.setHeroColor(heroC);
+        Enum.TryParse(PlayerPrefs.GetString("SwordColor", "blue"), out ColorDataBase.heroColorOptions swordC);
+        ColorDataBase.setSwordColor(swordC);
+
+    }
+    void Start()
+    {
+        
         hasPlayed();
         setUpItemPlayerPrefs();
         money = PlayerPrefs.GetInt("money", 0);
@@ -72,15 +84,16 @@ public class Shop : MonoBehaviour
             foreach(Transform t in canvas)
             {
                 Item tempItem = t.GetComponent<Item>();
-                tempItem.purchaseState = (Item.ButtonState)Enum.Parse(typeof(Item.ButtonState), PlayerPrefs.GetString(tempItem.name, "unlocked"), true);
 
+                tempItem.purchaseState = (Item.ButtonState)Enum.Parse(typeof(Item.ButtonState), PlayerPrefs.GetString(tempItem.name, tempItem.purchaseState.ToString()), true);
+                //Debug.Log(tempItem.name + ", Purchase State: " + tempItem.purchaseState);
                 if (tempItem.defaultItem && firstTimePlaying)
                 {
                     tempItem.price = 0;
                     
                     tempItem.purchaseState = Item.ButtonState.equipped;
                     PlayerPrefs.SetString(tempItem.name, tempItem.purchaseState.ToString());
-                    Debug.Log("FirstTimePlaying");
+
                 }
             }
         }
@@ -114,7 +127,7 @@ public class Shop : MonoBehaviour
         int index = scrollSnap.CurrentPanel;
 
         achievmentText.text = itemList[index].achievement;
-        itemName.text = itemList[index].name;
+        itemName.text = itemList[index].displayName;
 
         Text buttonText = purchaseButton.GetComponentInChildren<Text>();
         if (itemList[index].purchaseState == Item.ButtonState.equipped)
@@ -133,13 +146,17 @@ public class Shop : MonoBehaviour
         {
             buttonText.text = "Equip";
         }
+        else if (itemList[index].purchaseState == Item.ButtonState.noPurchase)
+        {
+            buttonText.text = "";
+        }
     }
     public void setItemValues(int _index)
     {
         int index = _index;
         
         achievmentText.text = itemList[index].achievement;
-        itemName.text = itemList[index].name;
+        itemName.text = itemList[index].displayName;
 
         Text buttonText = purchaseButton.GetComponentInChildren<Text>();
         if (itemList[index].purchaseState == Item.ButtonState.equipped)
@@ -157,6 +174,10 @@ public class Shop : MonoBehaviour
         else if (itemList[index].purchaseState == Item.ButtonState.purchased)
         {
             buttonText.text = "Equip";
+        }
+        else if (itemList[index].purchaseState == Item.ButtonState.noPurchase)
+        {
+            buttonText.text = "";
         }
     }
     public void pressPurchaseEnableButton(Button button)
@@ -185,6 +206,7 @@ public class Shop : MonoBehaviour
                 Debug.Log("Added");
                
             }
+        
         }
     }
     public void purchaseItemsNoCost(ref List<int> indexes)
@@ -220,8 +242,8 @@ public class Shop : MonoBehaviour
             if(i.type == Item.Type.enemyColor)
             {
                 ColorDataBase.setEnemyColor(i.enemyColor);
-                shopEnemyScript.SetMatColors();
-                PlayerPrefs.SetString("EnemyColor", i.enemyColor.ToString());
+               shopEnemyScript.SetMatColors();
+    
             }
             else if (i.type == Item.Type.heroColor)
             {
@@ -230,8 +252,7 @@ public class Shop : MonoBehaviour
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
-                PlayerPrefs.SetString("HeroColor", i.enemyColor.ToString());
-                PlayerPrefs.SetString("SwordColor", i.enemyColor.ToString());
+         
             }
             else if (i.type == Item.Type.swordColor)
             {
@@ -239,7 +260,7 @@ public class Shop : MonoBehaviour
                 swordColorScript.setSwordColor();
                 shopHeroSwordColorScript.setSwordColor();
                 shopSwordColorScript.setSwordColor();
-                PlayerPrefs.SetString("SwordColor", i.enemyColor.ToString());
+
             }
             else if (i.type == Item.Type.swordModel)
             {
@@ -248,6 +269,7 @@ public class Shop : MonoBehaviour
         }
         
     }
+    //Only used by sword cores
     public void equipItem(int  j)
     {
         Item i = itemList[j];
@@ -261,6 +283,8 @@ public class Shop : MonoBehaviour
                 }
             }
             i.purchaseState = Item.ButtonState.equipped;
+            PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
+            Debug.Log(i.name + " " + i.type);
             setItemValues();
         }
     }
@@ -298,5 +322,23 @@ public class Shop : MonoBehaviour
        
        
     }
- 
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetString("HeroColor", ColorDataBase.heroColorName);
+        PlayerPrefs.SetString("EnemyColor", ColorDataBase.enemyColorName);
+        PlayerPrefs.SetString("SwordColor", ColorDataBase.swordColorName);
+
+/*
+        foreach (Transform canvas in itemCanvas)
+        {
+            foreach (Transform t in canvas)
+            {
+                Item tempItem = t.GetComponent<Item>();
+
+               PlayerPrefs.SetString(tempItem.name,tempItem.p)
+             
+            }
+        }*/
+    }
+
 }
