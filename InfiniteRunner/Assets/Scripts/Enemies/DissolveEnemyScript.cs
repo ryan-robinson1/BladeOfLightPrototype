@@ -86,10 +86,17 @@ public class DissolveEnemyScript : MonoBehaviour
             float pitch = Random.Range(0.93f,1.2f);
 
             FindObjectOfType<AudioManager>().Play("SliceSound", pitch);
-             
-         
-            
-            this.GetComponent<ShootScript>().enabled = false;
+
+
+            if (this.gameObject.name.StartsWith("pistol"))
+            {
+                this.GetComponent<ShootScript>().enabled = false;
+            }
+            else if (this.gameObject.name.StartsWith("rocket"))
+            {
+                this.GetComponent<ShootScript>().enabled = false;
+            }
+
             this.Invoke("SwapMats", startDelay);
             this.Destruct();
         }

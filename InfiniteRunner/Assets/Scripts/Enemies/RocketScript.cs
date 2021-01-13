@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrenadeScript : MonoBehaviour
+public class RocketScript : MonoBehaviour
 {
     public Material bulletMaterial;
     public Material bulletTrailMaterial;
@@ -20,7 +20,7 @@ public class GrenadeScript : MonoBehaviour
     private void Start()
     {
       //  bulletMaterial.SetColor("bulletColor", ColorDataBase.GetBulletColor());
-     //   bulletTrailMaterial.SetColor("_EmissionColor", ColorDataBase.GetBulletTrail());
+       // bulletTrailMaterial.SetColor("_EmissionColor", ColorDataBase.GetBulletTrail());
 
         rb = this.GetComponent<Rigidbody>();
         lifeLengthTimer = Time.time;
@@ -31,7 +31,6 @@ public class GrenadeScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector3(transform.forward.x * bulletSpeed, transform.forward.y*bulletSpeed, transform.forward.z * bulletSpeed);
-
 
         if (Time.time - lifeLengthTimer > lifeLength)
             Destroy(this.gameObject); 
@@ -62,12 +61,25 @@ public class GrenadeScript : MonoBehaviour
      */
     private void OnTriggerEnter(Collider other)
     {
-        explode();
-    }
-    public void explode()
-    {
+        if (other.gameObject.transform.CompareTag("Player"))
+        {
+       
+           other.gameObject.GetComponent<DamageManager>().TakeDamage();
+           
+            
 
+            Destroy(this.gameObject);
+
+        }
+        else if (other.gameObject.transform.CompareTag("Sword"))
+        {
+           player.gameObject.GetComponent<DamageManager>().TakeDamage();
+            Destroy(this.gameObject);
+            
+        }
+       
     }
+
     public float getBulletSpeed()
     {
         return bulletSpeed; 
