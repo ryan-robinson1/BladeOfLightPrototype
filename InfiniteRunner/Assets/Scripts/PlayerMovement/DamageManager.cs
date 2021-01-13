@@ -41,11 +41,7 @@ public class DamageManager : MonoBehaviour
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         SetHeroColor();
 
-        lightfxModule = damageLightEffect.main;
-        lightfxModule.startColor = ColorDataBase.GetHeroAlbedo();
-
-        healfxModule = healLightFX.main;
-        healfxModule.startColor = ColorDataBase.GetHeroAlbedo();
+        
 
         gameOverState = this.GetComponentInChildren<GameOverState>();
     }
@@ -62,6 +58,11 @@ public class DamageManager : MonoBehaviour
     {
         healthIndicator.SetColor("dissolveColor",
            ColorDataBase.GetCurrentHeroColor());
+        lightfxModule = damageLightEffect.main;
+        lightfxModule.startColor = ColorDataBase.GetHeroAlbedo();
+
+        healfxModule = healLightFX.main;
+        healfxModule.startColor = ColorDataBase.GetHeroAlbedo();
     }
     /**
      * Displays information on screen.
