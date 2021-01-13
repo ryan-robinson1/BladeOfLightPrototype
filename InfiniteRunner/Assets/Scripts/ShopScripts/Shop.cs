@@ -41,7 +41,6 @@ public class Shop : MonoBehaviour
         moneyText2.text = money + "";
         moneyText3.text = money + "";
         moneyText4.text = money + "";
-        
 
         
     }

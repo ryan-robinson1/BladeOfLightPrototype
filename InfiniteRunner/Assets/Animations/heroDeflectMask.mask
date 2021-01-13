@@ -84,15 +84,15 @@ AvatarMask:
   - m_Path: coreIK/spine2/katana-holder
     m_Weight: 1
   - m_Path: coreIK/spine2/neck
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: coreIK/spine2/neck/head
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: coreIK/spine2/neck/head/hero-head
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: coreIK/spine2/neck/hero-neck
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: headTARGET
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: pelvis
     m_Weight: 0
   - m_Path: pelvis/hero-hips

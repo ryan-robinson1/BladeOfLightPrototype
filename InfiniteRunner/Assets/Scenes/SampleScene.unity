@@ -5836,9 +5836,12 @@ MonoBehaviour:
   - {fileID: 1926193808}
   - {fileID: 686266117}
   shopEnemyScript: {fileID: 2111834597}
+  damageManagerScript: {fileID: 0}
+  shopDamageManagerScript: {fileID: 0}
   swordColorScript: {fileID: 1243448756}
   shopHeroSwordColorScript: {fileID: 2573826767185139125}
   shopSwordColorScript: {fileID: 631723297}
+  bladeCoreSwitcher: {fileID: 0}
   deletePlayerPrefs: 0
 --- !u!1001 &144203019
 PrefabInstance:
@@ -17435,6 +17438,7 @@ GameObject:
   - component: {fileID: 398708835}
   - component: {fileID: 398708834}
   - component: {fileID: 398708836}
+  - component: {fileID: 398708837}
   m_Layer: 0
   m_Name: AutoTurret
   m_TagString: Untagged
@@ -17486,6 +17490,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &398708837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398708833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7539239d85f13468b37fb9185562a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1806744742710055406, guid: f8a72c67fb623a546a07a815aba67054, type: 3}
+  playerObject: {fileID: 1546999454}
+  leftGunBarrel: {fileID: 0}
+  rightGunBarrel: {fileID: 0}
+  midConnector: {fileID: 0}
 --- !u!1 &408210759
 GameObject:
   m_ObjectHideFlags: 0
@@ -38498,7 +38519,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
@@ -38508,7 +38529,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
@@ -38523,7 +38544,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fed1b8796380058489915e50007ba3ac,
         type: 3}
@@ -38675,7 +38696,7 @@ MonoBehaviour:
     spawnPosition: {x: 0, y: -1.46, z: 12}
     extentX: 0
   player: {fileID: 1546999454}
-  enemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a, type: 3}
+  enemy: {fileID: 398708833}
   healthPack: {fileID: 4616966541825948077, guid: db5c2bcc34789ee4e98412642b9949de,
     type: 3}
   streetLight: {fileID: 2600871424509047642, guid: 67e7163adcd6fff40a94c3b46c34630f,
@@ -76037,6 +76058,8 @@ MonoBehaviour:
   scrollSnapSwordCore: {fileID: 1376554430}
   scrollSnapSword: {fileID: 1977639678}
   setEquippedIndex: 0
+  purchasesToMakeIndex: 
+  heroSyncEquipIndex: -1
 --- !u!1 &2124306196
 GameObject:
   m_ObjectHideFlags: 0
