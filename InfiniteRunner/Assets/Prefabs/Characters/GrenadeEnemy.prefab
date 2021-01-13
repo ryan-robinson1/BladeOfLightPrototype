@@ -7902,9 +7902,9 @@ GameObject:
   - component: {fileID: 2155300144688084558}
   - component: {fileID: 6491162799621658131}
   - component: {fileID: 4953266717990845014}
-  - component: {fileID: -8362773748254921540}
+  - component: {fileID: 8409884262509566687}
   m_Layer: 9
-  m_Name: RocketEnemy
+  m_Name: GrenadeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7940,7 +7940,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &2155300144688084558
 BoxCollider:
@@ -7983,7 +7983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d171d9d99c427b646a741297433a923a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8362773748254921540
+--- !u!114 &8409884262509566687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7992,16 +7992,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2155300144688084552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098bb0fc16f411f45b19d912058bb9f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a32dcf4bdd978e41a4e9951a755e9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4464545643103125792, guid: 0bb851c834cac634cbf106862628e171, type: 3}
+  bullet: {fileID: 5564754520268991995, guid: 1cb13d1b7e671e44f91f53548588bcd5, type: 3}
   casing: {fileID: 0}
   player: {fileID: 0}
   objectToFollow: {fileID: 0}
   playerObject: {fileID: 0}
   gunBarrel: {fileID: 2155300143104042934}
-  casingSpawn: {fileID: 1949194857607391022}
+  casingSpawn: {fileID: 0}
   torso: {fileID: 2155300144342318697}
   head: {fileID: 2155300142867765143}
   legs: {fileID: 2155300144242548948}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShootRocketScript : MonoBehaviour
+public class ShootGrenadeScript: MonoBehaviour
 {
     public GameObject bullet;
     public GameObject casing;
@@ -18,7 +18,7 @@ public class ShootRocketScript : MonoBehaviour
     private Rigidbody _rb;
 
 
-    private float _bulletSpeed = 25f;
+    private float _bulletSpeed = 20f;
     private float _walkSpeed = 3f;
     private float _removalDistance = 10;
     private float _moveBackwardDistance;
@@ -31,9 +31,9 @@ public class ShootRocketScript : MonoBehaviour
 
 
 
-    private float ammo = 3;
-    private float timeInBetweenShots = 2f;
-    private float reloadTime = 4f;
+    private float ammo = 1;
+    private float timeInBetweenShots = 0.85f;
+    private float reloadTime = 2f;
     private float reloadTimer = float.NegativeInfinity;
     private bool shooting = false;
 
@@ -151,7 +151,7 @@ public class ShootRocketScript : MonoBehaviour
      */
     private void Shoot()
     {
-        if (ammo > 0 && Time.time - reloadTimer > reloadTime+Random.Range(0,0.4f) && positionDifference > 6)
+        if (ammo > 0 && Time.time - reloadTimer > reloadTime + Random.Range(0, 0.4f) && positionDifference > 6)
         {
             Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
             _direction = (_pointToAimAt - transform.position).normalized;
@@ -164,7 +164,7 @@ public class ShootRocketScript : MonoBehaviour
 
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
-            b.GetComponent<RocketScript>().bulletSpeed = _bulletSpeed;
+            b.GetComponent<GrenadeScript>().bulletSpeed = _bulletSpeed;
             //this.spawnBulletCasing();
             _anim.SetBool("shooting", true);
             _muzzleFlash.Play();
@@ -214,14 +214,14 @@ public class ShootRocketScript : MonoBehaviour
     private Vector3 CalculateInterceptPosition(Vector3 targetPosition)
     {
         Vector3 interceptPoint = FirstOrderIntercept(
-            this.transform.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 0.8f, targetPosition.z), player.getVelocity());
+            this.transform.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1.5f, targetPosition.z), player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
 
         if (player.timeSinceLastDodge > 8)
         {
             return interceptPoint;
         }
-        return interceptPoint;
+        return inaccurateInterceptPoint;
     }
 
     /**

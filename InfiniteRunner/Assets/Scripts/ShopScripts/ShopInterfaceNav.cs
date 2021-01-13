@@ -28,7 +28,10 @@ public class ShopInterfaceNav : MonoBehaviour
     public void goToShop()
     {
         int equippedIndex;
-     
+        ShopCamera.enabled = true;
+        MainMenuCamera.enabled = false;
+        PlayerShopCanvas.enabled = true;
+        mainMenuCanvas.enabled = false;
         shop.transform.GetChild(0).gameObject.SetActive(true);
         scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
       
@@ -46,7 +49,6 @@ public class ShopInterfaceNav : MonoBehaviour
         {
             Debug.LogError("Error: No item equipped");
         }
-     
 
     }
     public void goToMainMenu()
