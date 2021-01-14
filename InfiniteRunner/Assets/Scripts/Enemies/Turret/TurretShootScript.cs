@@ -110,17 +110,18 @@ public class TurretShootScript : MonoBehaviour
     {
         if (ammo > 0 && Time.time - reloadTimer > reloadTime + Random.Range(0, 0.4f) && positionDifference > 6)
         {
-            Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position);
-            _direction = (_pointToAimAt - transform.position).normalized;
-            _lookRotation = Quaternion.LookRotation(_direction);
-
-            RaycastHit hit;
 
             Vector3 spawnPos = Vector3.zero;
-
             // if the right canister has just shot, shoot from the left canister
             if (rightShot)
             {
+                Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position,leftGunBarrel.transform);
+                _direction = (_pointToAimAt - transform.position).normalized;
+                _lookRotation = Quaternion.LookRotation(_direction);
+
+                RaycastHit hit;
+
+               
                 spawnPos = leftGunBarrel.transform.position;
                 _ac.SetTrigger("leftShoot");
                 _leftFlash.Play();
@@ -129,6 +130,14 @@ public class TurretShootScript : MonoBehaviour
             // otherwise, shoot from the right canister
             else
             {
+                Vector3 _pointToAimAt = CalculateInterceptPosition(objectToFollow.position,rightGunBarrel.transform);
+                _pointToAimAt = new Vector3(_pointToAimAt.x, _pointToAimAt.y, _pointToAimAt.z + -0.4f);
+                _direction = (_pointToAimAt - transform.position).normalized;
+                _lookRotation = Quaternion.LookRotation(_direction);
+
+                RaycastHit hit;
+
+               
                 spawnPos = rightGunBarrel.transform.position;
                 _ac.SetTrigger("rightShoot");
                 _rightFlash.Play();
@@ -166,19 +175,20 @@ public class TurretShootScript : MonoBehaviour
     *  Helper method that calculates the point where the enemy should shoot at
     *  
     *  @param targetPosition The current position of the target
+    *  @param barrel "right" or "left"
     *  
     *  @return A random vector3 in between the target position and the predicted intercept position. Accuracy of shot can be modified in inaccurateInterceptPoint
     */
-    private Vector3 CalculateInterceptPosition(Vector3 targetPosition)
+    private Vector3 CalculateInterceptPosition(Vector3 targetPosition,Transform barrel)
     {
         Vector3 interceptPoint = ShootScript.FirstOrderIntercept(
-            this.transform.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1.5f, targetPosition.z), player.getVelocity());
+           barrel.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1.5f, targetPosition.z), player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
 
         if (player.timeSinceLastDodge > 8)
         {
             return interceptPoint;
         }
-        return inaccurateInterceptPoint;
+        return interceptPoint;
     }
 }
