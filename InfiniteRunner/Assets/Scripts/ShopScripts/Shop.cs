@@ -131,7 +131,7 @@ public class Shop : MonoBehaviour
                 else if (i.type == Item.Type.swordColor && i.heroColor.ToString() == ColorDataBase.swordColorName)
                 {
                     equippedIndex = itemList.Count - 1;
-                    Debug.Log("here");
+
                 }
                 else if (i.type == Item.Type.swordColor && i.heroColor.ToString() != ColorDataBase.swordColorName)
                 {
@@ -153,7 +153,6 @@ public class Shop : MonoBehaviour
          
             }
         }
-        Debug.Log("EQUIP INDEX::" + equippedIndex);
         return equippedIndex;
     }
     public void updateShopUIReferences(TextMeshProUGUI _achievementText, Button _purchaseButton, TextMeshProUGUI _itemName)
@@ -165,7 +164,6 @@ public class Shop : MonoBehaviour
     public void setItemValues()
     {
         int index = scrollSnap.CurrentPanel;
-        Debug.Log(itemList.Count);
         achievmentText.text = itemList[index].achievement;
         itemName.text = itemList[index].displayName;
 
@@ -243,6 +241,7 @@ public class Shop : MonoBehaviour
             if(i.type == Item.Type.heroColor)
             {
                 bladeCoreSwitcher.purchasesToMakeIndex.Add(scrollSnap.CurrentPanel);
+                bladeCoreSwitcher.savePurchaseEquipIndex();
                 Debug.Log("Added");
                
             }
@@ -296,8 +295,9 @@ public class Shop : MonoBehaviour
                 shopDamageManagerScript.SetHeroColor();
                 startMenu.updateUI();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
-                Debug.Log(bladeCoreSwitcher.heroSyncEquipIndex);
-         
+                bladeCoreSwitcher.savePurchaseEquipIndex();
+
+
             }
             else if (i.type == Item.Type.swordColor)
             {
@@ -330,7 +330,6 @@ public class Shop : MonoBehaviour
             i.purchaseState = Item.ButtonState.equipped;
             PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
             PlayerPrefs.SetString("SwordColor", i.heroColor.ToString());
-            Debug.Log(i.name + " " + i.type);
             setItemValues();
        
     }
