@@ -89,8 +89,10 @@ public class BladeCoreSwitcher : MonoBehaviour
     private void UpdatePreviousPurchases()
     {
         shop.purchaseItemsNoCost(ref purchasesToMakeIndex);
+        Debug.Log(heroSyncEquipIndex);
         if(heroSyncEquipIndex > -1)
         {
+            Debug.Log("equipping");
             shop.equipItem(heroSyncEquipIndex);
             heroSyncEquipIndex = -1;
         }

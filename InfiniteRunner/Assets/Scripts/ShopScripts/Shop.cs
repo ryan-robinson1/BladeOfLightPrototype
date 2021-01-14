@@ -81,16 +81,26 @@ public class Shop : MonoBehaviour
     }
     public void setUpItemPlayerPrefs()
     {
-        
+        bool noMoreEquipEnemyFlag = false;
+        bool noMoreEquipSwordCoreFlag = false;
+        bool noMoreEquipSword = false;
 
-        foreach(Transform canvas in itemCanvas)
+        foreach (Transform canvas in itemCanvas)
         {
             foreach(Transform t in canvas)
             {
                 Item tempItem = t.GetComponent<Item>();
-
+               
                 tempItem.purchaseState = (Item.ButtonState)Enum.Parse(typeof(Item.ButtonState), PlayerPrefs.GetString(tempItem.name, tempItem.purchaseState.ToString()), true);
-                //Debug.Log(tempItem.name + ", Purchase State: " + tempItem.purchaseState);
+             /*   if (noMoreEquipEnemyFlag && tempItem.purchaseState == Item.ButtonState.equipped && tempItem.type == Item.Type.enemyColor)
+                {
+                    tempItem.purchaseState = Item.ButtonState.purchased;
+                }
+                if (noMoreEquipEnemyFlag && tempItem.purchaseState == Item.ButtonState.equipped && tempItem.type == Item.Type.swordColor)
+                {
+                    tempItem.purchaseState = Item.ButtonState.purchased;
+                }
+*/
                 if (tempItem.defaultItem && firstTimePlaying)
                 {
                     tempItem.price = 0;
@@ -99,6 +109,13 @@ public class Shop : MonoBehaviour
                     PlayerPrefs.SetString(tempItem.name, tempItem.purchaseState.ToString());
 
                 }
+    /*            else if(tempItem.enemyColor.ToString() == PlayerPrefs.GetString("EnemyColor") && tempItem.type == Item.Type.enemyColor){
+                    noMoreEquipEnemyFlag = true;
+                }
+                else if (tempItem.heroColor.ToString() == PlayerPrefs.GetString("SwordColor") && tempItem.type == Item.Type.swordColor)
+                {
+                    noMoreEquipSwordCoreFlag = true;
+                }*/
             }
         }
     }
@@ -247,28 +264,26 @@ public class Shop : MonoBehaviour
             if(i.type == Item.Type.enemyColor)
             {
                 ColorDataBase.setEnemyColor(i.enemyColor);
-                ColorDataBase.enemyColorName = i.enemyColor.ToString();
-                PlayerPrefs.SetString("EnemyColor", i.enemyColor.ToString());
+           
                shopEnemyScript.SetMatColors();
     
             }
             else if (i.type == Item.Type.heroColor)
             {
                 ColorDataBase.setHeroColor(i.heroColor);
-                ColorDataBase.heroColorName = i.heroColor.ToString();
-                PlayerPrefs.SetString("HeroColor", i.heroColor.ToString());
+       
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
                 startMenu.updateUI();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
+                Debug.Log(bladeCoreSwitcher.heroSyncEquipIndex);
          
             }
             else if (i.type == Item.Type.swordColor)
             {
                 ColorDataBase.setSwordColor(i.heroColor);
-                ColorDataBase.heroColorName = i.heroColor.ToString();
-                PlayerPrefs.SetString("SwordColor", i.heroColor.ToString());
+         
                 swordColorScript.setSwordColor();
                 shopHeroSwordColorScript.setSwordColor();
                 shopSwordColorScript.setSwordColor();
@@ -285,8 +300,7 @@ public class Shop : MonoBehaviour
     public void equipItem(int  j)
     {
         Item i = itemList[j];
-        if (i.purchaseState == Item.ButtonState.purchased)
-        {
+      
             foreach (var otherItem in itemList)
             {
                 if (otherItem.purchaseState == Item.ButtonState.equipped)
@@ -299,7 +313,7 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetString("SwordColor", i.heroColor.ToString());
             Debug.Log(i.name + " " + i.type);
             setItemValues();
-        }
+       
     }
     public void unlockItem(Item i)
     {
