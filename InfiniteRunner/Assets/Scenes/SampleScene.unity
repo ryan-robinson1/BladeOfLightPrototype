@@ -5846,10 +5846,7 @@ MonoBehaviour:
   - {fileID: 686266117}
   shopEnemyScript: {fileID: 2111834597}
   damageManagerScript: {fileID: 1546999458}
-  shopDamageManagerScript: {fileID: 919132147670963244}
   swordColorScript: {fileID: 1243448756}
-  shopHeroSwordColorScript: {fileID: 2573826767185139125}
-  shopSwordColorScript: {fileID: 631723297}
   bladeCoreSwitcher: {fileID: 2116228447}
   startMenu: {fileID: 1834906558}
   deletePlayerPrefs: 0
@@ -77018,7 +77015,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651861028497}
   - component: {fileID: 5866666020174583019}
-  - component: {fileID: 919132147670963244}
   m_Layer: 0
   m_Name: DisplayHero
   m_TagString: Untagged
@@ -77026,28 +77022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132147670963244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147670963243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2717f72ae927844a61437dfbe204ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 1545877460}
-  bulletDamage: 10
-  startHealth: 100
-  healthIndicator: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
-  health: 0
-  damageEffect: {fileID: 878623979}
-  damageLightEffect: {fileID: 345851668}
-  healEffect: {fileID: 1021088125}
-  healEffect1: {fileID: 86245106}
-  healLightFX: {fileID: 186340981}
 --- !u!4 &967642234156740634
 Transform:
   m_ObjectHideFlags: 0
