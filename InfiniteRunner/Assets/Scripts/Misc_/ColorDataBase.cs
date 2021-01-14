@@ -327,9 +327,8 @@ public static class ColorDataBase
      */
     public static Color GetUIColor()
     {
-        Debug.Log(heroColorName);
+
         Enum.TryParse(heroColorName, out ColorDataBase.heroColorOptions UIColor);
-        Debug.Log(UIColorTranslator[UIColor].ToString());
         return UIColorTranslator[UIColor];
     }
 }

@@ -66,6 +66,9 @@ public class GameOverState : MonoBehaviour
      */
     public void RestartGame()
     {
+        PlayerPrefs.SetString("HeroColor", ColorDataBase.heroColorName);
+        PlayerPrefs.SetString("EnemyColor", ColorDataBase.enemyColorName);
+        PlayerPrefs.SetString("SwordColor", ColorDataBase.swordColorName);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

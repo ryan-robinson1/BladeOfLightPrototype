@@ -99,7 +99,6 @@ public class StartMenuScript : MonoBehaviour
         foreach (Material material in uiButtonMats)
         {
             material.EnableKeyword("buttonColor");
-            Debug.Log(ColorDataBase.GetUIColor().ToString());
             material.SetColor("buttonColor", ColorDataBase.GetUIColor());
 
         }

@@ -38,10 +38,13 @@ public class Shop : MonoBehaviour
         }
         Enum.TryParse(PlayerPrefs.GetString("EnemyColor", "red"), out ColorDataBase.enemyColorOptions enemyC);
         ColorDataBase.setEnemyColor(enemyC);
+        Debug.Log(enemyC.ToString());
         Enum.TryParse(PlayerPrefs.GetString("HeroColor", "blue"), out ColorDataBase.heroColorOptions heroC);
         ColorDataBase.setHeroColor(heroC);
+        Debug.Log(heroC.ToString());
         Enum.TryParse(PlayerPrefs.GetString("SwordColor", "blue"), out ColorDataBase.heroColorOptions swordC);
         ColorDataBase.setSwordColor(swordC);
+        Debug.Log(swordC.ToString());
 
     }
     void Start()
@@ -238,17 +241,22 @@ public class Shop : MonoBehaviour
             }
             i.purchaseState = Item.ButtonState.equipped;
             PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
+          
             
             setItemValues();
             if(i.type == Item.Type.enemyColor)
             {
                 ColorDataBase.setEnemyColor(i.enemyColor);
+                ColorDataBase.enemyColorName = i.enemyColor.ToString();
+                PlayerPrefs.SetString("EnemyColor", i.enemyColor.ToString());
                shopEnemyScript.SetMatColors();
     
             }
             else if (i.type == Item.Type.heroColor)
             {
                 ColorDataBase.setHeroColor(i.heroColor);
+                ColorDataBase.heroColorName = i.heroColor.ToString();
+                PlayerPrefs.SetString("HeroColor", i.heroColor.ToString());
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 shopDamageManagerScript.SetHeroColor();
@@ -259,6 +267,8 @@ public class Shop : MonoBehaviour
             else if (i.type == Item.Type.swordColor)
             {
                 ColorDataBase.setSwordColor(i.heroColor);
+                ColorDataBase.heroColorName = i.heroColor.ToString();
+                PlayerPrefs.SetString("SwordColor", i.heroColor.ToString());
                 swordColorScript.setSwordColor();
                 shopHeroSwordColorScript.setSwordColor();
                 shopSwordColorScript.setSwordColor();
@@ -286,6 +296,7 @@ public class Shop : MonoBehaviour
             }
             i.purchaseState = Item.ButtonState.equipped;
             PlayerPrefs.SetString(i.name, i.purchaseState.ToString());
+            PlayerPrefs.SetString("SwordColor", i.heroColor.ToString());
             Debug.Log(i.name + " " + i.type);
             setItemValues();
         }
@@ -342,5 +353,6 @@ public class Shop : MonoBehaviour
             }
         }*/
     }
+   
 
 }
