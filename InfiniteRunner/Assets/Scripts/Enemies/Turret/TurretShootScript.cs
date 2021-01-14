@@ -19,7 +19,7 @@ public class TurretShootScript : MonoBehaviour
 
 
     private float ammo = 100;
-    private float timeInBetweenShots = 0.75f;
+    private float timeInBetweenShots = 0.35f;
     private float reloadTime = 3f;
     private float reloadTimer = float.NegativeInfinity;
     private bool shooting = false;
@@ -27,7 +27,7 @@ public class TurretShootScript : MonoBehaviour
 
     Quaternion _lookRotation;
     Vector3 _direction;
-    Animator _anim;
+    private Animator _ac;
     ParticleSystem _muzzleFlash;
     private ParticleSystem.MainModule _mfMain;
 
@@ -36,7 +36,7 @@ public class TurretShootScript : MonoBehaviour
     {
 
         _rb = this.GetComponent<Rigidbody>();
-        // _anim = this.GetComponentInChildren<Animator>();
+        _ac = this.GetComponentInChildren<Animator>();
         //  _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
         hero = GameObject.FindGameObjectWithTag("Player");
         player = hero.GetComponent<PlayerController>();
@@ -69,12 +69,26 @@ public class TurretShootScript : MonoBehaviour
             InvokeRepeating("Shoot", 0f, timeInBetweenShots);
             shooting = true;
         }
-        else
-        {
-            // _anim.SetBool("shooting", false);
-        }
 
         destroyModel();
+
+    }
+
+    /**
+     *  Damages the player upon colliding with the player model.
+     *  Destroys this turret object in the process and prompts it
+     *  to explode.
+     *  
+     *  @param other The other collider
+     */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.transform.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<DamageManager>().TakeDamageFromTurret();
+
+            Destroy(this.gameObject);
+        }
 
     }
 
@@ -97,12 +111,14 @@ public class TurretShootScript : MonoBehaviour
             if (rightShot)
             {
                 spawnPos = leftGunBarrel.transform.position;
+                _ac.SetTrigger("leftShoot");
                 rightShot = false;
             }
             // otherwise, shoot from the right canister
             else
             {
-                spawnPos = rightGunBarrel.transform.position; 
+                spawnPos = rightGunBarrel.transform.position;
+                _ac.SetTrigger("rightShoot");
                 rightShot = true;
             }
 
@@ -110,14 +126,11 @@ public class TurretShootScript : MonoBehaviour
             //Sets the bullet speed in the script
             GameObject b = Instantiate(bullet, spawnPos, _lookRotation);
             b.GetComponent<BulletScript>().bulletSpeed = _bulletSpeed;
-            //this.spawnBulletCasing();
-            // _anim.SetBool("shooting", true);
             // _muzzleFlash.Play();
             //ammo--;
         }
         else if (ammo == 0)
         {
-            //_anim.SetBool("shooting", false);
             reloadTimer = Time.time;
             ammo = 5;
         }

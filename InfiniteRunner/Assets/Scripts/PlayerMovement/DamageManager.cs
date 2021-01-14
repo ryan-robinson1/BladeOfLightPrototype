@@ -94,6 +94,21 @@ public class DamageManager : MonoBehaviour
     }
 
     /**
+     * Takes damage from the turret when the player collides with the turret.
+     * The turret then explodes, taking away half the player's health, a
+     * true tragedy.
+     */
+    public void TakeDamageFromTurret()
+    {
+        health = health / 2;
+        healHealth = healHealth / 2;
+        damageEffect.Play();
+        damageLightEffect.Play();
+        // shouldn't ever end the round since it is always going to be half
+        // of the player's health
+    }
+
+    /**
      * Updates what color we should be displaying on the Player object
      * based on what the Player's current health is.
      */
