@@ -714,6 +714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822465126276947865}
     m_Modifications:
+    - target: {fileID: 5033850380069929350, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5033850380069929352, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -807,7 +812,7 @@ PrefabInstance:
     - target: {fileID: 5033850381272180276, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf5e5146681bd547ba52eab6f9ac6af, type: 3}
@@ -830,6 +835,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977168670687517568}
     m_Modifications:
+    - target: {fileID: 5033850380069929350, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5033850380069929352, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 5033850381272180276, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf5e5146681bd547ba52eab6f9ac6af, type: 3}
