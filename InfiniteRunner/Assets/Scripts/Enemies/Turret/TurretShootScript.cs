@@ -181,7 +181,7 @@ public class TurretShootScript : MonoBehaviour
     private Vector3 CalculateInterceptPosition(Vector3 targetPosition,Transform barrel)
     {
         Vector3 interceptPoint = ShootScript.FirstOrderIntercept(
-           barrel.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y - 1.5f, targetPosition.z), player.getVelocity());
+           barrel.position, _rb.velocity, _bulletSpeed, new Vector3(targetPosition.x, targetPosition.y -0.7f, targetPosition.z), player.getVelocity());
         Vector3 inaccurateInterceptPoint = new Vector3(Random.Range(targetPosition.x, interceptPoint.x), interceptPoint.y, Random.Range(targetPosition.z, interceptPoint.z));
 
         if (player.timeSinceLastDodge > 8)
