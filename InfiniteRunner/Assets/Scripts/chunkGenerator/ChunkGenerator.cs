@@ -15,7 +15,9 @@ public class ChunkGenerator : MonoBehaviour
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private GameObject enemy;
+    private GameObject pistolEnemy;
+    [SerializeField]
+    private GameObject turretEnemy;
     [SerializeField]
     private GameObject healthPack;
     [SerializeField]
@@ -168,17 +170,23 @@ public class ChunkGenerator : MonoBehaviour
 
         printVector3List(spawnPointVectors);
 
-        foreach (Vector3 spawnPoint in spawnPointVectors)
-        {
-           
-        }
+
         for(int i = 0; i < spawnPointVectors.Count; i++)
         {
             if (enemiesX + spawnPointVectors[i].x > 50)
             {
-                if (i > 0 && spawnPointVectors[i].x-spawnPointVectors[i-1].x>spaceBetweenEnemies)
+                float random = Random.Range(0f, 1f);
+                Debug.Log(random);
+                if (i > 0 && spawnPointVectors[i].x-spawnPointVectors[i-1].x>spaceBetweenEnemies && random <0.85)
                 {
-                    Instantiate(enemy, new Vector3(enemiesX, 0.5f, 0) + new Vector3(spawnPointVectors[i].x,0,spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
+                    Instantiate(pistolEnemy, new Vector3(enemiesX, 0.5f, 0) + new Vector3(spawnPointVectors[i].x,0,spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
+                }
+                else if(i > 0 && spawnPointVectors[i].x - spawnPointVectors[i - 1].x > spaceBetweenEnemies && random >= 0.85)
+                {
+                 
+                   Instantiate(turretEnemy, new Vector3(enemiesX, 0.5f, 0) + new Vector3(spawnPointVectors[i].x, 0, spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
+                    Debug.Log("TUREET");
+                    
                 }
              
             }

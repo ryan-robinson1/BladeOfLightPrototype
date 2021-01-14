@@ -38552,7 +38552,10 @@ MonoBehaviour:
     spawnPosition: {x: 0, y: -1.46, z: 12}
     extentX: 0
   player: {fileID: 1546999454}
-  enemy: {fileID: 7107611787434245042, guid: a97857b1dd10c9844b121de7fed016e8, type: 3}
+  pistolEnemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+    type: 3}
+  turretEnemy: {fileID: 7107611787434245042, guid: a97857b1dd10c9844b121de7fed016e8,
+    type: 3}
   healthPack: {fileID: 4616966541825948077, guid: db5c2bcc34789ee4e98412642b9949de,
     type: 3}
   streetLight: {fileID: 2600871424509047642, guid: 67e7163adcd6fff40a94c3b46c34630f,
