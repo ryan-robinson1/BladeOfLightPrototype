@@ -290,7 +290,7 @@ public class Shop : MonoBehaviour
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 startMenu.updateUI();
-                bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
+               // bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
                 bladeCoreSwitcher.savePurchaseEquipIndex();
 
 

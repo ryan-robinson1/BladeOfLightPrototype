@@ -172,9 +172,9 @@ public static class ColorDataBase
     public static void setHeroColor(heroColorOptions colorName)
     {
         heroColor = heroColorTranslator[colorName][0];
-        swordColor = heroColorTranslator[colorName][1];
+       // swordColor = heroColorTranslator[colorName][1];
         heroColorName = colorName.ToString();
-        swordColorName = colorName.ToString();
+      //  swordColorName = colorName.ToString();
 
     }
     public static void setEnemyColor(enemyColorOptions colorName)
