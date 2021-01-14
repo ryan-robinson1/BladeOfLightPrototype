@@ -18,21 +18,19 @@
 !/[Aa]ssets/**/*.meta
 
 # Materials for when we change color in the scene view
-/Assets/Materials/Bullet Materials/GlowyWhite.mat
-/Assets/Materials/Bullet Materials/GlowyWhite.mat
-/Assets/Materials/BulletTrailMaterial.mat
-/Assets/Materials/Bullet Materials/GlowyWhite.mat
-/Assets/Materials/heroMaterials/ninjaMainMat.mat
-/Assets/Materials/heroMaterials/SlashMaterial.mat
-/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorMat.mat
-/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorOffsetMat.mat
-/Assets/Materials/pistolEnemyMaterials/PistolEnemyDissolveRed.mat
-/Assets/UI/CurrencyDisplayMaterial.mat
-/Assets/UI/LogoShader.mat
-/Assets/UI/PlayButtonMaterial.mat
-/Assets/UI/SettingsButtonMaterial.mat
-/Assets/UI/ShopButtonMaterial.mat
-/Assets/UI/TrophyButtonMaterial.mat
+InfiniteRunner/Assets/Materials/BulletTrailMaterial.mat
+InfiniteRunner/Assets/Materials/Bullet Materials/GlowyWhite.mat
+InfiniteRunner/Assets/Materials/heroMaterials/ninjaMainMat.mat
+InfiniteRunner/Assets/Materials/heroMaterials/SlashMaterial.mat
+InfiniteRunner/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorMat.mat
+InfiniteRunner/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorOffsetMat.mat
+InfiniteRunner/Assets/Materials/pistolEnemyMaterials/PistolEnemyDissolveRed.mat
+InfiniteRunner/Assets/UI/CurrencyDisplayMaterial.mat
+InfiniteRunner/Assets/UI/LogoShader.mat
+InfiniteRunner/Assets/UI/PlayButtonMaterial.mat
+InfiniteRunner/Assets/UI/SettingsButtonMaterial.mat
+InfiniteRunner/Assets/UI/ShopButtonMaterial.mat
+InfiniteRunner/Assets/UI/TrophyButtonMaterial.mat
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
