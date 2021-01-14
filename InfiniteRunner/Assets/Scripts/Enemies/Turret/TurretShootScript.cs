@@ -28,8 +28,10 @@ public class TurretShootScript : MonoBehaviour
     Quaternion _lookRotation;
     Vector3 _direction;
     private Animator _ac;
-    ParticleSystem _muzzleFlash;
-    private ParticleSystem.MainModule _mfMain;
+    public ParticleSystem _leftFlash;
+    public ParticleSystem _rightFlash;
+    private ParticleSystem.MainModule _leftMain;
+    private ParticleSystem.MainModule _rightMain;
 
 
     private void Start()
@@ -37,14 +39,23 @@ public class TurretShootScript : MonoBehaviour
 
         _rb = this.GetComponent<Rigidbody>();
         _ac = this.GetComponentInChildren<Animator>();
-        //  _muzzleFlash = this.GetComponentInChildren<ParticleSystem>();
         hero = GameObject.FindGameObjectWithTag("Player");
         player = hero.GetComponent<PlayerController>();
         objectToFollow = hero.transform.GetChild(1).transform;
 
+        SetMuzzleFlash();
+    }
+
+    /**
+     * Sets the color of our muzzle flash particle systems.
+     */
+    private void SetMuzzleFlash()
+    {
         // muzzle flash color
-        // _mfMain = _muzzleFlash.main;
-        // _mfMain.startColor = ColorDataBase.GetEnemyStripAlbedo();
+        _leftMain = _leftFlash.main;
+        _leftMain.startColor = ColorDataBase.GetEnemyStripAlbedo();
+        _rightMain = _rightFlash.main;
+        _rightMain.startColor = ColorDataBase.GetEnemyStripAlbedo();
     }
 
     /**
@@ -112,6 +123,7 @@ public class TurretShootScript : MonoBehaviour
             {
                 spawnPos = leftGunBarrel.transform.position;
                 _ac.SetTrigger("leftShoot");
+                _leftFlash.Play();
                 rightShot = false;
             }
             // otherwise, shoot from the right canister
@@ -119,6 +131,7 @@ public class TurretShootScript : MonoBehaviour
             {
                 spawnPos = rightGunBarrel.transform.position;
                 _ac.SetTrigger("rightShoot");
+                _rightFlash.Play();
                 rightShot = true;
             }
 
