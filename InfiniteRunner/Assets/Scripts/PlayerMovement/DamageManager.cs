@@ -64,16 +64,23 @@ public class DamageManager : MonoBehaviour
         healfxModule = healLightFX.main;
         healfxModule.startColor = ColorDataBase.GetHeroAlbedo();
     }
+    
     /**
-     * Displays information on screen.
+     * Sets our hero to "half" health so we can better see colors in the shop.
      */
-    private void OnGUI()
+    public void SetShopDisplay()
     {
-        /*        int fps = (int)(1.0f / Time.smoothDeltaTime);
-                var style = new GUIStyle();
-                style.fontSize = 50;
-                style.normal.textColor = Color.green;
-                GUI.Label(new Rect(0, 0, 100, 100), "FPS: " + fps, style);*/
+        health = startHealth - (startHealth / 3);
+        healHealth = startHealth - (startHealth / 3);
+    }
+
+    /**
+     * Resets us to full health upon exiting the shop.
+     */
+    public void OnShopExit()
+    {
+        health = startHealth;
+        healHealth = startHealth;
     }
 
     //Method executed if hit by bullet. Takes damage.
