@@ -108,7 +108,7 @@ public class TurretShootScript : MonoBehaviour
      */
     private void Shoot()
     {
-        if (ammo > 0 && Time.time - reloadTimer > reloadTime + Random.Range(0, 0.4f) && positionDifference > 6)
+        if (ammo > 0 && Time.time - reloadTimer > reloadTime + Random.Range(0, 0.4f) && positionDifference > 9)
         {
 
             Vector3 spawnPos = Vector3.zero;
