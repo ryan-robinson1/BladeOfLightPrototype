@@ -81,6 +81,14 @@ public class ShopInterfaceNav : MonoBehaviour
         equippedIndex = shop.updateScrollSnap(scrollSnap);
         shop.updateShopUIReferences(EnemyShopAchievementRequirement, EnemyShopPurchaseButton,
                  EnemyShopItemName);
+        try
+        {
+            shop.setItemValues();
+        }
+        catch
+        {
+            Debug.Log("Broke");
+        }
         if (equippedIndex > -1)
         {
             scrollSnap.GoToPanel(equippedIndex);
@@ -100,6 +108,7 @@ public class ShopInterfaceNav : MonoBehaviour
         equippedIndex = shop.updateScrollSnap(scrollSnap);
         shop.updateShopUIReferences(HeroShopAchievementRequirement, HeroShopPurchaseButton,
                  HeroShopItemName);
+        shop.setItemValues();
         if (equippedIndex > -1)
         {
             scrollSnap.GoToPanel(equippedIndex);

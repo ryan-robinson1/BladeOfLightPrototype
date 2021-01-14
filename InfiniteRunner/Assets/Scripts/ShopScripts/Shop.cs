@@ -112,6 +112,7 @@ public class Shop : MonoBehaviour
         itemList.Clear();
         scrollSnap = _scrollSnap;
         GameObject content = _scrollSnap.transform.GetChild(0).GetChild(0).gameObject;
+       
         foreach (Transform child in content.transform)
         {
             Item i = child.GetComponent<Item>();
@@ -144,14 +145,15 @@ public class Shop : MonoBehaviour
             else if(i.type == Item.Type.swordColor && i.heroColor.ToString() == ColorDataBase.swordColorName)
             {
                 equippedIndex = itemList.Count - 1;
-                break;
+             
             }
             else if (i.type == Item.Type.enemyColor && i.enemyColor.ToString() == ColorDataBase.enemyColorName)
             {
                 equippedIndex = itemList.Count - 1;
-                break;
+         
             }
         }
+        Debug.Log("EQUIP INDEX::" + equippedIndex);
         return equippedIndex;
     }
     public void updateShopUIReferences(TextMeshProUGUI _achievementText, Button _purchaseButton, TextMeshProUGUI _itemName)
@@ -163,14 +165,14 @@ public class Shop : MonoBehaviour
     public void setItemValues()
     {
         int index = scrollSnap.CurrentPanel;
-
+        Debug.Log(itemList.Count);
         achievmentText.text = itemList[index].achievement;
         itemName.text = itemList[index].displayName;
 
         Text buttonText = purchaseButton.GetComponentInChildren<Text>();
         if (itemList[index].purchaseState == Item.ButtonState.equipped)
         {
-            buttonText.text = "Equipped"; 
+            buttonText.text = "Equipped";
         }
         else if (itemList[index].purchaseState == Item.ButtonState.locked)
         {

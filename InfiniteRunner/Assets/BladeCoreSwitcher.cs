@@ -27,7 +27,14 @@ public class BladeCoreSwitcher : MonoBehaviour
             shop.updateScrollSnap(scrollSnapSwordCore);
             UpdatePreviousPurchases();
             int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
-            shop.setItemValues(2);
+            try
+            {
+                shop.setItemValues(2);
+            }
+            catch
+            {
+                Debug.Log("Broke");
+            }
             coreSelect.SetActive(false);
             switchFlag = true;
             buttonText.text = "Blades";
@@ -49,7 +56,14 @@ public class BladeCoreSwitcher : MonoBehaviour
             {
                 
                 shop.updateScrollSnap(scrollSnapSword);
-                shop.setItemValues();
+                try
+                {
+                    shop.setItemValues();
+                }
+                catch
+                {
+                    Debug.Log("Broke");
+                }
                 coreSelect.SetActive(true);
                 swordSelect.SetActive(false);
                 switchFlag = false;
@@ -62,7 +76,14 @@ public class BladeCoreSwitcher : MonoBehaviour
                 shop.updateScrollSnap(scrollSnapSwordCore);
                 UpdatePreviousPurchases();
                 int equippedIndex = shop.updateScrollSnap(scrollSnapSwordCore);
-                shop.setItemValues();
+                try
+                {
+                    shop.setItemValues();
+                }
+                catch
+                {
+                    Debug.Log("Broke");
+                }
                 coreSelect.SetActive(false);
                 swordSelect.SetActive(true);
                 switchFlag = true;
@@ -97,7 +118,7 @@ public class BladeCoreSwitcher : MonoBehaviour
     private void UpdatePreviousPurchases()
     {
         shop.purchaseItemsNoCost(ref purchasesToMakeIndex);
-        Debug.Log(heroSyncEquipIndex);
+        Debug.Log("HERO SYNC INDEX:"+heroSyncEquipIndex);
         if(heroSyncEquipIndex > -1)
         {
             Debug.Log("equipping");
