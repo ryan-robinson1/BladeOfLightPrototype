@@ -17,6 +17,23 @@
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
+# Materials for when we change color in the scene view
+/Assets/Materials/Bullet Materials/GlowyWhite.mat
+/Assets/Materials/Bullet Materials/GlowyWhite.mat
+/Assets/Materials/BulletTrailMaterial.mat
+/Assets/Materials/Bullet Materials/GlowyWhite.mat
+/Assets/Materials/heroMaterials/ninjaMainMat.mat
+/Assets/Materials/heroMaterials/SlashMaterial.mat
+/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorMat.mat
+/Assets/Materials/pistolEnemyMaterials/PistolEnemyArmorOffsetMat.mat
+/Assets/Materials/pistolEnemyMaterials/PistolEnemyDissolveRed.mat
+/Assets/UI/CurrencyDisplayMaterial.mat
+/Assets/UI/LogoShader.mat
+/Assets/UI/PlayButtonMaterial.mat
+/Assets/UI/SettingsButtonMaterial.mat
+/Assets/UI/ShopButtonMaterial.mat
+/Assets/UI/TrophyButtonMaterial.mat
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
