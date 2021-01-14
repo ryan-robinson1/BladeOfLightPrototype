@@ -96,13 +96,13 @@ public class TurretShootScript : MonoBehaviour
             // if the right canister has just shot, shoot from the left canister
             if (rightShot)
             {
-                spawnPos = leftGunBarrel.transform.position + leftGunBarrel.transform.forward;
+                spawnPos = leftGunBarrel.transform.position;
                 rightShot = false;
             }
             // otherwise, shoot from the right canister
             else
             {
-                spawnPos = rightGunBarrel.transform.position + rightGunBarrel.transform.forward;
+                spawnPos = rightGunBarrel.transform.position; 
                 rightShot = true;
             }
 
