@@ -19,6 +19,17 @@ public class ShopInterfaceNav : MonoBehaviour
     bool moveToEnemyShop = false;
     bool moveToPlayerShop = false;
     bool moveToSwordShop = false;
+    public TextMeshProUGUI EnemyShopAchievementRequirement;
+    public TextMeshProUGUI SwordShopAchievementRequirement;
+    public TextMeshProUGUI HeroShopAchievementRequirement;
+
+    public TextMeshProUGUI EnemyShopItemName;
+    public TextMeshProUGUI SwordShopItemName;
+    public TextMeshProUGUI HeroShopItemName;
+
+    public Button EnemyShopPurchaseButton;
+    public Button SwordShopPurchaseButton;
+    public Button HeroShopPurchaseButton;
 
     Vector3 enemyShopCameraPosition = new Vector3(-8.152f, 2.43f, 10.6f);
     Vector3 playerShopCameraPosition = new Vector3(-15f, 2.43f, 10.6f);
@@ -37,9 +48,8 @@ public class ShopInterfaceNav : MonoBehaviour
       
         
         equippedIndex = shop.updateScrollSnap(scrollSnap);
-        shop.updateShopUIReferences(PlayerShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), PlayerShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
-           
-            PlayerShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
+        shop.updateShopUIReferences(HeroShopAchievementRequirement, HeroShopPurchaseButton,
+                 HeroShopItemName);
         shop.setItemValues();
         if (equippedIndex > -1)
         {
@@ -69,9 +79,9 @@ public class ShopInterfaceNav : MonoBehaviour
         PlayerShopCanvas.enabled = false;
         scrollSnap = EnemyShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
         equippedIndex = shop.updateScrollSnap(scrollSnap);
-        shop.updateShopUIReferences(EnemyShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), EnemyShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
-            EnemyShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
-        if(equippedIndex > -1)
+        shop.updateShopUIReferences(EnemyShopAchievementRequirement, EnemyShopPurchaseButton,
+                 EnemyShopItemName);
+        if (equippedIndex > -1)
         {
             scrollSnap.GoToPanel(equippedIndex);
         }
@@ -88,8 +98,8 @@ public class ShopInterfaceNav : MonoBehaviour
         moveToPlayerShop = true;
         scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
         equippedIndex = shop.updateScrollSnap(scrollSnap);
-        shop.updateShopUIReferences(PlayerShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), PlayerShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
-            PlayerShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
+        shop.updateShopUIReferences(HeroShopAchievementRequirement, HeroShopPurchaseButton,
+                 HeroShopItemName);
         if (equippedIndex > -1)
         {
             scrollSnap.GoToPanel(equippedIndex);
@@ -124,11 +134,11 @@ public class ShopInterfaceNav : MonoBehaviour
             {
                 Debug.LogError("Error: No item equipped");
             }
-   
-       
-        shop.updateShopUIReferences(SwordShopCanvas.transform.Find("AchievementRequirement").GetComponent<TextMeshProUGUI>(), SwordShopCanvas.transform.Find("PurchaseEnableButton").GetComponent<Button>(),
-            SwordShopCanvas.transform.Find("ItemName").GetComponent<TextMeshProUGUI>());
-        
+
+
+        shop.updateShopUIReferences(SwordShopAchievementRequirement, SwordShopPurchaseButton,
+                 SwordShopItemName);
+
     }
 
     void Update()
