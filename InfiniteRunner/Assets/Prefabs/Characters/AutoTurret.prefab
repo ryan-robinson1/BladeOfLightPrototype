@@ -804,6 +804,11 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5033850381272180276, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf5e5146681bd547ba52eab6f9ac6af, type: 3}
 --- !u!4 &1716611427151430409 stripped
@@ -914,6 +919,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033850381272180276, guid: 4bf5e5146681bd547ba52eab6f9ac6af,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf5e5146681bd547ba52eab6f9ac6af, type: 3}
