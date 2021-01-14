@@ -460,6 +460,15 @@ MonoBehaviour:
   scrollSnapSword: {fileID: 1977639678}
   scrollSnapSwordCore: {fileID: 1376554430}
   bladeCoreSwitcher: {fileID: 2116228447}
+  EnemyShopAchievementRequirement: {fileID: 1076157868}
+  SwordShopAchievementRequirement: {fileID: 1265027806}
+  HeroShopAchievementRequirement: {fileID: 989211014}
+  EnemyShopItemName: {fileID: 1862445252}
+  SwordShopItemName: {fileID: 1003176831}
+  HeroShopItemName: {fileID: 1536373735}
+  EnemyShopPurchaseButton: {fileID: 73883272}
+  SwordShopPurchaseButton: {fileID: 432811348}
+  HeroShopPurchaseButton: {fileID: 1539040257}
 --- !u!1 &37020331
 GameObject:
   m_ObjectHideFlags: 0

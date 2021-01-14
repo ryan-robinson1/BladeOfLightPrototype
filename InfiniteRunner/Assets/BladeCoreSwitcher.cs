@@ -32,10 +32,14 @@ public class BladeCoreSwitcher : MonoBehaviour
             switchFlag = true;
             buttonText.text = "Blades";
             initialSetupFlag = true;
-            if (setEquippedIndex)
+            if (setEquippedIndex && equippedIndex > -1)
             {
                 scrollSnapSwordCore.GoToPanel(equippedIndex);
                 setEquippedIndex = false;
+            }
+            else if(equippedIndex < 0)
+            {
+                Debug.LogError("No item equipped");
             }
            
         }
@@ -63,10 +67,14 @@ public class BladeCoreSwitcher : MonoBehaviour
                 swordSelect.SetActive(true);
                 switchFlag = true;
                 buttonText.text = "Blades";
-                if (setEquippedIndex)
+                if (setEquippedIndex && equippedIndex > -1)
                 {
                     scrollSnapSwordCore.GoToPanel(equippedIndex);
                     setEquippedIndex = false;
+                }
+                else if (equippedIndex < 0)
+                {
+                    Debug.LogError("No item equipped");
                 }
 
             }

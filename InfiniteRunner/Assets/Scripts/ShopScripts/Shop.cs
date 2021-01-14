@@ -92,15 +92,7 @@ public class Shop : MonoBehaviour
                 Item tempItem = t.GetComponent<Item>();
                
                 tempItem.purchaseState = (Item.ButtonState)Enum.Parse(typeof(Item.ButtonState), PlayerPrefs.GetString(tempItem.name, tempItem.purchaseState.ToString()), true);
-             /*   if (noMoreEquipEnemyFlag && tempItem.purchaseState == Item.ButtonState.equipped && tempItem.type == Item.Type.enemyColor)
-                {
-                    tempItem.purchaseState = Item.ButtonState.purchased;
-                }
-                if (noMoreEquipEnemyFlag && tempItem.purchaseState == Item.ButtonState.equipped && tempItem.type == Item.Type.swordColor)
-                {
-                    tempItem.purchaseState = Item.ButtonState.purchased;
-                }
-*/
+    
                 if (tempItem.defaultItem && firstTimePlaying)
                 {
                     tempItem.price = 0;
@@ -109,13 +101,6 @@ public class Shop : MonoBehaviour
                     PlayerPrefs.SetString(tempItem.name, tempItem.purchaseState.ToString());
 
                 }
-    /*            else if(tempItem.enemyColor.ToString() == PlayerPrefs.GetString("EnemyColor") && tempItem.type == Item.Type.enemyColor){
-                    noMoreEquipEnemyFlag = true;
-                }
-                else if (tempItem.heroColor.ToString() == PlayerPrefs.GetString("SwordColor") && tempItem.type == Item.Type.swordColor)
-                {
-                    noMoreEquipSwordCoreFlag = true;
-                }*/
             }
         }
     }
@@ -129,10 +114,42 @@ public class Shop : MonoBehaviour
         GameObject content = _scrollSnap.transform.GetChild(0).GetChild(0).gameObject;
         foreach (Transform child in content.transform)
         {
-            itemList.Add(child.GetComponent<Item>());
-            if(child.GetComponent<Item>().purchaseState == Item.ButtonState.equipped)
+            Item i = child.GetComponent<Item>();
+            itemList.Add(i);
+            if(i.purchaseState == Item.ButtonState.equipped)
             {
-                equippedIndex= itemList.Count - 1;
+                if(i.type == Item.Type.enemyColor && i.enemyColor.ToString() == ColorDataBase.enemyColorName)
+                {
+                    equippedIndex = itemList.Count - 1;
+                }
+                else if(i.type == Item.Type.enemyColor && i.enemyColor.ToString() != ColorDataBase.enemyColorName)
+                {
+                    i.purchaseState = Item.ButtonState.purchased;
+                }
+
+                else if (i.type == Item.Type.swordColor && i.heroColor.ToString() == ColorDataBase.swordColorName)
+                {
+                    equippedIndex = itemList.Count - 1;
+                    Debug.Log("here");
+                }
+                else if (i.type == Item.Type.swordColor && i.heroColor.ToString() != ColorDataBase.swordColorName)
+                {
+                    i.purchaseState = Item.ButtonState.purchased;
+                }
+                else
+                {
+                    equippedIndex = itemList.Count - 1;
+                }
+            }
+            else if(i.type == Item.Type.swordColor && i.heroColor.ToString() == ColorDataBase.swordColorName)
+            {
+                equippedIndex = itemList.Count - 1;
+                break;
+            }
+            else if (i.type == Item.Type.enemyColor && i.enemyColor.ToString() == ColorDataBase.enemyColorName)
+            {
+                equippedIndex = itemList.Count - 1;
+                break;
             }
         }
         return equippedIndex;
