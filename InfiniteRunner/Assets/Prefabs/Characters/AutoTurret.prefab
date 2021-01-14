@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7539239d85f13468b37fb9185562a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1806744742710055406, guid: f8a72c67fb623a546a07a815aba67054, type: 3}
+  bullet: {fileID: 2287294146204259699, guid: 333b015695b26404a956954dd8dfc565, type: 3}
   leftGunBarrel: {fileID: 822465126276947865}
   rightGunBarrel: {fileID: 1977168670687517568}
   _leftFlash: {fileID: 1716611427151430407}

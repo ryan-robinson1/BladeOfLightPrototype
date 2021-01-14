@@ -3,7 +3,17 @@ guid: 5408df37d9fc50c4eaea524fa2e16de6
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulletBase
+    second: {fileID: 2100000, guid: ebb06c1985f6b90448e35fe7f635f82b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BulletTip
+    second: {fileID: 2100000, guid: ebb06c1985f6b90448e35fe7f635f82b, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
