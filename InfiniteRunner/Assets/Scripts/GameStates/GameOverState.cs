@@ -122,7 +122,6 @@ public class GameOverState : MonoBehaviour
     {
         double g = (double)(((double)((double)score / 1000.0) + (double)streak)/100.0);
         double p = System.Math.Pow(g,(1.0/3.0))*175.0;
-        Debug.Log(p);
         bounty = (int)p;
 
         shop.GetComponent<Shop>().depositMoney(bounty);

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,11 @@ public class BladeCoreSwitcher : MonoBehaviour
     public List<int> purchasesToMakeIndex = new List<int>();
     [HideInInspector]
     public int heroSyncEquipIndex = -1;
+
+     private void Start()
+    {
+        restorePurchaseEquipIndex();
+    }
     public void switchSelects()
     {
         if (!initialSetupFlag)
@@ -118,12 +124,40 @@ public class BladeCoreSwitcher : MonoBehaviour
     private void UpdatePreviousPurchases()
     {
         shop.purchaseItemsNoCost(ref purchasesToMakeIndex);
-        Debug.Log("HERO SYNC INDEX:"+heroSyncEquipIndex);
         if(heroSyncEquipIndex > -1)
         {
-            Debug.Log("equipping");
+        
             shop.equipItem(heroSyncEquipIndex);
             heroSyncEquipIndex = -1;
         }
+    }
+    public void savePurchaseEquipIndex()
+    {
+        PlayerPrefs.SetString("purchasesToMakeIndex", listToString(purchasesToMakeIndex));
+        PlayerPrefs.SetInt("equipIndex", heroSyncEquipIndex);
+    }
+    private void restorePurchaseEquipIndex()
+    {
+        purchasesToMakeIndex = stringToList(PlayerPrefs.GetString("purchasesToMakeIndex", ""));
+        heroSyncEquipIndex = PlayerPrefs.GetInt("equipIndex", -1);
+    }
+    private string listToString(List<int> array)
+    {
+        string s = "";
+        foreach (int i in array) 
+        {
+            s += i;
+        }
+        return s;
+
+    }
+    private List<int> stringToList(string s)
+    {
+        List<int> list = new List<int>();
+        foreach(char c in s)
+        {
+            list.Add((int)Char.GetNumericValue(c));
+        }
+        return list;
     }
 }
