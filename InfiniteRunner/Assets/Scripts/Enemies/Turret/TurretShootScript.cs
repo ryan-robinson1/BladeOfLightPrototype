@@ -167,7 +167,6 @@ public class TurretShootScript : MonoBehaviour
     {
         if (-positionDifference > _removalDistance)
         {
-            player.GetComponent<PlayerAnimationController>().resetAttackMultiplier();
             Destroy(this.gameObject);
         }
     }
