@@ -17,10 +17,7 @@ public class Shop : MonoBehaviour
     public List<Transform> itemCanvas;
     public DissolveEnemyScript shopEnemyScript;
     public DamageManager damageManagerScript;
-    public DamageManager shopDamageManagerScript;
     public SwordColorScript swordColorScript;
-    public SwordColorScript shopHeroSwordColorScript;
-    public SwordColorScript shopSwordColorScript;
     public BladeCoreSwitcher bladeCoreSwitcher;
     public StartMenuScript startMenu;
     public bool deletePlayerPrefs = false;
@@ -292,7 +289,6 @@ public class Shop : MonoBehaviour
        
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
-                shopDamageManagerScript.SetHeroColor();
                 startMenu.updateUI();
                 bladeCoreSwitcher.heroSyncEquipIndex = scrollSnap.CurrentPanel;
                 bladeCoreSwitcher.savePurchaseEquipIndex();
@@ -304,8 +300,6 @@ public class Shop : MonoBehaviour
                 ColorDataBase.setSwordColor(i.heroColor);
          
                 swordColorScript.setSwordColor();
-                shopHeroSwordColorScript.setSwordColor();
-                shopSwordColorScript.setSwordColor();
 
             }
             else if (i.type == Item.Type.swordModel)
