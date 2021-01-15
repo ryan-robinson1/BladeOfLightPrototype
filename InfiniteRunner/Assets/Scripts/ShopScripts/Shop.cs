@@ -286,7 +286,7 @@ public class Shop : MonoBehaviour
             else if (i.type == Item.Type.heroColor)
             {
                 ColorDataBase.setHeroColor(i.heroColor);
-       
+                AudioManager.instance.Play("PowerCoreStartup");
                 swordColorScript.setSwordColor();
                 damageManagerScript.SetHeroColor();
                 startMenu.updateUI();

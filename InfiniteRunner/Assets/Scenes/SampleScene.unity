@@ -41398,13 +41398,13 @@ MonoBehaviour:
   automaticallyLayout: 1
   sizeControl: 0
   size: {x: 450, y: 450}
-  automaticLayoutSpacing: 0.013
+  automaticLayoutSpacing: 0
   leftMargin: 0
   rightMargin: 0
   topMargin: 0
   bottomMargin: 0
   infinitelyScroll: 1
-  infiniteScrollingEndSpacing: 0.1
+  infiniteScrollingEndSpacing: 0.06
   useOcclusionCulling: 0
   startingPanel: 2
   swipeGestures: 0
@@ -41414,7 +41414,7 @@ MonoBehaviour:
   pagination: {fileID: 0}
   toggleNavigation: 1
   snapTarget: 0
-  snappingSpeed: 15
+  snappingSpeed: 10
   thresholdSnappingSpeed: 90
   hardSnap: 1
   useUnscaledTime: 0
@@ -41442,7 +41442,183 @@ MonoBehaviour:
   onPanelChanging:
     m_PersistentCalls:
       m_Calls: []
-  transitionEffects: []
+  transitionEffects:
+  - minDisplacement: -1000
+    maxDisplacement: 1000
+    minValue: 0.5
+    maxValue: 1
+    defaultMinValue: 0
+    defaultMaxValue: 0
+    defaultMinDisplacement: 0
+    defaultMaxDisplacement: 0
+    showPanel: 1
+    showDisplacement: 1
+    showValue: 1
+    label: localScale.x
+    function:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1000
+        value: 0.54929733
+        inSlope: 0.00045449007
+        outSlope: 0.00045449007
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: -8.333334
+        value: 1
+        inSlope: 0.0000030900992
+        outSlope: 0.0000030900992
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 983.3333
+        value: 0.55542606
+        inSlope: -0.00044830987
+        outSlope: -0.00044830987
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defaultFunction:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.49341208
+        value: 1.0702382
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    simpleScrollSnap: {fileID: 1188590673}
+  - minDisplacement: -1000
+    maxDisplacement: 1000
+    minValue: 0.5
+    maxValue: 1
+    defaultMinValue: 0
+    defaultMaxValue: 0
+    defaultMinDisplacement: 0
+    defaultMaxDisplacement: 0
+    showPanel: 1
+    showDisplacement: 1
+    showValue: 1
+    label: localScale.y
+    function:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1000
+        value: 0.5495283
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 983.3334
+        value: 0.5542453
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defaultFunction:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1000
+        value: 0.5495283
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 983.3334
+        value: 0.5542453
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    simpleScrollSnap: {fileID: 1188590673}
 --- !u!114 &1188590674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42552,7 +42728,7 @@ MonoBehaviour:
     mute: 1
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: d32b80575ed8d8041b73de4979e9dd2b, type: 3}
-    volume: 0.4
+    volume: 0.266
     pitch: 1
     priority: 106
     name: Deflect2
@@ -42561,7 +42737,7 @@ MonoBehaviour:
     mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b95d5ec9d2cbbf241ba2f84d7912276f, type: 3}
-    volume: 0.346
+    volume: 0.266
     pitch: 1
     priority: 98
     name: Deflect3
@@ -42570,7 +42746,7 @@ MonoBehaviour:
     mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: e41218909557332489443fa956c4cd5b, type: 3}
-    volume: 0.359
+    volume: 0.266
     pitch: 1
     priority: 106
     name: Deflect4
@@ -42583,6 +42759,15 @@ MonoBehaviour:
     pitch: 1
     priority: 106
     name: HealthRegen
+    loop: 0
+    playOnAwake: 0
+    mute: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b73b872536b547a41aa88c2152411525, type: 3}
+    volume: 0.184
+    pitch: 1
+    priority: 75
+    name: PowerCoreStartup
     loop: 0
     playOnAwake: 0
     mute: 0
