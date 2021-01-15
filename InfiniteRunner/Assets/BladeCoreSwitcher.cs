@@ -9,7 +9,6 @@ public class BladeCoreSwitcher : MonoBehaviour
  
     public GameObject coreSelect;
     public GameObject swordSelect;
-    public Text buttonText;
     public Shop shop;
     public DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnapSwordCore;
     public DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap scrollSnapSword;
@@ -20,6 +19,9 @@ public class BladeCoreSwitcher : MonoBehaviour
     public List<int> purchasesToMakeIndex = new List<int>();
     [HideInInspector]
     public int heroSyncEquipIndex = -1;
+
+    public Image swordIcon;
+    public Image coreIcon;
 
      private void Start()
     {
@@ -43,7 +45,8 @@ public class BladeCoreSwitcher : MonoBehaviour
             }
             coreSelect.SetActive(false);
             switchFlag = true;
-            buttonText.text = "Blades";
+            swordIcon.enabled = true;
+            coreIcon.enabled = false;
             initialSetupFlag = true;
             if (setEquippedIndex && equippedIndex > -1)
             {
@@ -73,7 +76,8 @@ public class BladeCoreSwitcher : MonoBehaviour
                 coreSelect.SetActive(true);
                 swordSelect.SetActive(false);
                 switchFlag = false;
-                buttonText.text = "Cores";
+                swordIcon.enabled = false;
+                coreIcon.enabled = true;
 
             }
             else
@@ -93,7 +97,8 @@ public class BladeCoreSwitcher : MonoBehaviour
                 coreSelect.SetActive(false);
                 swordSelect.SetActive(true);
                 switchFlag = true;
-                buttonText.text = "Blades";
+                swordIcon.enabled = true;
+                coreIcon.enabled = false;
                 if (setEquippedIndex && equippedIndex > -1)
                 {
                     scrollSnapSwordCore.GoToPanel(equippedIndex);
@@ -117,7 +122,10 @@ public class BladeCoreSwitcher : MonoBehaviour
             coreSelect.SetActive(true);
             swordSelect.SetActive(false);
             switchFlag = false;
-            buttonText.text = "Cores";
+            coreSelect.SetActive(true);
+            swordSelect.SetActive(false);
+            swordIcon.enabled = false;
+            coreIcon.enabled = true;
 
         }
     }
@@ -159,5 +167,9 @@ public class BladeCoreSwitcher : MonoBehaviour
             list.Add((int)Char.GetNumericValue(c));
         }
         return list;
+    }
+    public void switchToCoreIcon()
+    {
+       
     }
 }
