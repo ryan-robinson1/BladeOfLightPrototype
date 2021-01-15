@@ -851,6 +851,11 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].cycleCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2372688282153851499, guid: a17960ef1d211234e9c3ecc69d7064fe,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2936494731319161577, guid: a17960ef1d211234e9c3ecc69d7064fe,
         type: 3}
       propertyPath: m_MinParticleSize

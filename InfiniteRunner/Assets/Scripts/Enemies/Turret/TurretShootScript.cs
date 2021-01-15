@@ -10,6 +10,7 @@ public class TurretShootScript : MonoBehaviour
     public Transform leftGunBarrel;
     public Transform rightGunBarrel;
     private Rigidbody _rb;
+    private Transform turretMesh;
 
 
     private float _bulletSpeed = 25f;
@@ -44,6 +45,7 @@ public class TurretShootScript : MonoBehaviour
         hero = GameObject.FindGameObjectWithTag("Player");
         player = hero.GetComponent<PlayerController>();
         objectToFollow = hero.transform.GetChild(1).transform;
+        turretMesh = transform.GetChild(1);
         explosionfx = this.GetComponentInChildren<ParticleSystem>();
         expModule = explosionfx.main;
         expModule.startColor = ColorDataBase.GetEnemyStripAlbedo();
@@ -104,7 +106,7 @@ public class TurretShootScript : MonoBehaviour
             other.gameObject.GetComponent<DamageManager>().TakeDamageFromTurret();
 
             explosionfx.Play();
-           // Destroy(this.gameObject);
+            turretMesh.gameObject.SetActive(false);
         }
 
     }
