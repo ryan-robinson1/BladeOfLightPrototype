@@ -45,8 +45,9 @@ public class ShopInterfaceNav : MonoBehaviour
         mainMenuCanvas.enabled = false;
         shop.transform.GetChild(0).gameObject.SetActive(true);
         scrollSnap = PlayerShopCanvas.transform.GetComponentInChildren<DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap>();
-      
+
         
+
         equippedIndex = shop.updateScrollSnap(scrollSnap);
         shop.updateShopUIReferences(HeroShopAchievementRequirement, HeroShopPurchaseButton,
                  HeroShopItemName);
