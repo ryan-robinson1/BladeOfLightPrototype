@@ -30,8 +30,10 @@ public class TurretShootScript : MonoBehaviour
     private Animator _ac;
     public ParticleSystem _leftFlash;
     public ParticleSystem _rightFlash;
+    private ParticleSystem explosionfx;
     private ParticleSystem.MainModule _leftMain;
     private ParticleSystem.MainModule _rightMain;
+    private ParticleSystem.MainModule expModule;
 
 
     private void Start()
@@ -42,6 +44,9 @@ public class TurretShootScript : MonoBehaviour
         hero = GameObject.FindGameObjectWithTag("Player");
         player = hero.GetComponent<PlayerController>();
         objectToFollow = hero.transform.GetChild(1).transform;
+        explosionfx = this.GetComponentInChildren<ParticleSystem>();
+        expModule = explosionfx.main;
+        expModule.startColor = ColorDataBase.GetEnemyStripAlbedo();
 
         SetMuzzleFlash();
     }
@@ -98,7 +103,8 @@ public class TurretShootScript : MonoBehaviour
         {
             other.gameObject.GetComponent<DamageManager>().TakeDamageFromTurret();
 
-            Destroy(this.gameObject);
+            explosionfx.Play();
+           // Destroy(this.gameObject);
         }
 
     }
