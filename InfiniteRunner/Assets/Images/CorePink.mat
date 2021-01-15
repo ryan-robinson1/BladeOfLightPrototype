@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CurrencyDisplayMaterial
+  m_Name: CorePink
   m_Shader: {fileID: -6465566751694194690, guid: 9dff60f7f54d83c4797bde4f6ff6be9c,
     type: 3}
   m_ShaderKeywords: buttonColor
@@ -21,14 +21,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Emission:
-        m_Texture: {fileID: 2800000, guid: 6a3a1d9f8ef113c47a749e39141ad649, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97d0f780839ecae4f9b4a00052d1bc60, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 156f098eba2c4904daab14d64599ad99, type: 3}
+        m_Texture: {fileID: 2800000, guid: 13b13df5c573edd4dbe57e2ef5ba635e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - buttonColor: {r: 0.01741129, g: 1.976675, b: 0, a: 1}
+    - buttonColor: {r: 1.976675, g: 0, b: 1.84425, a: 1}
   m_BuildTextureStacks: []
