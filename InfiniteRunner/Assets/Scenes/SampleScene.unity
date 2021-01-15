@@ -723,15 +723,15 @@ RectTransform:
   m_GameObject: {fileID: 75738940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.67218, z: 1}
   m_Children: []
   m_Father: {fileID: 1539040256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 6.800003}
+  m_SizeDelta: {x: 0, y: -17.408127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75738942
 MonoBehaviour:
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -754,7 +754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 02cf4b1d4ba9ee54488913bc5d1725a5, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -5740,7 +5740,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 4
-  achievement: Kill a bear
+  achievement: 
   purchaseState: 2
   type: 0
 --- !u!4 &97363569 stripped
@@ -6400,7 +6400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233964867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.93, y: 7.13, z: -19.94}
+  m_LocalPosition: {x: 24.93, y: 7.394, z: -19.94}
   m_LocalScale: {x: 3.0740674, y: 1.4146, z: 3.0844605}
   m_Children:
   - {fileID: 875178279}
@@ -18130,7 +18130,7 @@ MonoBehaviour:
   defaultItem: 1
   enemyColor: 0
   heroColor: 1
-  achievement: Fought 2000 enemies
+  achievement: 
   purchaseState: 2
   type: 0
 --- !u!1 &469702432
@@ -33267,7 +33267,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 2
-  achievement: Kill someone and get away with it
+  achievement: 
   purchaseState: 2
   type: 0
 --- !u!1 &576701923
@@ -39721,7 +39721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &929028409
 Transform:
   m_ObjectHideFlags: 0
@@ -40471,7 +40471,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: do 4 jumping jacks
+  achievement: 
   purchaseState: 2
   type: 0
 --- !u!1 &1019524914
@@ -41465,7 +41465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -441}
+  m_AnchoredPosition: {x: 0, y: -361.08}
   m_SizeDelta: {x: 400, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188590673
@@ -41484,7 +41484,7 @@ MonoBehaviour:
   movementAxis: 0
   automaticallyLayout: 1
   sizeControl: 0
-  size: {x: 450, y: 450}
+  size: {x: 500, y: 500}
   automaticLayoutSpacing: 0
   leftMargin: 0
   rightMargin: 0
@@ -41532,7 +41532,7 @@ MonoBehaviour:
   transitionEffects:
   - minDisplacement: -1000
     maxDisplacement: 1000
-    minValue: 0.5
+    minValue: 0.35
     maxValue: 1
     defaultMinValue: 0
     defaultMaxValue: 0
@@ -41547,31 +41547,31 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: -1000
-        value: 0.54929733
-        inSlope: 0.00045449007
-        outSlope: 0.00045449007
+        value: 0.35
+        inSlope: 0.00065546215
+        outSlope: 0.00065546215
         tangentMode: 34
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: -8.333334
         value: 1
-        inSlope: 0.0000030900992
-        outSlope: 0.0000030900992
+        inSlope: 0.0000054170378
+        outSlope: 0.0000054170378
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 983.3333
-        value: 0.55542606
-        inSlope: -0.00044830987
-        outSlope: -0.00044830987
+        time: 1000
+        value: 0.35
+        inSlope: -0.0006446281
+        outSlope: -0.0006446281
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -41611,14 +41611,14 @@ MonoBehaviour:
     simpleScrollSnap: {fileID: 1188590673}
   - minDisplacement: -1000
     maxDisplacement: 1000
-    minValue: 0.5
+    minValue: 0.35
     maxValue: 1
     defaultMinValue: 0
     defaultMaxValue: 0
     defaultMinDisplacement: 0
     defaultMaxDisplacement: 0
     showPanel: 1
-    showDisplacement: 1
+    showDisplacement: 0
     showValue: 1
     label: localScale.y
     function:
@@ -41626,15 +41626,15 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: -1000
-        value: 0.5495283
-        inSlope: 0
-        outSlope: 0
+        value: 0.35
+        inSlope: 0.00065
+        outSlope: 0.00065
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0
+        time: -16.666687
         value: 1
         inSlope: 0
         outSlope: 0
@@ -41643,22 +41643,13 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        time: 1000
+        value: 0.35
+        inSlope: -0.0006856774
+        outSlope: -0.0006856774
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 983.3334
-        value: 0.5542453
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
+        inWeight: 0.18181816
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -41931,7 +41922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379.83, y: -708.9}
+  m_AnchoredPosition: {x: 510, y: -872.54}
   m_SizeDelta: {x: 111.616974, y: 49.838745}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248232843
@@ -58639,8 +58630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4, y: -666}
-  m_SizeDelta: {x: 535.6584, y: 65.03693}
+  m_AnchoredPosition: {x: -0.00052524, y: -638}
+  m_SizeDelta: {x: 734.4205, y: 103.89496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1536373735
 MonoBehaviour:
@@ -58664,8 +58655,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ice Core
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a1a6de20e8277e04fa8e2260705e8aec, type: 2}
+  m_sharedMaterial: {fileID: -7348751918013965143, guid: a1a6de20e8277e04fa8e2260705e8aec,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -58689,8 +58681,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -58767,7 +58759,7 @@ RectTransform:
   m_GameObject: {fileID: 1539040255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.225117, y: 2.2890534, z: 1}
   m_Children:
   - {fileID: 75738941}
   m_Father: {fileID: 31118434}
@@ -58775,8 +58767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000020981, y: -813}
-  m_SizeDelta: {x: 346.85596, y: 142.84784}
+  m_AnchoredPosition: {x: 0.00060725, y: -791}
+  m_SizeDelta: {x: 527.24274, y: 212.9284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539040257
 MonoBehaviour:
@@ -58845,7 +58837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 835a8cf94d28c264ea4b7067d9bdb8b4, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -58853,8 +58845,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 13ce8a0d4dc3a4646be47a00a4fa59d8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -70041,7 +70033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -417, y: -735}
+  m_AnchoredPosition: {x: -481, y: -872.54}
   m_SizeDelta: {x: 246.07654, y: 140.42204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789216636
@@ -70183,6 +70175,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: eb49083e4747f844fa3637cdab52c02b, type: 2}
   - {fileID: 2100000, guid: fea5c68ac0b225a42af4e982e2a5d581, type: 2}
   - {fileID: 2100000, guid: 559babf3d31128b46b5e7e7bc9ef1f74, type: 2}
+  - {fileID: 2100000, guid: 835a8cf94d28c264ea4b7067d9bdb8b4, type: 2}
 --- !u!4 &1834906559
 Transform:
   m_ObjectHideFlags: 0
@@ -70818,7 +70811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1930240941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70835,7 +70828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000020033, y: -436}
+  m_AnchoredPosition: {x: 0.000020033, y: -374}
   m_SizeDelta: {x: 226.85863, y: 224.15927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1930240942
@@ -76331,7 +76324,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 5
-  achievement: Beat somone in a game of chess
+  achievement: 
   purchaseState: 2
   type: 0
 --- !u!114 &2111834597 stripped
@@ -77372,7 +77365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147670963243}
   m_LocalRotation: {x: 0.035998575, y: 0.7061898, z: 0.70618993, w: -0.035998583}
-  m_LocalPosition: {x: 25.285995, y: 8.648412, z: -20.380993}
+  m_LocalPosition: {x: 25.285995, y: 8.886, z: -20.380993}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 6032822943995783934}
