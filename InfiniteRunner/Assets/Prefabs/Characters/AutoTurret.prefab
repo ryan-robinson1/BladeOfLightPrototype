@@ -839,7 +839,7 @@ PrefabInstance:
     - target: {fileID: 2372688282153851499, guid: a17960ef1d211234e9c3ecc69d7064fe,
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2372688282153851499, guid: a17960ef1d211234e9c3ecc69d7064fe,
         type: 3}
