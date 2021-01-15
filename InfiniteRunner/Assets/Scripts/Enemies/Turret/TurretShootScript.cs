@@ -108,6 +108,7 @@ public class TurretShootScript : MonoBehaviour
             explosionfx.Play();
             turretMesh.gameObject.SetActive(false);
         }
+        Debug.Log("Explosion");
 
     }
 

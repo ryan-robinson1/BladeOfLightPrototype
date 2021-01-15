@@ -1558,7 +1558,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
+  - {fileID: 2100000, guid: dfc7cb7da233064429e6384dfe5335ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33763,7 +33763,7 @@ MonoBehaviour:
     spawnPosition: {x: 0, y: -1.46, z: 12}
     extentX: 0
   player: {fileID: 1546999454}
-  pistolEnemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
+  pistolEnemy: {fileID: 7107611787434245042, guid: a97857b1dd10c9844b121de7fed016e8,
     type: 3}
   turretEnemy: {fileID: 7107611787434245042, guid: a97857b1dd10c9844b121de7fed016e8,
     type: 3}
@@ -37853,7 +37853,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
+  - {fileID: 2100000, guid: dfc7cb7da233064429e6384dfe5335ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
