@@ -1,6 +1,6 @@
 # Blender v2.90.0 OBJ File: 'low_poly_hero-animated.blend'
 # www.blender.org
-mtllib hero-pedastool.mtl
+mtllib enemy-pedastool.mtl
 o Cylinder.001_Cylinder
 v -1.195681 0.000000 0.000000
 v -1.195681 2.400081 0.000000

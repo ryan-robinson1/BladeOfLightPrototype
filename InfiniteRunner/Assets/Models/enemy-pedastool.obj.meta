@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 162b3b327e95e0c4b852ea8435e51696
+guid: 1e74d96829fd92f40b104cdd398c9e2a
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blade-edge-red
-    second: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
+    second: {fileID: 2100000, guid: 296193f224f574e4788a1314f5b58a8d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
