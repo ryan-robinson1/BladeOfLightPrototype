@@ -101,7 +101,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.PlayOneShot(s.source.clip);
+        s.source.Play();
     }
     public void Play(string name, float pitch)
     {
