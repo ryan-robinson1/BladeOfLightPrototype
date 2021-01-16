@@ -37698,7 +37698,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 0.428
@@ -37714,7 +37714,7 @@ MonoBehaviour:
     pitch: 1
     priority: 108
     name: Footsteps
-    loop: 0
+    loop: 1
     playOnAwake: 0
     mute: 0
     source: {fileID: 0}
@@ -37768,6 +37768,15 @@ MonoBehaviour:
     pitch: 1.36
     priority: 184
     name: PowerCoreStartup
+    loop: 0
+    playOnAwake: 0
+    mute: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 2546f2c1957088e4580868b24ff4dd43, type: 3}
+    volume: 0.463
+    pitch: 1.4
+    priority: 159
+    name: TurretExplosion
     loop: 0
     playOnAwake: 0
     mute: 0

@@ -184,7 +184,7 @@ public class ChunkGenerator : MonoBehaviour
                 else if(i > 0 && spawnPointVectors[i].x - spawnPointVectors[i - 1].x > spaceBetweenEnemies && random >= 0.85)
                 {
                  
-                   Instantiate(turretEnemy, new Vector3(enemiesX, 0.5f, 0) + new Vector3(spawnPointVectors[i].x, 0, spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
+                   Instantiate(turretEnemy, new Vector3(enemiesX, 0.24f, 0) + new Vector3(spawnPointVectors[i].x, 0, spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
                     Debug.Log("TUREET");
                     
                 }
