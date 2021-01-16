@@ -21,6 +21,8 @@ public class Shop : MonoBehaviour
     public BladeCoreSwitcher bladeCoreSwitcher;
     public StartMenuScript startMenu;
     public Light heroLight;
+    public Light enemyLight;
+    public Light swordLight;
     public bool deletePlayerPrefs = false;
   
     TextMeshProUGUI achievmentText;
@@ -56,6 +58,8 @@ public class Shop : MonoBehaviour
         moneyText3.text = money + "";
         moneyText4.text = money + "";
         heroLight.color = ColorDataBase.GetHeroAlbedo();
+        enemyLight.color = ColorDataBase.GetEnemyStripAlbedo();
+        swordLight.color = ColorDataBase.GetSwordAlbedo();
         
     }
     public void hasPlayed()
@@ -282,6 +286,8 @@ public class Shop : MonoBehaviour
                 ColorDataBase.setEnemyColor(i.enemyColor);
            
                shopEnemyScript.SetMatColors();
+
+                enemyLight.color = ColorDataBase.GetEnemyStripAlbedo();
     
             }
             else if (i.type == Item.Type.heroColor)
@@ -302,7 +308,7 @@ public class Shop : MonoBehaviour
                 ColorDataBase.setSwordColor(i.heroColor);
          
                 swordColorScript.setSwordColor();
-
+                swordLight.color = ColorDataBase.GetSwordAlbedo();
             }
             else if (i.type == Item.Type.swordModel)
             {
