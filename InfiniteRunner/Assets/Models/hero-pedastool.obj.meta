@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blade
-    second: {fileID: 2100000, guid: 5dbf100845c56ce4489715b7bdb77ed5, type: 2}
+    second: {fileID: 2100000, guid: 80fcedf1978d37845bca53d3e19076aa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blade-edge-red
-    second: {fileID: 2100000, guid: 12859b8dd7b9b2b4591fc32e8a00db5d, type: 2}
+    second: {fileID: 2100000, guid: 13835af7e5d8da547acd3ef9fd2dfc07, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
