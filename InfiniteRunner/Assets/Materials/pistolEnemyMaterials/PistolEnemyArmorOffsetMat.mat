@@ -79,8 +79,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1.4592441, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - armorEdgeColor: {r: 0, g: 17.76, b: 18, a: 1}
-    - armorStripAlbedo: {r: 0, g: 0.74, b: 0.75, a: 1}
+    - armorEdgeColor: {r: 18, g: 5.04, b: 0, a: 1}
+    - armorStripAlbedo: {r: 0.75, g: 0.21, b: 0, a: 1}
     - dissolveEdgeColor: {r: 10.09701, g: 0.2381369, b: 0.2381369, a: 0}
     - mainColor: {r: 1.945098, g: 1.913725, b: 1.913725, a: 0}
   m_BuildTextureStacks: []
