@@ -113,6 +113,7 @@ public class GameOverState : MonoBehaviour
     public void GetHighestStreak(int streak) 
     {
         this.streak = streak;
+        HandleStreakAchievements();
     }
     /**
     * Calculates the money earned from the round
@@ -131,9 +132,24 @@ public class GameOverState : MonoBehaviour
      */
     private void HandleScoringAchievements()
     {
-        if (PlayerPrefs.GetString("score1000", "locked") == "locked" && score >= 1000)
+        if (PlayerPrefs.GetString("score1500", "locked") == "locked" && score >= 1500)
         {
-            AchievementEvents.aEvents.UnlockAchievementTrigger("score1000");
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score1500");
+        }
+        if (PlayerPrefs.GetString("score15k", "locked") == "locked" && score >= 15000)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score15k");
+        }
+    }
+
+    /**
+     * Handles unlocking achievements based on the highest streak from this round.
+     */
+    private void HandleStreakAchievements()
+    {
+        if (PlayerPrefs.GetString("streak25", "locked") == "locked" && streak >= 25)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("streak25");
         }
     }
 }

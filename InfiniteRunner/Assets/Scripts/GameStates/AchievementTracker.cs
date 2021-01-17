@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Text;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -14,12 +16,14 @@ public class AchievementTracker : MonoBehaviour
     public GameObject mainMenu;
     private Canvas[] achievementSubMenus;
     private int[] highScores;
+    private AchievementHandler _acHandler;
 
     // Start is called before the first frame update
     void Start()
     {
         highScores = GetHighScores();
         achievementSubMenus = this.GetComponentsInChildren<Canvas>();
+        _acHandler = this.GetComponentInParent<AchievementHandler>();
     }
 
     /**
@@ -103,9 +107,37 @@ public class AchievementTracker : MonoBehaviour
         return highScores;
     }
 
-    // Update is called once per frame
-    void Update()
+    /**
+     * Called when we click on the Achievements button on the main screen.
+     */
+    public void OnAchievementButton()
     {
-        
+        achievementSubMenus[0].enabled = false;
+        achievementSubMenus[2].enabled = true;
+        achievementSubMenus[2].GetComponentInChildren<TextMeshProUGUI>().text = DisplayAchievementInfo();
+    }
+
+    /**
+     * Called when the back button on the achievement menu is clicked.
+     */
+    public void OnAchievementBackButton()
+    {
+        achievementSubMenus[2].enabled = false;
+        achievementSubMenus[0].enabled = true;
+    }
+
+    /**
+     * Displays the achievement information on the achievement menu page.
+     */
+    private string DisplayAchievementInfo()
+    {
+        Dictionary<string, Achievement> a = _acHandler.GetAchievements();
+        StringBuilder str = new StringBuilder();
+        foreach (var item in a)
+        {
+            str.Append($"{item.Value.GetDisplayName()} is {item.Value.GetLockState()}\n{item.Value.GetDescription()}\n\n");
+        }
+
+        return str.ToString();
     }
 }

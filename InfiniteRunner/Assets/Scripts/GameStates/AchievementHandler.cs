@@ -20,7 +20,7 @@ public class AchievementHandler : MonoBehaviour
     void Start()
     {
         AchievementEvents.aEvents.onAchievementUnlocked += UnlockAchievement;
-        Debug.Log($"The {achievements["score1000"].Getid()} is {achievements["score1000"].IsUnlocked()}");
+        Debug.Log($"The {achievements["score1500"].Getid()} is {achievements["score1500"].IsUnlocked()}");
     }
 
     /**
@@ -69,15 +69,30 @@ public class AchievementHandler : MonoBehaviour
     }
 
     /**
-     * Initializes the player achievement dictionary.
+     * Initializes the player achievement dictionary. 
+     * IF ADDING AN ACHIEVEMENT ORGANIZE BY TYPE (i.e. Score-based, attack-based, etc.)
      */
     private void InitializeAchievements()
     {
         achievements = new Dictionary<string, Achievement>(){
 
-            {"score1000", new Achievement(
-                "score1000", PlayerPrefs.GetString("score1000", "locked"), "Noob Assassin",
-                "Acquire a score of 1000 or better in a single run.")
+            // SCORE BASED ACHIEVEMENTS
+
+            {"score1500", new Achievement(
+                "score1500", PlayerPrefs.GetString("score1500", "locked"), "Noob Assassin",
+                "Acquire a score of 1,500 or better in a single run.")
+            },
+
+            {"score15k", new Achievement(
+                "score15k", PlayerPrefs.GetString("score15k", "locked"), "Skilled Assassin",
+                "Acquire a score of 15,000 or better in a single run.")
+            },
+
+            // STREAK BASED ACHIEVEMENTS
+
+            {"streak25", new Achievement(
+                "streak25", PlayerPrefs.GetString("streak25", "locked"), "Chain 'em Together",
+                "Acquire a streak of 25 or higher in a single run.") 
             },
 
         };

@@ -62,10 +62,6 @@ public class Shop : MonoBehaviour
         
     }
 
-    private void TestEvent()
-    {
-        Debug.Log("this is my first time playing");
-    }
     public void hasPlayed()
     {
         int hasPlayed = PlayerPrefs.GetInt("hasPlayed",0);

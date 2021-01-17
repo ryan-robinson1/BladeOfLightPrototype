@@ -47,6 +47,16 @@ public class Achievement
     }
 
     /**
+     * Gets the lockState string.
+     * 
+     * @return the lockState string.
+     */
+    public string GetLockState()
+    {
+        return lockState;
+    }
+
+    /**
      * Returns the display name of the achievement. Used for UI purposes.
      * 
      * @return The displayName of this achievement.
