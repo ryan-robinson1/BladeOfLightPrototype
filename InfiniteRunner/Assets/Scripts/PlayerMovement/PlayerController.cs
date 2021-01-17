@@ -325,9 +325,11 @@ public class PlayerController : MonoBehaviour
             {
                 other.gameObject.GetComponent<HealthPackScript>().
                     HealPlayer(this.gameObject);
+                sCounter.JustHealed();
             }
         }
     }
+
 
     /* 
      * Executed by bulletScript if within the range defined by the variable "bulletrange" in bulletScript's update function

@@ -20,7 +20,6 @@ public class AchievementHandler : MonoBehaviour
     void Start()
     {
         AchievementEvents.aEvents.onAchievementUnlocked += UnlockAchievement;
-        Debug.Log($"The {achievements["score1500"].Getid()} is {achievements["score1500"].IsUnlocked()}");
     }
 
     /**
@@ -93,6 +92,18 @@ public class AchievementHandler : MonoBehaviour
             {"streak25", new Achievement(
                 "streak25", PlayerPrefs.GetString("streak25", "locked"), "Chain 'em Together",
                 "Acquire a streak of 25 or higher in a single run.") 
+            },
+
+            // THESE GO TOGETHER FOR THE MEME
+
+            {"firsthealth", new Achievement(
+                "firsthealth", PlayerPrefs.GetString("firsthealth", "locked"), "Call an Ambulance!",
+                "Use a health pack for the first time.") 
+            },
+
+            {"kill200noheal", new Achievement(
+                "kill200noheal", PlayerPrefs.GetString("kill200noheal", "locked"), "But not for me",
+                "Eliminate 200 enemies in a single run without using a health pack.") 
             },
 
         };

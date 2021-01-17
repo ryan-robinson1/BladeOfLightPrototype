@@ -40,6 +40,10 @@ public class HealthPackScript : MonoBehaviour
      */
     public void HealPlayer(GameObject hero)
     {
+        if (PlayerPrefs.GetString("firsthealth", "locked") == "locked")
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("firsthealth");
+        }
         _dm = hero.GetComponent<DamageManager>();
         if (_dm.health < _dm.startHealth)
         {

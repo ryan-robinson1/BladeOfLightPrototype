@@ -109,7 +109,6 @@ public class TurretShootScript : MonoBehaviour
             turretMesh.gameObject.SetActive(false);
             AudioManager.instance.Play("TurretExplosion", Random.Range(0.9f, 1.15f));
         }
-        Debug.Log("Explosion");
 
     }
 

@@ -21,6 +21,8 @@ public class ScoreCounter : MonoBehaviour
     private int deflectScore = 5;
     private int attackScore = 50;
     private int highestStreak;
+    private int totalElims;
+    private bool healed;
 
     /**
      * Called before the first frame update.
@@ -29,6 +31,8 @@ public class ScoreCounter : MonoBehaviour
     {
         score = 0;
         highestStreak = 0;
+        totalElims = 0;
+        healed = false;
         _animController = player.GetComponent<PlayerAnimationController>();
         gmOverState = player.GetComponent<GameOverState>();
     }
@@ -49,6 +53,7 @@ public class ScoreCounter : MonoBehaviour
     {
         gmOverState.GetScoreFromRound(score);
         gmOverState.GetHighestStreak(highestStreak);
+        gmOverState.GetElimTotal(totalElims, healed);
     }
 
     /**
@@ -57,6 +62,14 @@ public class ScoreCounter : MonoBehaviour
     public void AddDeflectScore()
     {
         score += deflectScore;
+    }
+
+    /**
+     * Tells us that we have healed.
+     */
+    public void JustHealed()
+    {
+        healed = true;
     }
 
     /**
@@ -71,6 +84,7 @@ public class ScoreCounter : MonoBehaviour
      */
     public void SetHighestStreak(int streak)
     {
+        totalElims += streak;
         if (streak > highestStreak)
         {
             highestStreak = streak;

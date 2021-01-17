@@ -23,6 +23,8 @@ public class GameOverState : MonoBehaviour
     private int score;
     private int streak;
     private int bounty;
+    private int elims;
+    private bool healed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +57,7 @@ public class GameOverState : MonoBehaviour
         else
         {
             gameOverUI.GetComponentInChildren<TextMeshProUGUI>().text
-            = $"Final Score: {score}\nHighest Streak: {streak}\nPayout: ${bounty}";
+            = $"Final Score: {score}\nTotal Eliminations: {elims}\nHighest Streak: {streak}\nPayout: ${bounty}";
         }
     }
 
@@ -115,6 +117,19 @@ public class GameOverState : MonoBehaviour
         this.streak = streak;
         HandleStreakAchievements();
     }
+
+    /**
+     * Gets the total number of elims from the current round.
+     * 
+     * @param elims The total number of eliminations from the current round.
+     */
+    public void GetElimTotal(int elims, bool healed)
+    {
+        this.elims = elims;
+        this.healed = healed;
+        HandleElimAchievements();
+    }
+
     /**
     * Calculates the money earned from the round
     */
@@ -150,6 +165,17 @@ public class GameOverState : MonoBehaviour
         if (PlayerPrefs.GetString("streak25", "locked") == "locked" && streak >= 25)
         {
             AchievementEvents.aEvents.UnlockAchievementTrigger("streak25");
+        }
+    }
+
+    /**
+     * Handles unlocking achievements regarding eliminations.
+     */
+    private void HandleElimAchievements()
+    {
+        if (PlayerPrefs.GetString("kill200noheal", "locked") == "locked" && elims >= 200 && !healed)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("kill200noheal");
         }
     }
 }

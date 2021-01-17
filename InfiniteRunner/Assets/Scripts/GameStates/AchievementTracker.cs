@@ -135,7 +135,7 @@ public class AchievementTracker : MonoBehaviour
         StringBuilder str = new StringBuilder();
         foreach (var item in a)
         {
-            str.Append($"{item.Value.GetDisplayName()} is {item.Value.GetLockState()}\n{item.Value.GetDescription()}\n\n");
+            str.Append($"{item.Value.GetDisplayName()} ({item.Value.GetLockState()})\n{item.Value.GetDescription()}\n\n");
         }
 
         return str.ToString();
