@@ -81,6 +81,10 @@ public class GameOverState : MonoBehaviour
     public void GetScoreFromRound(int score)
     {
         this.score = score;
+        if (score > 1000)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score1000");
+        }
     }
 
     /**

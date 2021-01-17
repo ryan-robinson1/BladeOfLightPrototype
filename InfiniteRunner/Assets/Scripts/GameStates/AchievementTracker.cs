@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using UnityEngine;
 
 /**
- * This script is in charge of navigating the achievments menu UI.
+ * This script is in charge of navigating the achievments menu UI
+ *  and handling the achievement unlock for the shop.
  * 
  * @author Maxfield Barden
  */

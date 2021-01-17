@@ -48,8 +48,7 @@ public class Shop : MonoBehaviour
 
     }
     void Start()
-    {
-        
+    {   
         hasPlayed();
         setUpItemPlayerPrefs();
         money = PlayerPrefs.GetInt("money", 0);
@@ -61,6 +60,11 @@ public class Shop : MonoBehaviour
         enemyLight.color = ColorDataBase.GetEnemyStripAlbedo();
         swordLight.color = ColorDataBase.GetSwordAlbedo();
         
+    }
+
+    private void TestEvent()
+    {
+        Debug.Log("this is my first time playing");
     }
     public void hasPlayed()
     {

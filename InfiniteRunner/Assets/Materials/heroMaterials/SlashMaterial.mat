@@ -87,7 +87,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - slashColor: {r: 0.32, g: 12, b: 0.96, a: 1}
+    - slashColor: {r: 0.096, g: 3.28, b: 6, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6373347441529590370
 MonoBehaviour:
