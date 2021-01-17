@@ -1,6 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
+/**
+ * In charge of executing the action that unlocks achievements.
+ * 
+ * @author Maxfield Barden
+ */
 public class AchievementEvents : MonoBehaviour
 {
     public static AchievementEvents aEvents;
@@ -14,7 +19,8 @@ public class AchievementEvents : MonoBehaviour
     }
 
     /**
-     * Triggers an achievement to be unlocked.
+     * Triggers an achievement to be unlocked. Called by other scripts to 
+     * execute an achievement unlock.
      * 
      * @param id The id of the achievement.
      */

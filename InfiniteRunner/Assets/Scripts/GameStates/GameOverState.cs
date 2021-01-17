@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -81,10 +79,7 @@ public class GameOverState : MonoBehaviour
     public void GetScoreFromRound(int score)
     {
         this.score = score;
-        if (score > 1000)
-        {
-            AchievementEvents.aEvents.UnlockAchievementTrigger("score1000");
-        }
+        HandleScoringAchievements();
     }
 
     /**
@@ -131,10 +126,14 @@ public class GameOverState : MonoBehaviour
         shop.GetComponent<Shop>().depositMoney(bounty);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    /**
+     * Handles unlocking achievements based on the score from this round.
+     */
+    private void HandleScoringAchievements()
     {
-        
+        if (PlayerPrefs.GetString("score1000", "locked") == "locked" && score >= 1000)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score1000");
+        }
     }
 }

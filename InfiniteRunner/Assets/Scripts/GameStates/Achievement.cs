@@ -9,7 +9,8 @@ public class Achievement
 {
     private string id;
     private string lockState;
-    private bool unlocked;
+    private string displayName;
+    private string description;
 
     /**
      * A new Achievement object.
@@ -17,15 +18,17 @@ public class Achievement
      * @param id The achievement's string identifier.
      * @param unlocked Tells whether the achievement is unlocked or not.
      */
-    public Achievement(string id, string lockState)
+    public Achievement(string id, string lockState, string displayName,
+        string description)
     {
         this.id = id;
         this.lockState = lockState;
-        unlocked = IsUnlocked();
+        this.displayName = displayName;
+        this.description = description;
     }
 
     /**
-     * Returns the string id of this Achievement.
+     * Returns the string id of this Achievement. Used for scripting purposes.
      * 
      * @return The string id.
      */
@@ -44,11 +47,30 @@ public class Achievement
     }
 
     /**
+     * Returns the display name of the achievement. Used for UI purposes.
+     * 
+     * @return The displayName of this achievement.
+     */
+    public string GetDisplayName()
+    {
+        return displayName;
+    }
+
+    /**
+     * Gets the description of this achievement. Used for UI purposes.
+     * 
+     * @return The description of this achievement.
+     */
+    public string GetDescription()
+    { 
+        return description;
+    }
+
+    /**
      * Sets the unlocked boolean value to true upon the achievement being unlocked.
      */
     public void SetUnlocked()
     {
         lockState = "unlocked";
-        unlocked = true;
     }
 }
