@@ -33,7 +33,7 @@ public class SwordColorScript : MonoBehaviour
                 ParticleSystem>().main;
             bladeSmoke.startColor = swordAlbedo;
         }
-        catch (Exception e)
+        catch 
         {
         }
 
