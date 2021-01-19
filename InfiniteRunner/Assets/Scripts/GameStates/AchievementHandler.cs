@@ -87,6 +87,16 @@ public class AchievementHandler : MonoBehaviour
                 "Acquire a score of 15,000 or better in a single run.")
             },
 
+            {"score50k", new Achievement(
+                "score50k", PlayerPrefs.GetString("score50k", "locked"), "Elite Assassin",
+                "Acquire a score of 50,000 or better in a single run.") 
+            },
+
+            {"score200k", new Achievement(
+                "score200k", PlayerPrefs.GetString("score200k", "locked"), "Legendary Assassin",
+                "Acquire a score of 200,000 or better in a single run.") 
+            },
+
             // STREAK BASED ACHIEVEMENTS
 
             {"streak25", new Achievement(

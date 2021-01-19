@@ -17,6 +17,7 @@ public class AchievementTracker : MonoBehaviour
     private Canvas[] achievementSubMenus;
     private int[] highScores;
     private AchievementHandler _acHandler;
+    public GameObject plane;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,14 @@ public class AchievementTracker : MonoBehaviour
     }
 
     /**
+     * Enables the backdrop to the UI so we can read the text more clearly.
+     */
+    public void EnableBackdrop()
+    {
+        plane.SetActive(true);
+    }
+
+    /**
      * Returns to the main menu upon the back button being clicked.
      */
     public void OnMainBackButtonClick()
@@ -34,6 +43,7 @@ public class AchievementTracker : MonoBehaviour
         mainMenu.GetComponentInChildren<Canvas>().enabled = true;
         // main achievement menu
         achievementSubMenus[0].enabled = false;
+        plane.SetActive(false);
     }
 
     /**

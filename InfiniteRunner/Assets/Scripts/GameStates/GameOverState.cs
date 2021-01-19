@@ -147,6 +147,7 @@ public class GameOverState : MonoBehaviour
      */
     private void HandleScoringAchievements()
     {
+        // will need to restructure this code to execute better
         if (PlayerPrefs.GetString("score1500", "locked") == "locked" && score >= 1500)
         {
             AchievementEvents.aEvents.UnlockAchievementTrigger("score1500");
@@ -154,6 +155,16 @@ public class GameOverState : MonoBehaviour
         if (PlayerPrefs.GetString("score15k", "locked") == "locked" && score >= 15000)
         {
             AchievementEvents.aEvents.UnlockAchievementTrigger("score15k");
+        }
+        if (PlayerPrefs.GetString("score50k", "locked") == "locked" && score >= 50000)
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score50k");
+        }
+
+        //very rare to hit 200K so flip the if statement
+        if (score >= 200000 && PlayerPrefs.GetString("score200k", "locked") == "locked")
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("score200k");
         }
     }
 
