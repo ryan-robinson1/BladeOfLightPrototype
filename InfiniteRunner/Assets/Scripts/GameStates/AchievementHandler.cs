@@ -116,6 +116,18 @@ public class AchievementHandler : MonoBehaviour
                 "Eliminate 200 enemies in a single run without using a health pack.") 
             },
 
+            // PACIFIST (IDK HOW TO SPELL) ACHIEVEMENTS
+
+            {"passive5k", new Achievement(
+                "passive5k", PlayerPrefs.GetString("passive5k", "locked"), "Love thy enemy",
+                "Score 5,000 or better in a single run without eliminating a single enemy.") 
+            },
+
+            {"passive20k", new Achievement(
+                "passive20k", PlayerPrefs.GetString("passive20k", "locked"), "All life is sacred",
+                "Score 20,000 or better in a single run without eliminating a single enemy.") 
+            },
+
         };
     }
 }

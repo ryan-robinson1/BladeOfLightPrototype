@@ -188,5 +188,15 @@ public class GameOverState : MonoBehaviour
         {
             AchievementEvents.aEvents.UnlockAchievementTrigger("kill200noheal");
         }
+
+        if (elims == 0 && score >= 5000 && PlayerPrefs.GetString("passive5k", "locked") == "locked")
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("passive5k");
+        }
+
+        if (elims == 0 && score >= 20000 && PlayerPrefs.GetString("passive20k", "locked") == "locked")
+        {
+            AchievementEvents.aEvents.UnlockAchievementTrigger("passive20k");
+        }
     }
 }
