@@ -73298,6 +73298,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 616498272445209613, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05839018
+      objectReference: {fileID: 0}
+    - target: {fileID: 616498272445209613, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05723075
+      objectReference: {fileID: 0}
+    - target: {fileID: 616498272445209613, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05723075
+      objectReference: {fileID: 0}
     - target: {fileID: 1246332017692281104, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73431,12 +73446,12 @@ PrefabInstance:
     - target: {fileID: 2112060965045044565, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00002
+      value: -0.00025
       objectReference: {fileID: 0}
     - target: {fileID: 2112060965045044565, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00633
+      value: 0.00498
       objectReference: {fileID: 0}
     - target: {fileID: 2112060965045044565, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
@@ -73567,6 +73582,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 217.207
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.ratio
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: TrailModule.dieWithParticles
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: TrailModule.ratio
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 696377091934289089, guid: 53002bc535f494c4b8f4b3ee35c289a6, type: 3}
