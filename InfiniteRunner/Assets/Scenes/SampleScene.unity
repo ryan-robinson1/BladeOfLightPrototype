@@ -73596,7 +73596,7 @@ PrefabInstance:
     - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: LightsModule.intensityCurve.scalar
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8966864722778278534, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
