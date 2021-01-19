@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +33,9 @@ public class SwordColorScript : MonoBehaviour
                 ParticleSystem>().main;
             bladeSmoke.startColor = swordAlbedo;
         }
-        catch { }
+        catch (Exception e)
+        {
+        }
 
         slashMaterial.SetColor("slashColor", swordEmission);
 
