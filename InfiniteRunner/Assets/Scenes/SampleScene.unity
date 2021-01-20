@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 97069851}
   - component: {fileID: 97069853}
   m_Layer: 5
-  m_Name: 2
+  m_Name: CyanCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,8 +772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 97069849}
   name: IceCore1
-  displayName: IceCore
-  price: 10
+  displayName: CyanCore
+  price: 20
   defaultItem: 0
   enemyColor: 0
   heroColor: 4
@@ -1005,6 +1005,104 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2155300144688084556, guid: e0f450a687d30d145b878b036977c47a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0f450a687d30d145b878b036977c47a, type: 3}
+--- !u!1 &145144377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145144378}
+  - component: {fileID: 145144381}
+  - component: {fileID: 145144380}
+  - component: {fileID: 145144379}
+  m_Layer: 5
+  m_Name: LightBladeCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &145144378
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145144377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 686266117}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &145144379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145144377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 145144377}
+  name: LightCore2
+  displayName: LightCore
+  price: 0
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 7
+  achievement: 
+  purchaseState: 4
+  type: 2
+--- !u!114 &145144380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145144377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 4c759f444139a614aafc22035f140878, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &145144381
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145144377}
+  m_CullTransparentMesh: 0
 --- !u!1 &158974309
 GameObject:
   m_ObjectHideFlags: 0
@@ -7518,7 +7616,7 @@ GameObject:
   - component: {fileID: 333786046}
   - component: {fileID: 333786045}
   m_Layer: 5
-  m_Name: VoltBlade
+  m_Name: VoltBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7536,7 +7634,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7561,7 +7659,7 @@ MonoBehaviour:
   price: 0
   defaultItem: 0
   enemyColor: 0
-  heroColor: 6
+  heroColor: 8
   achievement: 
   purchaseState: 4
   type: 2
@@ -7896,6 +7994,104 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348908435}
+  m_CullTransparentMesh: 0
+--- !u!1 &362108285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362108286}
+  - component: {fileID: 362108289}
+  - component: {fileID: 362108288}
+  - component: {fileID: 362108287}
+  m_Layer: 5
+  m_Name: LightCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &362108286
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362108285}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2139145385}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &362108287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362108285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 362108285}
+  name: LightCore1
+  displayName: LightCore
+  price: 1000
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 7
+  achievement: 
+  purchaseState: 2
+  type: 0
+--- !u!114 &362108288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362108285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 4c759f444139a614aafc22035f140878, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &362108289
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362108285}
   m_CullTransparentMesh: 0
 --- !u!1 &377364328
 GameObject:
@@ -13607,7 +13803,7 @@ GameObject:
   - component: {fileID: 460401870}
   - component: {fileID: 460401872}
   m_Layer: 5
-  m_Name: 1
+  m_Name: HazeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28970,7 +29166,7 @@ GameObject:
   - component: {fileID: 573329338}
   - component: {fileID: 573329340}
   m_Layer: 5
-  m_Name: 3
+  m_Name: CodeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28988,7 +29184,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29048,7 +29244,7 @@ MonoBehaviour:
   prefab: {fileID: 573329336}
   name: CodeCore1
   displayName: CodeCore
-  price: 25
+  price: 35
   defaultItem: 0
   enemyColor: 0
   heroColor: 2
@@ -29068,7 +29264,7 @@ GameObject:
   - component: {fileID: 576701925}
   - component: {fileID: 576701927}
   m_Layer: 5
-  m_Name: 5
+  m_Name: MatterBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29086,7 +29282,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29149,7 +29345,7 @@ MonoBehaviour:
   price: 80
   defaultItem: 0
   enemyColor: 0
-  heroColor: 0
+  heroColor: 5
   achievement: 
   purchaseState: 4
   type: 2
@@ -34288,7 +34484,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34680,11 +34876,13 @@ RectTransform:
   m_Children:
   - {fileID: 1849849416}
   - {fileID: 1469104258}
-  - {fileID: 2143961011}
   - {fileID: 1914969496}
-  - {fileID: 873213799}
   - {fileID: 333786044}
+  - {fileID: 873213799}
   - {fileID: 576701924}
+  - {fileID: 2143961011}
+  - {fileID: 865250445}
+  - {fileID: 145144378}
   m_Father: {fileID: 690611592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35486,6 +35684,104 @@ MonoBehaviour:
   achievement: 
   purchaseState: 2
   type: 1
+--- !u!1 &865250444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865250445}
+  - component: {fileID: 865250448}
+  - component: {fileID: 865250447}
+  - component: {fileID: 865250446}
+  m_Layer: 5
+  m_Name: DarkMatterBladeCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &865250445
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865250444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 686266117}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &865250446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865250444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 865250444}
+  name: DarkMatterCore2
+  displayName: DarkMatterCore
+  price: 0
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 1
+  achievement: 
+  purchaseState: 4
+  type: 2
+--- !u!114 &865250447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865250444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 28230b9e7f26b3249989f6b3993f2173, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &865250448
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865250444}
+  m_CullTransparentMesh: 0
 --- !u!1 &873213798
 GameObject:
   m_ObjectHideFlags: 0
@@ -35499,7 +35795,7 @@ GameObject:
   - component: {fileID: 873213800}
   - component: {fileID: 873213802}
   m_Layer: 5
-  m_Name: 4
+  m_Name: VoidBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35576,11 +35872,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 873213798}
   name: PurpleCore2
-  displayName: DarkCore
+  displayName: VoidCore
   price: 30
   defaultItem: 0
   enemyColor: 0
-  heroColor: 5
+  heroColor: 6
   achievement: 
   purchaseState: 4
   type: 2
@@ -36424,7 +36720,7 @@ GameObject:
   - component: {fileID: 1003943655}
   - component: {fileID: 1003943657}
   m_Layer: 5
-  m_Name: 5
+  m_Name: MatterCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36442,7 +36738,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -36502,7 +36798,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   name: MatterCore1
   displayName: MatterCore
-  price: 45
+  price: 70
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
@@ -38354,7 +38650,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38376,7 +38672,7 @@ MonoBehaviour:
   prefab: {fileID: 1325661819}
   name: FlameCore1
   displayName: RageCore
-  price: 20
+  price: 150
   defaultItem: 0
   enemyColor: 0
   heroColor: 3
@@ -49479,7 +49775,7 @@ GameObject:
   - component: {fileID: 1469104259}
   - component: {fileID: 1469104261}
   m_Layer: 5
-  m_Name: 2
+  m_Name: CyanCodeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49556,11 +49852,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1469104257}
   name: IceCore2
-  displayName: IceCore
+  displayName: CyanCore
   price: 45
   defaultItem: 0
   enemyColor: 0
-  heroColor: 4
+  heroColor: 0
   achievement: 
   purchaseState: 4
   type: 2
@@ -55848,6 +56144,104 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1858167387}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1640176715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640176716}
+  - component: {fileID: 1640176719}
+  - component: {fileID: 1640176718}
+  - component: {fileID: 1640176717}
+  m_Layer: 5
+  m_Name: DarkMatterCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1640176716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640176715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2139145385}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1640176717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640176715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1640176715}
+  name: DarkMatterCore1
+  displayName: DarkMatterCore
+  price: 900
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 1
+  achievement: 
+  purchaseState: 2
+  type: 0
+--- !u!114 &1640176718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640176715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 28230b9e7f26b3249989f6b3993f2173, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1640176719
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640176715}
+  m_CullTransparentMesh: 0
 --- !u!1 &1657451150
 GameObject:
   m_ObjectHideFlags: 0
@@ -66918,7 +67312,7 @@ GameObject:
   - component: {fileID: 1849849417}
   - component: {fileID: 1849849419}
   m_Layer: 5
-  m_Name: 1
+  m_Name: HazeBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66999,7 +67393,7 @@ MonoBehaviour:
   price: 25
   defaultItem: 1
   enemyColor: 0
-  heroColor: 1
+  heroColor: 2
   achievement: 
   purchaseState: 4
   type: 2
@@ -67373,7 +67767,7 @@ GameObject:
   - component: {fileID: 1914969497}
   - component: {fileID: 1914969499}
   m_Layer: 5
-  m_Name: 3
+  m_Name: CodeBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67391,7 +67785,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67454,7 +67848,7 @@ MonoBehaviour:
   price: 75
   defaultItem: 0
   enemyColor: 0
-  heroColor: 2
+  heroColor: 3
   achievement: 
   purchaseState: 4
   type: 2
@@ -73022,7 +73416,7 @@ GameObject:
   - component: {fileID: 2010392590}
   - component: {fileID: 2010392592}
   m_Layer: 5
-  m_Name: 4
+  m_Name: VoidCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73099,8 +73493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2010392588}
   name: PurpleCore1
-  displayName: DarkCore
-  price: 35
+  displayName: VoidCore
+  price: 65
   defaultItem: 0
   enemyColor: 0
   heroColor: 5
@@ -73774,11 +74168,13 @@ RectTransform:
   m_Children:
   - {fileID: 460401869}
   - {fileID: 97069850}
-  - {fileID: 1325661820}
   - {fileID: 573329337}
-  - {fileID: 2010392589}
   - {fileID: 618279491}
+  - {fileID: 2010392589}
   - {fileID: 1003943654}
+  - {fileID: 1325661820}
+  - {fileID: 1640176716}
+  - {fileID: 362108286}
   m_Father: {fileID: 1488609041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73903,7 +74299,7 @@ GameObject:
   - component: {fileID: 2143961013}
   - component: {fileID: 2143961012}
   m_Layer: 5
-  m_Name: RageBlade
+  m_Name: RageBladeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73921,7 +74317,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -73946,7 +74342,7 @@ MonoBehaviour:
   price: 0
   defaultItem: 0
   enemyColor: 0
-  heroColor: 3
+  heroColor: 4
   achievement: 
   purchaseState: 4
   type: 2

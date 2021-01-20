@@ -26,6 +26,9 @@ public static class ColorDataBase
             {"hero-aqua", new Color(
                 0f, 0.74f * heroIntensity, 0.75f * heroIntensity) },
 
+            {"hero-black", new Color(
+                0f, 0f, 0f) },
+
             {"hero-blue", new Color(
                 0.012f * heroIntensity, 0.41f * heroIntensity, 0.75f * heroIntensity) },
 
@@ -41,8 +44,12 @@ public static class ColorDataBase
             {"hero-purple", new Color(
                 0.275f * heroIntensity, 0.07f * heroIntensity, 0.75f * heroIntensity) },
 
+            {"hero-white", new Color(
+                1 * heroIntensity, 1 * heroIntensity, 1 * heroIntensity) },
+
             {"hero-yellow", new Color(
                 0.99f * heroIntensity, 1 * heroIntensity, 0) },
+
         };
 
     /**
@@ -94,6 +101,9 @@ public static class ColorDataBase
             {"sword-aqua", new Color(
                 0f, 0.74f * swordIntensity, 0.75f * swordIntensity) },
 
+            {"sword-black", new Color(
+                0f, 0f, 0f) },
+
             {"sword-blue", new Color(
                 0.012f * swordIntensity, 0.41f * swordIntensity, 0.75f * swordIntensity) },
 
@@ -109,6 +119,9 @@ public static class ColorDataBase
             {"sword-purple", new Color(
                 0.275f * swordIntensity, 0.07f * swordIntensity, 0.75f * swordIntensity) },
 
+            {"sword-white", new Color(
+                1 * swordIntensity, 1 * swordIntensity, 1 * swordIntensity) },
+
             {"sword-yellow", new Color(
                 0.99f * swordIntensity, 1 * swordIntensity, 0) },
         };
@@ -119,50 +132,64 @@ public static class ColorDataBase
     private static Dictionary<heroColorOptions, Color[]> heroColorTranslator =
         new Dictionary<heroColorOptions, Color[]>()
         {
-            {heroColorOptions.pink, new Color[]{ heroColors["hero-pink"], swordColors["sword-pink"] } },
+            // SORT BY ALPHA
+
+            {heroColorOptions.aqua, new Color[]{ heroColors["hero-aqua"], swordColors["sword-aqua"] } },
+            {heroColorOptions.black, new Color[]{ heroColors["hero-black"], swordColors["sword-black"] } },
             {heroColorOptions.blue, new Color[]{ heroColors["hero-blue"], swordColors["sword-blue"] } },
             {heroColorOptions.green, new Color[]{ heroColors["hero-green"], swordColors["sword-green"] } },
             {heroColorOptions.red, new Color[]{ heroColors["hero-red"], swordColors["sword-red"] } },
-            {heroColorOptions.aqua, new Color[]{ heroColors["hero-aqua"], swordColors["sword-aqua"] } },
+            {heroColorOptions.pink, new Color[]{ heroColors["hero-pink"], swordColors["sword-pink"] } },
             {heroColorOptions.purple, new Color[]{ heroColors["hero-purple"], swordColors["sword-purple"] } },
+            {heroColorOptions.white, new Color[]{ heroColors["hero-white"], swordColors["sword-white"] } },
             {heroColorOptions.yellow, new Color[]{ heroColors["hero-yellow"], swordColors["sword-yellow"] } },
         };
     private static Dictionary<enemyColorOptions, Color[]> enemyColorTranslator =
         new Dictionary<enemyColorOptions, Color[]>()
         {
-            {enemyColorOptions.orangeYellow, new Color[]{ enemyColors["enemyDissolve-orangeYellow"], enemyColors["enemyStrip-orangeYellow"] } },
             {enemyColorOptions.aqua, new Color[]{ enemyColors["enemyDissolve-aqua"], enemyColors["enemyStrip-aqua"] } },
             {enemyColorOptions.green, new Color[]{ enemyColors["enemyDissolve-green"], enemyColors["enemyStrip-green"] } },
+            {enemyColorOptions.orangeYellow, new Color[]{ enemyColors["enemyDissolve-orangeYellow"], enemyColors["enemyStrip-orangeYellow"] } },
             {enemyColorOptions.red, new Color[]{ enemyColors["enemyDissolve-red"], enemyColors["enemyStrip-red"] } },
 
         };
     private static Dictionary<heroColorOptions, Color> UIColorTranslator =
         new Dictionary<heroColorOptions, Color>()
         {
-            {heroColorOptions.pink, new Color(1.976675f,0f,1.844258f)},
+            // SORT BY ALPHA
+
+            {heroColorOptions.aqua, new Color(0,1.976675f,1.775073f) },
+            {heroColorOptions.black, new Color(0f, 0f, 0f) },
             {heroColorOptions.blue, new Color(0,0.6856585f,1.976675f) },
             {heroColorOptions.green, new Color(0.01741129f,1.976675f,0) },
             {heroColorOptions.red,new Color(1.976675f,0,0)},
-            {heroColorOptions.aqua, new Color(0,1.976675f,1.775073f) },
+            {heroColorOptions.pink, new Color(1.976675f,0f,1.844258f)},
             {heroColorOptions.purple, new Color(0.9620769f,0,1.976675f) },
+            {heroColorOptions.white, new Color(1f, 1f, 1f) },
             {heroColorOptions.yellow, new Color(0.99f, 1f, 0) },
 
         };
     public enum heroColorOptions
     {
-        pink,
+        // SORT BY ALPHA
+
+        aqua,
+        black,
         blue,
         green,
         red,
-        aqua,
+        pink,
         purple,
+        white,
         yellow
     }
     public enum enemyColorOptions
     {
-        orangeYellow,
+        // SORT BY ALPHA
+
         aqua,
         green,
+        orangeYellow,
         red
     }
     // will need to change this later to make it more variable
