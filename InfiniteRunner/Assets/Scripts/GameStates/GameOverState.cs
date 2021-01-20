@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 /**
  * Takes care of the game over screen when after the player runs out of health.
@@ -135,9 +136,18 @@ public class GameOverState : MonoBehaviour
     */
     public void calculateBounty()
     {
-        double g = (double)(((double)((double)score / 1000.0) + (double)streak)/100.0);
-        double p = System.Math.Pow(g,(1.0/3.0))*175.0;
-        bounty = (int)p;
+        // old payout system
+        //  double g = (double)(((double)((double)score / 1000.0) + (double)streak)/100.0);
+        //   double p = System.Math.Pow(g,(1.0/3.0))*175.0;
+
+        // new payout system (every 1000 = 1 credit) rounds to next highest whole number
+        // with a base of one per round
+        double unRounded = score / 1000f;
+        bounty = (int)Math.Ceiling(unRounded) + 1;
+        Debug.Log(Math.Ceiling(unRounded));
+
+        Debug.Log(unRounded);
+        Debug.Log(Math.Ceiling(unRounded));
 
         shop.GetComponent<Shop>().depositMoney(bounty);
     }
