@@ -40,6 +40,9 @@ public static class ColorDataBase
 
             {"hero-purple", new Color(
                 0.275f * heroIntensity, 0.07f * heroIntensity, 0.75f * heroIntensity) },
+
+            {"hero-yellow", new Color(
+                0.99f * heroIntensity, 1 * heroIntensity, 0) },
         };
 
     /**
@@ -105,6 +108,9 @@ public static class ColorDataBase
 
             {"sword-purple", new Color(
                 0.275f * swordIntensity, 0.07f * swordIntensity, 0.75f * swordIntensity) },
+
+            {"sword-yellow", new Color(
+                0.99f * swordIntensity, 1 * swordIntensity, 0) },
         };
 
     /**
@@ -119,6 +125,7 @@ public static class ColorDataBase
             {heroColorOptions.red, new Color[]{ heroColors["hero-red"], swordColors["sword-red"] } },
             {heroColorOptions.aqua, new Color[]{ heroColors["hero-aqua"], swordColors["sword-aqua"] } },
             {heroColorOptions.purple, new Color[]{ heroColors["hero-purple"], swordColors["sword-purple"] } },
+            {heroColorOptions.yellow, new Color[]{ heroColors["hero-yellow"], swordColors["sword-yellow"] } },
         };
     private static Dictionary<enemyColorOptions, Color[]> enemyColorTranslator =
         new Dictionary<enemyColorOptions, Color[]>()
@@ -138,6 +145,7 @@ public static class ColorDataBase
             {heroColorOptions.red,new Color(1.976675f,0,0)},
             {heroColorOptions.aqua, new Color(0,1.976675f,1.775073f) },
             {heroColorOptions.purple, new Color(0.9620769f,0,1.976675f) },
+            {heroColorOptions.yellow, new Color(0.99f, 1f, 0) },
 
         };
     public enum heroColorOptions
@@ -147,7 +155,8 @@ public static class ColorDataBase
         green,
         red,
         aqua,
-        purple
+        purple,
+        yellow
     }
     public enum enemyColorOptions
     {

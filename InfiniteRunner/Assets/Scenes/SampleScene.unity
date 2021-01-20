@@ -2034,8 +2034,8 @@ MonoBehaviour:
   defaultItem: 1
   enemyColor: 0
   heroColor: 0
-  achievement: Win a duel
-  purchaseState: 2
+  achievement: 
+  purchaseState: 3
   type: 3
 --- !u!1 &265389583
 GameObject:
@@ -7505,6 +7505,104 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &333786043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333786044}
+  - component: {fileID: 333786047}
+  - component: {fileID: 333786046}
+  - component: {fileID: 333786045}
+  m_Layer: 5
+  m_Name: VoltBlade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &333786044
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333786043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 686266117}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &333786045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333786043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 333786043}
+  name: VoltCore2
+  displayName: VoltCore
+  price: 0
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 6
+  achievement: 
+  purchaseState: 4
+  type: 2
+--- !u!114 &333786046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333786043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 5f812be35b2dba2478bfa44c3e93f77b, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &333786047
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333786043}
+  m_CullTransparentMesh: 0
 --- !u!1 &337273344
 GameObject:
   m_ObjectHideFlags: 0
@@ -13493,8 +13591,8 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: Stab someone in the back
-  purchaseState: 2
+  achievement: 
+  purchaseState: 3
   type: 3
 --- !u!1 &460401868
 GameObject:
@@ -23601,7 +23699,7 @@ MonoBehaviour:
   defaultItem: 1
   enemyColor: 3
   heroColor: 0
-  achievement: Buy your first home
+  achievement: 
   purchaseState: 2
   type: 1
 --- !u!1 &513722787
@@ -28890,7 +28988,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -28988,7 +29086,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29052,7 +29150,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: Geocash
+  achievement: 
   purchaseState: 4
   type: 2
 --- !u!1001 &578467597
@@ -34156,9 +34254,107 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 1
   heroColor: 0
-  achievement: Kick a field goal
+  achievement: 
   purchaseState: 2
   type: 1
+--- !u!1 &618279490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618279491}
+  - component: {fileID: 618279494}
+  - component: {fileID: 618279493}
+  - component: {fileID: 618279492}
+  m_Layer: 5
+  m_Name: VoltCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &618279491
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618279490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2139145385}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &618279492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618279490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 618279490}
+  name: VoltCore1
+  displayName: VoltCore
+  price: 40
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 6
+  achievement: 
+  purchaseState: 2
+  type: 0
+--- !u!114 &618279493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618279490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 5f812be35b2dba2478bfa44c3e93f77b, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &618279494
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618279490}
+  m_CullTransparentMesh: 0
 --- !u!1 &631723293
 GameObject:
   m_ObjectHideFlags: 0
@@ -34484,8 +34680,10 @@ RectTransform:
   m_Children:
   - {fileID: 1849849416}
   - {fileID: 1469104258}
+  - {fileID: 2143961011}
   - {fileID: 1914969496}
   - {fileID: 873213799}
+  - {fileID: 333786044}
   - {fileID: 576701924}
   m_Father: {fileID: 690611592}
   m_RootOrder: 0
@@ -35285,7 +35483,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: AHelp an old lady cross the street
+  achievement: 
   purchaseState: 2
   type: 1
 --- !u!1 &873213798
@@ -35319,7 +35517,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -35383,7 +35581,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 5
-  achievement: Adopt a Dog
+  achievement: 
   purchaseState: 4
   type: 2
 --- !u!1 &911404077
@@ -36244,7 +36442,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -36905,7 +37103,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 2
   heroColor: 0
-  achievement: Carve a pumpkin
+  achievement: 
   purchaseState: 2
   type: 1
 --- !u!1 &1131692591
@@ -38125,6 +38323,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285261878}
   m_CullTransparentMesh: 0
+--- !u!1 &1325661819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325661820}
+  - component: {fileID: 1325661823}
+  - component: {fileID: 1325661822}
+  - component: {fileID: 1325661821}
+  m_Layer: 5
+  m_Name: RageCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1325661820
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325661819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2139145385}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1325661821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325661819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1325661819}
+  name: FlameCore1
+  displayName: RageCore
+  price: 20
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 3
+  achievement: 
+  purchaseState: 2
+  type: 0
+--- !u!114 &1325661822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325661819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 30638eeb58098714b96043c4d5fcac4f, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1325661823
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325661819}
+  m_CullTransparentMesh: 0
 --- !u!1 &1325911514
 GameObject:
   m_ObjectHideFlags: 0
@@ -39204,8 +39500,8 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: Fight a wolf
-  purchaseState: 2
+  achievement: 
+  purchaseState: 3
   type: 3
 --- !u!1 &1415579264
 GameObject:
@@ -49265,7 +49561,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 4
-  achievement: Never Kill Anyone
+  achievement: 
   purchaseState: 4
   type: 2
 --- !u!1 &1470794321
@@ -65759,8 +66055,8 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: Run for office
-  purchaseState: 2
+  achievement: 
+  purchaseState: 3
   type: 3
 --- !u!1 &1717883599
 GameObject:
@@ -66606,8 +66902,8 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 0
-  achievement: Stub your toe
-  purchaseState: 2
+  achievement: 
+  purchaseState: 3
   type: 3
 --- !u!1 &1849849415
 GameObject:
@@ -66704,7 +67000,7 @@ MonoBehaviour:
   defaultItem: 1
   enemyColor: 0
   heroColor: 1
-  achievement: Get 6000 Score
+  achievement: 
   purchaseState: 4
   type: 2
 --- !u!1001 &1858167387
@@ -67095,7 +67391,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 686266117}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -67159,7 +67455,7 @@ MonoBehaviour:
   defaultItem: 0
   enemyColor: 0
   heroColor: 2
-  achievement: red rEd red!
+  achievement: 
   purchaseState: 4
   type: 2
 --- !u!1 &1926193807
@@ -72744,7 +73040,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139145385}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -73478,8 +73774,10 @@ RectTransform:
   m_Children:
   - {fileID: 460401869}
   - {fileID: 97069850}
+  - {fileID: 1325661820}
   - {fileID: 573329337}
   - {fileID: 2010392589}
+  - {fileID: 618279491}
   - {fileID: 1003943654}
   m_Father: {fileID: 1488609041}
   m_RootOrder: 0
@@ -73592,6 +73890,104 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2143961010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143961011}
+  - component: {fileID: 2143961014}
+  - component: {fileID: 2143961013}
+  - component: {fileID: 2143961012}
+  m_Layer: 5
+  m_Name: RageBlade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2143961011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143961010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 686266117}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2143961012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143961010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5056209b13fe44a522e676d4b6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2143961010}
+  name: FlameCore2
+  displayName: RageCore
+  price: 0
+  defaultItem: 0
+  enemyColor: 0
+  heroColor: 3
+  achievement: 
+  purchaseState: 4
+  type: 2
+--- !u!114 &2143961013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143961010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 30638eeb58098714b96043c4d5fcac4f, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6209f0e17c20d20418a8660d547a89df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2143961014
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143961010}
+  m_CullTransparentMesh: 0
 --- !u!33 &104766379498721243
 MeshFilter:
   m_ObjectHideFlags: 0
