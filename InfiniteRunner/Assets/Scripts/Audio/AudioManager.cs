@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
-            s.source.mute = true;
+            s.source.mute = !s.source.mute;
         }
         PlayerPrefs.SetString("muteMusic", "true");
     }
@@ -75,7 +75,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
-            s.source.mute = false;
+            s.source.mute = !s.source.mute;
         }
         PlayerPrefs.SetString("muteMusic", "false");
     }
