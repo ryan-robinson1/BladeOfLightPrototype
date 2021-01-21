@@ -15,6 +15,7 @@ public class SettingsNavigator : MonoBehaviour
     public GameObject menuMain;
     private Canvas[] achievementSubMenus;
     public GameObject displayPlane;
+    public AudioManager _am;
 
     // Start is called before the first frame update
     void Start()
@@ -61,5 +62,22 @@ public class SettingsNavigator : MonoBehaviour
         // disable main menu and enable how to play
         achievementSubMenus[0].enabled = false;
         achievementSubMenus[1].enabled = true;
+    }
+
+    /**
+     * Handles the muting / unmuting functionality.
+     */
+    public void OnMuteButtonPress()
+    {
+        if (PlayerPrefs.GetString("muteMusic", "false") == "false")
+        {
+            _am.MuteAllSounds();
+        }
+
+        // otherwise, unmute
+        else
+        {
+            _am.UnMuteAllSounds();
+        }
     }
 }

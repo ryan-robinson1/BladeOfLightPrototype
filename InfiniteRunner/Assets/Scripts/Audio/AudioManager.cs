@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
+        
+
         foreach(Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -35,6 +38,12 @@ public class AudioManager : MonoBehaviour
             }
 
         }
+
+        // mute the music if player prefs is set to true
+        if (PlayerPrefs.GetString("muteMusic", "false") == "true")
+        {
+            this.MuteAllSounds();
+        }
     }
 
     /**
@@ -45,6 +54,30 @@ public class AudioManager : MonoBehaviour
     public Sound[] GetSounds()
     {
         return sounds;
+    }
+
+    /**
+     * Mutes all the music in the game.
+     */
+    public void MuteAllSounds()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.mute = true;
+        }
+        PlayerPrefs.SetString("muteMusic", "true");
+    }
+
+    /**
+     * Unmutes all the sounds in the game.
+     */
+    public void UnMuteAllSounds()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.mute = false;
+        }
+        PlayerPrefs.SetString("muteMusic", "false");
     }
 
     /**

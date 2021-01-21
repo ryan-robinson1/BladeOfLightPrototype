@@ -65,11 +65,17 @@ public static class ColorDataBase
             {"enemyDissolve-aqua", new Color(
                 0f, 0.74f * enemyMainIntensity, 0.75f * enemyMainIntensity) },
 
+            {"enemyDissolve-black", new Color(
+                0f, 0f, 0f) },
+
             {"enemyDissolve-blue", new Color(
                 0.035f * enemyMainIntensity, 0.39f * enemyMainIntensity, 0.75f * enemyMainIntensity) },
 
             {"enemyDissolve-green", new Color(
                 0f, 0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
+
+            {"enemyDissolve-lightPink", new Color(
+                0.75f * enemyMainIntensity, 0.16f * enemyMainIntensity, 0.27f * enemyMainIntensity) },
 
             {"enemyDissolve-orangeYellow", new Color(
                 0.75f * enemyMainIntensity, 0.21f * enemyMainIntensity, 0f) },
@@ -80,16 +86,23 @@ public static class ColorDataBase
             {"enemyDissolve-red", new Color(
                 0.75f * enemyMainIntensity, 0.03f * enemyMainIntensity, 0.03f * enemyMainIntensity) },
 
+            {"enemyDissolve-white", new Color(
+                1 * enemyMainIntensity, 1 * enemyMainIntensity, 1 * enemyMainIntensity) },
+
 
             // armor strip colors
             {"enemyStrip-aqua", new Color(
                 0f, 0.74f * enemyStripIntensity, 0.75f * enemyStripIntensity) },
+
 
             {"enemyStrip-blue", new Color(
                 0.035f * enemyStripIntensity, 0.39f * enemyStripIntensity, 0.75f * enemyStripIntensity) },
 
             {"enemyStrip-green", new Color(
                 0f, 0.75f * enemyStripIntensity, 0.004f * enemyStripIntensity) },
+
+            {"enemyStrip-lightPink", new Color(
+                0.75f * enemyStripIntensity, 0.16f * enemyStripIntensity, 0.27f * enemyStripIntensity) },
 
             {"enemyStrip-orangeYellow", new Color(
                 0.75f * enemyStripIntensity, 0.21f * enemyStripIntensity, 0f) },
@@ -99,6 +112,9 @@ public static class ColorDataBase
 
             {"enemyStrip-red", new Color(
                 0.75f * enemyStripIntensity, 0.03f * enemyStripIntensity, 0.03f * enemyStripIntensity) },
+
+            {"enemyStrip-white", new Color(
+                1 * enemyStripIntensity, 1 * enemyStripIntensity, 1 * enemyStripIntensity) },
 
             
         };
@@ -165,6 +181,9 @@ public static class ColorDataBase
             {enemyColorOptions.orangeYellow, new Color[]{ enemyColors["enemyDissolve-orangeYellow"], enemyColors["enemyStrip-orangeYellow"] } },
             {enemyColorOptions.red, new Color[]{ enemyColors["enemyDissolve-red"], enemyColors["enemyStrip-red"] } },
             {enemyColorOptions.purple, new Color[]{ enemyColors["enemyDissolve-purple"], enemyColors["enemyStrip-purple"]} },
+            {enemyColorOptions.white, new Color[]{ enemyColors["enemyDissolve-white"], enemyColors["enemyStrip-white"]} },
+            {enemyColorOptions.black, new Color[]{ enemyColors["enemyDissolve-black"], enemyColors["enemyDissolve-black"]} },
+            {enemyColorOptions.lightPink, new Color[]{ enemyColors["enemyDissolve-lightPink"], enemyColors["enemyStrip-lightPink"] } },
 
         };
     private static Dictionary<heroColorOptions, Color> UIColorTranslator =
@@ -206,7 +225,10 @@ public static class ColorDataBase
         green,
         orangeYellow,
         red,
-        purple
+        purple,
+        white,
+        black,
+        lightPink
     }
     // will need to change this later to make it more variable
     private static Color heroColor = heroColors["hero-blue"];
