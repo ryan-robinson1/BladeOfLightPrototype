@@ -143,7 +143,7 @@ public class GameOverState : MonoBehaviour
         // new payout system (every 1000 = 1 credit) rounds to next highest whole number
         // with a base of one per round
         double unRounded = score / 1000f;
-        bounty = (int)Math.Ceiling(unRounded) + 1;
+        bounty = (int)Math.Ceiling(unRounded) + 100000;
         Debug.Log(Math.Ceiling(unRounded));
 
         Debug.Log(unRounded);
