@@ -41,6 +41,8 @@ public class ChunkGenerator : MonoBehaviour
     int previousBuildingIndexLeft = -1;
     int previousBuildingIndexRight = -1;
 
+    int roadBoundX = 0;
+
     private List<float> enemySpawnPoints = new List<float>();
     Dictionary<float,int> zCoordTranslations = new Dictionary<float, int>(){
     {3.5f,1},
@@ -62,6 +64,7 @@ public class ChunkGenerator : MonoBehaviour
     {
         GameObject roadSection = GameObject.Instantiate(road, position + new Vector3(180 * roads.Count, 0, 0), rotation);
        roads.Enqueue(roadSection);
+        roadBoundX = (int)(roadSection.transform.position.x) + 90;
        generateBuildings();
        spawnEnemies();
        spawnStreetLights();
@@ -77,21 +80,23 @@ public class ChunkGenerator : MonoBehaviour
     }
     public void generateBuildings()
     {
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < 12; i++)
         {
             int buildingNum = buildingIndex(previousBuildingIndexLeft);
             Vector3 spawnPosition = structures[buildingNum].spawnPosition + new Vector3(currentSpawnXLeft + structures[buildingNum].extentX, 0, 0);
             GameObject.Instantiate(structures[buildingNum].prefab, spawnPosition, Quaternion.identity);
             currentSpawnXLeft += (structures[buildingNum].extentX * 2) + alleyWidth;
             previousBuildingIndexLeft = buildingNum;
+            if (currentSpawnXLeft > roadBoundX) break;
         }
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 12; i++)
         {
             int buildingNum = buildingIndex(previousBuildingIndexRight);
             Vector3 spawnPosition = new Vector3(0, structures[buildingNum].spawnPosition.y, structures[buildingNum].spawnPosition.z*-1) + new Vector3(currentSpawnXRight + structures[buildingNum].extentX, 0, 0);
             GameObject.Instantiate(structures[buildingNum].prefab, spawnPosition, Quaternion.Euler(0,180,0));
             currentSpawnXRight += (structures[buildingNum].extentX * 2) + alleyWidth;
             previousBuildingIndexRight = buildingNum;
+            if (currentSpawnXRight > roadBoundX) break;
         }
     }
     /*
@@ -158,7 +163,7 @@ public class ChunkGenerator : MonoBehaviour
             _streetLight2 = streetLightOff;
         }
       
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 10; i++)
         {
             if(Random.Range(0,5) != 2)
             {
@@ -170,6 +175,8 @@ public class ChunkGenerator : MonoBehaviour
                 GameObject.Instantiate(_streetLight2, new Vector3(streetLightSpawnX - Random.Range(5, 15), 0, -5), Quaternion.Euler(0,180,0));
             }
             streetLightSpawnX += 55;
+
+            if (streetLightSpawnX > roadBoundX) break;
         }
     }
     void spawnPowerUps()
@@ -215,7 +222,6 @@ public class ChunkGenerator : MonoBehaviour
             if (enemiesX + spawnPointVectors[i].x > 50)
             {
                 float random = Random.Range(0f, 1f);
-                Debug.Log(random);
                 if (i > 0 && spawnPointVectors[i].x-spawnPointVectors[i-1].x>spaceBetweenEnemies && random <0.85)
                 {
                     Instantiate(pistolEnemy, new Vector3(enemiesX, 0.5f, 0) + new Vector3(spawnPointVectors[i].x,0,spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
@@ -224,8 +230,6 @@ public class ChunkGenerator : MonoBehaviour
                 {
                  
                    Instantiate(turretEnemy, new Vector3(enemiesX, 0.24f, 0) + new Vector3(spawnPointVectors[i].x, 0, spawnPointVectors[i].z), Quaternion.Euler(0, -90, 0));
-                    Debug.Log("TUREET");
-                    
                 }
              
             }

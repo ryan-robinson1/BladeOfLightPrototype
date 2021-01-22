@@ -38,13 +38,11 @@ public class Shop : MonoBehaviour
         }
         Enum.TryParse(PlayerPrefs.GetString("EnemyColor", "red"), out ColorDataBase.enemyColorOptions enemyC);
         ColorDataBase.setEnemyColor(enemyC);
-        Debug.Log(enemyC.ToString());
         Enum.TryParse(PlayerPrefs.GetString("HeroColor", "blue"), out ColorDataBase.heroColorOptions heroC);
         ColorDataBase.setHeroColor(heroC);
-        Debug.Log(heroC.ToString());
         Enum.TryParse(PlayerPrefs.GetString("SwordColor", "blue"), out ColorDataBase.heroColorOptions swordC);
         ColorDataBase.setSwordColor(swordC);
-        Debug.Log(swordC.ToString());
+
 
     }
     void Start()
