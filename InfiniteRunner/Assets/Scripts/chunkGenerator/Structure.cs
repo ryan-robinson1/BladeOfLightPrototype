@@ -11,7 +11,7 @@ public class Structure
     //Number of stories, e.g. 1, 2, 3
     public int height;
 
-    public float probabilityOfSpawning;
+    public float probabilityMultiplier;
 
     //X does nothing. Y modifies height from ground, z modifies distance from curb
     public Vector3 spawnPosition;

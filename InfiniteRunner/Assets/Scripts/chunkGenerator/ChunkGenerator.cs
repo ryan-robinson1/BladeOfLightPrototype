@@ -38,7 +38,8 @@ public class ChunkGenerator : MonoBehaviour
     float enemiesX = 0;
 
     int spaceBetweenEnemies = 6;
-
+    int previousBuildingIndexLeft = -1;
+    int previousBuildingIndexRight = -1;
 
     private List<float> enemySpawnPoints = new List<float>();
     Dictionary<float,int> zCoordTranslations = new Dictionary<float, int>(){
@@ -78,18 +79,56 @@ public class ChunkGenerator : MonoBehaviour
     {
         for(int i = 0; i < 8; i++)
         {
-            int buildingNum = Random.Range(0, structures.Length);
+            int buildingNum = buildingIndex(previousBuildingIndexLeft);
             Vector3 spawnPosition = structures[buildingNum].spawnPosition + new Vector3(currentSpawnXLeft + structures[buildingNum].extentX, 0, 0);
             GameObject.Instantiate(structures[buildingNum].prefab, spawnPosition, Quaternion.identity);
             currentSpawnXLeft += (structures[buildingNum].extentX * 2) + alleyWidth;
+            previousBuildingIndexLeft = buildingNum;
         }
         for (int i = 0; i < 8; i++)
         {
-            int buildingNum = Random.Range(0, structures.Length);
+            int buildingNum = buildingIndex(previousBuildingIndexRight);
             Vector3 spawnPosition = new Vector3(0, structures[buildingNum].spawnPosition.y, structures[buildingNum].spawnPosition.z*-1) + new Vector3(currentSpawnXRight + structures[buildingNum].extentX, 0, 0);
             GameObject.Instantiate(structures[buildingNum].prefab, spawnPosition, Quaternion.Euler(0,180,0));
             currentSpawnXRight += (structures[buildingNum].extentX * 2) + alleyWidth;
+            previousBuildingIndexRight = buildingNum;
         }
+    }
+    /*
+     * Returns a structures array index that corresponds to the correct next building to spawn based on structure parameters
+     * 
+     * @param previousBuildingIndex The index of the last building spawned
+     * 
+     * @return the structures array index of the building that should be spawned
+     */
+    private int buildingIndex(int _previousBuildingIndex)
+    {
+        List<int> weightedIndexes = new List<int>();
+        HashSet<int> blackListedIndexes = new HashSet<int>();
+        if (_previousBuildingIndex != -1 && structures[_previousBuildingIndex].height == 1)
+        {
+            for (int i = 0; i < structures.Length; i++)
+            {
+                int h = structures[i].height;
+                if (h == 1 || h == 2)
+                {
+                    blackListedIndexes.Add(i);
+                }
+            }
+        }
+        blackListedIndexes.Add(_previousBuildingIndex);
+        for (int i = 0; i < structures.Length; i++)
+        {
+            if (!blackListedIndexes.Contains(i))
+            {
+                for(int j=0;j< structures[i].probabilityMultiplier; j++)
+                {
+                    weightedIndexes.Add(i);
+                }
+            }
+        }
+
+        return weightedIndexes[Random.Range(0, weightedIndexes.Count)];
     }
     public void degenerateChunk()
     {
