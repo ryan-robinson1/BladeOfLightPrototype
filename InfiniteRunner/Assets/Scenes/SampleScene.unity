@@ -35002,7 +35002,7 @@ MonoBehaviour:
       type: 3}
     height: 4
     probabilityMultiplier: 4
-    spawnPosition: {x: 0, y: 3.37, z: 12}
+    spawnPosition: {x: 0, y: 0, z: 12}
     extentX: 0
   player: {fileID: 1546999454}
   pistolEnemy: {fileID: 2155300144688084552, guid: e0f450a687d30d145b878b036977c47a,
