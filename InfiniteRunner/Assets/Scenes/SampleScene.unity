@@ -1238,7 +1238,7 @@ Canvas:
   m_GameObject: {fileID: 160488607}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -35639,7 +35639,7 @@ Canvas:
   m_GameObject: {fileID: 816872026}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -36559,7 +36559,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -56212,7 +56212,7 @@ Canvas:
   m_GameObject: {fileID: 1589529854}
   m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -67206,8 +67206,9 @@ MonoBehaviour:
     \n\t\ton the ground.\n\t- Save deflects for powerful enemies or large\n\t\tgroups
     of enemies\n\t- Sliding cancels your current deflect, allowing\n\t\tit to recharge"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e73e963e99cc4b48b74055fe17ce810, type: 2}
+  m_sharedMaterial: {fileID: 8385377534546361564, guid: 7e73e963e99cc4b48b74055fe17ce810,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
