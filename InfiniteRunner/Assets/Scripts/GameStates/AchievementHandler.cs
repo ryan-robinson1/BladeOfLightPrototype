@@ -46,7 +46,6 @@ public class AchievementHandler : MonoBehaviour
         // notify our player prefs that the achievement is unlocked
         PlayerPrefs.SetString(id, "unlocked");
         achievements[id].SetUnlocked();
-        Debug.Log("you unlocked the " + achievements[id].GetDisplayName() + " achievement");
     }
 
     /**
