@@ -27,40 +27,24 @@ public class TimeManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+       
+    }
+    
+    /**
+     * Pauses the game.
+     */
+    public void PauseGame()
+    {
+        if (PlayerPrefs.GetString("paused", "false") == "false")
         {
-            if (paused)
-            {
-                this.ContinueGame();
-            }
-            else
-            {
-                this.PauseGame();
-            }
+            Time.timeScale = 0;
+            PlayerPrefs.SetString("paused", "true");
         }
-        ResetSlowMotionTimer();
-    }
-
-    /**
-     * Pauses the game and sets the Pause Menu to active.
-     */
-    private void PauseGame()
-    {
-        Time.timeScale = 0;
-        paused = true;
-        audioManager.PauseAllSounds(audioManager.GetSounds());
-        // paused menu code goes here
-    }
-
-    /**
-     * Continues the game if we are paused.
-     */
-    private void ContinueGame()
-    {
-        Time.timeScale = 1;
-        paused = false;
-        audioManager.UnPauseAllSounds(audioManager.GetSounds());
-        // disable pause menu code goes here
+        else
+        {
+            Time.timeScale = 1;
+            PlayerPrefs.SetString("paused", "false");
+        }
     }
     private void DoSlowMotion()
     {

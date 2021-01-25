@@ -31,7 +31,7 @@ public class SwordColorScript : MonoBehaviour
         {
             bladeSmoke = transform.GetChild(0).GetComponentInChildren<
                 ParticleSystem>().main;
-            bladeSmoke.startColor = swordEmission;
+            bladeSmoke.startColor = swordAlbedo;
         }
         catch 
         {
