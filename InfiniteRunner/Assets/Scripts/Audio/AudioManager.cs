@@ -62,7 +62,10 @@ public class AudioManager : MonoBehaviour
      */
     public void MuteAllSounds()
     {
-        AudioListener.volume = 0;
+        foreach (Sound s in sounds)
+        {
+            s.source.mute = !s.source.mute;
+        }
         PlayerPrefs.SetString("muteMusic", "true");
     }
 
@@ -71,7 +74,10 @@ public class AudioManager : MonoBehaviour
      */
     public void UnMuteAllSounds()
     {
-        AudioListener.volume = 1;
+        foreach (Sound s in sounds)
+        {
+            s.source.mute = !s.source.mute;
+        }
         PlayerPrefs.SetString("muteMusic", "false");
     }
 

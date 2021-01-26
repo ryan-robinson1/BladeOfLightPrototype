@@ -53,12 +53,7 @@ public class GameOverState : MonoBehaviour
         if (IsHighScore())
         {
             gameOverUI.GetComponentInChildren<TextMeshProUGUI>().text
-            = $"Final Score: {score}\n\nNew High Score!\nTotal Eliminations: {elims}\n\nHighest Streak: {streak}\nPayout: ${bounty}";
-        }
-        else if (IsTop3())
-        {
-            gameOverUI.GetComponentInChildren<TextMeshProUGUI>().text
-            = $"Final Score: {score}\n\nTop 3 Score!\nTotal Eliminations: {elims}\n\nHighest Streak: {streak}\nPayout: ${bounty}";
+            = $"Final Score: {score}\n\nNew High Score!\n\nHighest Streak: {streak}\nPayout: ${bounty}";
         }
         else
         {
@@ -97,17 +92,6 @@ public class GameOverState : MonoBehaviour
      */
     private bool IsHighScore()
     {
-        // based on script execution order, it's HighScore2, not HighScore1
-        return score > PlayerPrefs.GetInt("HighScore2", 0);
-    }
-
-    /**
-     * Determines if the score from this round is a top 3 score.
-     * 
-     * @return True if this round's score is a top 3 score.
-     */
-    private bool IsTop3()
-    {
         return score > PlayerPrefs.GetInt("HighScore3", 0);
     }
 
@@ -118,7 +102,7 @@ public class GameOverState : MonoBehaviour
     private void DetermineHighScore(int score)
     {
         // if its higher than the lowest high score, it's a new high score.
-        if (IsTop3())
+        if (IsHighScore())
         {
             achievements.UpdateHighScores(score);
         }
