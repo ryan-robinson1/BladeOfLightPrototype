@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dependencies>
+    <androidPackages>
+        <androidPackage spec="com.applovin.mediation:amazon-adapter:6.0.0.0.0" />
+    </androidPackages>
+    <iosPods>
+        <iosPod name="AppLovinMediationAmazonAdapter" version="3.1.0.0.3" />
+    </iosPods>
+</dependencies>
