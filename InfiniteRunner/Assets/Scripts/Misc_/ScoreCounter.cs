@@ -103,7 +103,7 @@ public class ScoreCounter : MonoBehaviour
     /**
      * Update is called once per frame.
      */
-    void Update()
+    void FixedUpdate()
     {
         score++;
         scoreText.text = 
