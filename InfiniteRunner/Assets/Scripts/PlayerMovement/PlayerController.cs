@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     Transform _tf;
     CapsuleCollider _cc;
     AudioManager _am;
+    public CameraShaker _cshaker;
 
 
     private int _playerPositionOffset = 0;
@@ -93,6 +94,11 @@ public class PlayerController : MonoBehaviour
         
        
        
+    }
+
+    public CameraShaker GetCamShaker()
+    {
+        return _cshaker;
     }
     void ChangeLookAtPoint()
     {
@@ -279,6 +285,7 @@ public class PlayerController : MonoBehaviour
         var main = particle.main;
         // main.simulationSpeed = 0.3f;
         particle.Play();
+        _cshaker.PlayDeflectShake();
 
     }
 

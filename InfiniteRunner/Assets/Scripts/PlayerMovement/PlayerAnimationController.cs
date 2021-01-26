@@ -14,6 +14,7 @@ public class PlayerAnimationController : MonoBehaviour
     Animator _anim;
     PlayerController player;
     SwordSlashSpawner slashSpawner;
+    private CameraShaker _shaker;
     private int attacks = 0;
     private float attackTimer = 0f;
     private float attackReset = 4f;
@@ -32,6 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
         _anim = this.GetComponentInChildren<Animator>();
         player = this.GetComponent<PlayerController>();
         slashSpawner = this.GetComponent<SwordSlashSpawner>();
+        _shaker = player.GetCamShaker();
     }
 
     /**
@@ -145,6 +147,7 @@ public class PlayerAnimationController : MonoBehaviour
             player.setDeflects(0);
             slashID = -1;
             Handheld.Vibrate();
+            _shaker.PlayHitShake();
             return;
         }
         if (this.IsSlideChain())
@@ -162,6 +165,7 @@ public class PlayerAnimationController : MonoBehaviour
             player.setDeflects(0);
             slashID = -1;
             Handheld.Vibrate();
+            _shaker.PlayHitShake();
             return;
         }
 
@@ -185,6 +189,7 @@ public class PlayerAnimationController : MonoBehaviour
             slashID = 2;
         }
         Handheld.Vibrate();
+        _shaker.PlayHitShake();
         player.setDeflects(0);
     }
 

@@ -26,4 +26,20 @@ public class CameraShaker : MonoBehaviour
     {
         _camAnim.SetTrigger("hitShake");
     }
+
+    /**
+     * Plays the attack shake effect.
+     */
+    public void PlayAttackShake()
+    {
+        _camAnim.SetTrigger("attackShake");
+    }
+
+    /**
+     * Plays the deflect shake.
+     */
+    public void PlayDeflectShake()
+    {
+        _camAnim.SetTrigger("deflectShake");
+    }
 }

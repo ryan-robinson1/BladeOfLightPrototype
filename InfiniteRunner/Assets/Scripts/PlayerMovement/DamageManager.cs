@@ -19,7 +19,7 @@ public class DamageManager : MonoBehaviour
     public ParticleSystem healEffect;
     public ParticleSystem healEffect1;
     public ParticleSystem healLightFX;
-    public CameraShaker shaker;
+    private CameraShaker shaker;
 
     private ParticleSystem.MainModule lightfxModule;
     private ParticleSystem.MainModule healfxModule;
@@ -42,10 +42,8 @@ public class DamageManager : MonoBehaviour
         healHealth = startHealth;
         edgeWidth = healthIndicator.GetFloat("edgeWidth");
         SetHeroColor();
-
-        
-
         gameOverState = this.GetComponentInChildren<GameOverState>();
+        shaker = this.GetComponent<PlayerController>().GetCamShaker();
     }
 
     /**
@@ -114,6 +112,7 @@ public class DamageManager : MonoBehaviour
         healHealth = healHealth / 2;
         damageEffect.Play();
         damageLightEffect.Play();
+        shaker.PlayAttackShake();
         // shouldn't ever end the round since it is always going to be half
         // of the player's health
     }

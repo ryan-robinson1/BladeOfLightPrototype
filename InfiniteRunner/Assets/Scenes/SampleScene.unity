@@ -884,7 +884,7 @@ MonoBehaviour:
   heroLight: {fileID: 1592425734}
   enemyLight: {fileID: 1111971325}
   swordLight: {fileID: 513722789}
-  deletePlayerPrefs: 0
+  deletePlayerPrefs: 1
 --- !u!1001 &144203019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39871,7 +39871,7 @@ MonoBehaviour:
     name: MainTheme
     loop: 1
     playOnAwake: 1
-    mute: 1
+    mute: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b9af5f3601d75bf4cb6d870f6ddbbd16, type: 3}
     volume: 0.428
@@ -75774,6 +75774,11 @@ PrefabInstance:
       propertyPath: sCounter
       value: 
       objectReference: {fileID: 911404082}
+    - target: {fileID: 321682931019228642, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: _shaker
+      value: 
+      objectReference: {fileID: 251982486}
     - target: {fileID: 321682931019228643, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: sCounter
@@ -75789,6 +75794,11 @@ PrefabInstance:
       propertyPath: StaminaBar
       value: 
       objectReference: {fileID: 2127063117}
+    - target: {fileID: 321682931019228643, guid: 53002bc535f494c4b8f4b3ee35c289a6,
+        type: 3}
+      propertyPath: _cshaker
+      value: 
+      objectReference: {fileID: 251982486}
     - target: {fileID: 321682931019228644, guid: 53002bc535f494c4b8f4b3ee35c289a6,
         type: 3}
       propertyPath: HealthBar

@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
         {
             this.MuteAllSounds();
         }
+        Debug.Log(AudioListener.volume);
     }
 
     /**
