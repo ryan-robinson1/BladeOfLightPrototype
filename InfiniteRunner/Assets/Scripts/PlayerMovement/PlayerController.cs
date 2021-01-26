@@ -342,6 +342,7 @@ public class PlayerController : MonoBehaviour
         {
             deflects++;
             sCounter.AddDeflectScore();
+            Handheld.Vibrate();
             if (deflects >= 5)
             {
                 deflects = 1;

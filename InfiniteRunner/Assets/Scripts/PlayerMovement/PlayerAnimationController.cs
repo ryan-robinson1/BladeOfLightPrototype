@@ -144,6 +144,7 @@ public class PlayerAnimationController : MonoBehaviour
             _anim.SetTrigger("SlideAgain");
             player.setDeflects(0);
             slashID = -1;
+            Handheld.Vibrate();
             return;
         }
         if (this.IsSlideChain())
@@ -160,6 +161,7 @@ public class PlayerAnimationController : MonoBehaviour
             _anim.SetTrigger("Slide");
             player.setDeflects(0);
             slashID = -1;
+            Handheld.Vibrate();
             return;
         }
 
@@ -182,6 +184,7 @@ public class PlayerAnimationController : MonoBehaviour
             attacks = 0;
             slashID = 2;
         }
+        Handheld.Vibrate();
         player.setDeflects(0);
     }
 

@@ -19,6 +19,7 @@ public class DamageManager : MonoBehaviour
     public ParticleSystem healEffect;
     public ParticleSystem healEffect1;
     public ParticleSystem healLightFX;
+    public CameraShaker shaker;
 
     private ParticleSystem.MainModule lightfxModule;
     private ParticleSystem.MainModule healfxModule;
@@ -91,6 +92,7 @@ public class DamageManager : MonoBehaviour
         healHealth -= bulletDamage;
         damageEffect.Play();
         damageLightEffect.Play();
+        shaker.PlayHitShake();
 
         // round is over
         if (health <= 0)
